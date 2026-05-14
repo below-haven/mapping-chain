@@ -5614,7 +5614,7 @@ CLASS Class_901
 CLASS Class_902
 	METHOD method_3757 equals (Ljava/lang/Object;)Z
 	METHOD method_3758 hashCode ()I
-CLASS Class_903 com/google/inject/internal/asm/$ClassTooLargeException
+CLASS Class_903 com/google/inject/internal/asm/ClassTooLargeException
 	CLASS Class_904
 		FIELD field_2058 className Ljava/lang/String;
 		FIELD field_2059 constantPoolCount I
@@ -6803,17 +6803,17 @@ CLASS Class_1133
 	METHOD method_4659 ()[Ljava/lang/String;
 CLASS Class_1134
 	METHOD method_4660 (Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-CLASS Class_1135
+CLASS Class_1135 com/samskivert/text/MessageUtil
 	METHOD method_4661 (Ljava/lang/String;)Z
 	METHOD method_4662 (Ljava/lang/String;)Ljava/lang/String;
 	METHOD method_4663 (Ljava/lang/String;)Ljava/lang/String;
 	METHOD method_4664 (Ljava/lang/String;)Ljava/lang/String;
 	METHOD method_4665 (Ljava/lang/String;)Ljava/lang/String;
 	METHOD method_4666 (Ljava/lang/String;)Ljava/lang/String;
-	METHOD method_4667 (Ljava/lang/Object;)Ljava/lang/String;
+	METHOD method_4667 taint (Ljava/lang/Object;)Ljava/lang/String;
 	METHOD method_4668 (Ljava/lang/String;[Ljava/lang/String;)Ljava/lang/String;
 	METHOD method_4669 (Ljava/lang/String;[Ljava/lang/String;)Ljava/lang/String;
-	METHOD method_4670 (Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+	METHOD method_4670 compose (Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 	METHOD method_4671 (Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 	METHOD method_4672 (Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 CLASS Class_1136
@@ -6821,7 +6821,7 @@ CLASS Class_1136
 	CLASS Class_1137
 		METHOD method_4674 (Ljava/lang/String;)Ljava/lang/Object;
 CLASS Class_1138 com/samskivert/io/PersistenceException
-CLASS Class_1139
+CLASS Class_1139 com/samskivert/io/ByteArrayOutInputStream
 	METHOD method_4675 getInputStream ()Ljava/io/InputStream;
 CLASS Class_1140
 CLASS Class_1141
@@ -6908,7 +6908,7 @@ CLASS Class_1149 com/samskivert/swing/RuntimeAdjust
 		METHOD method_4728 ()Ljava/lang/String;
 		METHOD method_4729 ()Ljavax/swing/JPanel;
 		METHOD method_4730 toString ()Ljava/lang/String;
-	CLASS Class_1152
+	CLASS Class_1152 BooleanAdjust
 		METHOD method_4731 actionPerformed (Ljava/awt/event/ActionEvent;)V
 		METHOD method_4732 (Ljava/lang/Object;)Z
 		METHOD method_4733 (Z)V
@@ -6973,7 +6973,7 @@ CLASS Class_1166
 	METHOD method_4774 replace (Ljavax/swing/text/DocumentFilter$FilterBypass;IILjava/lang/String;Ljavax/swing/text/AttributeSet;)V
 CLASS Class_1167
 	METHOD method_4775 ()V
-CLASS Class_1168
+CLASS Class_1168 com/samskivert/swing/Controller
 	METHOD method_4776 (Ljava/awt/Component;Ljava/lang/String;)V
 	METHOD method_4777 (Ljava/awt/Component;Ljava/lang/String;Ljava/lang/Object;)V
 	METHOD method_4778 (Ljava/awt/event/ActionEvent;)V
@@ -7003,7 +7003,7 @@ CLASS Class_1174
 	METHOD method_4795 ()V
 	METHOD method_4796 insertUpdate (Ljavax/swing/event/DocumentEvent;)V
 	METHOD method_4797 removeUpdate (Ljavax/swing/event/DocumentEvent;)V
-CLASS Class_1175
+CLASS Class_1175 com/samskivert/swing/ControllerProvider
 	METHOD method_4798 ()LClass_1168;
 CLASS Class_1176
 	FIELD field_2682 count I
@@ -7177,13 +7177,13 @@ CLASS Class_1197 com/samskivert/util/BaseArrayList
 	METHOD method_4920 ()I
 	METHOD method_4921 toArray ()[Ljava/lang/Object;
 	METHOD method_4922 toArray ([Ljava/lang/Object;)[Ljava/lang/Object;
-CLASS Class_1198
+CLASS Class_1198 com/samskivert/util/IntListUtil
 	METHOD method_4923 ([II)Z
 	METHOD method_4924 ([II)I
 	METHOD method_4925 ([I)[I
-	METHOD method_4926 ([III)[I
+	METHOD method_4926 add ([III)[I
 	METHOD method_4927 ([I)I
-	METHOD method_4928 ([II)[I
+	METHOD method_4928 add ([II)[I
 	METHOD method_4929 ([II)[I
 	METHOD method_4930 ([I)I
 CLASS Class_1199 com/samskivert/util/ComparableArrayList
@@ -7194,14 +7194,14 @@ CLASS Class_1200 com/samskivert/util/ComparableTuple
 	METHOD method_4933 compareTo (Ljava/lang/Object;)I
 CLASS Class_1201 com/samskivert/util/IntMap
 	METHOD method_4934 containsKey (I)Z
-	METHOD method_4935 (ILjava/lang/Object;)Ljava/lang/Object;
+	METHOD method_4935 put (ILjava/lang/Object;)Ljava/lang/Object;
 	METHOD method_4936 (I)Ljava/lang/Object;
 	METHOD method_4937 ()Ljava/util/Set;
 	METHOD method_4938 remove (I)Ljava/lang/Object;
 	CLASS Class_1202
 		METHOD method_4939 ()I
 CLASS Class_1203 com/samskivert/util/IntMaps
-	METHOD method_4940 ()LClass_1207;
+	METHOD method_4940 newHashIntMap ()LClass_1207;
 CLASS Class_1204
 	METHOD method_4941 (I)Z
 CLASS Class_1205
@@ -7275,7 +7275,7 @@ CLASS Class_1212 com/samskivert/util/HashIntSet
 	METHOD method_4992 ()LClass_1212;
 	METHOD method_4993 readObject (Ljava/io/ObjectInputStream;)V
 	METHOD method_4994 writeObject (Ljava/io/ObjectOutputStream;)V
-CLASS Class_1213
+CLASS Class_1213 com/samskivert/util/Interval
 	FIELD field_2792 RUN_DIRECT LClass_1307;
 	FIELD field_2793 _runQueue LClass_1307;
 	FIELD field_2794 _task LClass_1213$Class_1214;
@@ -7451,7 +7451,8 @@ CLASS Class_1241
 	CLASS Class_1243
 		METHOD method_5114 (LClass_1241;Ljava/lang/Object;)V
 CLASS Class_1244 com/samskivert/util/Randoms
-	METHOD method_5115 (II)I
+	FIELD field_2856 _r Ljava/util/Random;
+	METHOD method_5115 getInRange (II)I
 	METHOD method_5116 (DD)D
 	METHOD method_5117 (FF)F
 	METHOD method_5118 (Ljava/lang/Iterable;Ljava/lang/Object;)Ljava/lang/Object;
@@ -7462,10 +7463,10 @@ CLASS Class_1244 com/samskivert/util/Randoms
 	METHOD method_5123 (Ljava/util/Random;)LClass_1244;
 	METHOD method_5124 (FF)F
 	METHOD method_5125 (Ljava/lang/Iterable;Ljava/lang/Object;)Ljava/lang/Object;
-	METHOD method_5126 (I)I
+	METHOD method_5126 getInt (I)I
 	METHOD method_5127 (I)Z
 	METHOD method_5128 (D)Z
-	METHOD method_5129 (F)F
+	METHOD method_5129 getFloat (F)F
 	METHOD method_5130 ()LClass_1244;
 	METHOD method_5131 ()Z
 	CLASS Class_1245 ThreadLocalRandom
@@ -7545,22 +7546,23 @@ CLASS Class_1261
 CLASS Class_1262
 	METHOD method_5178 ([Ljava/lang/Object;)LClass_1262;
 	METHOD method_5179 toString ()Ljava/lang/String;
-CLASS Class_1263
+CLASS Class_1263 com/samskivert/util/Logger
+	FIELD field_2916 _factory LClass_1263$Class_1264;
 	METHOD method_5180 (ILjava/lang/Object;[Ljava/lang/Object;)V
 	METHOD method_5181 (LClass_1263$Class_1264;)V
-	METHOD method_5182 (Ljava/lang/String;)LClass_1263;
+	METHOD method_5182 getLogger (Ljava/lang/String;)LClass_1263;
 	METHOD method_5183 (ILjava/lang/String;Ljava/lang/Throwable;)V
 	METHOD method_5184 (I)Z
 	METHOD method_5185 (Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/String;
 	METHOD method_5186 (Ljava/lang/Object;[Ljava/lang/Object;)V
 	METHOD method_5187 (Ljava/lang/Object;[Ljava/lang/Object;)V
-	METHOD method_5188 (Ljava/lang/Object;[Ljava/lang/Object;)V
+	METHOD method_5188 warning (Ljava/lang/Object;[Ljava/lang/Object;)V
 	METHOD method_5189 (Ljava/lang/Object;[Ljava/lang/Object;)V
 	METHOD method_5190 ()V
-	METHOD method_5191 ()LClass_1263$Class_1264;
-	CLASS Class_1264
-		METHOD method_5192 (Ljava/lang/String;)LClass_1263;
-		METHOD method_5193 ()V
+	METHOD method_5191 createConfiguredFactory ()LClass_1263$Class_1264;
+	CLASS Class_1264 Factory
+		METHOD method_5192 getLogger (Ljava/lang/String;)LClass_1263;
+		METHOD method_5193 init ()V
 CLASS Class_1265
 	METHOD method_5194 (I)Z
 	METHOD method_5195 (I)Z
@@ -7639,11 +7641,11 @@ CLASS Class_1286
 	METHOD method_5245 hashCode ()I
 	METHOD method_5246 ()V
 	METHOD method_5247 (Ljava/util/List;)Ljava/lang/reflect/Member;
-CLASS Class_1287
+CLASS Class_1287 com/samskivert/util/ObjectUtil
 	METHOD method_5248 (Ljava/lang/Comparable;Ljava/lang/Comparable;)I
-	METHOD method_5249 (Ljava/lang/Object;Ljava/lang/Class;)Ljava/lang/Object;
-	METHOD method_5250 (Ljava/lang/Throwable;Ljava/lang/Throwable;)Z
-	METHOD method_5251 (Ljava/lang/Object;Ljava/lang/Object;)Z
+	METHOD method_5249 as (Ljava/lang/Object;Ljava/lang/Class;)Ljava/lang/Object;
+	METHOD method_5250 equals (Ljava/lang/Throwable;Ljava/lang/Throwable;)Z
+	METHOD method_5251 equals (Ljava/lang/Object;Ljava/lang/Object;)Z
 CLASS Class_1288
 	METHOD method_5252 format (Ljava/util/logging/LogRecord;)Ljava/lang/String;
 	METHOD method_5253 (Z)V
@@ -7745,11 +7747,11 @@ CLASS Class_1306
 	METHOD method_5325 ()Z
 	METHOD method_5326 ()Z
 	METHOD method_5328 ()J
-CLASS Class_1307
+CLASS Class_1307 com/samskivert/util/RunQueue
 	METHOD method_5234 isRunning ()Z
 	METHOD method_5329 isDispatchThread ()Z
 	METHOD method_5330 postRunnable (Ljava/lang/Runnable;)V
-	CLASS Class_1308
+	CLASS Class_1308 AsExecutor
 		FIELD field_2975 _runQueue LClass_1307;
 		METHOD method_5331 execute (Ljava/lang/Runnable;)V
 CLASS Class_1309
@@ -7819,7 +7821,8 @@ CLASS Class_1316
 	METHOD method_5388 remove ()V
 CLASS Class_1317
 	METHOD method_5389 hasNext ()Z
-CLASS Class_1318
+CLASS Class_1318 com/samskivert/util/ArrayUtil
+	FIELD field_2987 EMPTY_INT [I
 	METHOD method_5390 ([III)V
 	METHOD method_5391 ([IIILjava/util/Random;)V
 	METHOD method_5392 ([Ljava/lang/Object;I)[Ljava/lang/Object;
@@ -9030,8 +9033,8 @@ CLASS Class_1511
 	METHOD method_6075 (Ljava/lang/Class;)LClass_329;
 CLASS Class_1512
 	METHOD method_6076 ()V
-CLASS Class_1513
-CLASS Class_1514
+CLASS Class_1513 com/threerings/crowd/Log
+CLASS Class_1514 com/threerings/crowd/util/CrowdContext
 	METHOD method_6077 (LClass_1563;)V
 	METHOD method_6078 (LClass_1563;)V
 	METHOD method_6079 getMessageManager ()LClass_7684;
@@ -9072,7 +9075,7 @@ CLASS Class_1518 com/threerings/crowd/chat/client/ChatDirector
 	METHOD method_6098 (LClass_3716;Ljava/lang/String;)V
 	METHOD method_6099 (LClass_7677;)V
 	METHOD method_6100 (LClass_7677;Ljava/lang/String;LClass_1301;)V
-	METHOD method_6101 (LClass_7683;Ljava/lang/String;LClass_1518$Class_1523;)V
+	METHOD method_6101 registerCommandHandler (LClass_7683;Ljava/lang/String;LClass_1518$Class_1523;)V
 	METHOD method_6102 (Ljava/lang/String;BZZ)Ljava/lang/String;
 	METHOD method_6103 (Ljava/lang/String;LClass_7677;Z)Ljava/lang/String;
 	METHOD method_6104 (Ljava/lang/String;Ljava/lang/String;BLjava/lang/String;)V
@@ -9162,8 +9165,8 @@ CLASS Class_1540 com/threerings/crowd/chat/client/MuteDirector
 	METHOD method_6165 (LClass_7677;)Z
 	METHOD method_6166 ()[LClass_7677;
 	METHOD method_6167 shutdown ()V
-	CLASS Class_1541
-		METHOD method_6168 (LClass_7677;Z)V
+	CLASS Class_1541 MuteObserver
+		METHOD method_6168 muteChanged (LClass_7677;Z)V
 CLASS Class_1542
 	METHOD method_6169 (LClass_1540$Class_1541;)Z
 CLASS Class_1543
@@ -9175,10 +9178,11 @@ CLASS Class_1545 com/threerings/crowd/chat/data/ChatChannel
 CLASS Class_1546 com/threerings/crowd/chat/data/ChatMarshaller
 	CLASS Class_1547 TellMarshaller
 CLASS Class_1548 com/threerings/crowd/chat/data/ChatMessage
+	FIELD field_3762 localtype Ljava/lang/String;
 	FIELD field_3763 bundle Ljava/lang/String;
 	FIELD field_3764 message Ljava/lang/String;
 	FIELD field_3765 timestamp J
-	METHOD method_6173 ()Ljava/lang/String;
+	METHOD method_6173 getFormat ()Ljava/lang/String;
 	METHOD method_6174 (Ljava/lang/String;Ljava/lang/String;)V
 	METHOD method_6175 toString ()Ljava/lang/String;
 CLASS Class_1549 com/threerings/crowd/chat/data/SpeakMarshaller
@@ -9187,11 +9191,13 @@ CLASS Class_1550 com/threerings/crowd/chat/data/SystemMessage
 CLASS Class_1551 com/threerings/crowd/chat/data/TellFeedbackMessage
 	FIELD field_3767 _failure Z
 CLASS Class_1552 com/threerings/crowd/chat/data/UserMessage
+	FIELD field_3768 mode B
 	FIELD field_3769 speaker LClass_7677;
-	METHOD method_6176 ()LClass_7677;
+	METHOD method_6176 getSpeakerDisplayName ()LClass_7677;
 CLASS Class_1553 com/threerings/crowd/chat/data/UserSystemMessage
 	FIELD field_3770 speaker LClass_7677;
-CLASS Class_1554
+CLASS Class_1554 com/threerings/crowd/chat/data/ChatCodes
+	FIELD field_3773 XLATE_MODES [Ljava/lang/String;
 CLASS Class_1555 com/threerings/crowd/chat/server/ChatChannelManager
 	CLASS Class_1556 ChannelAction
 		FIELD field_3776 _channel LClass_1545;
@@ -9211,10 +9217,10 @@ CLASS Class_1561
 	METHOD method_6182 compare (Ljava/lang/Object;Ljava/lang/Object;)I
 CLASS Class_1562
 	METHOD method_6183 ()V
-CLASS Class_1563
+CLASS Class_1563 com/threerings/crowd/client/PlaceView
 	METHOD method_6184 (LClass_1605;)V
 	METHOD method_6185 (LClass_1605;)V
-CLASS Class_1564
+CLASS Class_1564 com/threerings/crowd/client/PlaceViewUtil
 	METHOD method_6186 (Ljava/lang/Object;LClass_1605;)V
 	METHOD method_6187 (Ljava/lang/Object;LClass_1605;)V
 CLASS Class_1565 com/threerings/crowd/client/MoveFailedException
@@ -9223,7 +9229,7 @@ CLASS Class_1567
 	METHOD method_6188 (Z)V
 CLASS Class_1568
 CLASS Class_1569
-CLASS Class_1570
+CLASS Class_1570 com/threerings/crowd/client/LocationDirector
 	FIELD field_3798 _observers LClass_1234;
 	METHOD method_6189 (ILClass_1301;)Z
 	METHOD method_6190 (ILClass_1604;)V
@@ -9260,16 +9266,16 @@ CLASS Class_1577
 	METHOD method_6214 (LClass_1579;)Z
 CLASS Class_1578
 	METHOD method_6215 (LClass_1579;)Z
-CLASS Class_1579
-	METHOD method_6216 (LClass_1605;)V
-	METHOD method_6217 (I)Z
-	METHOD method_6218 (ILjava/lang/String;)V
-CLASS Class_1580
-	METHOD method_6219 (I)V
-CLASS Class_1581
-	METHOD method_6220 (ILClass_1581$Class_1582;)V
-	METHOD method_6221 ()V
-	CLASS Class_1582
+CLASS Class_1579 com/threerings/crowd/client/LocationObserver
+	METHOD method_6216 locationDidChange (LClass_1605;)V
+	METHOD method_6217 locationMayChange (I)Z
+	METHOD method_6218 locationChangeFailed (ILjava/lang/String;)V
+CLASS Class_1580 com/threerings/crowd/client/LocationReceiver
+	METHOD method_6219 forcedMove (I)V
+CLASS Class_1581 com/threerings/crowd/client/LocationService
+	METHOD method_6220 moveTo (ILClass_1581$Class_1582;)V
+	METHOD method_6221 leavePlace ()V
+	CLASS Class_1582 MoveListener
 		METHOD method_6222 (LClass_1604;)V
 CLASS Class_1583 com/threerings/crowd/client/OccupantDirector
 	FIELD field_3812 _observers LClass_1234;
@@ -9286,7 +9292,7 @@ CLASS Class_1587
 	METHOD method_6229 (LClass_1601;)V
 	METHOD method_6230 (LClass_1601;LClass_1601;)V
 	METHOD method_6231 (LClass_1601;)V
-CLASS Class_1588
+CLASS Class_1588 com/threerings/crowd/client/PlaceController
 	METHOD method_6232 (LClass_1514;)LClass_1563;
 	METHOD method_6233 (LClass_1514;LClass_1604;)V
 	METHOD method_6234 (LClass_1588$Class_1589;)V
@@ -9296,7 +9302,7 @@ CLASS Class_1588
 	METHOD method_6238 (LClass_1605;)V
 	METHOD method_6239 ()LClass_1604;
 	METHOD method_6240 ()LClass_1563;
-	CLASS Class_1589
+	CLASS Class_1589 DelegateOp
 		METHOD method_6241 (LClass_1595;)V
 		METHOD method_6242 (LClass_1595;)Z
 CLASS Class_1590
@@ -9304,7 +9310,7 @@ CLASS Class_1591
 CLASS Class_1592
 CLASS Class_1593
 CLASS Class_1594
-CLASS Class_1595
+CLASS Class_1595 com/threerings/crowd/client/PlaceControllerDelegate
 	METHOD method_6243 (LClass_1514;LClass_1604;)V
 	METHOD method_6244 (Ljava/awt/event/ActionEvent;)Z
 	METHOD method_6245 (LClass_1605;)V
@@ -9450,19 +9456,19 @@ CLASS Class_1642 com/threerings/delta/ReflectiveDelta
 	METHOD method_6316 readObject (LClass_2323;)V
 	METHOD method_6317 toString ()Ljava/lang/String;
 	METHOD method_6318 writeObject (LClass_2324;)V
-	CLASS Class_1643
+	CLASS Class_1643 ClassMapping
 		FIELD field_3914 _fields [Ljava/lang/reflect/Field;
 		METHOD method_6319 ()[Ljava/lang/reflect/Field;
 		METHOD method_6320 ()[LClass_1642$Class_1644;
 		METHOD method_6321 ()I
-	CLASS Class_1644
+	CLASS Class_1644 FieldHandler
 		METHOD method_6322 (LClass_2273;LClass_2061;Ljava/util/List;LClass_2323;)V
 		METHOD method_6323 (LClass_2273;LClass_2061;[Ljava/lang/Object;LClass_2061;LClass_2324;)V
 		METHOD method_6324 (Ljava/lang/reflect/Field;LClass_2273;LClass_2061;[Ljava/lang/Object;LClass_2061;Ljava/lang/StringBuilder;)V
 		METHOD method_6325 (Ljava/lang/reflect/Field;Ljava/lang/Object;Ljava/lang/Object;LClass_2273;LClass_2061;Ljava/util/List;)V
 		METHOD method_6326 (Ljava/lang/reflect/Field;Ljava/lang/Object;Ljava/lang/Object;LClass_2273;LClass_2061;[Ljava/lang/Object;LClass_2061;)V
-	CLASS Class_1645
-CLASS Class_1646
+	CLASS Class_1645 FinalFieldHandler
+CLASS Class_1646 com/threerings/delta/BareArrayMask
 CLASS Class_1647
 CLASS Class_1648
 CLASS Class_1649
@@ -9536,7 +9542,7 @@ CLASS Class_1675
 		METHOD method_6367 toString ()Ljava/lang/String;
 CLASS Class_1677
 	METHOD method_6368 ()[LClass_1694;
-CLASS Class_1678
+CLASS Class_1678 com/threerings/editor/Editable
 	METHOD method_6369 ()D
 	METHOD method_6370 ()I
 	METHOD method_6371 ()I
@@ -9547,7 +9553,7 @@ CLASS Class_1678
 	METHOD method_6376 ()Z
 	METHOD method_6377 ()Ljava/lang/String;
 	METHOD method_6378 ()D
-	METHOD method_6379 ()Ljava/lang/String;
+	METHOD method_6379 hgroup ()Ljava/lang/String;
 	METHOD method_6380 ()[Ljava/lang/String;
 	METHOD method_6381 ()Ljava/lang/String;
 	METHOD method_6382 ()Ljava/lang/String;
@@ -9556,7 +9562,7 @@ CLASS Class_1678
 	METHOD method_6385 ()Ljava/lang/String;
 	METHOD method_6386 ()I
 	METHOD method_6387 ()I
-	METHOD method_6388 ()D
+	METHOD method_6388 min ()D
 	METHOD method_6389 ()D
 	METHOD method_6390 ()D
 CLASS Class_1679
@@ -10695,7 +10701,7 @@ CLASS Class_1867
 	METHOD method_7136 ()LClass_1800$Class_1805;
 CLASS Class_1868
 	METHOD method_7137 ()LClass_1800$Class_1805;
-CLASS Class_1869
+CLASS Class_1869 com/threerings/export/Exportable
 CLASS Class_1870
 	METHOD method_7138 (Ljava/lang/reflect/Field;Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;LClass_1812;)V
 	METHOD method_7139 (Ljava/lang/reflect/Field;Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;LClass_1880;)V
@@ -11141,7 +11147,7 @@ CLASS Class_2060 com/threerings/expr/MutableFloat
 	METHOD method_7311 equals (Ljava/lang/Object;)Z
 	METHOD method_7312 hashCode ()I
 	METHOD method_7313 toString ()Ljava/lang/String;
-CLASS Class_2061
+CLASS Class_2061 com/threerings/expr/MutableInteger
 	FIELD field_4514 value I
 	METHOD method_7314 equals (Ljava/lang/Object;)Z
 	METHOD method_7315 hashCode ()I
@@ -11158,7 +11164,7 @@ CLASS Class_2065
 	METHOD method_7322 ()LClass_2334;
 CLASS Class_2066
 	METHOD method_7323 ()LClass_2334;
-CLASS Class_2067
+CLASS Class_2067 com/threerings/expr/Scope
 	METHOD method_7324 addListener (LClass_2068;)V
 	METHOD method_7325 (Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/Object;
 	METHOD method_7326 getParentScope ()LClass_2067;
@@ -11195,7 +11201,7 @@ CLASS Class_2087
 CLASS Class_2088
 CLASS Class_2089
 CLASS Class_2090
-CLASS Class_2091
+CLASS Class_2091 com/threerings/expr/Bound
 	METHOD method_7336 value ()Ljava/lang/String;
 CLASS Class_2092 com/threerings/expr/package-info
 CLASS Class_2093
@@ -12325,7 +12331,7 @@ CLASS Class_2257 com/threerings/io/Streamer
 		METHOD method_8035 (LClass_2324;I)V
 		METHOD method_8036 (LClass_2323;)I
 	CLASS Class_2272
-CLASS Class_2273
+CLASS Class_2273 com/threerings/io/ArrayMask
 	METHOD method_8037 (LClass_2323;)V
 	METHOD method_8038 (LClass_2324;)V
 	METHOD method_8039 (I)Z
@@ -12394,7 +12400,10 @@ CLASS Class_2303
 	METHOD method_8072 ()Ljava/nio/ByteBuffer;
 	METHOD method_8073 write (I)V
 	METHOD method_8074 write ([BII)V
-CLASS Class_2304
+CLASS Class_2304 com/threerings/io/ClassMapping
+	FIELD field_5299 code S
+	FIELD field_5300 sclass Ljava/lang/Class;
+	FIELD field_5301 streamer LClass_2257;
 	METHOD method_8075 toString ()Ljava/lang/String;
 CLASS Class_2305
 	METHOD method_8076 (Ljava/lang/reflect/Field;Ljava/lang/Object;LClass_2323;)V
@@ -12435,8 +12444,11 @@ CLASS Class_2320
 	METHOD method_8095 ()V
 CLASS Class_2321
 CLASS Class_2322
-CLASS Class_2323
+CLASS Class_2323 com/threerings/io/ObjectInputStream
 	FIELD field_5315 _depth I
+	FIELD field_5317 _classmap Ljava/util/List;
+	FIELD field_5318 _internmap Ljava/util/List;
+	FIELD field_5319 _current Ljava/lang/Object;
 	METHOD method_8096 (Ljava/lang/Object;LClass_2257;Z)V
 	METHOD method_8097 (SLjava/lang/String;)V
 	METHOD method_8098 (SLjava/lang/String;)LClass_2304;
@@ -12450,7 +12462,7 @@ CLASS Class_2323
 	METHOD method_8106 ()V
 	METHOD method_8107 ()Ljava/lang/String;
 	METHOD method_8108 toString ()Ljava/lang/String;
-CLASS Class_2324
+CLASS Class_2324 com/threerings/io/ObjectOutputStream
 	METHOD method_8109 (ILjava/lang/Class;)V
 	METHOD method_8110 (LClass_2304;)V
 	METHOD method_8111 (SLjava/lang/Class;LClass_2257;)LClass_2304;
@@ -12474,7 +12486,7 @@ CLASS Class_2326
 	METHOD method_8127 compare (Ljava/lang/Object;Ljava/lang/Object;)I
 CLASS Class_2327
 	METHOD method_8128 (Ljava/lang/reflect/Field;)Z
-CLASS Class_2328
+CLASS Class_2328 com/threerings/math/Box
 	FIELD field_5331 _maxExtent LClass_2342;
 	FIELD field_5332 _minExtent LClass_2342;
 	METHOD method_8129 (FFF)LClass_2328;
@@ -12936,7 +12948,7 @@ CLASS Class_2345
 	METHOD method_8543 ()LClass_2341;
 	METHOD method_8544 ()LClass_2341;
 	METHOD method_8545 toString ()Ljava/lang/String;
-CLASS Class_2346
+CLASS Class_2346 com/threerings/math/Ray3D
 	METHOD method_8546 (LClass_2339;LClass_2346;)LClass_2346;
 	METHOD method_8547 (LClass_2339;)LClass_2346;
 	METHOD method_8548 (LClass_2339;)LClass_2346;
@@ -15109,7 +15121,7 @@ CLASS Class_2740
 CLASS Class_2741
 	FIELD field_6643 _root LClass_2766;
 	METHOD method_9574 setLineFadeTime (I)V
-CLASS Class_2742
+CLASS Class_2742 com/threerings/opengl/gui/Image
 	FIELD field_6644 _height I
 	FIELD field_6645 _image Ljava/awt/image/BufferedImage;
 	FIELD field_6646 _theight I
@@ -15560,12 +15572,12 @@ CLASS Class_2781
 	METHOD method_9810 getArgument ()Ljava/lang/Object;
 	METHOD method_9811 setAction (Ljava/lang/String;)V
 	METHOD method_9812 setArgument (Ljava/lang/Object;)V
-CLASS Class_2782
+CLASS Class_2782 com/threerings/opengl/gui/background/Background
 	METHOD method_9813 getMinimumHeight ()I
 	METHOD method_9814 getMinimumWidth ()I
 	METHOD method_9815 render (LClass_3267;IIIIF)V
 CLASS Class_2783
-CLASS Class_2784
+CLASS Class_2784 com/threerings/opengl/gui/background/ImageBackground
 	FIELD field_6832 _anchor I
 	FIELD field_6833 _frame LClass_2992;
 	FIELD field_6834 _image LClass_2742;
@@ -15580,7 +15592,7 @@ CLASS Class_2785
 	FIELD field_6836 _color LClass_3264;
 CLASS Class_2786
 	FIELD field_6837 this$0 LClass_2820;
-CLASS Class_2787
+CLASS Class_2787 com/threerings/opengl/gui/UserInterfaceWindow
 	FIELD field_6838 _interface LClass_2820;
 	FIELD field_6839 _scope LClass_2096;
 	FIELD field_6840 _stretch Z
@@ -15692,7 +15704,7 @@ CLASS Class_2798
 CLASS Class_2799
 	FIELD field_6879 this$0 LClass_2798;
 	METHOD method_9877 stateChanged (Ljavax/swing/event/ChangeEvent;)V
-CLASS Class_2800
+CLASS Class_2800 com/threerings/opengl/gui/StatusLabel
 	FIELD field_6880 _flashAlert LClass_1213;
 	FIELD field_6881 _icons [LClass_2834;
 	METHOD method_9878 setStatus (Ljava/lang/String;Ljava/lang/String;Z)V
@@ -15801,12 +15813,12 @@ CLASS Class_2815
 	FIELD field_6922 _glyphs [LClass_3056;
 	FIELD field_6923 _lines I
 	METHOD method_9929 calculatePosition (ILClass_2993;)V
-CLASS Class_2816
+CLASS Class_2816 com/threerings/opengl/gui/TextField
 	FIELD field_6925 _cursx I
 	FIELD field_6926 _glyphs LClass_3056;
 	FIELD field_6927 _selx I
 	FIELD field_6928 _txoff I
-CLASS Class_2817
+CLASS Class_2817 com/threerings/opengl/gui/ToggleButton
 	FIELD field_6929 STATE_PCLASSES [Ljava/lang/String;
 	FIELD field_6930 _selected Z
 	METHOD method_9930 isSelected ()Z
@@ -15831,7 +15843,7 @@ CLASS Class_2819
 	METHOD method_9944 getSourceActions (LClass_3034;)I
 	METHOD method_9945 getVisualRepresentation (Ljava/awt/datatransfer/Transferable;)LClass_2834;
 	METHOD method_9946 importData (LClass_3034;Ljava/awt/datatransfer/Transferable;)Z
-CLASS Class_2820
+CLASS Class_2820 com/threerings/opengl/gui/UserInterface
 	FIELD field_6934 _config LClass_2961;
 	FIELD field_6935 _controller LClass_2820$Class_2822;
 	FIELD field_6936 _epoch LClass_2062;
@@ -15946,7 +15958,7 @@ CLASS Class_2832
 CLASS Class_2833
 	FIELD field_6971 _height I
 	FIELD field_6972 _width I
-CLASS Class_2834
+CLASS Class_2834 com/threerings/opengl/gui/icon/Icon
 	METHOD method_10011 getHeight ()I
 	METHOD method_10012 getWidth ()I
 	METHOD method_10013 render (LClass_3267;IIF)V
@@ -16556,7 +16568,7 @@ CLASS Class_2977
 	FIELD field_7375 _hgap I
 	FIELD field_7376 _vgap I
 	METHOD method_10134 setGaps (II)V
-CLASS Class_2978
+CLASS Class_2978 com/threerings/opengl/gui/layout/DimenInfo
 	FIELD field_7377 count I
 	FIELD field_7378 dimens [LClass_2991;
 	FIELD field_7379 fixhei I
@@ -16570,7 +16582,7 @@ CLASS Class_2978
 	FIELD field_7387 totweight I
 	FIELD field_7388 totwid I
 	METHOD method_10135 toString ()Ljava/lang/String;
-CLASS Class_2979
+CLASS Class_2979 com/threerings/opengl/gui/layout/GroupLayout
 	FIELD field_7389 BOTTOM LClass_2979$Class_2981;
 	FIELD field_7390 CENTER LClass_2979$Class_2981;
 	FIELD field_7391 CONSTRAIN LClass_2979$Class_2982;
@@ -16603,13 +16615,13 @@ CLASS Class_2979
 	METHOD method_10153 setOffAxisJustification (LClass_2979$Class_2981;)LClass_2979;
 	METHOD method_10154 setOffAxisPolicy (LClass_2979$Class_2982;)LClass_2979;
 	METHOD method_10155 setPolicy (LClass_2979$Class_2982;)LClass_2979;
-	CLASS Class_2980
+	CLASS Class_2980 Constraints
 		FIELD field_7405 fixed Z
 		FIELD field_7406 weight I
-	CLASS Class_2981
-	CLASS Class_2982
-CLASS Class_2983
-CLASS Class_2984
+	CLASS Class_2981 Justification
+	CLASS Class_2982 Policy
+CLASS Class_2983 com/threerings/opengl/gui/layout/HGroupLayout
+CLASS Class_2984 com/threerings/opengl/gui/layout/LayoutManager
 	METHOD method_10156 addLayoutComponent (LClass_3034;Ljava/lang/Object;)V
 	METHOD method_10157 computePreferredSize (LClass_2747;II)LClass_2991;
 	METHOD method_10158 getConstraints (LClass_3034;)Ljava/lang/Object;
@@ -16641,8 +16653,8 @@ CLASS Class_2985
 		FIELD field_7423 cachedHint I
 		FIELD field_7424 columnWidths [I
 		FIELD field_7425 rowHeights [I
-CLASS Class_2988
-CLASS Class_2989
+CLASS Class_2988 com/threerings/opengl/gui/layout/VGroupLayout
+CLASS Class_2989 com/threerings/opengl/gui/Button
 	FIELD field_7426 STATE_PCLASSES [Ljava/lang/String;
 	FIELD field_7427 _feedbackSounds [Ljava/lang/String;
 	METHOD method_10169 doClick ()V
@@ -16791,11 +16803,11 @@ CLASS Class_3006 com/threerings/opengl/gui/event/MouseEvent
 	METHOD method_10257 ()I
 CLASS Class_3007 com/threerings/opengl/gui/event/TextEvent
 CLASS Class_3008 com/threerings/opengl/gui/event/WindowEvent
-CLASS Class_3009
+CLASS Class_3009 com/threerings/opengl/gui/event/ActionListener
 	METHOD method_10258 actionPerformed (LClass_2999;)V
 CLASS Class_3010
 	METHOD method_10259 stateChanged (LClass_3000;)V
-CLASS Class_3011
+CLASS Class_3011 com/threerings/opengl/gui/event/ComponentListener
 CLASS Class_3012
 	METHOD method_10260 controllerMoved (LClass_3001;)V
 	METHOD method_10261 controllerPressed (LClass_3001;)V
@@ -16821,7 +16833,7 @@ CLASS Class_3019
 	METHOD method_10274 textChanged (LClass_3007;)V
 CLASS Class_3020
 	METHOD method_10275 windowRemoved (LClass_3008;)V
-CLASS Class_3021
+CLASS Class_3021 com/threerings/opengl/gui/ButtonGroup
 	FIELD field_7474 _alwaysSelect Z
 	FIELD field_7475 _buttons Ljava/util/List;
 	FIELD field_7476 _listeners Ljava/util/List;
@@ -17607,10 +17619,11 @@ CLASS Class_3119 com/threerings/opengl/model/CollisionMesh
 		METHOD method_10660 computeIntersection (LClass_2346;LClass_2342;)Z
 		METHOD method_10661 getBounds ()LClass_2328;
 		METHOD method_10662 getIntersection (LClass_2346;LClass_2342;)Z
-CLASS Class_3123
+CLASS Class_3123 com/threerings/opengl/model/Animation
 	FIELD field_7793 EMPTY_ARRAY [LClass_3123;
 	FIELD field_7794 NULL_IMPLEMENTATION LClass_3123$Class_3127;
 	FIELD field_7795 _config LClass_3147;
+	FIELD field_7796 _ctx LClass_3572;
 	FIELD field_7797 _epoch LClass_2062;
 	FIELD field_7798 _impl LClass_3123$Class_3127;
 	FIELD field_7799 _lastElapsed F
@@ -17659,7 +17672,7 @@ CLASS Class_3123
 	CLASS Class_3126
 		FIELD field_7810 executor LClass_2097;
 		FIELD field_7811 frame F
-	CLASS Class_3127
+	CLASS Class_3127 Implementation
 		FIELD field_7812 _config LClass_3147$Class_3153;
 		FIELD field_7814 _targetWeight F
 		FIELD field_7815 _weight F
@@ -17720,10 +17733,10 @@ CLASS Class_3123
 	CLASS Class_3132
 		FIELD field_7842 _config LClass_3147$Class_3156;
 		METHOD method_10717 setConfig (LClass_3147$Class_3156;)V
-	CLASS Class_3133
+	CLASS Class_3133 StartedOp
 		METHOD method_10718 apply (LClass_3220;)Z
 		METHOD method_10719 (LClass_3123;)V
-	CLASS Class_3134
+	CLASS Class_3134 StoppedOp
 		FIELD field_7843 _completed Z
 		METHOD method_10720 apply (LClass_3220;)Z
 		METHOD method_10721 (LClass_3123;Z)V
@@ -18110,7 +18123,7 @@ CLASS Class_3218
 	FIELD field_8084 val$tcollisions [LClass_3181$Class_3182;
 CLASS Class_3219
 	FIELD field_8085 val$config LClass_3183;
-CLASS Class_3220
+CLASS Class_3220 com/threerings/opengl/model/AnimationObserver
 	METHOD method_10802 animationStarted (LClass_3123;)Z
 	METHOD method_10803 animationStopped (LClass_3123;Z)Z
 CLASS Class_3221
@@ -18213,12 +18226,13 @@ CLASS Class_3225
 	METHOD method_10831 setConfig (LClass_3572;LClass_3175;)V
 	METHOD method_10832 updateActive ()V
 	METHOD method_10833 updateFromConfig ()V
-CLASS Class_3226
+CLASS Class_3226 com/threerings/opengl/model/Model
 	FIELD field_8155 EMPTY_ARRAY [LClass_3226;
 	FIELD field_8156 NULL_IMPLEMENTATION LClass_3226$Class_3228;
 	FIELD field_8157 _colorState LClass_3277;
 	FIELD field_8158 _completedOp LClass_3226$Class_3227;
 	FIELD field_8159 _config LClass_3183;
+	FIELD field_8160 _ctx LClass_3572;
 	FIELD field_8161 _definitions Ljava/util/Map;
 	FIELD field_8162 _epoch LClass_2062;
 	FIELD field_8163 _fogState LClass_3280;
@@ -18290,7 +18304,7 @@ CLASS Class_3226
 		METHOD method_10886 apply (LClass_3232;)Z
 		METHOD method_10887 clear ()V
 		METHOD method_10888 (LClass_3226;)V
-	CLASS Class_3228
+	CLASS Class_3228 Implementation
 		METHOD method_10889 attach (Ljava/lang/String;LClass_3226;Z)V
 		METHOD method_10890 createAnimation ()LClass_3123;
 		METHOD method_10891 createSurface (LClass_3572;LClass_2067;LClass_3183$Class_3193;[LClass_3183$Class_3187$Class_3188;Ljava/util/Map;)LClass_3118;
@@ -18321,7 +18335,7 @@ CLASS Class_3229
 	FIELD field_8176 this$0 LClass_3226;
 CLASS Class_3230
 CLASS Class_3231
-CLASS Class_3232
+CLASS Class_3232 com/threerings/opengl/model/ModelObserver
 	METHOD method_10915 modelCompleted (LClass_3226;)Z
 CLASS Class_3233
 	FIELD field_8177 LONG_ELAPSED_TIME F
@@ -18584,7 +18598,7 @@ CLASS Class_3264 com/threerings/opengl/renderer/Color4f
 	METHOD method_11040 multLocal (F)LClass_3264;
 	METHOD method_11041 multLocal (LClass_3264;)LClass_3264;
 	METHOD method_11042 (FFFF)LClass_3264;
-	METHOD method_11043 (LClass_3264;)LClass_3264;
+	METHOD method_11043 set (LClass_3264;)LClass_3264;
 	METHOD method_11044 (Ljava/awt/Color;)LClass_3264;
 	METHOD method_11045 ([F)LClass_3264;
 	METHOD method_11046 toString ()Ljava/lang/String;
@@ -18919,7 +18933,7 @@ CLASS Class_3276
 	FIELD field_8501 _green Z
 	FIELD field_8502 _instances LClass_1207;
 	METHOD method_11167 getInstance (ZZZZ)LClass_3276;
-CLASS Class_3277
+CLASS Class_3277 com/threerings/opengl/renderer/state/ColorState
 	FIELD field_8504 WHITE LClass_3277;
 	FIELD field_8505 _color LClass_3264;
 	METHOD method_11168 equals (Ljava/lang/Object;)Z
@@ -19007,7 +19021,7 @@ CLASS Class_3285
 	METHOD method_11194 getInstance (IIFF)LClass_3285;
 	METHOD method_11195 getInstance (LClass_3285;)LClass_3285;
 	METHOD method_11196 hashCode ()I
-CLASS Class_3286
+CLASS Class_3286 com/threerings/opengl/renderer/state/RenderState
 	FIELD field_8555 _defaults [LClass_3286;
 	FIELD field_8556 _dirty Z
 	METHOD method_11197 apply (LClass_3267;)V
@@ -20035,7 +20049,7 @@ CLASS Class_3483
 		FIELD field_9130 _indices Ljava/nio/ShortBuffer;
 	CLASS Class_3492
 		FIELD field_9131 _indices Ljava/nio/ShortBuffer;
-CLASS Class_3493
+CLASS Class_3493 com/threerings/opengl/renderer/Texture
 	FIELD field_9132 COMPRESSED_FORMATS [I
 	FIELD field_9133 FORMATS [I
 	FIELD field_9134 _borderColor LClass_3264;
@@ -20045,6 +20059,7 @@ CLASS Class_3493
 	FIELD field_9138 _depthMode I
 	FIELD field_9139 _format I
 	FIELD field_9140 _generateMipmaps Z
+	FIELD field_9141 _id I
 	FIELD field_9142 _magFilter I
 	FIELD field_9143 _maxAnisotropy F
 	FIELD field_9144 _minFilter I
@@ -20150,7 +20165,7 @@ CLASS Class_3498
 	METHOD method_11564 resize (II)V
 	METHOD method_11565 startRender ()V
 	METHOD method_11566 startRender (II)V
-CLASS Class_3499
+CLASS Class_3499 com/threerings/opengl/renderer/TextureUnit
 	FIELD field_9175 alphaCombine I
 	FIELD field_9176 alphaOperand0 I
 	FIELD field_9177 alphaOperand1 I
@@ -20891,10 +20906,10 @@ CLASS Class_3639
 	METHOD method_11833 ()I
 	CLASS Class_3640
 		FIELD field_9548 number I
-CLASS Class_3641
-	METHOD method_11834 ()LClass_3745;
-	METHOD method_11835 ()LClass_1331;
-	METHOD method_11836 ()LClass_3656;
+CLASS Class_3641 com/threerings/presents/util/PresentsContext
+	METHOD method_11834 getDObjectManager ()LClass_3745;
+	METHOD method_11835 getConfig ()LClass_1331;
+	METHOD method_11836 getClient ()LClass_3656;
 CLASS Class_3642 com/threerings/presents/util/SafeSubscriber
 	FIELD field_9549 _active Z
 	METHOD method_11837 ()Z
@@ -20912,13 +20927,13 @@ CLASS Class_3643
 	METHOD method_11848 (Ljava/security/PublicKey;)Z
 	METHOD method_11849 (I)[B
 	METHOD method_11850 (Ljava/lang/String;)Ljava/security/PublicKey;
-CLASS Class_3644
-	CLASS Class_3645
-		METHOD method_11851 ()V
-	CLASS Class_3646
-		METHOD method_11852 (Ljava/lang/String;)V
-	CLASS Class_3647
-		METHOD method_11853 (Ljava/lang/Object;)V
+CLASS Class_3644 com/threerings/presents/client/InvocationService
+	CLASS Class_3645 ConfirmListener
+		METHOD method_11851 requestProcessed ()V
+	CLASS Class_3646 InvocationListener
+		METHOD method_11852 requestFailed (Ljava/lang/String;)V
+	CLASS Class_3647 ResultListener
+		METHOD method_11853 requestProcessed (Ljava/lang/Object;)V
 CLASS Class_3648 com/threerings/presents/client/MessageTracker
 	METHOD method_11854 messageReceived (ZILClass_3769;I)V
 	METHOD method_11855 messageSent (ZILClass_3790;)V
@@ -21190,7 +21205,7 @@ CLASS Class_3709 com/threerings/presents/data/TimeBaseMarshaller
 CLASS Class_3711 com/threerings/presents/data/TimeBaseObject
 	FIELD field_9711 evenBase J
 	FIELD field_9712 oddBase J
-CLASS Class_3712
+CLASS Class_3712 com/threerings/presents/data/Permission
 CLASS Class_3713 com/threerings/presents/dobj/AttributeChangedEvent
 	FIELD field_9713 _value Ljava/lang/Object;
 	METHOD method_12042 (Ljava/lang/Object;)LClass_3713;
@@ -21407,8 +21422,8 @@ CLASS Class_3748
 	METHOD method_12179 (Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/reflect/Method;
 CLASS Class_3749
 	METHOD method_12180 (LClass_3719;)V
-CLASS Class_3750
-	METHOD method_12181 (LClass_3715;)V
+CLASS Class_3750 com/threerings/presents/dobj/EventListener
+	METHOD method_12181 eventReceived (LClass_3715;)V
 CLASS Class_3751
 	METHOD method_12182 (LClass_3727;)V
 CLASS Class_3752
@@ -21428,10 +21443,10 @@ CLASS Class_3756
 	METHOD method_12192 (I)V
 	METHOD method_12193 (Ljava/lang/Runnable;)LClass_1213;
 CLASS Class_3757
-CLASS Class_3758
-	METHOD method_12194 (LClass_3720;)V
-	METHOD method_12195 (LClass_3722;)V
-	METHOD method_12196 (LClass_3723;)V
+CLASS Class_3758 com/threerings/presents/dobj/SetListener
+	METHOD method_12194 entryAdded (LClass_3720;)V
+	METHOD method_12195 entryRemoved (LClass_3722;)V
+	METHOD method_12196 entryUpdated (LClass_3723;)V
 CLASS Class_3759 com/threerings/presents/dobj/Subscriber
 	METHOD method_12197 requestFailed (ILClass_3730;)V
 	METHOD method_12198 objectAvailable (LClass_3716;)V
@@ -23717,10 +23732,10 @@ CLASS Class_4224 com/threerings/projectx/client/ProjectXApp
 	CLASS 12
 		FIELD field_11399 this$0 LClass_4224;
 		METHOD method_13175 actionPerformed (Ljava/awt/event/ActionEvent;)V
-	CLASS Class_4225
+	CLASS Class_4225 GetdownObserver
 		METHOD method_13176 ()V
 		METHOD method_13177 (LClass_4224$Class_4226;)V
-	CLASS Class_4226
+	CLASS Class_4226 GetdownStatus
 		FIELD field_11404 message Ljava/lang/String;
 	CLASS Class_4227
 		METHOD method_13178 (Z)V
@@ -24200,7 +24215,7 @@ CLASS Class_4306
 	METHOD method_13516 (IJ)V
 CLASS Class_4307
 	FIELD field_11628 _msgs LClass_7683;
-CLASS Class_4308 com/threerings/projectx/client/GlobalControl
+CLASS Class_4308 com/threerings/projectx/client/GlobalControls
 	FIELD field_11635 _ctx LClass_7079;
 	FIELD field_11638 _adminDashboard LClass_3942;
 	FIELD field_11639 _activeDialogs Ljava/util/List;
@@ -24232,11 +24247,11 @@ CLASS Class_4310
 CLASS Class_4311
 CLASS Class_4312
 CLASS Class_4313
-CLASS Class_4314
+CLASS Class_4314 com/threerings/projectx/client/HelpPanel
 	FIELD field_11659 _msgs LClass_7683;
 	METHOD method_13543 ()Z
 	METHOD method_13544 setText (Ljava/lang/String;)V
-CLASS Class_4315
+CLASS Class_4315 com/threerings/projectx/client/HudWindow
 	METHOD method_13545 ()V
 	METHOD method_13546 ()V
 	METHOD method_13547 ()V
@@ -24563,26 +24578,26 @@ CLASS Class_4417 com/threerings/projectx/client/chat/ProjectXChatDirector
 	METHOD method_13765 (Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;
 	CLASS Class_4418
 	CLASS Class_4419
-	CLASS Class_4420
+	CLASS Class_4420 ItemHandler
 	CLASS Class_4421
-	CLASS Class_4422
+	CLASS Class_4422 JoinHandler
 	CLASS Class_4423
 		METHOD method_13766 (LClass_5026;)V
 	CLASS Class_4424
 	CLASS Class_4425
-	CLASS Class_4426
-	CLASS Class_4427
+	CLASS Class_4426 LBroadcastHandler
+	CLASS Class_4427 LeaveHandler
 	CLASS Class_4428
 	CLASS Class_4429
 	CLASS Class_4430
 	CLASS Class_4431
 	CLASS Class_4432
-	CLASS Class_4433
+	CLASS Class_4433 MuteHandler
 	CLASS Class_4434
 		METHOD method_13767 ()Ljava/lang/String;
 		METHOD method_13768 (LClass_7677;)Ljava/lang/String;
-	CLASS Class_4435
-	CLASS Class_4436
+	CLASS Class_4435 OfficerHandler
+	CLASS Class_4436 PBroadcastHandler
 	CLASS Class_4437 SpecialCommandHandler
 		METHOD method_13769 ()LClass_4417$Class_4437$Class_4438;
 		CLASS Class_4438 Type
@@ -24595,20 +24610,20 @@ CLASS Class_4417 com/threerings/projectx/client/chat/ProjectXChatDirector
 			METHOD method_13770 $values ()[LClass_4417$Class_4437$Class_4438;
 			METHOD method_13771 valueOf (Ljava/lang/String;)LClass_4417$Class_4437$Class_4438;
 			METHOD method_13772 values ()[LClass_4417$Class_4437$Class_4438;
-	CLASS Class_4439
-	CLASS Class_4440
+	CLASS Class_4439 PGoHandler
+	CLASS Class_4440 PartyHandler
 	CLASS Class_4441
-	CLASS Class_4442
+	CLASS Class_4442 RebootHandler
 	CLASS Class_4443
-	CLASS Class_4444
+	CLASS Class_4444 RespondHandler
 	CLASS Class_4445
 	CLASS Class_4446
-	CLASS Class_4447
+	CLASS Class_4447 SGoHandler
 	CLASS Class_4448
 	CLASS Class_4449
-	CLASS Class_4450
+	CLASS Class_4450 ShoutHandler
 	CLASS Class_4451
-	CLASS Class_4452
+	CLASS Class_4452 SpawnHandler
 	CLASS Class_4453
 		METHOD method_13773 ()LClass_1543;
 	CLASS Class_4454
@@ -24619,27 +24634,27 @@ CLASS Class_4417 com/threerings/projectx/client/chat/ProjectXChatDirector
 	CLASS Class_4459
 	CLASS Class_4460
 	CLASS Class_4461
-	CLASS Class_4462
-	CLASS Class_4463
+	CLASS Class_4462 TeamHandler
+	CLASS Class_4463 ToggleHandler
 		METHOD method_13774 (LClass_7683;Ljava/lang/String;ILjava/lang/String;Ljava/util/Map;)V
 		METHOD method_13775 (LClass_7683;Ljava/lang/String;Ljava/util/Map;)V
 		METHOD method_13776 (Ljava/lang/String;)Ljava/lang/String;
 		METHOD method_13777 (Ljava/util/Map;)Ljava/lang/String;
 		METHOD method_13778 (ILjava/lang/String;)V
-	CLASS Class_4464
-	CLASS Class_4465
+	CLASS Class_4464 ToggleProgressHandler
+	CLASS Class_4465 TradeHandler
 	CLASS Class_4466
 	CLASS Class_4467
-	CLASS Class_4468
-	CLASS Class_4469
-	CLASS Class_4470
+	CLASS Class_4468 ZGoHandler
+	CLASS Class_4469 ZoneHandler
+	CLASS Class_4470 ActionHandler
 	CLASS Class_4471
 	CLASS Class_4472
 	CLASS Class_4473
-	CLASS Class_4474
-	CLASS Class_4475
-	CLASS Class_4476
-	CLASS Class_4477
+	CLASS Class_4474 AwayHandler
+	CLASS Class_4475 BackHandler
+	CLASS Class_4476 BugHandler
+	CLASS Class_4477 ComplainHandler
 	CLASS Class_4478
 	CLASS Class_4479
 	CLASS Class_4480
@@ -24648,9 +24663,9 @@ CLASS Class_4417 com/threerings/projectx/client/chat/ProjectXChatDirector
 		METHOD method_13779 (LClass_7683;Ljava/lang/String;I)V
 		METHOD method_13780 (Ljava/lang/String;Ljava/util/List;)Ljava/lang/String;
 	CLASS Class_4483
-	CLASS Class_4484
+	CLASS Class_4484 FireHandler
 	CLASS Class_4485
-	CLASS Class_4486
+	CLASS Class_4486 GameHandler
 		METHOD method_13781 ()LClass_5183;
 	CLASS Class_4487
 	CLASS Class_4488
@@ -24659,7 +24674,7 @@ CLASS Class_4417 com/threerings/projectx/client/chat/ProjectXChatDirector
 	CLASS Class_4489
 	CLASS Class_4490
 	CLASS Class_4491
-	CLASS Class_4492
+	CLASS Class_4492 GuildHandler
 	CLASS Class_4493
 	CLASS Class_4494
 CLASS Class_4495
@@ -24703,8 +24718,9 @@ CLASS Class_4508
 CLASS Class_4509
 CLASS Class_4510
 CLASS Class_4511
-CLASS Class_4512
-	METHOD method_13807 (LClass_1552;LClass_5047;)V
+CLASS Class_4512 com/threerings/projectx/client/chat/WordBalloon
+	METHOD method_13807 setMessage (LClass_1552;LClass_5047;)V
+		ARG 1 msg
 CLASS Class_4513
 	METHOD method_13808 (LClass_4228$Class_4229;)Ljava/lang/String;
 CLASS Class_4514
@@ -24758,8 +24774,9 @@ CLASS Class_4530
 	CLASS Class_4531
 		FIELD field_12033 _model LClass_3226;
 		METHOD method_13839 (Z)V
-CLASS Class_4532
+CLASS Class_4532 com/threerings/projectx/client/BaseListPanel
 	FIELD field_12039 _msgs LClass_7683;
+	FIELD field_12052 _imsgs LClass_7683;
 	METHOD method_13840 (Ljava/util/List;)V
 	METHOD method_13841 ()V
 	METHOD method_13842 ()V
@@ -24932,7 +24949,7 @@ CLASS Class_4588
 CLASS Class_4589
 CLASS Class_4590
 CLASS Class_4591
-CLASS Class_4592
+CLASS Class_4592 com/threerings/projectx/client/ProjectXSceneView
 	FIELD field_12180 _msgs LClass_7683;
 	METHOD method_13949 ()V
 	METHOD method_13950 ()LClass_4638;
@@ -24975,7 +24992,7 @@ CLASS Class_4604
 	METHOD method_13973 ()LClass_5012;
 	METHOD method_13974 ()V
 	METHOD method_13975 (LClass_5012;)Z
-CLASS Class_4605
+CLASS Class_4605 com/threerings/projectx/client/SelectInstanceDialog
 	METHOD method_13976 (Ljava/util/List;)V
 	METHOD method_13977 ()V
 CLASS Class_4606
@@ -25000,7 +25017,7 @@ CLASS Class_4614
 	METHOD method_13987 (LClass_4244$Class_4245;Z)V
 	METHOD method_13988 (LClass_4244$Class_4245;)V
 	METHOD method_13989 (LClass_7677;)V
-CLASS Class_4615
+CLASS Class_4615 com/threerings/projectx/client/WorldMapWindow
 CLASS Class_4616 com/threerings/projectx/client/ZoneInstanceDirector
 	FIELD field_12244 _enabled Z
 	METHOD method_13990 isEnabled ()Z
@@ -25012,11 +25029,12 @@ CLASS Class_4618
 	METHOD method_13994 ()I
 	METHOD method_13995 (LClass_7079;)LClass_4532;
 	METHOD method_13996 ()V
-CLASS Class_4619
+CLASS Class_4619 com/threerings/projectx/client/BaseMapPanel
+	FIELD field_12253 _rows LClass_2747;
 	METHOD method_13997 ()V
 	METHOD method_13998 (I)LClass_4619$Class_4621;
 	METHOD method_13999 getTitle ()Ljava/lang/String;
-	CLASS Class_4620
+	CLASS Class_4620 PlacePanel
 		METHOD method_14000 ()V
 		METHOD method_14001 ()V
 		METHOD method_14002 ()V
@@ -25038,7 +25056,7 @@ CLASS Class_4619
 		METHOD method_14018 getName ()Ljava/lang/String;
 		METHOD method_14019 (III)V
 		METHOD method_14020 (III)V
-	CLASS Class_4621
+	CLASS Class_4621 Row
 	CLASS Class_4622
 CLASS Class_4623
 CLASS Class_4624
@@ -25098,8 +25116,16 @@ CLASS Class_4636
 	METHOD method_14061 (LClass_3728;)V
 CLASS Class_4637
 CLASS Class_4638 com/threerings/projectx/client/hud/Minimap
+	FIELD field_12314 _ctx LClass_7079;
 	FIELD field_12315 _mask LClass_2742;
 	FIELD field_12316 _msgs LClass_7683;
+	FIELD field_12317 _floor LClass_2761;
+	FIELD field_12318 _ping LClass_2761;
+	FIELD field_12319 _lastPingIdx I
+	FIELD field_12323 ICON_DISTANCE F
+	FIELD field_12324 CONNECTION_PINGS [I
+	FIELD field_12325 CONNECTION_ICONS [Ljava/lang/String;
+	FIELD field_12326 _view LClass_4592;
 	METHOD method_14062 ()LClass_4638$Class_4640;
 	METHOD method_14063 ()V
 	METHOD method_14064 (LClass_7211;)LClass_4638$Class_4640;
@@ -25269,6 +25295,13 @@ CLASS Class_4686 com/threerings/projectx/client/sprite/KnightSprite
 	FIELD field_12450 _colorState LClass_3277;
 	FIELD field_12451 _hover Z
 	FIELD field_12452 _sprite LClass_6829;
+	FIELD field_12455 _label LClass_3226;
+	FIELD field_12456 _actionEffect LClass_3226;
+	FIELD field_12457 _disconnectedEffect LClass_3226;
+	FIELD field_12458 _occupantInfo LClass_5047;
+	FIELD field_12459 _invisible Z
+	FIELD field_12461 _balloon LClass_4512;
+	FIELD field_12465 _defaultInteract LClass_7167$Class_7168$Class_7169;
 	METHOD method_14166 ()V
 	METHOD method_14167 (LClass_2342;)Z
 	METHOD method_14168 ()I
@@ -25287,7 +25320,8 @@ CLASS Class_4686 com/threerings/projectx/client/sprite/KnightSprite
 	METHOD method_14181 ()V
 	METHOD method_14182 (LClass_3226;Ljava/util/Collection;)V
 	METHOD method_14183 (LClass_4686;)LClass_7655;
-	METHOD method_14184 (LClass_5047;)V
+	METHOD method_14184 updateLabel (LClass_5047;)V
+		ARG 1 info
 	METHOD method_14185 (LClass_5064;)V
 	METHOD method_14186 (LClass_5065;)V
 	METHOD method_14187 (LClass_7167;)LClass_2339;
@@ -25300,7 +25334,7 @@ CLASS Class_4686 com/threerings/projectx/client/sprite/KnightSprite
 	METHOD method_14194 (LClass_7522;)Z
 	METHOD method_14195 (I)V
 	METHOD method_14196 (Ljava/lang/String;)V
-	METHOD method_14197 ([Ljava/lang/String;)LClass_7167$Class_7168$Class_7169;
+	METHOD method_14197 createUseActivity ([Ljava/lang/String;)LClass_7167$Class_7168$Class_7169;
 	METHOD method_14198 (LClass_1412;)LClass_7167$Class_7168$Class_7169;
 	METHOD method_14199 (LClass_2341;)V
 	METHOD method_14200 (LClass_2341;)LClass_2341;
@@ -25439,7 +25473,7 @@ CLASS Class_4718
 	METHOD method_14266 shutdown ()V
 	METHOD method_20877 (LClass_2794;LClass_4179;)Z
 CLASS Class_4720
-CLASS Class_4721
+CLASS Class_4721 com/threerings/projectx/client/ui/UserInterfaceDialog
 	METHOD method_14267 ()Z
 	METHOD method_14268 (LClass_7079;)V
 CLASS Class_4722
@@ -25471,13 +25505,13 @@ CLASS Class_4729
 	METHOD method_14283 (LClass_387;LClass_3226;)V
 	METHOD method_14284 (LClass_4686$Class_4687;)F
 CLASS Class_4730
-CLASS Class_4731
+CLASS Class_4731 com/threerings/projectx/client/ui/BaseBalloon
 	FIELD field_12615 _startTime J
 	METHOD method_14285 ()Z
 	METHOD method_14286 (J)V
 	METHOD method_14287 (JF)V
 	METHOD method_14288 (JFF)V
-	METHOD method_14289 (Ljava/lang/String;Ljava/lang/String;LClass_3264;Ljava/lang/String;)V
+	METHOD method_14289 setBalloon (Ljava/lang/String;Ljava/lang/String;LClass_3264;Ljava/lang/String;)V
 	METHOD method_14290 (Ljava/lang/String;Ljava/lang/String;LClass_3264;Ljava/lang/String;Ljava/lang/String;)V
 	METHOD method_14291 (Ljava/lang/String;Ljava/lang/String;LClass_3264;Ljava/lang/String;Ljava/lang/String;I)V
 	METHOD method_14292 (JF)V
@@ -26949,10 +26983,10 @@ CLASS Class_5064 com/threerings/projectx/data/actor/Knight
 	FIELD field_13619 _sprite LClass_6829;
 	METHOD method_14771 ()Ljava/lang/String;
 	METHOD method_14772 ()Z
-	METHOD method_14773 ()LClass_4762;
+	METHOD method_14773 getActionDesc ()LClass_4762;
 	METHOD method_14774 ()LClass_7493;
 	METHOD method_14775 ()LClass_1412;
-	METHOD method_14776 ()Z
+	METHOD method_14776 canAction ()Z
 	METHOD method_14777 ()I
 	METHOD method_14778 ()Z
 	METHOD method_14779 ()Z
@@ -27867,7 +27901,7 @@ CLASS Class_5376
 CLASS Class_5377
 CLASS Class_5378
 CLASS Class_5379
-CLASS Class_5380
+CLASS Class_5380 com/threerings/projectx/dungeon/client/GateMapPanel
 	METHOD method_15221 ()LClass_5380$Class_5382;
 	METHOD method_15222 ()V
 	METHOD method_15223 ()LClass_3264;
@@ -27884,7 +27918,7 @@ CLASS Class_5380
 	CLASS Class_5381
 	CLASS Class_5382
 	CLASS Class_5383
-	CLASS Class_5384
+	CLASS Class_5384 WedgePanel
 CLASS Class_5385
 CLASS Class_5386
 CLASS Class_5387
@@ -30421,7 +30455,7 @@ CLASS Class_5983
 	METHOD method_15941 (Ljava/lang/String;)V
 	METHOD method_15942 setStatus (Ljava/lang/String;Z)V
 CLASS Class_5984
-CLASS Class_5985
+CLASS Class_5985 com/threerings/projectx/exchange/client/BillingUtil
 	METHOD method_15943 (LClass_7079;)V
 	METHOD method_15944 (LClass_7079;)V
 	METHOD method_15945 (LClass_7079;)V
@@ -33665,7 +33699,7 @@ CLASS Class_6715 com/threerings/projectx/social/client/NotificationDirector
 CLASS Class_6718
 CLASS Class_6719
 	METHOD method_17536 (LClass_5057;)V
-CLASS Class_6720
+CLASS Class_6720 com/threerings/projectx/social/client/SocialListPanel
 	METHOD method_17537 (LClass_6720;)LClass_2789;
 	METHOD method_17538 (LClass_6720;)LClass_7079;
 	METHOD method_17539 (LClass_6720;)LClass_7079;
@@ -35560,11 +35594,13 @@ CLASS Class_7162
 		METHOD method_18520 (LClass_7480$Class_7483;)V
 CLASS Class_7165
 CLASS Class_7166
-CLASS Class_7167
+CLASS Class_7167 com/threerings/tudey/client/sprite/ActorSprite
 	FIELD field_19077 _actor LClass_7522;
 	FIELD field_19078 _attachedModels Ljava/util/Map;
 	FIELD field_19079 _disposed Z
 	FIELD field_19080 _model LClass_3226;
+	FIELD field_19083 _config LClass_7282;
+	FIELD field_19084 _removed I
 	METHOD method_18521 (LClass_1412;)V
 	METHOD method_18522 (LClass_1412;)LClass_3226;
 	METHOD method_18523 ()V
@@ -35604,9 +35640,10 @@ CLASS Class_7167
 	METHOD method_18557 setConfig (LClass_1412;)V
 	METHOD method_18558 update ()V
 	METHOD method_18559 updateFromConfig ()V
-	CLASS Class_7168
+	CLASS Class_7168 Acting
+		FIELD field_19091 _activities LClass_1201;
 		METHOD method_18560 ()V
-		CLASS Class_7169
+		CLASS Class_7169 Activity
 			METHOD method_18561 (LClass_1412;)V
 			METHOD method_18562 (LClass_7167$Class_7168$Class_7169;)V
 			METHOD method_18563 (LClass_7167$Class_7168$Class_7169;)V
@@ -35627,14 +35664,15 @@ CLASS Class_7167
 		METHOD method_18577 ()F
 		METHOD method_18578 ()I
 		METHOD method_18579 (LClass_7499;)V
-		METHOD method_18580 (LClass_7522;)V
+		METHOD method_18580 update (LClass_7522;)V
+			ARG 1 actor
 		METHOD method_18581 createTooltipComponent (Ljava/lang/String;)LClass_3034;
 		METHOD method_18582 dispatchEvent (LClass_3002;)Z
 		METHOD method_18583 getTooltipText ()Ljava/lang/String;
 		METHOD method_18584 getTooltipTimeout ()F
 		METHOD method_18585 getTooltipWindowStyle ()Ljava/lang/String;
 		METHOD method_18586 isHoverable ()Z
-	CLASS Class_7171
+	CLASS Class_7171 Moving
 		METHOD method_18587 ()LClass_3123;
 		METHOD method_18588 (LClass_7525;)LClass_3123;
 		METHOD method_18589 (LClass_7525;F[LClass_7291$Class_7294;[[LClass_3123;)LClass_3123;
@@ -35649,8 +35687,9 @@ CLASS Class_7167
 		FIELD field_19100 _attachedModels Ljava/util/Map;
 		FIELD field_19101 _model LClass_3226;
 		FIELD field_19102 _view LClass_7221;
+		FIELD field_19103 _ctx LClass_7655;
 		METHOD method_18597 ()LClass_1412;
-		METHOD method_18598 (LClass_7291;)V
+		METHOD method_18598 setConfig (LClass_7291;)V
 		METHOD method_18599 ()LClass_7167;
 		METHOD method_18600 ()Z
 	CLASS Class_7173
@@ -35756,7 +35795,7 @@ CLASS Class_7197
 		METHOD method_18656 (LClass_7433$Class_7438;)LClass_1412;
 	CLASS Class_7202
 CLASS Class_7203
-CLASS Class_7204
+CLASS Class_7204 com/threerings/tudey/client/sprite/Sprite
 	FIELD field_19170 _view LClass_7221;
 	METHOD method_18657 ()Z
 	METHOD method_18658 ()I
@@ -35850,7 +35889,7 @@ CLASS Class_7218
 	METHOD method_18721 ()V
 CLASS Class_7219
 CLASS Class_7220
-CLASS Class_7221
+CLASS Class_7221 com/threerings/tudey/client/TudeySceneView
 	FIELD field_19236 _camhand LClass_2545;
 	FIELD field_19237 _disposed Z
 	FIELD field_19238 _isect LClass_2342;
@@ -35928,7 +35967,7 @@ CLASS Class_7221
 		FIELD field_19282 _mask I
 		METHOD method_18789 (LClass_3500;)Z
 		METHOD method_18790 (I)LClass_7221$Class_7222;
-	CLASS Class_7223
+	CLASS Class_7223 TickParticipant
 		METHOD method_18791 (I)Z
 	CLASS Class_7224
 		FIELD field_19283 _timestamp I
@@ -35948,7 +35987,7 @@ CLASS Class_7233
 	CLASS Class_7234
 		METHOD method_18795 ()Z
 CLASS Class_7235
-CLASS Class_7236
+CLASS Class_7236 com/threerings/tudey/space/HashSpace
 	FIELD field_19298 _elements Ljava/util/HashMap;
 	FIELD field_19299 _granularity F
 	FIELD field_19300 _internalNodePool Ljava/util/List;
@@ -35956,6 +35995,9 @@ CLASS Class_7236
 	FIELD field_19302 _levels I
 	FIELD field_19303 _oversizedElements Ljava/util/ArrayList;
 	FIELD field_19304 _visit I
+	FIELD field_19306 _bounds LClass_2335;
+	FIELD field_19307 _minCoord LClass_7634;
+	FIELD field_19308 _maxCoord LClass_7634;
 	METHOD method_18796 (LClass_7634;LClass_7236$Class_7239;)V
 	METHOD method_18797 (Ljava/util/HashMap;Ljava/util/ArrayList;LClass_7243;)V
 	METHOD method_18798 (II)LClass_7236$Class_7239;
@@ -35989,12 +36031,12 @@ CLASS Class_7240
 	METHOD method_18817 boundsDidChange ()V
 	METHOD method_18818 boundsWillChange ()V
 	METHOD method_18819 setUserObject (Ljava/lang/Object;)V
-CLASS Class_7241
+CLASS Class_7241 com/threerings/tudey/space/Space
 	FIELD field_19324 _disposed Z
 	METHOD method_18820 (LClass_7537;Ljava/util/Collection;)V
 	METHOD method_18821 (Ljava/util/ArrayList;LClass_7537;LClass_167;Ljava/util/Collection;)V
 	METHOD method_18822 (LClass_7242;)V
-	METHOD method_18823 (LClass_7537;LClass_167;Ljava/util/Collection;)V
+	METHOD method_18823 getIntersecting (LClass_7537;LClass_167;Ljava/util/Collection;)V
 	METHOD method_18824 (LClass_7242;)V
 	METHOD method_18825 (LClass_7242;)V
 	METHOD method_18826 dispose ()V
@@ -36997,8 +37039,8 @@ CLASS Class_7525 com/threerings/tudey/data/actor/Mobile
 	METHOD method_19189 ()F
 	METHOD method_19190 getSpeed ()F
 CLASS Class_7526 com/threerings/tudey/data/actor/Pawn
-CLASS Class_7527
-	METHOD method_19191 ()LClass_7522;
+CLASS Class_7527 com/threerings/tudey/data/actor/HasActor
+	METHOD method_19191 getActor ()LClass_7522;
 CLASS Class_7528
 	METHOD method_19192 (LClass_7522;)V
 	METHOD method_19193 ()I
@@ -37896,7 +37938,7 @@ CLASS Class_7653
 	METHOD method_19707 (LClass_2998;)V
 CLASS Class_7654
 	FIELD field_20234 _value I
-CLASS Class_7655
+CLASS Class_7655 com/threerings/tudey/util/TudeyContext
 	METHOD method_19708 getRoot ()LClass_2766;
 CLASS Class_7656
 CLASS Class_7657
@@ -38034,8 +38076,10 @@ CLASS Class_7678
 		METHOD method_19807 (LClass_7678$Class_7680;)Z
 		METHOD method_19808 (IIJ)V
 CLASS Class_7682
-CLASS Class_7683
+	FIELD field_20299 log LClass_1263;
+CLASS Class_7683 com/threerings/util/MessageBundle
 	FIELD field_20300 _msgmgr LClass_7684;
+	FIELD field_20303 _parent LClass_7683;
 	METHOD method_19809 (LClass_7684;Ljava/lang/String;Ljava/util/ResourceBundle;LClass_7683;)V
 	METHOD method_19810 (Ljava/lang/String;)Ljava/lang/String;
 	METHOD method_19811 (Ljava/lang/String;)Ljava/lang/String;
@@ -38290,7 +38334,7 @@ CLASS Class_7744
 	METHOD method_19982 ([B[BLjava/lang/Object;)[B
 	METHOD method_19983 ([B[B)Z
 	METHOD method_19984 ([B)I
-CLASS Class_7745
+CLASS Class_7745 com/threerings/whirled/Log
 CLASS Class_7746
 	METHOD method_19985 (LClass_7773;)V
 CLASS Class_7747
@@ -38366,14 +38410,14 @@ CLASS Class_7773 com/threerings/whirled/data/SceneUpdate
 	METHOD method_20024 toString ()Ljava/lang/String;
 	METHOD method_20025 toString (Ljava/lang/StringBuilder;)V
 	METHOD method_20026 writeObject (LClass_2324;)V
-CLASS Class_7774
-	METHOD method_20027 ()I
-	METHOD method_20028 ()LClass_7770;
-	METHOD method_20029 (LClass_7773;)V
+CLASS Class_7774 com/threerings/whirled/data/Scene
+	METHOD method_20027 getVersion ()I
+	METHOD method_20028 getSceneModel ()LClass_7770;
+	METHOD method_20029 updateReceived (LClass_7773;)V
 	METHOD method_20030 getName ()Ljava/lang/String;
-	METHOD method_20031 ()LClass_1604;
-	METHOD method_20032 ()I
-CLASS Class_7775
+	METHOD method_20031 getPlaceConfig ()LClass_1604;
+	METHOD method_20032 getId ()I
+CLASS Class_7775 com/threerings/whirled/data/SceneImpl
 	METHOD method_20033 toString ()Ljava/lang/String;
 CLASS Class_7776
 CLASS Class_7777
@@ -38427,8 +38471,8 @@ CLASS Class_7790 com/threerings/whirled/util/NoSuchSceneException
 	FIELD field_20411 _sceneId I
 CLASS Class_7791
 	METHOD method_20056 (LClass_7770;LClass_1604;)LClass_7774;
-CLASS Class_7792
-	METHOD method_20057 ()LClass_7750;
+CLASS Class_7792 com/threerings/whirled/util/WhirledContext
+	METHOD method_20057 getSceneDirector ()LClass_7750;
 CLASS Class_7793
 CLASS Class_7794
 CLASS Class_7795
