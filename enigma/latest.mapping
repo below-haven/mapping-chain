@@ -7887,7 +7887,7 @@ CLASS Class_1329
 CLASS Class_1330
 	METHOD method_5442 compare (Ljava/lang/Comparable;Ljava/lang/Comparable;)I
 	METHOD method_5443 compare (Ljava/lang/Object;Ljava/lang/Object;)I
-CLASS Class_1331
+CLASS Class_1331 com/samskivert/util/Config
 	METHOD method_5444 (Ljava/lang/String;Ljava/lang/ClassLoader;Ljava/util/Properties;)Ljava/util/Properties;
 	METHOD method_5445 (Ljava/lang/String;[F)[F
 	METHOD method_5446 (Ljava/lang/String;[I)[I
@@ -14039,7 +14039,7 @@ CLASS Class_2537 com/threerings/opengl/GlCanvas
 CLASS Class_2539 com/threerings/opengl/GlCanvasApp
 	CLASS 4
 		FIELD field_6069 this$0 LClass_2609;
-CLASS Class_2540
+CLASS Class_2540 com/threerings/opengl/GlApp
 	FIELD field_6071 _billboardRotation LClass_2334;
 	FIELD field_6072 _camhand LClass_2542;
 	FIELD field_6073 _cfgmgr LClass_1411;
@@ -14219,7 +14219,7 @@ CLASS Class_2548 com/threerings/opengl/compositor/RenderQueue
 		METHOD method_9327 (LClass_2548;)V
 CLASS Class_2555
 	METHOD method_9328 composite ()V
-CLASS Class_2556
+CLASS Class_2556 com/threerings/opengl/compositor/Compositor
 	FIELD field_6150 _backgroundColor LClass_3264;
 	FIELD field_6151 _cachedEffects Ljava/util/Map;
 	FIELD field_6152 _camera LClass_2541;
@@ -17324,7 +17324,7 @@ CLASS Class_3065
 		METHOD method_10579 setVSyncEnabled (Z)V
 CLASS Class_3067
 	FIELD field_7649 this$1 LClass_3065$Class_3066;
-CLASS Class_3068
+CLASS Class_3068 com/threerings/opengl/GlDisplayApp
 	FIELD field_7650 _displayRoot LClass_2766;
 	FIELD field_7651 _fbHeight I
 	FIELD field_7652 _fbWidth I
@@ -35118,7 +35118,7 @@ CLASS Class_7077
 	METHOD method_18303 (LClass_460$Class_461;LClass_460$Class_461;)I
 CLASS Class_7078
 	METHOD method_18304 (LClass_1411;LClass_7502;LClass_2341;)Ljava/util/List;
-CLASS Class_7079
+CLASS Class_7079 com/threerings/projectx/util/ProjectXContext
 	METHOD method_9252 xlate (Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 	METHOD method_18305 ()LClass_5028;
 	METHOD method_18306 ()LClass_4580;
