@@ -5614,7 +5614,7 @@ CLASS Class_901
 CLASS Class_902
 	METHOD method_3757 equals (Ljava/lang/Object;)Z
 	METHOD method_3758 hashCode ()I
-CLASS Class_903
+CLASS Class_903 com/google/inject/internal/asm/$ClassTooLargeException
 	CLASS Class_904
 		FIELD field_2058 className Ljava/lang/String;
 		FIELD field_2059 constantPoolCount I
@@ -8822,7 +8822,7 @@ CLASS Class_1465 com/threerings/config/tools/ConfigEditor
 		METHOD method_5953 (Z)V
 		METHOD method_5954 setBackground (Ljava/awt/Color;)V
 		METHOD method_5955 stateChanged (Ljavax/swing/event/ChangeEvent;)V
-		CLASS Class_1469 GroupItem
+		CLASS Class_1469
 			CLASS 2
 				FIELD field_3614 this$2 LClass_1465$Class_1468$Class_1470;
 		CLASS Class_1470
@@ -14044,7 +14044,7 @@ CLASS Class_2537 com/threerings/opengl/GlCanvas
 		METHOD method_9229 lockContext ()V
 		METHOD method_9230 paintGL ()V
 		METHOD method_9231 unlockContext ()V
-CLASS Class_2539 com/threerings/opengl/GlCanvasApp
+CLASS Class_2539
 	CLASS 4
 		FIELD field_6069 this$0 LClass_2609;
 CLASS Class_2540 com/threerings/opengl/GlApp
@@ -17103,7 +17103,7 @@ CLASS Class_3040
 	METHOD method_10457 setupCallbacks (J)V
 	METHOD method_10458 updateButtonModifier (IZ)V
 	METHOD method_10459 updateKeyModifier (IZ)V
-CLASS Class_3041 com/threerings/opengl/gui/text/Document
+CLASS Class_3041
 	CLASS 1
 		FIELD field_7560 _edits Ljava/util/ArrayList;
 		FIELD field_7561 this$0 LClass_3048;
@@ -23396,7 +23396,7 @@ CLASS Class_4184
 CLASS Class_4185
 CLASS Class_4186
 CLASS Class_4187
-CLASS Class_4188 com/threerings/projectx/client/GlobalControls
+CLASS Class_4188
 	CLASS 5
 		FIELD field_11105 this$0 LClass_4308;
 CLASS Class_4189
@@ -37456,7 +37456,7 @@ CLASS Class_7594 com/threerings/tudey/tools/Placer
 	METHOD method_19422 ()V
 	CLASS Class_7595 PlaceableReference
 		FIELD field_20001 placeable LClass_1412;
-CLASS Class_7596 com/threerings/tudey/tools/SceneEditor
+CLASS Class_7596
 	CLASS 2
 		FIELD field_20004 this$0 LClass_7611;
 	CLASS 9
@@ -38119,7 +38119,7 @@ CLASS Class_7696
 	METHOD method_19872 (IF)F
 	METHOD method_19873 (FI)F
 	METHOD method_19874 (FF)F
-CLASS Class_7697 com/threerings/util/ToolUtil
+CLASS Class_7697
 	CLASS 1
 		FIELD field_20316 val$listener Ljava/awt/event/ActionListener;
 		METHOD method_19875 actionPerformed (Ljava/awt/event/ActionEvent;)V
