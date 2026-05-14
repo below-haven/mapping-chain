@@ -6835,7 +6835,6 @@ c	com/google/inject/internal/as	Class_902
 	f	Lcom/google/inject/Key;	oS	field_2057
 	m	(Ljava/lang/Object;)Z	equals	method_3757
 	m	()I	hashCode	method_3758
-c	com/google/inject/internal/asm/	Class_903
 c	com/google/inject/internal/asm/$ClassTooLargeException	Class_903$Class_904
 	f	Ljava/lang/String;	className	field_2058
 	f	I	constantPoolCount	field_2059
@@ -11165,7 +11164,6 @@ c	com/threerings/config/tools/ConfigEditor$ManagerPanel	Class_1465$Class_1468
 	m	(Z)V	q	method_5953
 	m	(Ljava/awt/Color;)V	setBackground	method_5954
 	m	(Ljavax/swing/event/ChangeEvent;)V	stateChanged	method_5955
-c	com/threerings/config/tools/ConfigEditor$ManagerPanel$GroupItem	Class_1465$Class_1468$Class_1469
 c	com/threerings/config/tools/ConfigEditor$ManagerPanel$GroupItem$2	Class_1465$Class_1468$Class_1469$2
 	f	Lcom/threerings/config/tools/ConfigEditor$ManagerPanel$a;	this$2	field_3614
 c	com/threerings/config/tools/ConfigEditor$ManagerPanel$a	Class_1465$Class_1468$Class_1470
@@ -18012,7 +18010,6 @@ c	com/threerings/opengl/GlCanvas$LockableGLCanvas	Class_2537$Class_2538
 	m	()V	lockContext	method_9229
 	m	()V	paintGL	method_9230
 	m	()V	unlockContext	method_9231
-c	com/threerings/opengl/GlCanvasApp	Class_2539
 c	com/threerings/opengl/GlCanvasApp$4	Class_2539$4
 	f	Lcom/threerings/opengl/e;	this$0	field_6069
 c	com/threerings/opengl/a	Class_2540
@@ -21244,7 +21241,6 @@ c	com/threerings/opengl/gui/t	Class_3040
 	m	(J)V	setupCallbacks	method_10457
 	m	(IZ)V	updateButtonModifier	method_10458
 	m	(IZ)V	updateKeyModifier	method_10459
-c	com/threerings/opengl/gui/text/Document	Class_3041
 c	com/threerings/opengl/gui/text/Document$1	Class_3041$1
 	f	Ljava/util/ArrayList;	_edits	field_7560
 	f	Lcom/threerings/opengl/gui/text/d;	this$0	field_7561
@@ -28462,7 +28458,6 @@ c	com/threerings/projectx/client/F	Class_4186
 	f	Lcom/threerings/opengl/gui/ad;	azM	field_11103
 c	com/threerings/projectx/client/G	Class_4187
 	f	Lcom/threerings/projectx/client/C;	azN	field_11104
-c	com/threerings/projectx/client/GlobalControls	Class_4188
 c	com/threerings/projectx/client/GlobalControls$5	Class_4188$5
 	f	Lcom/threerings/projectx/client/al;	this$0	field_11105
 c	com/threerings/projectx/client/H	Class_4189
@@ -47319,7 +47314,6 @@ c	com/threerings/tudey/tools/Placer	Class_7594
 	m	()V	adu	method_19422
 c	com/threerings/tudey/tools/Placer$PlaceableReference	Class_7594$Class_7595
 	f	Lcom/threerings/config/ConfigReference;	placeable	field_20001
-c	com/threerings/tudey/tools/SceneEditor	Class_7596
 c	com/threerings/tudey/tools/SceneEditor$10	Class_7596$10
 	f	Lcom/threerings/tudey/tools/h;	this$0	field_20002
 	f	Ljava/io/File;	val$recentFile	field_20003
@@ -48189,7 +48183,6 @@ c	com/threerings/util/T	Class_7696
 	m	(IF)F	e	method_19872
 	m	(FI)F	f	method_19873
 	m	(FF)F	y	method_19874
-c	com/threerings/util/ToolUtil	Class_7697
 c	com/threerings/util/ToolUtil$1	Class_7697$1
 	f	Ljava/awt/event/ActionListener;	val$listener	field_20316
 	m	(Ljava/awt/event/ActionEvent;)V	actionPerformed	method_19875
