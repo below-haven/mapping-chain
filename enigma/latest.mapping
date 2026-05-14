@@ -5614,7 +5614,7 @@ CLASS Class_901
 CLASS Class_902
 	METHOD method_3757 equals (Ljava/lang/Object;)Z
 	METHOD method_3758 hashCode ()I
-CLASS Class_903 com/google/inject/internal/asm/ClassTooLargeException
+CLASS Class_903 com/google/inject/internal/asm/$ClassTooLargeException
 	CLASS Class_904
 		FIELD field_2058 className Ljava/lang/String;
 		FIELD field_2059 constantPoolCount I
@@ -7747,6 +7747,7 @@ CLASS Class_1306
 	METHOD method_5325 ()Z
 	METHOD method_5326 ()Z
 	METHOD method_5328 ()J
+	METHOD method_20880 ()Z
 CLASS Class_1307 com/samskivert/util/RunQueue
 	METHOD method_5234 isRunning ()Z
 	METHOD method_5329 isDispatchThread ()Z
@@ -12151,6 +12152,7 @@ CLASS Class_2219
 	METHOD method_7943 (Ljava/lang/String;I)V
 	METHOD method_7944 update ()V
 	METHOD method_7945 (Z)V
+	METHOD method_20881 ()V
 CLASS Class_2220
 	METHOD method_7946 (LClass_2191;Ljava/lang/String;Ljava/lang/String;)V
 	METHOD method_7947 (LClass_2191;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
@@ -13946,6 +13948,9 @@ CLASS Class_2515 com/threerings/openal/SoundManager
 		METHOD method_20869 ()I
 		METHOD method_20870 ()I
 		METHOD method_20871 ()Z
+		METHOD method_20882 equals (Ljava/lang/Object;)Z
+		METHOD method_20883 hashCode ()I
+		METHOD method_20884 toString ()Ljava/lang/String;
 CLASS Class_2516
 	METHOD method_9163 (LClass_1241;LClass_2496;)V
 CLASS Class_2517
@@ -26671,6 +26676,7 @@ CLASS Class_5028 com/threerings/projectx/data/PlayerObject
 	METHOD method_14685 (LClass_1412;)Z
 	METHOD method_14686 (LClass_1411;)LClass_1412;
 	METHOD method_14687 (LClass_1412;)LClass_6832;
+	METHOD method_20885 ()Z
 	CLASS Class_5029 EquipPolicy
 		FIELD field_13388 $VALUES [LClass_5028$Class_5029;
 		FIELD field_13390 NORMAL LClass_5028$Class_5029;
@@ -32692,6 +32698,7 @@ CLASS Class_6483 com/threerings/projectx/mission/client/MissionPanel
 	METHOD method_17045 (Ljava/lang/String;Ljava/lang/String;Z)V
 	METHOD method_17046 isEnabled (LClass_7079;)Z
 	METHOD method_17047 ()V
+	METHOD method_20886 ()V
 	CLASS Class_6484 HelpMode
 		FIELD field_17359 $VALUES [LClass_6483$Class_6484;
 		FIELD field_17360 FIRST LClass_6483$Class_6484;
