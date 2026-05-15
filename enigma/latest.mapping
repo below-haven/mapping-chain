@@ -5614,7 +5614,7 @@ CLASS Class_901
 CLASS Class_902
 	METHOD method_3757 equals (Ljava/lang/Object;)Z
 	METHOD method_3758 hashCode ()I
-CLASS Class_903 ClassTooLargeException
+CLASS Class_903 com/google/inject/internal/asm/$ClassTooLargeException
 	CLASS Class_904
 		FIELD field_2058 className Ljava/lang/String;
 		FIELD field_2059 constantPoolCount I
@@ -25376,11 +25376,13 @@ CLASS Class_4686 com/threerings/projectx/client/sprite/KnightSprite
 		FIELD field_12502 USE_INVENTORY LClass_4686$Class_4687;
 		FIELD field_12503 activity I
 		FIELD field_12504 animation Ljava/lang/String;
+		FIELD field_20999 HIDDEN_SUFFIX Ljava/lang/String;
 		METHOD method_14202 $values ()[LClass_4686$Class_4687;
 		METHOD method_14203 getAlternate ()LClass_4686$Class_4687;
 		METHOD method_14204 showInTooltip ()Z
 		METHOD method_14205 valueOf (Ljava/lang/String;)LClass_4686$Class_4687;
 		METHOD method_14206 values ()[LClass_4686$Class_4687;
+		METHOD method_20887 getAnimations (Ljava/lang/String;Z)Ljava/util/Collection;
 	CLASS Class_4688
 	CLASS Class_4689
 		METHOD method_14207 ()V
