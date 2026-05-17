@@ -390,7 +390,7 @@ CLASS Class_97 com/google/common/base/CaseFormat
 		METHOD method_272 (Ljava/lang/String;)Ljava/lang/String;
 		METHOD method_273 hashCode ()I
 		METHOD method_274 toString ()Ljava/lang/String;
-CLASS Class_99 com/google/common/base/Stopwatch
+CLASS Class_99 com/google/common/base/StopwatchTimeUnitMap
 CLASS Class_100 com/google/common/base/Strings
 	METHOD method_275 (Ljava/lang/String;IC)Ljava/lang/String;
 	METHOD method_276 (Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
@@ -5465,7 +5465,7 @@ CLASS Class_865
 	METHOD method_3645 toString ()Ljava/lang/String;
 CLASS Class_866
 	METHOD method_3646 ()Ljava/lang/String;
-	METHOD method_3647 ()Ljava/lang/Object;
+	METHOD method_3647 run ()Ljava/lang/Object;
 CLASS Class_867
 	METHOD method_3648 (LClass_728;LClass_683;LClass_715;)V
 	METHOD method_3649 (LClass_728;LClass_994;LClass_683;)Z
@@ -5614,7 +5614,7 @@ CLASS Class_901
 CLASS Class_902
 	METHOD method_3757 equals (Ljava/lang/Object;)Z
 	METHOD method_3758 hashCode ()I
-CLASS Class_903 com/google/inject/internal/asm/$ClassTooLargeException
+CLASS Class_903 ClassTooLargeException
 	CLASS Class_904
 		FIELD field_2058 className Ljava/lang/String;
 		FIELD field_2059 constantPoolCount I
@@ -7400,7 +7400,7 @@ CLASS Class_1234 com/samskivert/util/ObserverList
 	METHOD method_5077 clear ()V
 	METHOD method_5078 (ILjava/lang/Object;)Z
 	METHOD method_5079 isEmpty ()Z
-	METHOD method_5080 ()LClass_1234;
+	METHOD method_5080 newSafeInOrder ()LClass_1234;
 	METHOD method_5081 ()LClass_1234;
 	METHOD method_5082 remove (Ljava/lang/Object;)Z
 	METHOD method_5083 ()I
@@ -7543,21 +7543,23 @@ CLASS Class_1257 com/samskivert/util/ValueMarshaller
 		METHOD method_5177 (Ljava/lang/String;)Ljava/lang/Object;
 CLASS Class_1260
 CLASS Class_1261
-CLASS Class_1262
+CLASS Class_1262 com/samskivert/util/LogBuilder
+	FIELD field_2914 _hasArgs Z
+	FIELD field_2915 _log Ljava/lang/StringBuilder;
 	METHOD method_5178 ([Ljava/lang/Object;)LClass_1262;
 	METHOD method_5179 toString ()Ljava/lang/String;
 CLASS Class_1263 com/samskivert/util/Logger
 	FIELD field_2916 _factory LClass_1263$Class_1264;
-	METHOD method_5180 (ILjava/lang/Object;[Ljava/lang/Object;)V
+	METHOD method_5180 doLog (ILjava/lang/Object;[Ljava/lang/Object;)V
 	METHOD method_5181 (LClass_1263$Class_1264;)V
 	METHOD method_5182 getLogger (Ljava/lang/String;)LClass_1263;
 	METHOD method_5183 (ILjava/lang/String;Ljava/lang/Throwable;)V
 	METHOD method_5184 (I)Z
 	METHOD method_5185 (Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/String;
-	METHOD method_5186 (Ljava/lang/Object;[Ljava/lang/Object;)V
-	METHOD method_5187 (Ljava/lang/Object;[Ljava/lang/Object;)V
+	METHOD method_5186 debug (Ljava/lang/Object;[Ljava/lang/Object;)V
+	METHOD method_5187 info (Ljava/lang/Object;[Ljava/lang/Object;)V
 	METHOD method_5188 warning (Ljava/lang/Object;[Ljava/lang/Object;)V
-	METHOD method_5189 (Ljava/lang/Object;[Ljava/lang/Object;)V
+	METHOD method_5189 error (Ljava/lang/Object;[Ljava/lang/Object;)V
 	METHOD method_5190 ()V
 	METHOD method_5191 createConfiguredFactory ()LClass_1263$Class_1264;
 	CLASS Class_1264 Factory
@@ -7588,7 +7590,7 @@ CLASS Class_1266
 	METHOD method_5214 ()Ljava/lang/String;
 	METHOD method_5215 toString ()Ljava/lang/String;
 	METHOD method_5216 update ()V
-CLASS Class_1267
+CLASS Class_1267 com/samskivert/util/Throttle
 	METHOD method_5217 (IJ)V
 	METHOD method_5218 ()Z
 	METHOD method_5219 (J)Z
@@ -7678,7 +7680,8 @@ CLASS Class_1291
 CLASS Class_1293
 	METHOD method_5274 (Ljava/util/Properties;Ljava/lang/String;)Ljava/util/Properties;
 	METHOD method_5275 (Ljava/util/Properties;Ljava/util/Properties;Ljava/lang/String;)V
-CLASS Class_1294
+CLASS Class_1294 com/samskivert/util/Queue
+	FIELD field_2954 _items [Ljava/lang/Object;
 	FIELD field_2956 _count I
 	FIELD field_2958 _size I
 	FIELD field_2959 _start I
@@ -7742,7 +7745,7 @@ CLASS Class_1304
 	METHOD method_5322 (LClass_1301;)Z
 CLASS Class_1305
 	METHOD method_5323 (LClass_1301;)Z
-CLASS Class_1306
+CLASS Class_1306 com/samskivert/util/RunAnywhere
 	METHOD method_5324 (Ljava/awt/event/InputEvent;)J
 	METHOD method_5325 ()Z
 	METHOD method_5326 ()Z
@@ -8109,10 +8112,10 @@ CLASS Class_1374 com/threerings/resource/ResourceManager
 		METHOD method_5569 (Ljava/lang/String;J)V
 CLASS Class_1379
 	METHOD method_5570 ()Ljava/lang/Void;
-	METHOD method_5571 ()Ljava/lang/Object;
+	METHOD method_5571 run ()Ljava/lang/Object;
 CLASS Class_1380
 	METHOD method_5572 ()Ljava/io/InputStream;
-	METHOD method_5573 ()Ljava/lang/Object;
+	METHOD method_5573 run ()Ljava/lang/Object;
 CLASS Class_1381
 CLASS Class_1382 com/threerings/billing/data/BillingInfo
 	FIELD field_3101 coinPacks LClass_7687;
@@ -12269,8 +12272,10 @@ CLASS Class_2250
 	FIELD field_5261 value I
 CLASS Class_2251
 	METHOD method_8002 (Ljava/lang/reflect/Field;)Z
-CLASS Class_2252
-CLASS Class_2253
+CLASS Class_2252 com/threerings/io/UnreliableObjectInputStream
+CLASS Class_2253 com/threerings/io/UnreliableObjectOutputStream
+	FIELD field_5262 _mappedClasses Ljava/util/Set;
+	FIELD field_5263 _mappedInterns Ljava/util/Set;
 	METHOD method_8003 (Ljava/util/Set;)V
 	METHOD method_8004 (Ljava/util/Set;)V
 	METHOD method_8005 (Ljava/util/Collection;)V
@@ -12396,10 +12401,11 @@ CLASS Class_2302
 	METHOD method_8067 ([BII)I
 	METHOD method_8068 reset ()V
 	METHOD method_8069 (J)J
-CLASS Class_2303
-	METHOD method_8070 (I)V
+CLASS Class_2303 com/threerings/io/ByteBufferOutputStream
+	FIELD field_5298 _buffer Ljava/nio/ByteBuffer;
+	METHOD method_8070 expand (I)V
 	METHOD method_8071 reset ()V
-	METHOD method_8072 ()Ljava/nio/ByteBuffer;
+	METHOD method_8072 flip ()Ljava/nio/ByteBuffer;
 	METHOD method_8073 write (I)V
 	METHOD method_8074 write ([BII)V
 CLASS Class_2304 com/threerings/io/ClassMapping
@@ -12429,8 +12435,10 @@ CLASS Class_2315
 CLASS Class_2316
 CLASS Class_2317
 CLASS Class_2318
-CLASS Class_2319
+CLASS Class_2319 com/threerings/io/FramedInputStream
 	FIELD field_5310 _length I
+	FIELD field_5311 _buffer Ljava/nio/ByteBuffer;
+	FIELD field_5312 _have I
 	METHOD method_8084 (Ljava/nio/channels/ReadableByteChannel;)Z
 	METHOD method_8085 available ()I
 	METHOD method_8086 (I)V
@@ -12441,7 +12449,7 @@ CLASS Class_2319
 	METHOD method_8091 (J)J
 	METHOD method_8092 ()I
 	METHOD method_8093 ()Z
-CLASS Class_2320
+CLASS Class_2320 com/threerings/io/FramingOutputStream
 	METHOD method_8094 ()Ljava/nio/ByteBuffer;
 	METHOD method_8095 ()V
 CLASS Class_2321
@@ -12453,7 +12461,7 @@ CLASS Class_2323 com/threerings/io/ObjectInputStream
 	FIELD field_5319 _current Ljava/lang/Object;
 	METHOD method_8096 (Ljava/lang/Object;LClass_2257;Z)V
 	METHOD method_8097 (SLjava/lang/String;)V
-	METHOD method_8098 (SLjava/lang/String;)LClass_2304;
+	METHOD method_8098 mapClass (SLjava/lang/String;)LClass_2304;
 	METHOD method_8099 (SLjava/lang/String;)LClass_2304;
 	METHOD method_8100 (Ljava/lang/ClassLoader;)V
 	METHOD method_8101 (SLjava/lang/String;)V
@@ -12481,7 +12489,7 @@ CLASS Class_2324 com/threerings/io/ObjectOutputStream
 	METHOD method_8122 (ILjava/lang/String;)V
 	METHOD method_8123 ()V
 CLASS Class_2325
-	METHOD method_8124 ()Ljava/lang/Object;
+	METHOD method_8124 run ()Ljava/lang/Object;
 	METHOD method_8125 ()LClass_2257;
 CLASS Class_2326
 	METHOD method_8126 (Ljava/lang/reflect/Field;Ljava/lang/reflect/Field;)I
@@ -13853,7 +13861,11 @@ CLASS Class_2499
 	METHOD method_9092 (LClass_2496$Class_2497;)Z
 CLASS Class_2500 com/threerings/openal/ClipProvider
 	METHOD method_9093 (Ljava/lang/String;)LClass_2469;
-CLASS Class_2501
+CLASS Class_2501 com/threerings/openal/Listener
+	FIELD field_5922 _gain F
+	FIELD field_5925 _az F
+	FIELD field_5927 _uy F
+	FIELD field_5929 _vbuf [F
 	METHOD method_9094 (FFFFFF)V
 	METHOD method_9095 (FFF)V
 	METHOD method_9096 ()F
@@ -15315,7 +15327,8 @@ CLASS Class_2755
 	METHOD method_9683 getTransferData (Ljava/awt/datatransfer/DataFlavor;)Ljava/lang/Object;
 	METHOD method_9684 getTransferDataFlavors ()[Ljava/awt/datatransfer/DataFlavor;
 	METHOD method_9685 isDataFlavorSupported (Ljava/awt/datatransfer/DataFlavor;)Z
-CLASS Class_2756
+CLASS Class_2756 com/threerings/openal/Log
+	FIELD field_6714 log LClass_1263;
 CLASS Class_2757
 	FIELD field_6715 _mask LClass_2742;
 CLASS Class_2758
@@ -17219,7 +17232,7 @@ CLASS Class_3048
 	CLASS Class_3049
 		METHOD method_10496 textInserted (LClass_3048;II)V
 		METHOD method_10497 textRemoved (LClass_3048;II)V
-CLASS Class_3050
+CLASS Class_3050 com/threerings/opengl/gui/text/HTMLView
 	FIELD field_7613 _antialias Z
 	FIELD field_7615 _rendered LClass_2742;
 	FIELD field_7616 _rsize Ljava/awt/Rectangle;
@@ -17231,7 +17244,7 @@ CLASS Class_3050
 	METHOD method_10501 setContents (Ljavax/swing/text/html/HTMLDocument;)V
 	METHOD method_10502 setStyleSheet (Ljava/lang/String;)V
 	METHOD method_10503 setStyleSheet (Ljavax/swing/text/html/StyleSheet;)V
-	CLASS Class_3051
+	CLASS Class_3051 BridgeView
 		FIELD field_7619 _target Ljavax/swing/text/View;
 		FIELD field_7620 this$0 LClass_3050;
 		METHOD method_10504 getAlignment (I)F
@@ -20905,16 +20918,23 @@ CLASS Class_3632 com/threerings/parlor/tourney/data/TourneyObject
 	FIELD field_9537 state I
 	FIELD field_9538 tourneyService LClass_3631;
 CLASS Class_3633 com/threerings/parlor/tourney/data/TourniesMarshaller
-CLASS Class_3634
+CLASS Class_3634 com/threerings/presents/Log
+	FIELD field_9539 log LClass_1263;
 CLASS Class_3635
 CLASS Class_3636
 CLASS Class_3637
 CLASS Class_3638
-CLASS Class_3639
+CLASS Class_3639 com/threerings/presents/util/DatagramSequencer
+	FIELD field_9540 _uout LClass_2253;
+	FIELD field_9541 _uin LClass_2252;
+	FIELD field_9542 _lastNumber I
+	FIELD field_9543 _lastReceived I
+	FIELD field_9544 _missedCount I
+	FIELD field_9545 _sendrecs Ljava/util/ArrayList;
 	METHOD method_11831 (LClass_3774;)V
 	METHOD method_11832 ()LClass_3774;
 	METHOD method_11833 ()I
-	CLASS Class_3640
+	CLASS Class_3640 SendRecord
 		FIELD field_9548 number I
 CLASS Class_3641 com/threerings/presents/util/PresentsContext
 	METHOD method_11834 getDObjectManager ()LClass_3745;
@@ -20948,6 +20968,27 @@ CLASS Class_3648 com/threerings/presents/client/MessageTracker
 	METHOD method_11854 messageReceived (ZILClass_3769;I)V
 	METHOD method_11855 messageSent (ZILClass_3790;)V
 CLASS Class_3649 com/threerings/presents/client/BlockingCommunicator
+	FIELD field_9559 _loader Ljava/lang/ClassLoader;
+	FIELD field_9560 _selector Ljava/nio/channels/Selector;
+	FIELD field_9561 _channel Ljava/nio/channels/SocketChannel;
+	FIELD field_9562 _reader LClass_3649$Class_3653;
+	FIELD field_9563 _writer LClass_3649$Class_3654;
+	FIELD field_9564 _datagramReader LClass_3649$Class_3651;
+	FIELD field_9565 _datagramWriter LClass_3649$Class_3652;
+	FIELD field_9566 _msgq LClass_1294;
+	FIELD field_9567 _datagramChannel Ljava/nio/channels/DatagramChannel;
+	FIELD field_9568 _dataq LClass_1294;
+	FIELD field_9569 _logonError Ljava/lang/Exception;
+	FIELD field_9570 _fout LClass_2320;
+	FIELD field_9571 _oout LClass_2324;
+	FIELD field_9572 _fin LClass_2319;
+	FIELD field_9573 _oin LClass_2323;
+	FIELD field_9574 _bout LClass_2303;
+	FIELD field_9575 _uout LClass_2253;
+	FIELD field_9576 _digest Ljava/security/MessageDigest;
+	FIELD field_9577 _secret [B
+	FIELD field_9578 _buf Ljava/nio/ByteBuffer;
+	FIELD field_9579 _sequencer LClass_3639;
 	METHOD method_11856 (Ljava/net/InetAddress;)V
 	METHOD method_11857 (LClass_3790;)V
 	METHOD method_11858 (LClass_3790;)V
@@ -20965,22 +21006,25 @@ CLASS Class_3649 com/threerings/presents/client/BlockingCommunicator
 	METHOD method_11870 ()LClass_3769;
 	METHOD method_11871 ()Z
 	METHOD method_11872 ()LClass_3769;
-	METHOD method_11873 ()Z
+	METHOD method_11873 debugLogMessages ()Z
 	METHOD method_11874 ()V
 	CLASS Class_3650 TerminationMessage
-	CLASS Class_3651
+	CLASS Class_3651 DatagramReader
 		METHOD method_11875 (I)Z
 		METHOD method_11876 connect ()V
-	CLASS Class_3652
-	CLASS Class_3653
+	CLASS Class_3652 DatagramWriter
+	CLASS Class_3653 Reader
 		METHOD method_11877 connect ()V
-	CLASS Class_3654
+	CLASS Class_3654 Writer
 CLASS Class_3655
 CLASS Class_3656 com/threerings/presents/client/Client
+	FIELD field_9584 _clobj LClass_3700;
 	FIELD field_9586 _creds LClass_3768;
 	FIELD field_9587 _observers LClass_1234;
 	FIELD field_9588 _runQueue LClass_1307;
 	FIELD field_9589 _version Ljava/lang/String;
+	FIELD field_9592 _connectionId I
+	FIELD field_9594 DEFAULT_SERVER_PORTS [I
 	METHOD method_11878 (J)J
 	METHOD method_11879 (J)J
 	METHOD method_11880 (J)V
@@ -21051,7 +21095,7 @@ CLASS Class_3656 com/threerings/presents/client/Client
 		METHOD method_11942 $values ()[LClass_3656$Class_3657;
 		METHOD method_11943 valueOf (Ljava/lang/String;)LClass_3656$Class_3657;
 		METHOD method_11944 values ()[LClass_3656$Class_3657;
-	CLASS Class_3658
+	CLASS Class_3658 ServerSwitcher
 		METHOD method_11945 ()V
 CLASS Class_3659
 	CLASS Class_3660
@@ -21063,9 +21107,9 @@ CLASS Class_3662
 CLASS Class_3663
 CLASS Class_3664 com/threerings/presents/client/SessionObserver
 	METHOD method_11949 clientDidLogoff (LClass_3656;)V
-	METHOD method_11950 (LClass_3656;)V
-	METHOD method_11951 (LClass_3656;)V
-	METHOD method_11952 (LClass_3656;)V
+	METHOD method_11950 clientDidLogon (LClass_3656;)V
+	METHOD method_11951 clientObjectDidChange (LClass_3656;)V
+	METHOD method_11952 clientWillLogon (LClass_3656;)V
 CLASS Class_3665
 	CLASS Class_3666
 		METHOD method_11953 (I)V
@@ -21095,14 +21139,17 @@ CLASS Class_3679
 CLASS Class_3680
 CLASS Class_3681
 CLASS Class_3682
-CLASS Class_3683
+CLASS Class_3683 com/threerings/presents/client/ClientAdapter
 CLASS Class_3684 com/threerings/presents/client/ClientCommunicator
 	METHOD method_11961 (Z)Z
 	METHOD method_11962 (Ljava/lang/String;I)V
 	METHOD method_11963 (Ljava/lang/String;I)I
 	CLASS Class_3685
 		METHOD method_11964 ()V
-CLASS Class_3686
+CLASS Class_3686 com/threerings/presents/client/ClientDObjectMgr
+	FIELD field_9654 _client LClass_3656;
+	FIELD field_9655 _flusher LClass_1213;
+	FIELD field_9662 _comm LClass_3694;
 	METHOD method_11965 (ILClass_3716;LClass_3715;)V
 	METHOD method_11966 (ILClass_3759;Z)V
 	METHOD method_11967 (LClass_3686$Class_3688;)V
@@ -21125,35 +21172,42 @@ CLASS Class_3686
 CLASS Class_3690
 CLASS Class_3691
 CLASS Class_3692
-CLASS Class_3693
-	METHOD method_11981 (LClass_3656;Ljava/lang/Exception;)V
-	METHOD method_11982 (LClass_3656;Ljava/lang/Exception;)V
-	METHOD method_11983 (LClass_3656;)V
-	METHOD method_11984 (LClass_3656;)Z
-CLASS Class_3694
-	METHOD method_11985 (LClass_3762;)V
-	METHOD method_11986 (LClass_3763;)V
+CLASS Class_3693 com/threerings/presents/client/ClientObserver
+	METHOD method_11981 clientFailedToLogon (LClass_3656;Ljava/lang/Exception;)V
+	METHOD method_11982 clientConnectionFailed (LClass_3656;Ljava/lang/Exception;)V
+	METHOD method_11983 clientDidClear (LClass_3656;)V
+	METHOD method_11984 clientWillLogoff (LClass_3656;)Z
+CLASS Class_3694 com/threerings/presents/client/Communicator
+	FIELD field_9675 _client LClass_3656;
+	FIELD field_9676 _omgr LClass_3686;
+	FIELD field_9677 _lastWrite J
+	METHOD method_11985 gotAuthResponse (LClass_3762;)V
+	METHOD method_11986 logonSucceeded (LClass_3763;)V
 	METHOD method_11987 (LClass_3774;)V
-	METHOD method_11988 (LClass_3790;)V
+	METHOD method_11988 postMessage (LClass_3790;)V
 	METHOD method_11989 (LClass_3659$Class_3661;)V
-	METHOD method_11990 (Ljava/lang/ClassLoader;)V
+	METHOD method_11990 setClassLoader (Ljava/lang/ClassLoader;)V
 	METHOD method_11991 (Ljava/lang/Exception;)V
 	METHOD method_11992 ()V
-	METHOD method_11993 ()V
-	METHOD method_11994 ()V
-	METHOD method_11995 ()V
+	METHOD method_11993 logon ()V
+	METHOD method_11994 logoff ()V
+	METHOD method_11995 gotBootstrap ()V
 	METHOD method_11996 ()J
 	METHOD method_11997 ()Z
-CLASS Class_3695
-	METHOD method_11998 (LClass_3776;)V
-	METHOD method_11999 (LClass_3777;)Z
+CLASS Class_3695 com/threerings/presents/client/DeltaCalculator
+	FIELD field_9678 _iter I
+	FIELD field_9679 _deltas [J
+	FIELD field_9680 _ping LClass_3776;
+	METHOD method_11998 sentPing (LClass_3776;)V
+	METHOD method_11999 gotPong (LClass_3777;)Z
 	METHOD method_12000 isDone ()Z
 	METHOD method_12001 ()Z
 	METHOD method_12002 ()J
-CLASS Class_3696
-	METHOD method_12003 (I[Ljava/lang/Object;)V
-	METHOD method_12004 ()Ljava/lang/String;
-CLASS Class_3697
+CLASS Class_3696 com/threerings/presents/client/InvocationDecoder
+	FIELD field_9681 receiver LClass_3667;
+	METHOD method_12003 dispatchNotification (I[Ljava/lang/Object;)V
+	METHOD method_12004 getReceiverCode ()Ljava/lang/String;
+CLASS Class_3697 com/threerings/presents/client/InvocationDirector
 	FIELD field_9684 _receiverId S
 	FIELD field_9685 _requestId S
 	METHOD method_12005 (J)V
