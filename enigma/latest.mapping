@@ -5614,7 +5614,7 @@ CLASS Class_901
 CLASS Class_902
 	METHOD method_3757 equals (Ljava/lang/Object;)Z
 	METHOD method_3758 hashCode ()I
-CLASS Class_903 ClassTooLargeException
+CLASS Class_903 com/google/inject/internal/asm/$ClassTooLargeException
 	CLASS Class_904
 		FIELD field_2058 className Ljava/lang/String;
 		FIELD field_2059 constantPoolCount I
@@ -8634,12 +8634,17 @@ CLASS Class_1452 com/threerings/config/swing/ConfigTree
 	METHOD method_5839 ()V
 	METHOD method_5840 ()V
 	METHOD method_5841 ()V
+	METHOD method_20888 getAccessibleContext ()Ljavax/accessibility/AccessibleContext;
 	CLASS 1
 		FIELD field_3533 this$0 LClass_1452;
-		METHOD method_5842 insertNodeInto (Ljavax/swing/tree/MutableTreeNode;Ljavax/swing/tree/MutableTreeNode;I)V
-		METHOD method_5843 removeNodeFromParent (Ljavax/swing/tree/MutableTreeNode;)V
-		METHOD method_5844 valueForPathChanged (Ljavax/swing/tree/TreePath;Ljava/lang/Object;)V
-	CLASS 4
+		METHOD method_20889 treeCollapsed (Ljavax/swing/event/TreeExpansionEvent;)V
+		METHOD method_20890 treeExpanded (Ljavax/swing/event/TreeExpansionEvent;)V
+	CLASS 2
+		FIELD field_21001 this$0 LClass_1452;
+		METHOD method_20891 insertNodeInto (Ljavax/swing/tree/MutableTreeNode;Ljavax/swing/tree/MutableTreeNode;I)V
+		METHOD method_20892 removeNodeFromParent (Ljavax/swing/tree/MutableTreeNode;)V
+		METHOD method_20893 valueForPathChanged (Ljavax/swing/tree/TreePath;Ljava/lang/Object;)V
+	CLASS 5
 		FIELD field_3534 this$0 LClass_1452;
 		METHOD method_5845 canImport (Ljavax/swing/JComponent;[Ljava/awt/datatransfer/DataFlavor;)Z
 		METHOD method_5846 createTransferable (Ljavax/swing/JComponent;)Ljava/awt/datatransfer/Transferable;
@@ -17081,6 +17086,8 @@ CLASS Class_3034 com/threerings/opengl/gui/Component
 	METHOD method_10437 updateFromStyleConfig (ILClass_2954$Class_2957;)V
 	METHOD method_10438 wasAdded ()V
 	METHOD method_10439 wasRemoved ()V
+	METHOD method_20894 addActionListener (LClass_3009;)Ljava/lang/Runnable;
+	METHOD method_20895 lambda$addActionListener$0 (LClass_3009;)V
 CLASS Class_3035
 	FIELD field_7526 _batch LClass_3483;
 	FIELD field_7527 _billboardLocalTransform LClass_2339;
@@ -17138,6 +17145,7 @@ CLASS Class_3040
 	METHOD method_10457 setupCallbacks (J)V
 	METHOD method_10458 updateButtonModifier (IZ)V
 	METHOD method_10459 updateKeyModifier (IZ)V
+	METHOD method_20896 access$300 (LClass_3040;)LClass_3572;
 CLASS Class_3041
 	CLASS 1
 		FIELD field_7560 _edits Ljava/util/ArrayList;
@@ -17416,6 +17424,7 @@ CLASS Class_3068 com/threerings/opengl/GlDisplayApp
 	METHOD method_10608 updateFrame ()V
 	METHOD method_10609 updateRendererSize ()V
 	METHOD method_10610 wasResized ()Z
+	METHOD method_20897 refreshCursorMode ()V
 CLASS Class_3069
 	FIELD field_7667 this$0 LClass_3068;
 CLASS Class_3070 com/threerings/opengl/GlView
@@ -22795,12 +22804,8 @@ CLASS Class_4052 com/threerings/projectx/admin/data/RewardConfigObject
 		FIELD field_10595 energy I
 		FIELD field_10596 rewardId I
 CLASS Class_4054 com/threerings/projectx/admin/data/ServerConfigObject
-	FIELD field_10597 addExtraFraudWarnings Z
-	FIELD field_10598 allowFullSteamTrade Z
 	FIELD field_10599 avoidReboots [LClass_4054$Class_4056;
 	FIELD field_10600 baseTicksPerSecond I
-	FIELD field_10601 concurrentSteamAssetRequests I
-	FIELD field_10602 concurrentSteamAssetRequestsTimeout I
 	FIELD field_10603 conditions [Ljava/lang/String;
 	FIELD field_10604 crownAlerts Ljava/util/List;
 	FIELD field_10605 deltaCrownDefaultAlert I
@@ -22831,7 +22836,6 @@ CLASS Class_4054 com/threerings/projectx/admin/data/ServerConfigObject
 	FIELD field_10630 rollingRebootFreeMemoryPriority I
 	FIELD field_10631 rollingRebootMaxPercentage F
 	FIELD field_10632 rollingRebootMinUpHours I
-	FIELD field_10633 steamCurrencyPolicy LClass_4054$Class_4059;
 	FIELD field_10634 txFailFastOnInactivePlayer Z
 	CLASS Class_4055 AlertLevel
 		FIELD field_10635 alertLevel I
@@ -22843,15 +22847,6 @@ CLASS Class_4054 com/threerings/projectx/admin/data/ServerConfigObject
 	CLASS Class_4058 NodeWeight
 		FIELD field_10642 nodeName Ljava/lang/String;
 		FIELD field_10643 weight F
-	CLASS Class_4059 SteamCurrencyPolicy
-		FIELD field_10644 $VALUES [LClass_4054$Class_4059;
-		FIELD field_10645 DEFAULT_ONLY LClass_4054$Class_4059;
-		FIELD field_10646 LEGACY LClass_4054$Class_4059;
-		FIELD field_10647 LOOKS_RIGHT LClass_4054$Class_4059;
-		FIELD field_10648 OWNER_ONLY LClass_4054$Class_4059;
-		METHOD method_12680 $values ()[LClass_4054$Class_4059;
-		METHOD method_12681 valueOf (Ljava/lang/String;)LClass_4054$Class_4059;
-		METHOD method_12682 values ()[LClass_4054$Class_4059;
 CLASS Class_4060 com/threerings/projectx/admin/data/SessionStats
 	FIELD field_10649 added I
 	FIELD field_10650 maximumDuration J
@@ -24234,6 +24229,7 @@ CLASS Class_4290
 	METHOD method_13489 ()V
 	METHOD method_13490 (LClass_7079;Ljava/lang/String;)LClass_2834;
 	METHOD method_13491 (F)V
+	METHOD method_20898 ()V
 CLASS Class_4291
 	METHOD method_13492 fadeBackground ()V
 	METHOD method_13493 fadeTitle ()V
@@ -24306,6 +24302,7 @@ CLASS Class_4308 com/threerings/projectx/client/GlobalControls
 	METHOD method_13540 (I)V
 	METHOD method_13542 (Ljava/lang/String;Z)V
 	METHOD method_20876 (I)V
+	METHOD method_20899 (LClass_2249;[Ljava/lang/String;)V
 CLASS Class_4309
 CLASS Class_4310
 CLASS Class_4311
@@ -24741,6 +24738,7 @@ CLASS Class_4417 com/threerings/projectx/client/chat/ProjectXChatDirector
 	CLASS Class_4492 GuildHandler
 	CLASS Class_4493
 	CLASS Class_4494
+	CLASS Class_7979
 CLASS Class_4495 com/threerings/projectx/client/chat/FeedbackListener
 	FIELD field_11968 _bundle Ljava/lang/String;
 	FIELD field_11969 _ctx LClass_7079;
@@ -24748,7 +24746,6 @@ CLASS Class_4496
 CLASS Class_4497
 	METHOD method_13784 (Ljava/lang/String;Ljava/util/Map;LClass_4417$Class_4437$Class_4438;)Ljava/lang/String;
 CLASS Class_4498
-CLASS Class_4499
 CLASS Class_4500
 CLASS Class_4501
 CLASS Class_4502
@@ -25431,6 +25428,9 @@ CLASS Class_4686 com/threerings/projectx/client/sprite/KnightSprite
 		FIELD field_12503 activity I
 		FIELD field_12504 animation Ljava/lang/String;
 		FIELD field_20999 HIDDEN_SUFFIX Ljava/lang/String;
+		FIELD field_21006 EMOTE_SLEEP LClass_4686$Class_4687;
+		FIELD field_21007 SLEEPING LClass_4686$Class_4687;
+		FIELD field_21008 SLOOMING LClass_4686$Class_4687;
 		METHOD method_14202 $values ()[LClass_4686$Class_4687;
 		METHOD method_14203 getAlternate ()LClass_4686$Class_4687;
 		METHOD method_14204 showInTooltip ()Z
@@ -26180,7 +26180,6 @@ CLASS Class_4945
 CLASS Class_4947
 	METHOD method_14495 (LClass_6410;LClass_6410;)I
 CLASS Class_4948
-CLASS Class_4949
 CLASS Class_4950
 	METHOD method_14496 ()LClass_4950$Class_4951;
 	METHOD method_14497 ()V
@@ -26739,6 +26738,7 @@ CLASS Class_5028 com/threerings/projectx/data/PlayerObject
 	METHOD method_14686 (LClass_1411;)LClass_1412;
 	METHOD method_14687 (LClass_1412;)LClass_6832;
 	METHOD method_20885 ()Z
+	METHOD method_20901 (Ljava/lang/String;)Z
 	CLASS Class_5029 EquipPolicy
 		FIELD field_13388 $VALUES [LClass_5028$Class_5029;
 		FIELD field_13390 NORMAL LClass_5028$Class_5029;
@@ -26919,8 +26919,6 @@ CLASS Class_5045 com/threerings/projectx/data/ProjectXCredentials
 	FIELD field_13542 ticket [B
 	METHOD method_14727 ()Z
 	METHOD method_14728 ()Z
-	METHOD method_14729 (Ljava/lang/String;Ljava/lang/String;)LClass_5045;
-	METHOD method_14730 (Ljava/lang/String;Ljava/lang/String;)LClass_5045;
 	METHOD method_14731 (LClass_7677;Ljava/lang/String;)J
 	METHOD method_14732 (LClass_7677;Ljava/lang/String;)Ljava/lang/String;
 	METHOD method_14733 (LClass_7677;)J
@@ -31339,7 +31337,7 @@ CLASS Class_6196
 	METHOD method_16335 (JLjava/lang/Object;LClass_3644$Class_3645;)V
 	METHOD method_16336 (JILClass_3644$Class_3647;)V
 	METHOD method_16337 (JLClass_3644$Class_3645;)V
-	METHOD method_16338 (JILClass_3644$Class_3647;)V
+	METHOD method_16338 (JIILClass_3644$Class_3647;)V
 	METHOD method_16339 (JLClass_3644$Class_3647;)V
 	METHOD method_16340 (JLClass_3644$Class_3647;)V
 	METHOD method_16341 (JLClass_3644$Class_3647;)V
@@ -31542,7 +31540,8 @@ CLASS Class_6243
 	METHOD method_16486 (LClass_6422;)V
 	METHOD method_16487 (Z)V
 	METHOD method_16488 lambda$new$0 (LClass_2999;)V
-CLASS Class_6244
+	METHOD method_20902 ()V
+	METHOD method_20903 (LClass_2999;)V
 CLASS Class_6245
 	METHOD method_16489 ()V
 	METHOD method_16490 (LClass_6422;)V
@@ -33115,20 +33114,10 @@ CLASS Class_6560 com/threerings/projectx/partner/client/SteamDirector
 		METHOD method_17199 ()V
 		METHOD method_17200 ()Z
 		METHOD method_17201 (Z)V
-CLASS Class_6564
-	METHOD method_17202 ()Z
-	METHOD method_17203 ()Ljava/lang/String;
-	METHOD method_17204 ()LClass_5045;
-	METHOD method_17205 ()Z
 CLASS Class_6565
 	METHOD method_17206 ()Z
 	METHOD method_17207 shutdown ()V
 	METHOD method_17208 update ()V
-CLASS Class_6566
-	METHOD method_17209 ()LClass_5045;
-	METHOD method_17210 ()Z
-	METHOD method_17211 ()Ljava/lang/String;
-	METHOD method_17212 ()Z
 CLASS Class_6567
 CLASS Class_6568
 CLASS Class_6569
@@ -33147,13 +33136,6 @@ CLASS Class_6576
 	METHOD method_17218 (I)V
 	METHOD method_17219 (Z)V
 	METHOD method_17220 (Ljava/lang/String;LClass_3644$Class_3645;)V
-CLASS Class_6577 com/threerings/projectx/partner/data/ItemDescription
-	CLASS Class_6578 Type
-		FIELD field_17582 $VALUES [LClass_6577$Class_6578;
-		FIELD field_17584 IMAGE LClass_6577$Class_6578;
-		METHOD method_17221 $values ()[LClass_6577$Class_6578;
-		METHOD method_17222 valueOf (Ljava/lang/String;)LClass_6577$Class_6578;
-		METHOD method_17223 values ()[LClass_6577$Class_6578;
 CLASS Class_6579 com/threerings/projectx/partner/data/SteamMarshaller
 CLASS Class_6580
 CLASS Class_6581
@@ -33514,9 +33496,12 @@ CLASS Class_6649
 	METHOD method_17404 ()V
 	METHOD method_17405 ()V
 	METHOD method_17406 ()LClass_6679;
-	METHOD method_17407 (LClass_6667;I)I
+	METHOD method_17407 (LClass_6275$Class_6293;I)I
 	METHOD method_17408 (LClass_6667;)LClass_6649$Class_6650;
 	METHOD method_17409 (Ljava/lang/String;)V
+	METHOD method_20905 (Ljava/lang/String;LClass_6275$Class_6316;I)I
+	METHOD method_20906 (LClass_6667;I)I
+	METHOD method_20907 (Ljava/lang/String;)V
 	CLASS Class_6650
 		FIELD field_17830 index I
 		METHOD method_17410 update ()V
@@ -35198,7 +35183,6 @@ CLASS Class_7052
 	METHOD method_18240 ()Ljava/lang/String;
 	METHOD method_18241 ()Ljava/lang/String;
 	METHOD method_18242 ()Ljava/lang/String;
-	METHOD method_18243 ()Z
 	METHOD method_18244 ()Z
 	METHOD method_18245 ()Z
 	METHOD method_18246 ()Z
@@ -39602,3 +39586,9 @@ CLASS Class_7976
 	METHOD method_20864 (Ljava/awt/Rectangle;)Ljava/awt/Point;
 	METHOD method_20865 (Ljava/awt/Rectangle;)Ljava/awt/Rectangle;
 	CLASS Class_7977
+CLASS Class_7980
+CLASS Class_7981
+	METHOD method_20900 ()V
+CLASS Class_7982
+CLASS Class_7983
+	METHOD method_20904 ()V
