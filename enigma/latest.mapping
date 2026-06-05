@@ -22837,6 +22837,7 @@ CLASS Class_4054 com/threerings/projectx/admin/data/ServerConfigObject
 	FIELD field_10631 rollingRebootMaxPercentage F
 	FIELD field_10632 rollingRebootMinUpHours I
 	FIELD field_10634 txFailFastOnInactivePlayer Z
+	FIELD field_21022 transmitIntervalLeeway F
 	CLASS Class_4055 AlertLevel
 		FIELD field_10635 alertLevel I
 	CLASS Class_4056 AvoidReboot
@@ -33282,8 +33283,8 @@ CLASS Class_6611 com/threerings/projectx/pvp/data/PvpGame
 	FIELD field_17688 SUPER_BRAWL LClass_6611;
 	FIELD field_17689 _headers LClass_329;
 	FIELD field_17691 guildTeamSize I
-	FIELD field_17692 modes LClass_335;
 	FIELD field_17693 teamPrivacy Z
+	FIELD field_21024 configs LClass_335;
 	METHOD method_17295 $values ()[LClass_6611;
 	METHOD method_17296 getDesc ()Ljava/lang/String;
 	METHOD method_17297 getIcon ()Ljava/lang/String;
