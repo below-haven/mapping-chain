@@ -7019,6 +7019,7 @@ CLASS Class_1176
 	FIELD field_2692 totwid I
 	METHOD method_4799 toString ()Ljava/lang/String;
 CLASS Class_1177
+	FIELD field_2709 _gap I
 	METHOD method_4800 (LClass_1177$Class_1179;)V
 	METHOD method_4801 (LClass_1177$Class_1179;[Ljava/awt/Component;)Ljavax/swing/JPanel;
 	METHOD method_4802 (LClass_1177$Class_1180;)V
@@ -7683,6 +7684,7 @@ CLASS Class_1293
 CLASS Class_1294 com/samskivert/util/Queue
 	FIELD field_2954 _items [Ljava/lang/Object;
 	FIELD field_2956 _count I
+	FIELD field_2957 _end I
 	FIELD field_2958 _size I
 	FIELD field_2959 _start I
 	METHOD method_5276 (Ljava/lang/Object;Z)V
@@ -7939,6 +7941,7 @@ CLASS Class_1341
 CLASS Class_1342
 	METHOD method_5473 hasNext ()Z
 CLASS Class_1343
+	FIELD field_3023 _idx I
 	METHOD method_5474 hasNext ()Z
 	METHOD method_5475 ()V
 CLASS Class_1344
@@ -7953,6 +7956,7 @@ CLASS Class_1348 com/threerings/admin/client/AsStringFieldEditor
 CLASS Class_1349 com/threerings/admin/client/BooleanFieldEditor
 	FIELD field_3028 _value Ljavax/swing/JCheckBox;
 CLASS Class_1350 com/threerings/admin/client/ConfigEditorPanel
+	FIELD field_3031 _ctx LClass_3641;
 	FIELD field_3032 _defaultPane Ljava/lang/String;
 	FIELD field_3033 _matchCursor I
 	FIELD field_3034 _matchLabel Ljavax/swing/JLabel;
@@ -8008,6 +8012,8 @@ CLASS Class_1351 com/threerings/admin/client/DSetEditor
 		METHOD method_5504 ()V
 		METHOD method_5505 ()V
 CLASS Class_1354 com/threerings/admin/client/EditableFieldEditor
+	FIELD field_3055 _a1 [Ljava/lang/Object;
+	FIELD field_3056 _a2 [Ljava/lang/Object;
 	FIELD field_3057 _commit Ljavax/swing/JButton;
 	FIELD field_3058 _dummy Ljava/lang/Object;
 	FIELD field_3059 _editor LClass_1705;
@@ -8018,6 +8024,7 @@ CLASS Class_1354 com/threerings/admin/client/EditableFieldEditor
 		METHOD method_5507 actionPerformed (Ljava/awt/event/ActionEvent;)V
 CLASS Class_1355 com/threerings/admin/client/FieldEditor
 	FIELD field_3062 _accessor LClass_1355$Class_1356;
+	FIELD field_3063 _ctx LClass_3641;
 	FIELD field_3064 _field Ljava/lang/reflect/Field;
 	FIELD field_3065 _label Ljavax/swing/JLabel;
 	METHOD method_5508 (LClass_1355$Class_1356;)V
@@ -8040,6 +8047,8 @@ CLASS Class_1355 com/threerings/admin/client/FieldEditor
 		METHOD method_5524 ()V
 	CLASS Class_1357
 CLASS Class_1358 com/threerings/admin/client/ObjectEditorPanel
+	FIELD field_3068 _ctx LClass_3641;
+	FIELD field_3069 _key Ljava/lang/String;
 	FIELD field_3070 _object LClass_1365;
 	FIELD field_3071 _safesub LClass_3642;
 	METHOD method_5525 (LClass_1365;)V
@@ -8269,6 +8278,8 @@ CLASS Class_1405 com/threerings/coin/data/CoinExOfferInfo
 	METHOD method_5601 (LClass_1405;)I
 	METHOD method_5602 compareTo (Ljava/lang/Object;)I
 CLASS Class_1406 com/threerings/config/ArgumentMap
+	FIELD field_3421 _a1 [Ljava/lang/Object;
+	FIELD field_3422 _a2 [Ljava/lang/Object;
 	METHOD method_5603 (Ljava/lang/Object;)I
 	METHOD method_5604 clear ()V
 	METHOD method_5605 clone ()Ljava/lang/Object;
@@ -8289,6 +8300,7 @@ CLASS Class_1406 com/threerings/config/ArgumentMap
 	METHOD method_5620 ()I
 	METHOD method_5621 writeObject (LClass_2324;)V
 	CLASS Class_1407
+		FIELD field_3423 _key Ljava/lang/String;
 		METHOD method_5622 (Ljava/util/Map$Entry;)I
 		METHOD method_5623 (Ljava/lang/String;)LClass_1406$Class_1407;
 		METHOD method_5624 compareTo (Ljava/lang/Object;)I
@@ -8525,6 +8537,7 @@ CLASS Class_1430
 CLASS Class_1431 com/threerings/config/dist/data/ConfigEntry
 	FIELD field_3490 _bytes [B
 	FIELD field_3491 _config LClass_1414;
+	FIELD field_3492 _key LClass_1432;
 	METHOD method_5787 equals (Ljava/lang/Object;)Z
 	METHOD method_5788 hashCode ()I
 	METHOD method_5789 ()LClass_1414;
@@ -8606,6 +8619,7 @@ CLASS Class_1449 com/threerings/config/swing/ConfigChooser
 		FIELD field_3518 _groups [LClass_1410;
 		FIELD field_3519 _label Ljava/lang/String;
 		FIELD field_3520 _msgs LClass_7683;
+		FIELD field_3521 _ok Ljavax/swing/JButton;
 		FIELD field_3522 _selected Ljava/lang/String;
 		METHOD method_5824 (LClass_1452;[ZLjavax/swing/JDialog;Ljava/awt/event/ActionEvent;)V
 CLASS Class_1452 com/threerings/config/swing/ConfigTree
@@ -8757,6 +8771,7 @@ CLASS Class_1465 com/threerings/config/tools/ConfigEditor
 	FIELD field_3576 _chooser Ljavax/swing/JFileChooser;
 	FIELD field_3577 _clipclass Ljava/lang/Class;
 	FIELD field_3578 _copy Ljavax/swing/Action;
+	FIELD field_3579 _cut Ljavax/swing/Action;
 	FIELD field_3580 _delete Ljavax/swing/Action;
 	FIELD field_3581 _editListener LClass_1423;
 	FIELD field_3582 _exportConfigs Ljavax/swing/JMenuItem;
@@ -8804,6 +8819,8 @@ CLASS Class_1465 com/threerings/config/tools/ConfigEditor
 	CLASS Class_1466 ConfigEdit
 		FIELD field_3599 _diffKey Ljava/lang/String;
 		FIELD field_3600 _group LClass_1410;
+		FIELD field_3601 _new LClass_1414;
+		FIELD field_3602 _old LClass_1414;
 		FIELD field_3603 _type LClass_1465$Class_1466$Class_1467;
 		METHOD method_5937 addEdit (Ljavax/swing/undo/UndoableEdit;)Z
 		METHOD method_5938 getPresentationName ()Ljava/lang/String;
@@ -8883,6 +8900,7 @@ CLASS Class_1473 com/threerings/config/tools/ConfigFlattener
 		METHOD method_5988 values ()[LClass_1473$Class_1475;
 CLASS Class_1476 com/threerings/config/tools/ConfigSearcher
 	FIELD field_3627 _content Ljavax/swing/JPanel;
+	FIELD field_3628 _ctx LClass_1672;
 	FIELD field_3629 _eprefs LClass_7710$Class_7711;
 	FIELD field_3630 _nextStatusUpdate J
 	FIELD field_3631 _status Ljavax/swing/JLabel;
@@ -8909,10 +8927,12 @@ CLASS Class_1476 com/threerings/config/tools/ConfigSearcher
 	CLASS Class_1478
 		METHOD method_6002 (LClass_1412;Ljava/lang/Class;)LClass_460;
 	CLASS Class_1479
+		FIELD field_3638 _ctx LClass_1672;
 	CLASS Class_1480
 		METHOD method_6003 (LClass_1476$Class_1484;)Ljava/util/Iterator;
 		METHOD method_6004 ()Ljava/lang/String;
 	CLASS Class_1481
+		FIELD field_3643 _ctx LClass_1672;
 		FIELD field_3644 _label Ljava/lang/String;
 		METHOD method_6005 (LClass_1476$Class_1484;Ljava/io/File;)LClass_1476$Class_1483;
 		METHOD method_6006 (Ljava/io/File;LClass_1476$Class_1484;)LClass_1476$Class_1483;
@@ -9075,6 +9095,7 @@ CLASS Class_1518 com/threerings/crowd/chat/client/ChatDirector
 	FIELD field_3727 _place LClass_1605;
 	FIELD field_3728 _clobj LClass_3700;
 	FIELD field_3729 _bundle Ljava/lang/String;
+	FIELD field_3730 _ctx LClass_1514;
 	METHOD method_6092 (LClass_1536;)Z
 	METHOD method_6093 (LClass_1537;)Z
 	METHOD method_6094 (LClass_1543;Ljava/lang/String;B)V
@@ -9239,6 +9260,7 @@ CLASS Class_1567
 CLASS Class_1568
 CLASS Class_1569
 CLASS Class_1570 com/threerings/crowd/client/LocationDirector
+	FIELD field_3797 _ctx LClass_1514;
 	FIELD field_3798 _observers LClass_1234;
 	METHOD method_6189 (ILClass_1301;)Z
 	METHOD method_6190 (ILClass_1604;)V
@@ -9302,6 +9324,7 @@ CLASS Class_1587
 	METHOD method_6230 (LClass_1601;LClass_1601;)V
 	METHOD method_6231 (LClass_1601;)V
 CLASS Class_1588 com/threerings/crowd/client/PlaceController
+	FIELD field_3824 _ctx LClass_1514;
 	METHOD method_6232 (LClass_1514;)LClass_1563;
 	METHOD method_6233 (LClass_1514;LClass_1604;)V
 	METHOD method_6234 (LClass_1588$Class_1589;)V
@@ -9701,6 +9724,7 @@ CLASS Class_1696 com/threerings/editor/swing/BaseEditorPanel
 		FIELD field_3958 this$0 LClass_1696;
 		METHOD method_6484 actionPerformed (Ljava/awt/event/ActionEvent;)V
 CLASS Class_1697 com/threerings/editor/swing/BasePropertyEditor
+	FIELD field_3965 _ctx LClass_1672;
 	FIELD field_3966 _highlight Ljavax/swing/JButton;
 	FIELD field_3967 _highlighted Z
 	FIELD field_3968 _invalid Z
@@ -9812,6 +9836,7 @@ CLASS Class_1703 com/threerings/editor/swing/FindDialog
 	METHOD method_6553 (Ljava/awt/Component;)Ljava/awt/Rectangle;
 	METHOD method_6554 ()V
 CLASS Class_1704 com/threerings/editor/swing/ObjectPanel
+	FIELD field_4001 _box Ljavax/swing/JComboBox;
 	FIELD field_4002 _group Ljavax/swing/Action;
 	FIELD field_4003 _lvalue Ljava/lang/Object;
 	FIELD field_4004 _outer Ljava/lang/Object;
@@ -9925,6 +9950,7 @@ CLASS Class_1710 com/threerings/editor/swing/Transform3DPanel
 		METHOD method_6624 values ()[LClass_1710$Class_1711;
 CLASS Class_1712 com/threerings/editor/swing/TreeEditorPanel
 	FIELD field_4039 _copy Ljavax/swing/Action;
+	FIELD field_4040 _cut Ljavax/swing/Action;
 	FIELD field_4041 _delete Ljavax/swing/Action;
 	FIELD field_4042 _export Ljavax/swing/Action;
 	FIELD field_4043 _import Ljavax/swing/Action;
@@ -10007,6 +10033,7 @@ CLASS Class_1719
 CLASS Class_1720
 	METHOD method_6672 actionPerformed (Ljava/awt/event/ActionEvent;)V
 CLASS Class_1721
+	FIELD field_4073 _lx I
 	METHOD method_6673 mouseDragged (Ljava/awt/event/MouseEvent;)V
 	METHOD method_6674 mousePressed (Ljava/awt/event/MouseEvent;)V
 CLASS Class_1722
@@ -10014,7 +10041,10 @@ CLASS Class_1722
 CLASS Class_1723
 	METHOD method_6676 stateChanged (Ljavax/swing/event/ChangeEvent;)V
 CLASS Class_1724 com/threerings/editor/swing/editors/ArrayListEditor
+	FIELD field_4079 _add Ljavax/swing/JButton;
 	FIELD field_4080 _fixed Z
+	FIELD field_4081 _max I
+	FIELD field_4082 _min I
 	METHOD method_6677 (I)Ljava/lang/Object;
 	METHOD method_6678 addValue (Ljava/lang/Object;)V
 	METHOD method_6679 (Ljava/lang/String;)Ljava/lang/String;
@@ -10027,7 +10057,9 @@ CLASS Class_1724 com/threerings/editor/swing/editors/ArrayListEditor
 	METHOD method_6686 (Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 	METHOD method_6687 (Z)V
 CLASS Class_1725 com/threerings/editor/swing/editors/BooleanEditor
+	FIELD field_4083 _box Ljavax/swing/JCheckBox;
 CLASS Class_1726 com/threerings/editor/swing/editors/ChoiceEditor
+	FIELD field_4084 _box Ljavax/swing/JComboBox;
 	METHOD method_6688 ()[Ljava/lang/Object;
 CLASS Class_1727 com/threerings/editor/swing/editors/Color4fEditor
 	FIELD field_4085 _button Ljavax/swing/JButton;
@@ -10055,6 +10087,7 @@ CLASS Class_1728 com/threerings/editor/swing/editors/ColorizationEditor
 		METHOD method_6700 hashCode ()I
 		METHOD method_6701 toString ()Ljava/lang/String;
 CLASS Class_1731 com/threerings/editor/swing/editors/ConfigEditor
+	FIELD field_4094 _box LClass_1447;
 	METHOD method_6702 (LClass_1731;)Ljava/lang/Object;
 	METHOD method_6703 (LClass_1731;)Ljava/lang/Object;
 CLASS Class_1732 com/threerings/editor/swing/editors/ConfigReferenceEditor
@@ -10126,6 +10159,7 @@ CLASS Class_1739 com/threerings/editor/swing/editors/DateTimeEditor
 	CLASS Class_1742 TimeOnlyEditor
 CLASS Class_1743 com/threerings/editor/swing/editors/DerivedConfigReferenceEditor
 CLASS Class_1744 com/threerings/editor/swing/editors/EnumEditor
+	FIELD field_4120 _box Ljavax/swing/JComboBox;
 	METHOD method_6745 (LClass_7683;Ljava/lang/Enum;)Ljava/lang/String;
 	METHOD method_6746 ()Ljava/util/List;
 CLASS Class_1745 com/threerings/editor/swing/editors/EnumPanelArrayListEditor
@@ -10135,6 +10169,7 @@ CLASS Class_1745 com/threerings/editor/swing/editors/EnumPanelArrayListEditor
 	METHOD method_6750 ()Ljava/util/List;
 	METHOD method_6751 ()Ljava/lang/Class;
 	CLASS Class_1746 EnumEntryPanel
+		FIELD field_4121 _box Ljavax/swing/JComboBox;
 		FIELD field_4122 this$0 LClass_1745;
 		METHOD method_6752 (LClass_7683;Ljava/lang/Enum;)Ljava/lang/String;
 		METHOD method_6753 (Ljava/awt/event/ActionEvent;)V
@@ -10391,6 +10426,7 @@ CLASS Class_1788
 	METHOD method_6909 getDescription ()Ljava/lang/String;
 CLASS Class_1789
 CLASS Class_1790 com/threerings/editor/tools/BatchValidateDialog
+	FIELD field_4212 _ctx LClass_1672;
 	FIELD field_4213 _excludes Ljavax/swing/JTextField;
 	FIELD field_4214 _includes Ljavax/swing/JTextField;
 	FIELD field_4215 _prefs Ljava/util/prefs/Preferences;
@@ -10488,6 +10524,8 @@ CLASS Class_1811 com/threerings/export/Encodable
 	METHOD method_6973 encodeToStream (Ljava/io/DataOutputStream;)V
 	METHOD method_6974 encodeToString ()Ljava/lang/String;
 CLASS Class_1812 com/threerings/export/Exporter
+	FIELD field_4273 _a1 [Ljava/lang/Object;
+	FIELD field_4274 _a2 [Ljava/lang/Object;
 	FIELD field_4275 _object Ljava/lang/Object;
 	METHOD method_6975 (LClass_1869;)V
 	METHOD method_6976 (Ljava/lang/String;BB)V
@@ -12089,7 +12127,9 @@ CLASS Class_2214 com/threerings/getdown/launcher/ProxyPanel
 		METHOD method_7891 getPreferredSize ()Ljava/awt/Dimension;
 CLASS Class_2218 com/threerings/getdown/launcher/StatusPanel
 	FIELD field_5137 _barimg Ljava/awt/Image;
+	FIELD field_5138 _bg LClass_2222;
 	FIELD field_5139 _displayError Z
+	FIELD field_5140 _ifc LClass_2191$Class_2193;
 	FIELD field_5141 _label LClass_21;
 	FIELD field_5142 _msgs Ljava/util/ResourceBundle;
 	FIELD field_5143 _newlab LClass_21;
@@ -12125,6 +12165,7 @@ CLASS Class_2218 com/threerings/getdown/launcher/StatusPanel
 	METHOD method_7909 removeNotify ()V
 	METHOD method_7910 setStatus (Ljava/lang/String;Z)V
 CLASS Class_2219
+	FIELD field_5157 _ifc LClass_2191$Class_2193;
 	METHOD method_7911 (Z)V
 	METHOD method_7912 (Z)V
 	METHOD method_7913 (LClass_2191$Class_2193$Class_2194;)V
@@ -12641,6 +12682,8 @@ CLASS Class_2333 com/threerings/math/Plane
 	FIELD field_5374 XZ_PLANE LClass_2333;
 	FIELD field_5375 YZ_PLANE LClass_2333;
 	FIELD field_5376 _normal LClass_2342;
+	FIELD field_5377 _v1 LClass_2342;
+	FIELD field_5378 _v2 LClass_2342;
 	FIELD field_5379 constant F
 	METHOD method_8253 equals (Ljava/lang/Object;)Z
 	METHOD method_8254 fromPointNormal (LClass_2342;LClass_2342;)LClass_2333;
@@ -12821,6 +12864,9 @@ CLASS Class_2339 com/threerings/math/Transform3D
 	METHOD method_8408 ()LClass_2342;
 	METHOD method_8409 writeFields (LClass_1812;)V
 CLASS Class_2340 com/threerings/math/Triangle
+	FIELD field_5403 _v1 LClass_2342;
+	FIELD field_5404 _v2 LClass_2342;
+	FIELD field_5405 _v3 LClass_2342;
 	METHOD method_8410 (LClass_2340;)LClass_2340;
 	METHOD method_8411 (LClass_2342;LClass_2342;LClass_2342;)LClass_2340;
 	METHOD method_8412 getIntersection (LClass_2346;LClass_2342;)Z
@@ -13018,8 +13064,12 @@ CLASS Class_2351 com/threerings/media/MediaPanel
 CLASS Class_2354 com/threerings/media/VirtualMediaPanel
 	FIELD field_5445 _abounds Ljava/awt/Rectangle;
 	FIELD field_5446 _background LClass_2385;
+	FIELD field_5447 _dx D
+	FIELD field_5448 _dy D
 	FIELD field_5449 _fmode B
 	FIELD field_5450 _fpath LClass_2368;
+	FIELD field_5451 _nx I
+	FIELD field_5452 _ny I
 	FIELD field_5453 _trackers Ljava/util/ArrayList;
 	FIELD field_5454 _vbounds Ljava/awt/Rectangle;
 	FIELD field_20981 _zoomManager LClass_7976;
@@ -13121,6 +13171,7 @@ CLASS Class_2376 com/threerings/media/image/ColorPository
 	METHOD method_8645 (Ljava/lang/String;I)LClass_2380;
 	CLASS Class_2377 ClassRecord
 		FIELD field_5484 _fhsv [I
+		FIELD field_5485 _hsv [F
 		FIELD field_5487 classId I
 		FIELD field_5488 colors LClass_1207;
 		FIELD field_5489 defaultId I
@@ -13149,6 +13200,7 @@ CLASS Class_2379
 	FIELD field_5501 _image Ljava/awt/image/BufferedImage;
 CLASS Class_2380
 	FIELD field_5503 _fhsv [I
+	FIELD field_5504 _hsv [F
 	FIELD field_5505 colorizationId I
 	FIELD field_5506 offsets [F
 	FIELD field_5507 range [F
@@ -13304,6 +13356,7 @@ CLASS Class_2407 com/threerings/miso/client/MisoScenePanel
 	FIELD field_5571 _applicator LClass_2431;
 	FIELD field_5572 _armedItem Ljava/lang/Object;
 	FIELD field_5573 _blocks Ljava/util/concurrent/ConcurrentHashMap;
+	FIELD field_5574 _ctx LClass_2400;
 	FIELD field_5575 _delayRepaint Z
 	FIELD field_5576 _dframe Ljavax/swing/JFrame;
 	FIELD field_5577 _dirtyItems LClass_2412;
@@ -13677,6 +13730,7 @@ CLASS Class_2457
 	FIELD field_5796 _remaining F
 	FIELD field_5797 _transitioning Z
 CLASS Class_2458
+	FIELD field_5800 _id I
 	FIELD field_5801 _maxDistance F
 	FIELD field_5802 _soundmgr LClass_2515;
 	METHOD method_8996 (Z)V
@@ -13762,6 +13816,7 @@ CLASS Class_2467
 	METHOD method_9062 ([BZLjava/nio/ByteOrder;)Ljava/nio/ByteBuffer;
 	METHOD method_9063 (Ljava/io/InputStream;)LClass_2467;
 CLASS Class_2468
+	FIELD field_5853 _id I
 	FIELD field_5854 _soundmgr LClass_2515;
 	METHOD method_9064 (ILjava/nio/ByteBuffer;I)V
 	METHOD method_9065 delete ()V
@@ -13982,6 +14037,7 @@ CLASS Class_2521
 	METHOD method_9168 (LClass_2496;)I
 CLASS Class_2522
 	FIELD field_6015 _epoch LClass_2062;
+	FIELD field_6016 _now LClass_2062;
 	FIELD field_6017 _started LClass_2059;
 	FIELD field_6018 _transform LClass_2339;
 	METHOD method_9169 (LClass_2470;)V
@@ -14035,6 +14091,7 @@ CLASS Class_2522
 		METHOD method_9202 (LClass_2470$Class_2486;)V
 	CLASS Class_2533
 		FIELD field_6050 _completed Z
+		FIELD field_6051 _now LClass_2062;
 		FIELD field_6052 _sidx I
 		FIELD field_6053 _time F
 		METHOD method_9203 (LClass_2470$Class_2487;)V
@@ -14082,6 +14139,7 @@ CLASS Class_2539
 	CLASS 4
 		FIELD field_6069 this$0 LClass_2609;
 CLASS Class_2540 com/threerings/opengl/GlApp
+	FIELD field_6070 _at LClass_2342;
 	FIELD field_6071 _billboardRotation LClass_2334;
 	FIELD field_6072 _camhand LClass_2542;
 	FIELD field_6073 _cfgmgr LClass_1411;
@@ -14093,6 +14151,7 @@ CLASS Class_2540 com/threerings/opengl/GlApp
 	FIELD field_6079 _epoch LClass_2062;
 	FIELD field_6080 _imgcache LClass_3576;
 	FIELD field_6081 _msgmgr LClass_7684;
+	FIELD field_6082 _now LClass_2062;
 	FIELD field_6083 _renderEffects Z
 	FIELD field_6084 _renderScheme Ljava/lang/String;
 	FIELD field_6085 _renderer LClass_3267;
@@ -14100,6 +14159,7 @@ CLASS Class_2540 com/threerings/opengl/GlApp
 	FIELD field_6087 _shadcache LClass_3591;
 	FIELD field_6088 _soundmgr LClass_2515;
 	FIELD field_6089 _streamGain LClass_2060;
+	FIELD field_6090 _up LClass_2342;
 	FIELD field_6091 _viewTransform LClass_2339;
 	FIELD field_6092 _viewTransformState LClass_3290;
 	FIELD field_6093 _worldTransform LClass_2339;
@@ -14126,6 +14186,7 @@ CLASS Class_2540 com/threerings/opengl/GlApp
 	METHOD method_9252 xlate (Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 CLASS Class_2541
 	FIELD field_6094 _bottom F
+	FIELD field_6095 _far F
 	FIELD field_6096 _left F
 	FIELD field_6097 _localVolume LClass_2329;
 	FIELD field_6098 _mirrored Z
@@ -14134,6 +14195,7 @@ CLASS Class_2541
 	FIELD field_6101 _ortho Z
 	FIELD field_6102 _projection LClass_2332;
 	FIELD field_6103 _right F
+	FIELD field_6104 _top F
 	FIELD field_6105 _viewTransform LClass_2339;
 	FIELD field_6106 _viewport LClass_2998;
 	FIELD field_6107 _worldTransform LClass_2339;
@@ -14165,6 +14227,8 @@ CLASS Class_2541
 	METHOD method_9277 updateTransform ()V
 CLASS Class_2542 com/threerings/opengl/camera/CameraHandler
 	FIELD field_6109 _camera LClass_2541;
+	FIELD field_6110 _ctx LClass_3572;
+	FIELD field_6111 _far F
 	FIELD field_6112 _fovy F
 	FIELD field_6113 _matchRenderSurface Z
 	FIELD field_6114 _near F
@@ -14183,6 +14247,8 @@ CLASS Class_2542 com/threerings/opengl/camera/CameraHandler
 		METHOD method_9288 apply (LClass_2339;)Z
 CLASS Class_2544
 	FIELD field_6116 _camhand LClass_2545;
+	FIELD field_6117 _lx I
+	FIELD field_6118 _ly I
 	FIELD field_6119 _panXY Z
 	FIELD field_6120 _radiansPerPixel F
 	FIELD field_6121 _unitsPerClick F
@@ -14200,6 +14266,7 @@ CLASS Class_2545
 	FIELD field_6125 _maxElevation F
 	FIELD field_6126 _minDistance F
 	FIELD field_6127 _minElevation F
+	FIELD field_6128 _pan LClass_2342;
 	FIELD field_6129 _target LClass_2342;
 	METHOD method_9296 getCoords ()LClass_2337;
 	METHOD method_9297 getTarget ()LClass_2342;
@@ -14218,6 +14285,7 @@ CLASS Class_2547
 CLASS Class_2548 com/threerings/opengl/compositor/RenderQueue
 	FIELD field_6132 _batches Ljava/util/ArrayList;
 	FIELD field_6133 _config LClass_2575;
+	FIELD field_6134 _ctx LClass_3572;
 	FIELD field_6135 _groups LClass_1207;
 	FIELD field_6136 _lists LClass_1199;
 	FIELD field_6137 _priorities LClass_1207;
@@ -14236,6 +14304,7 @@ CLASS Class_2548 com/threerings/opengl/compositor/RenderQueue
 		METHOD method_9316 compareTo (LClass_2548$Class_2549;)I
 		METHOD method_9317 compareTo (Ljava/lang/Object;)I
 	CLASS Class_2550
+		FIELD field_6139 _ctx LClass_3572;
 		FIELD field_6140 _queuesByName Ljava/util/HashMap;
 		FIELD field_6141 _queues LClass_1199;
 		METHOD method_9318 clearQueues ()V
@@ -14253,6 +14322,7 @@ CLASS Class_2548 com/threerings/opengl/compositor/RenderQueue
 		CLASS Class_2553
 			FIELD field_6144 _depth F
 			FIELD field_6145 _gstate LClass_2548$Class_2550$Class_2551;
+			FIELD field_6146 _key [I
 			METHOD method_9326 (LClass_2548$Class_2552;)V
 	CLASS Class_2554
 		FIELD field_6147 _bstates Ljava/util/ArrayList;
@@ -14266,6 +14336,7 @@ CLASS Class_2556 com/threerings/opengl/compositor/Compositor
 	FIELD field_6151 _cachedEffects Ljava/util/Map;
 	FIELD field_6152 _camera LClass_2541;
 	FIELD field_6153 _combinedEffects Ljava/util/List;
+	FIELD field_6154 _ctx LClass_3572;
 	FIELD field_6155 _defaultBackgroundColor LClass_3264;
 	FIELD field_6156 _dependencies Ljava/util/Map;
 	FIELD field_6157 _effects Ljava/util/List;
@@ -14314,6 +14385,7 @@ CLASS Class_2556 com/threerings/opengl/compositor/Compositor
 		METHOD method_9358 (LClass_2556;)V
 CLASS Class_2558
 	FIELD field_6170 CUBE_FACE_ROTATIONS [LClass_2334;
+	FIELD field_6171 _ctx LClass_3572;
 	METHOD method_9359 cleanup ()V
 	METHOD method_9360 merge (LClass_2558;)V
 	METHOD method_9361 resolve ()V
@@ -14337,6 +14409,8 @@ CLASS Class_2558
 		FIELD field_6182 texture LClass_3493;
 	CLASS Class_2563
 	CLASS Class_2564
+		FIELD field_6183 _v0 LClass_2342;
+		FIELD field_6184 _v1 LClass_2342;
 		FIELD field_6185 ratio F
 	CLASS Class_2565
 		FIELD field_6186 config LClass_2570;
@@ -14480,7 +14554,9 @@ CLASS Class_2603 com/threerings/opengl/compositor/Enqueueable
 CLASS Class_2604
 	FIELD field_6250 NOOP_TECHNIQUE LClass_2570$Class_2574;
 	FIELD field_6251 _config LClass_2570;
+	FIELD field_6252 _ctx LClass_3572;
 	FIELD field_6253 _identity Ljava/lang/String;
+	FIELD field_6254 _idx I
 	FIELD field_6255 _output LClass_2604$Class_2606;
 	FIELD field_6256 _priority I
 	FIELD field_6257 _targets [LClass_2604$Class_2606;
@@ -14496,6 +14572,7 @@ CLASS Class_2604
 		METHOD method_9414 setConfig (LClass_2592$Class_2594;)V
 	CLASS Class_2606
 		FIELD field_6258 _config LClass_2592;
+		FIELD field_6259 _ctx LClass_3572;
 		FIELD field_6260 _executors [LClass_2097;
 		METHOD method_9415 render ()V
 		METHOD method_9416 setConfig (LClass_2592;)V
@@ -14592,6 +14669,7 @@ CLASS Class_2635
 	FIELD field_6311 _bounds LClass_2328;
 	FIELD field_6312 _completed Z
 	FIELD field_6313 _config LClass_2639;
+	FIELD field_6314 _ctx LClass_3572;
 	FIELD field_6315 _groupBounds [LClass_2328;
 	FIELD field_6316 _influenceFlags I
 	FIELD field_6317 _layers [LClass_2635$Class_2636;
@@ -14617,6 +14695,7 @@ CLASS Class_2635
 		FIELD field_6330 _completed Z
 		FIELD field_6331 _config LClass_2639$Class_2640;
 		FIELD field_6332 _counter LClass_2637;
+		FIELD field_6333 _ctx LClass_3572;
 		FIELD field_6334 _geometryRadius F
 		FIELD field_6335 _influences [LClass_2638;
 		FIELD field_6336 _living LClass_2061;
@@ -14880,10 +14959,14 @@ CLASS Class_2698
 CLASS Class_2699
 	CLASS Class_2700
 		FIELD field_6496 _models [LClass_3226;
+		FIELD field_6497 _r LClass_2342;
+		FIELD field_6498 _s LClass_2342;
+		FIELD field_6499 _t LClass_2342;
 		FIELD field_6500 _view LClass_2342;
 		FIELD field_6501 _viewTransform LClass_2339;
 		FIELD field_6502 _vrot LClass_2334;
 CLASS Class_2701
+	FIELD field_6503 _age F
 	FIELD field_6504 _alphaMode LClass_2610;
 	FIELD field_6505 _angularVelocity LClass_2342;
 	FIELD field_6506 _color LClass_3264;
@@ -14919,12 +15002,16 @@ CLASS Class_2702
 	FIELD field_6524 _drawCommand LClass_3483$Class_3489;
 	FIELD field_6525 _last LClass_2342;
 	FIELD field_6526 _living LClass_2061;
+	FIELD field_6527 _n LClass_2342;
 	FIELD field_6528 _next LClass_2342;
 	FIELD field_6529 _normalOffset I
 	FIELD field_6530 _particles [LClass_2701;
 	FIELD field_6531 _position LClass_2342;
+	FIELD field_6532 _r LClass_2342;
 	FIELD field_6533 _rotation LClass_2334;
+	FIELD field_6534 _s LClass_2342;
 	FIELD field_6535 _stride I
+	FIELD field_6536 _t LClass_2342;
 	FIELD field_6537 _texCoordOffset I
 	FIELD field_6538 _transformState LClass_3290;
 	FIELD field_6539 _vertexOffset I
@@ -15166,13 +15253,19 @@ CLASS Class_2743
 	FIELD field_6651 _config LClass_2743$Class_2744;
 	FIELD field_6652 _container LClass_2814;
 	FIELD field_6653 _fade LClass_2743$Class_2745;
+	FIELD field_6654 _fit LClass_2761$Class_2762;
+	FIELD field_6655 _gap I
 	FIELD field_6656 _icon LClass_2834;
+	FIELD field_6657 _ix I
+	FIELD field_6658 _iy I
 	FIELD field_6659 _orient I
 	FIELD field_6660 _prefWidth I
 	FIELD field_6661 _prefconfig LClass_2743$Class_2744;
 	FIELD field_6662 _prefsize LClass_2991;
 	FIELD field_6663 _srect LClass_2998;
 	FIELD field_6664 _textRotation I
+	FIELD field_6665 _tx I
+	FIELD field_6666 _ty I
 	FIELD field_6667 _value Ljava/lang/String;
 	METHOD method_9586 computePreferredSize (II)LClass_2991;
 	METHOD method_9587 computeSize (LClass_2743$Class_2744;)LClass_2991;
@@ -15425,6 +15518,8 @@ CLASS Class_2766 com/threerings/opengl/gui/Root
 	FIELD field_6763 _mouseX I
 	FIELD field_6764 _mouseY I
 	FIELD field_6765 _pressedKeys LClass_1207;
+	FIELD field_6766 _px I
+	FIELD field_6767 _py I
 	FIELD field_6768 _rendererObserver LClass_3267$Class_3271;
 	FIELD field_6769 _scale F
 	FIELD field_6770 _soundGroup LClass_2513;
@@ -15543,6 +15638,9 @@ CLASS Class_2773
 CLASS Class_2774
 	FIELD field_6799 this$0 LClass_2772;
 CLASS Class_2775
+	FIELD field_6800 _sv I
+	FIELD field_6801 _sx I
+	FIELD field_6802 _sy I
 	FIELD field_6803 this$0 LClass_2772;
 CLASS Class_2776
 	FIELD field_6804 this$0 LClass_2772;
@@ -15747,6 +15845,7 @@ CLASS Class_2803
 	FIELD field_6889 _selector LClass_3009;
 	FIELD field_6890 _selidx I
 	FIELD field_6891 _tabs Ljava/util/ArrayList;
+	FIELD field_6892 _top LClass_2747;
 	METHOD method_9881 addTab (Ljava/lang/String;LClass_3034;)V
 	METHOD method_9882 addTab (Ljava/lang/String;LClass_3034;Z)V
 	METHOD method_9883 addTab (Ljava/lang/String;LClass_3034;ZLClass_1412;)V
@@ -15836,6 +15935,7 @@ CLASS Class_2815
 	FIELD field_6921 _curs LClass_2993;
 	FIELD field_6922 _glyphs [LClass_3056;
 	FIELD field_6923 _lines I
+	FIELD field_6924 _sel LClass_2993;
 	METHOD method_9929 calculatePosition (ILClass_2993;)V
 CLASS Class_2816 com/threerings/opengl/gui/TextField
 	FIELD field_6925 _cursx I
@@ -15954,6 +16054,8 @@ CLASS Class_2828 com/threerings/opengl/gui/BoundedRangeModel
 	FIELD field_6960 _event LClass_3000;
 	FIELD field_6961 _extent I
 	FIELD field_6962 _listeners Ljava/util/ArrayList;
+	FIELD field_6963 _max I
+	FIELD field_6964 _min I
 	FIELD field_6965 _value I
 	METHOD method_9996 addChangeListener (LClass_3010;)V
 	METHOD method_9997 createWheelListener ()LClass_3018;
@@ -16615,6 +16717,7 @@ CLASS Class_2979 com/threerings/opengl/gui/layout/GroupLayout
 	FIELD field_7396 RIGHT LClass_2979$Class_2981;
 	FIELD field_7397 STRETCH LClass_2979$Class_2982;
 	FIELD field_7399 _constraints Ljava/util/Map;
+	FIELD field_7400 _gap I
 	FIELD field_7401 _justification LClass_2979$Class_2981;
 	FIELD field_7402 _offjust LClass_2979$Class_2981;
 	FIELD field_7403 _offpolicy LClass_2979$Class_2982;
@@ -16753,6 +16856,7 @@ CLASS Class_2994
 		FIELD field_7447 _povy Ljava/util/Map;
 		FIELD field_7448 _pressedKeys LClass_1212;
 		FIELD field_7449 _pressedModifiers I
+		FIELD field_20992 _pk LClass_2994;
 		METHOD method_10213 addModifierKey (II)V
 		METHOD method_10214 addModifierUser (I)V
 		METHOD method_10215 applyModifierKeys (I)I
@@ -16822,6 +16926,8 @@ CLASS Class_3006 com/threerings/opengl/gui/event/MouseEvent
 	FIELD field_7467 _button I
 	FIELD field_7468 _ccount I
 	FIELD field_7469 _delta I
+	FIELD field_7470 _mx I
+	FIELD field_7471 _my I
 	FIELD field_7472 _type I
 	METHOD method_10252 getButton ()I
 	METHOD method_10253 getClickCount ()I
@@ -16899,6 +17005,7 @@ CLASS Class_3022
 	METHOD method_10304 mouseWheelMoved (Ljava/awt/event/MouseWheelEvent;)V
 CLASS Class_3023
 	FIELD field_7479 _area LClass_2809;
+	FIELD field_7480 _end LClass_2989;
 	FIELD field_7481 _msgs LClass_7683;
 	FIELD field_7482 _scrollbar LClass_2772;
 	FIELD field_7483 _systemColors [LClass_3264;
@@ -16969,6 +17076,7 @@ CLASS Class_3034 com/threerings/opengl/gui/Component
 	FIELD field_7502 _backgrounds [LClass_2782;
 	FIELD field_7503 _borders [LClass_2829;
 	FIELD field_7504 _colors [LClass_3264;
+	FIELD field_7505 _ctx LClass_3572;
 	FIELD field_7506 _cursor LClass_3038;
 	FIELD field_7507 _enabled Z
 	FIELD field_7508 _height I
@@ -16987,6 +17095,8 @@ CLASS Class_3034 com/threerings/opengl/gui/Component
 	FIELD field_7521 _valid Z
 	FIELD field_7522 _visible Z
 	FIELD field_7523 _width I
+	FIELD field_7524 _x I
+	FIELD field_7525 _y I
 	METHOD method_10341 acceptsFocus ()Z
 	METHOD method_10342 addListener (LClass_3011;)V
 	METHOD method_10343 addWindowListener (LClass_3020;)Ljava/lang/Runnable;
@@ -17094,6 +17204,7 @@ CLASS Class_3035
 	FIELD field_7528 _billboardViewTransform LClass_2339;
 	FIELD field_7529 _bounds LClass_2328;
 	FIELD field_7530 _config LClass_2879;
+	FIELD field_7531 _ctx LClass_3572;
 	FIELD field_7532 _influenceFlags I
 	FIELD field_7533 _localTransform LClass_2339;
 	FIELD field_7534 _nbounds LClass_2328;
@@ -17111,6 +17222,8 @@ CLASS Class_3037
 CLASS Class_3038
 	FIELD field_7542 _awtCursor Ljava/awt/Cursor;
 	FIELD field_7543 _glfwCursor J
+	FIELD field_7544 _hx I
+	FIELD field_7545 _hy I
 	FIELD field_7546 _image Ljava/awt/image/BufferedImage;
 	METHOD method_10442 createAWTCursor (Ljava/awt/Toolkit;)Ljava/awt/Cursor;
 	METHOD method_10443 createGLFWCursor ()J
@@ -17187,8 +17300,13 @@ CLASS Class_3042
 		METHOD method_10473 hashCode ()I
 	CLASS Class_3044
 		FIELD field_7581 _bounds LClass_2998;
+		FIELD field_7582 _c C
 		FIELD field_7583 _effect I
+		FIELD field_7584 _s1 F
+		FIELD field_7585 _s2 F
 		FIELD field_7586 _size I
+		FIELD field_7587 _t1 F
+		FIELD field_7588 _t2 F
 		FIELD field_7589 _units [LClass_3499;
 		FIELD field_7590 _vector Ljava/awt/font/GlyphVector;
 		FIELD field_7591 this$0 LClass_3042;
@@ -17198,6 +17316,8 @@ CLASS Class_3042
 		FIELD field_7593 _height I
 		FIELD field_7594 _texture LClass_3495;
 		FIELD field_7595 _units [LClass_3499;
+		FIELD field_7596 _x I
+		FIELD field_7597 _y I
 		FIELD field_7598 this$0 LClass_3042;
 		METHOD method_10475 (II[F)[LClass_3499;
 CLASS Class_3046
@@ -17242,6 +17362,7 @@ CLASS Class_3048
 		METHOD method_10497 textRemoved (LClass_3048;II)V
 CLASS Class_3050 com/threerings/opengl/gui/text/HTMLView
 	FIELD field_7613 _antialias Z
+	FIELD field_7614 _kit Ljavax/swing/text/html/HTMLEditorKit;
 	FIELD field_7615 _rendered LClass_2742;
 	FIELD field_7616 _rsize Ljava/awt/Rectangle;
 	FIELD field_7617 _style Ljavax/swing/text/html/StyleSheet;
@@ -17630,6 +17751,7 @@ CLASS Class_3118
 	FIELD field_7780 BLANK_TECHNIQUE LClass_3086;
 	FIELD field_7781 _boneMatrices [LClass_2332;
 	FIELD field_7782 _compositable LClass_2555;
+	FIELD field_7783 _ctx LClass_3572;
 	FIELD field_7784 _geometryConfig LClass_2725;
 	FIELD field_7785 _geometry LClass_2721;
 	FIELD field_7786 _group LClass_2548$Class_2550;
@@ -17706,6 +17828,7 @@ CLASS Class_3123 com/threerings/opengl/model/Animation
 		FIELD field_7811 frame F
 	CLASS Class_3127 Implementation
 		FIELD field_7812 _config LClass_3147$Class_3153;
+		FIELD field_7813 _ctx LClass_3572;
 		FIELD field_7814 _targetWeight F
 		FIELD field_7815 _weight F
 		FIELD field_7816 _weightRate F
@@ -18126,18 +18249,22 @@ CLASS Class_3209
 	FIELD field_8059 val$localTransform LClass_2339;
 	FIELD field_8060 val$parentViewTransform LClass_2339;
 CLASS Class_3210
+	FIELD field_8061 _rot LClass_2334;
 	FIELD field_8062 _trans LClass_2342;
 	FIELD field_8063 val$localTransform LClass_2339;
 	FIELD field_8064 val$parentViewTransform LClass_2339;
 CLASS Class_3211
+	FIELD field_8065 _rot LClass_2334;
 	FIELD field_8066 _trans LClass_2342;
 	FIELD field_8067 val$localTransform LClass_2339;
 	FIELD field_8068 val$parentViewTransform LClass_2339;
 CLASS Class_3212
+	FIELD field_8069 _rot LClass_2334;
 	FIELD field_8070 _trans LClass_2342;
 	FIELD field_8071 val$localTransform LClass_2339;
 	FIELD field_8072 val$parentViewTransform LClass_2339;
 CLASS Class_3213
+	FIELD field_8073 _rot LClass_2334;
 	FIELD field_8074 _trans LClass_2342;
 	FIELD field_8075 val$brot LClass_2334;
 	FIELD field_8076 val$localTransform LClass_2339;
@@ -18147,6 +18274,7 @@ CLASS Class_3214
 	FIELD field_8079 val$pworld LClass_2339;
 CLASS Class_3215 com/threerings/opengl/model/config/package-info
 CLASS Class_3216
+	FIELD field_8080 _lup LClass_2342;
 	FIELD field_8081 val$local LClass_2339;
 	FIELD field_8082 val$pworld LClass_2339;
 CLASS Class_3217
@@ -18165,6 +18293,7 @@ CLASS Class_3221
 	FIELD field_8089 _completed Z
 	FIELD field_8090 _configAttachments [LClass_3226;
 	FIELD field_8091 _config LClass_3160;
+	FIELD field_8092 _ctx LClass_3572;
 	FIELD field_8093 _influenceFlags I
 	FIELD field_8094 _localTransform LClass_2339;
 	FIELD field_8095 _nbounds LClass_2328;
@@ -18202,6 +18331,7 @@ CLASS Class_3221
 	CLASS Class_3223
 		FIELD field_8115 _boneTransform LClass_2339;
 		FIELD field_8116 _config LClass_3160$Class_3167;
+		FIELD field_8117 _ctx LClass_3572;
 		FIELD field_8118 _localTransform LClass_2339;
 		FIELD field_8119 _parentViewTransform LClass_2339;
 		FIELD field_8120 _parentWorldTransform LClass_2339;
@@ -18228,6 +18358,7 @@ CLASS Class_3224
 	FIELD field_8126 _bounds LClass_2328;
 	FIELD field_8127 _completed Z
 	FIELD field_8128 _config LClass_3173;
+	FIELD field_8129 _ctx LClass_3572;
 	FIELD field_8130 _influenceFlags I
 	FIELD field_8131 _localTransform LClass_2339;
 	FIELD field_8132 _models [LClass_3226;
@@ -18244,6 +18375,7 @@ CLASS Class_3225
 	FIELD field_8140 _bounds LClass_2328;
 	FIELD field_8141 _completed Z
 	FIELD field_8142 _config LClass_3175;
+	FIELD field_8143 _ctx LClass_3572;
 	FIELD field_8144 _distance LClass_2060;
 	FIELD field_8145 _evaluators [LClass_1903$Class_1920;
 	FIELD field_8146 _influenceFlags I
@@ -18374,6 +18506,7 @@ CLASS Class_3233
 	FIELD field_8178 _bounds LClass_2328;
 	FIELD field_8179 _completed Z
 	FIELD field_8180 _config LClass_3194;
+	FIELD field_8181 _ctx LClass_3572;
 	FIELD field_8182 _eidx I
 	FIELD field_8183 _executors [LClass_3233$Class_3234;
 	FIELD field_8184 _influenceFlags I
@@ -18394,6 +18527,7 @@ CLASS Class_3233
 CLASS Class_3235
 	FIELD field_8196 _bounds LClass_2328;
 	FIELD field_8197 _config LClass_3196$Class_3197;
+	FIELD field_8198 _ctx LClass_3572;
 	FIELD field_8199 _localTransform LClass_2339;
 	FIELD field_8200 _nbounds LClass_2328;
 	FIELD field_8201 _parentViewTransform LClass_2339;
@@ -18667,6 +18801,7 @@ CLASS Class_3267 com/threerings/opengl/renderer/Renderer
 	FIELD field_8319 _alphaTestFunc I
 	FIELD field_8320 _alphaTestRef F
 	FIELD field_8321 _arrayBuffer LClass_3291;
+	FIELD field_8322 _ati Z
 	FIELD field_8323 _backAmbient LClass_3264;
 	FIELD field_8324 _backDiffuse LClass_3264;
 	FIELD field_8325 _backEmission LClass_3264;
@@ -18700,6 +18835,7 @@ CLASS Class_3267 com/threerings/opengl/renderer/Renderer
 	FIELD field_8353 _displayListCount I
 	FIELD field_8354 _drawBuffer I
 	FIELD field_8355 _elementArrayBuffer LClass_3291;
+	FIELD field_8356 _far F
 	FIELD field_8357 _finalizedBufferObjectBytes I
 	FIELD field_8358 _finalizedBufferObjects [I
 	FIELD field_8359 _finalizedDisplayLists [I
@@ -18734,6 +18870,7 @@ CLASS Class_3267 com/threerings/opengl/renderer/Renderer
 	FIELD field_8388 _lights [LClass_3267$Class_3270;
 	FIELD field_8389 _lineWidth F
 	FIELD field_8390 _localViewer Ljava/lang/Boolean;
+	FIELD field_8391 _mat LClass_2332;
 	FIELD field_8392 _matrixMode I
 	FIELD field_8393 _maxClipPlanes I
 	FIELD field_8394 _maxLights I
@@ -18782,6 +18919,7 @@ CLASS Class_3267 com/threerings/opengl/renderer/Renderer
 	FIELD field_8437 _textureBytes I
 	FIELD field_8438 _textureChangeCount I
 	FIELD field_8439 _textureCount I
+	FIELD field_8440 _top F
 	FIELD field_8441 _twoSide Ljava/lang/Boolean;
 	FIELD field_8442 _unitEnd I
 	FIELD field_8443 _units [LClass_3267$Class_3272;
@@ -18964,6 +19102,7 @@ CLASS Class_3276
 	FIELD field_8500 _blue Z
 	FIELD field_8501 _green Z
 	FIELD field_8502 _instances LClass_1207;
+	FIELD field_8503 _red Z
 	METHOD method_11167 getInstance (ZZZZ)LClass_3276;
 CLASS Class_3277 com/threerings/opengl/renderer/state/ColorState
 	FIELD field_8504 WHITE LClass_3277;
@@ -19091,6 +19230,7 @@ CLASS Class_3290 com/threerings/opengl/renderer/state/TransformState
 	METHOD method_11208 getModelview ()LClass_2339;
 CLASS Class_3291
 	FIELD field_8574 _bytes I
+	FIELD field_8575 _id I
 	FIELD field_8576 _renderer LClass_3267;
 	METHOD method_11209 finalize ()V
 	METHOD method_11210 getId ()I
@@ -19871,14 +20011,17 @@ CLASS Class_3449 com/threerings/opengl/renderer/config/TextureUnitConfig
 	METHOD method_11436 getTextureConfig (LClass_3572;)LClass_3387;
 	METHOD method_11437 isSupported (LClass_3572;Z)Z
 CLASS Class_3450
+	FIELD field_9017 _dir LClass_2342;
 	FIELD field_9018 this$0 LClass_3323$Class_3326;
 	FIELD field_9019 val$light LClass_3265;
 	FIELD field_9020 val$transform LClass_2339;
 CLASS Class_3451
+	FIELD field_9021 _pos LClass_2342;
 	FIELD field_9022 this$0 LClass_3323$Class_3328;
 	FIELD field_9023 val$light LClass_3265;
 	FIELD field_9024 val$transform LClass_2339;
 CLASS Class_3452
+	FIELD field_9025 _pos LClass_2342;
 	FIELD field_9026 this$0 LClass_3323$Class_3329;
 	FIELD field_9027 val$light LClass_3265;
 	FIELD field_9028 val$transform LClass_2339;
@@ -19956,6 +20099,7 @@ CLASS Class_3469
 	FIELD field_9083 _batches Ljava/util/ArrayList;
 	METHOD method_11438 getBatches ()Ljava/util/ArrayList;
 CLASS Class_3470
+	FIELD field_9084 _id I
 	FIELD field_9085 _renderer LClass_3267;
 	METHOD method_11439 begin ()V
 	METHOD method_11440 ()V
@@ -19969,6 +20113,7 @@ CLASS Class_3471
 	FIELD field_9089 _depthAttachment Ljava/lang/Object;
 	FIELD field_9090 _depthLevel I
 	FIELD field_9091 _depthParam I
+	FIELD field_9092 _id I
 	FIELD field_9093 _renderer LClass_3267;
 	FIELD field_9094 _stencilAttachment Ljava/lang/Object;
 	METHOD method_11444 delete ()V
@@ -20027,6 +20172,7 @@ CLASS Class_3472
 		METHOD method_11477 equals (Ljava/lang/Object;)Z
 		METHOD method_11478 hashCode ()I
 CLASS Class_3479
+	FIELD field_9108 _id I
 	FIELD field_9109 _renderer LClass_3267;
 	METHOD method_11479 delete ()V
 	METHOD method_11480 finalize ()V
@@ -20037,6 +20183,7 @@ CLASS Class_3481
 	METHOD method_11483 setSource (Ljava/lang/String;)Z
 CLASS Class_3482
 	FIELD field_9110 ASCII_CHARSET Ljava/nio/charset/Charset;
+	FIELD field_9111 _id I
 	FIELD field_9112 _renderer LClass_3267;
 	METHOD method_11484 finalize ()V
 	METHOD method_11485 getId ()I
@@ -20076,6 +20223,7 @@ CLASS Class_3483
 		METHOD method_11497 setLimits (II)V
 		METHOD method_11498 setRange (II)V
 	CLASS Class_3490
+		FIELD field_9128 _end I
 		FIELD field_9129 _start I
 	CLASS Class_3491
 		FIELD field_9130 _indices Ljava/nio/ShortBuffer;
@@ -20172,6 +20320,7 @@ CLASS Class_3497
 	METHOD method_11555 setImages (IZ[Ljava/awt/image/BufferedImage;ZZZ)V
 CLASS Class_3498
 	FIELD field_9159 _color LClass_3493;
+	FIELD field_9160 _ctx LClass_3572;
 	FIELD field_9161 _depthBits Z
 	FIELD field_9162 _depth LClass_3493;
 	FIELD field_9163 _framebuffer LClass_3471;
@@ -20400,6 +20549,7 @@ CLASS Class_3543
 	FIELD field_9306 _fogState LClass_3280;
 CLASS Class_3544
 	FIELD field_9307 _bounds LClass_2328;
+	FIELD field_9308 _box LClass_2328;
 	FIELD field_9309 _coord LClass_3544$Class_3545;
 	FIELD field_9310 _effects Ljava/util/HashMap;
 	FIELD field_9311 _elements Ljava/util/HashMap;
@@ -20414,6 +20564,7 @@ CLASS Class_3544
 	FIELD field_9320 _oversizedEffects Ljava/util/ArrayList;
 	FIELD field_9321 _oversizedElements Ljava/util/ArrayList;
 	FIELD field_9322 _oversizedInfluences Ljava/util/ArrayList;
+	FIELD field_9323 _pt LClass_2342;
 	FIELD field_9324 _visit I
 	METHOD method_11595 (Ljava/util/HashMap;Ljava/util/ArrayList;LClass_3558;)V
 	METHOD method_11596 addBounds (LClass_3544$Class_3545;LClass_3544$Class_3548;)V
@@ -20466,6 +20617,7 @@ CLASS Class_3551
 	FIELD field_9337 _alwaysTick Ljava/util/ArrayList;
 	FIELD field_9338 _alwaysTickTime J
 	FIELD field_9339 _clipmgr LClass_2510;
+	FIELD field_9340 _ctx LClass_3572;
 	FIELD field_9341 _disposed Z
 	FIELD field_9342 _dumpInfluences Z
 	FIELD field_9343 _effects LClass_3564;
@@ -20563,6 +20715,7 @@ CLASS Class_3557
 	FIELD field_9365 _added Z
 	FIELD field_9366 _bounds LClass_2328;
 	FIELD field_9367 _config LClass_3514;
+	FIELD field_9368 _ctx LClass_3572;
 	FIELD field_9369 _influenceFlags I
 	FIELD field_9370 _influence LClass_3555;
 	FIELD field_9371 _localTransform LClass_2339;
@@ -20604,6 +20757,7 @@ CLASS Class_3562
 	FIELD field_9390 _added Z
 	FIELD field_9391 _bounds LClass_2328;
 	FIELD field_9392 _config LClass_3519;
+	FIELD field_9393 _ctx LClass_3572;
 	FIELD field_9394 _effect LClass_3563;
 	FIELD field_9395 _influenceFlags I
 	FIELD field_9396 _localTransform LClass_2339;
@@ -20647,6 +20801,7 @@ CLASS Class_3565 com/threerings/opengl/util/DisplayMode
 		METHOD method_11722 valueOf (Ljava/lang/String;)LClass_3565$Class_3566;
 		METHOD method_11723 values ()[LClass_3565$Class_3566;
 CLASS Class_3567 com/threerings/opengl/util/PreloadableSet
+	FIELD field_9412 _ctx LClass_3572;
 	FIELD field_9413 _preloaded I
 	FIELD field_9414 _remaining Ljava/util/List;
 	METHOD method_11724 (LClass_3583;)Z
@@ -20658,6 +20813,9 @@ CLASS Class_3567 com/threerings/opengl/util/PreloadableSet
 	METHOD method_11730 preloadBatch (J)F
 CLASS Class_3568
 	FIELD field_9415 _vector LClass_2342;
+	FIELD field_9416 _x LClass_3056;
+	FIELD field_9417 _y LClass_3056;
+	FIELD field_9418 _z LClass_3056;
 	METHOD method_11731 drawAxis (LClass_3267;LClass_3056;FF)V
 CLASS Class_3569
 	METHOD method_11732 (Ljava/io/File;)Ljava/nio/ByteBuffer;
@@ -20744,6 +20902,7 @@ CLASS Class_3582
 	FIELD field_9447 _cpct F
 	FIELD field_9448 _durations [F
 	FIELD field_9449 _methods [Ljava/lang/reflect/Method;
+	FIELD field_9450 _pct F
 	FIELD field_9451 _phase I
 	METHOD method_11773 completed ()V
 	METHOD method_11774 update (IF)V
@@ -20751,17 +20910,21 @@ CLASS Class_3583
 	METHOD method_11775 preload (LClass_3572;)V
 	CLASS Class_3584
 		FIELD field_9452 _anim LClass_3123;
+		FIELD field_9453 _ref LClass_1412;
 	CLASS Class_3585
 		FIELD field_9454 _clazz Ljava/lang/Class;
 		FIELD field_9455 _config LClass_1414;
+		FIELD field_9456 _ref LClass_1412;
 		METHOD method_11776 getConfigClass ()Ljava/lang/Class;
 		METHOD method_11777 getReference ()LClass_1412;
 	CLASS Class_3586
 		METHOD method_11778 preload (LClass_3572;)V
 	CLASS Class_3587
 		FIELD field_9457 _model LClass_3226;
+		FIELD field_9458 _ref LClass_1412;
 CLASS Class_3588
 	FIELD field_9459 _checkTimestamps Z
+	FIELD field_9460 _ctx LClass_3572;
 	CLASS Class_3589
 		FIELD field_9461 _file Ljava/io/File;
 		FIELD field_9462 _lastModified J
@@ -20805,6 +20968,7 @@ CLASS Class_3595
 CLASS Class_3596 com/threerings/opengl/util/SimpleOverlay
 CLASS Class_3597 com/threerings/opengl/util/SimpleRenderable
 	FIELD field_9476 _batch LClass_3483;
+	FIELD field_9477 _ctx LClass_3572;
 	FIELD field_9478 _priority I
 	FIELD field_9479 _queue LClass_2548;
 	METHOD method_11799 createBatch (ZI)LClass_3483;
@@ -20951,6 +21115,7 @@ CLASS Class_3641 com/threerings/presents/util/PresentsContext
 	METHOD method_11836 getClient ()LClass_3656;
 CLASS Class_3642 com/threerings/presents/util/SafeSubscriber
 	FIELD field_9549 _active Z
+	FIELD field_9550 _oid I
 	METHOD method_11837 ()Z
 	METHOD method_11838 (LClass_3745;)V
 	METHOD method_11839 (LClass_3745;)V
@@ -21130,6 +21295,7 @@ CLASS Class_3667 com/threerings/presents/client/InvocationReceiver
 CLASS Class_3669 com/threerings/presents/client/LogonException
 	FIELD field_9627 _stillInProgress Z
 CLASS Class_3670 com/threerings/presents/client/BasicDirector
+	FIELD field_9628 _ctx LClass_3641;
 	METHOD method_11955 (LClass_3656;)V
 	METHOD method_11956 (LClass_3656;)V
 	METHOD method_11957 (LClass_3656;)V
@@ -21154,6 +21320,7 @@ CLASS Class_3684 com/threerings/presents/client/ClientCommunicator
 	METHOD method_11962 (Ljava/lang/String;I)V
 	METHOD method_11963 (Ljava/lang/String;I)I
 	CLASS Class_3685
+		FIELD field_9650 _key Ljava/lang/String;
 		METHOD method_11964 ()V
 CLASS Class_3686 com/threerings/presents/client/ClientDObjectMgr
 	FIELD field_9654 _client LClass_3656;
@@ -21403,6 +21570,7 @@ CLASS Class_3721 com/threerings/presents/dobj/EntryEvent
 	METHOD method_12130 ()LClass_3717$Class_3718;
 	METHOD method_12131 ()LClass_3717$Class_3718;
 CLASS Class_3722 com/threerings/presents/dobj/EntryRemovedEvent
+	FIELD field_9748 _key Ljava/lang/Comparable;
 	METHOD method_12132 (LClass_3717$Class_3718;)LClass_3722;
 CLASS Class_3723 com/threerings/presents/dobj/EntryUpdatedEvent
 	FIELD field_9750 _entry LClass_3717$Class_3718;
@@ -21437,9 +21605,11 @@ CLASS Class_3728 com/threerings/presents/dobj/NamedEvent
 CLASS Class_3729 com/threerings/presents/dobj/NoSuchObjectException
 CLASS Class_3730 com/threerings/presents/dobj/ObjectAccessException
 CLASS Class_3731 com/threerings/presents/dobj/ObjectAddedEvent
+	FIELD field_9763 _oid I
 	METHOD method_12145 ()I
 CLASS Class_3732 com/threerings/presents/dobj/ObjectDestroyedEvent
 CLASS Class_3733 com/threerings/presents/dobj/ObjectRemovedEvent
+	FIELD field_9765 _oid I
 	METHOD method_12146 (Z)LClass_3733;
 	METHOD method_12147 ()I
 CLASS Class_3734 com/threerings/presents/dobj/OidList
@@ -21461,6 +21631,7 @@ CLASS Class_3734 com/threerings/presents/dobj/OidList
 CLASS Class_3736 com/threerings/presents/dobj/ReleaseLockEvent
 CLASS Class_3737 com/threerings/presents/dobj/ServerMessageEvent
 CLASS Class_3738 com/threerings/presents/dobj/SimpleEntry
+	FIELD field_9771 _key Ljava/lang/Comparable;
 CLASS Class_3739 com/threerings/presents/dobj/AccessController
 	METHOD method_12159 (LClass_3716;LClass_3759;)Z
 	METHOD method_12160 (LClass_3716;LClass_3715;)Z
@@ -21560,6 +21731,7 @@ CLASS Class_3770 com/threerings/presents/net/EventNotification
 	METHOD method_12210 ()LClass_3715;
 CLASS Class_3771 com/threerings/presents/net/FailureResponse
 	FIELD field_9800 _message Ljava/lang/String;
+	FIELD field_9801 _oid I
 	METHOD method_12211 getMessage ()Ljava/lang/String;
 	METHOD method_12212 ()I
 CLASS Class_3772 com/threerings/presents/net/ForwardEventRequest
@@ -21604,6 +21776,7 @@ CLASS Class_3781 com/threerings/presents/net/ServiceCreds
 	METHOD method_12232 (Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 	METHOD method_12233 toString ()Ljava/lang/String;
 CLASS Class_3782 com/threerings/presents/net/SubscribeRequest
+	FIELD field_9819 _oid I
 	METHOD method_12234 ()I
 CLASS Class_3783 com/threerings/presents/net/ThrottleUpdatedMessage
 	FIELD field_9820 messagesPerSec I
@@ -21635,8 +21808,10 @@ CLASS Class_3785 com/threerings/presents/net/Transport
 		CLASS 3
 		CLASS 4
 CLASS Class_3787 com/threerings/presents/net/UnsubscribeRequest
+	FIELD field_9837 _oid I
 	METHOD method_12248 ()I
 CLASS Class_3788 com/threerings/presents/net/UnsubscribeResponse
+	FIELD field_9838 _oid I
 	METHOD method_12249 ()I
 CLASS Class_3789 com/threerings/presents/net/UpdateThrottleMessage
 	FIELD field_9839 messagesPerSec I
@@ -21858,6 +22033,7 @@ CLASS Class_3851 com/threerings/presents/server/PresentsDObjectMgr
 	METHOD method_12381 ()I
 	CLASS Class_3852 AccessObjectEvent
 		FIELD field_9979 _action I
+		FIELD field_9980 _oid I
 		FIELD field_9981 _target LClass_3759;
 		FIELD field_9982 this$0 LClass_3851;
 	CLASS Class_3853
@@ -22103,6 +22279,7 @@ CLASS Class_3940 com/threerings/projectx/admin/client/ActorSpawner
 		FIELD field_10152 actor LClass_1412;
 CLASS Class_3942 com/threerings/projectx/admin/client/AdminDashboard
 	FIELD field_10153 _activeTool LClass_3943;
+	FIELD field_10154 _ctx LClass_7079;
 	FIELD field_10155 _msgs LClass_7683;
 	FIELD field_10156 _tools Ljavax/swing/JComboBox;
 	METHOD method_12496 (LClass_3943;)V
@@ -22115,6 +22292,7 @@ CLASS Class_3942 com/threerings/projectx/admin/client/AdminDashboard
 	METHOD method_12503 removeNotify ()V
 	METHOD method_12504 ()Z
 CLASS Class_3943 com/threerings/projectx/admin/client/AdminTool
+	FIELD field_10157 _ctx LClass_7079;
 	FIELD field_10158 _dashboard LClass_3942;
 	FIELD field_10159 _msgs LClass_7683;
 	FIELD field_10160 _name Ljava/lang/String;
@@ -22192,6 +22370,7 @@ CLASS Class_3955 com/threerings/projectx/admin/client/LoadTester
 	FIELD field_10194 _count Ljavax/swing/JLabel;
 	FIELD field_10195 _interval LClass_1213;
 	FIELD field_10196 _listener LClass_3742;
+	FIELD field_10197 _oid I
 	FIELD field_10198 _status Ljavax/swing/JLabel;
 	FIELD field_10199 _subAction Ljavax/swing/Action;
 	METHOD method_12531 (LClass_4054;)V
@@ -22282,6 +22461,9 @@ CLASS Class_3957 com/threerings/projectx/admin/client/PeerAdministrator
 		METHOD method_12552 (LClass_4060;)V
 	CLASS Class_3963 ShutdownPanel
 		FIELD field_10256 _button Ljavax/swing/JButton;
+		FIELD field_10257 _c1 Ljavax/swing/JPanel;
+		FIELD field_10258 _c2 Ljavax/swing/JPanel;
+		FIELD field_10259 _c3 Ljavax/swing/JPanel;
 		FIELD field_10260 _dontRejectPlayers Ljavax/swing/JCheckBox;
 		FIELD field_10261 _earlyPlayers LClass_1699;
 		FIELD field_10262 _info LClass_4025;
@@ -22333,7 +22515,10 @@ CLASS Class_3964 com/threerings/projectx/admin/client/PlaceBrowser
 		METHOD method_12570 toString ()Ljava/lang/String;
 CLASS Class_3966 com/threerings/projectx/admin/client/PrefabTester
 	FIELD field_10285 _depth Ljavax/swing/JSpinner;
+	FIELD field_10286 _dev Ljavax/swing/JCheckBox;
+	FIELD field_10287 _fab Ljavax/swing/JComboBox;
 	FIELD field_10288 _goFull Ljavax/swing/JButton;
+	FIELD field_10289 _go Ljavax/swing/JButton;
 	FIELD field_10290 _goSingle Ljavax/swing/JButton;
 	FIELD field_10291 _nameToProto LClass_280;
 	FIELD field_10292 _proto Ljavax/swing/JComboBox;
@@ -22697,6 +22882,7 @@ CLASS Class_4029 com/threerings/projectx/admin/data/PartyStats
 	METHOD method_12665 ()F
 CLASS Class_4030 com/threerings/projectx/admin/data/PartySummary
 	FIELD field_10521 _gateId I
+	FIELD field_10522 _key LClass_5833;
 	FIELD field_10523 _language Ljava/lang/String;
 	FIELD field_10524 difficulty LClass_5806$Class_5807;
 	FIELD field_10525 floor I
@@ -22709,6 +22895,7 @@ CLASS Class_4031 com/threerings/projectx/admin/data/PlaceBrowserObject
 	FIELD field_10528 parties LClass_3717;
 	FIELD field_10529 places LClass_3717;
 CLASS Class_4032 com/threerings/projectx/admin/data/PlaceSummary
+	FIELD field_10530 _key LClass_4032$Class_4033;
 	FIELD field_10531 _language Ljava/lang/String;
 	FIELD field_10532 _name Ljava/lang/String;
 	FIELD field_10533 occupants Ljava/util/List;
@@ -22925,6 +23112,7 @@ CLASS Class_4074
 CLASS Class_4075
 	METHOD method_12705 (LClass_4125;)V
 CLASS Class_4076
+	FIELD field_10701 _ctx LClass_7079;
 	METHOD method_12706 (Z)V
 CLASS Class_4077
 	METHOD method_12707 (Ljava/util/List;)V
@@ -22957,6 +23145,7 @@ CLASS Class_4088
 CLASS Class_4089
 	METHOD method_12723 (LClass_4127;)V
 CLASS Class_4090 com/threerings/projectx/auction/client/SearchPanel
+	FIELD field_10727 _ctx LClass_7079;
 	FIELD field_10728 _msgs LClass_7683;
 	FIELD field_10729 _next LClass_2989;
 	FIELD field_10730 _prev LClass_2989;
@@ -23015,6 +23204,7 @@ CLASS Class_4096
 	METHOD method_12765 ()LClass_2817;
 CLASS Class_4097
 CLASS Class_4098
+	FIELD field_10761 _ctx LClass_7079;
 	METHOD method_12766 (Z)LClass_4712;
 	METHOD method_12767 (LClass_3034;Z)V
 	METHOD method_12768 (LClass_4125;Z)V
@@ -23052,6 +23242,7 @@ CLASS Class_4107
 CLASS Class_4108
 CLASS Class_4109
 	FIELD field_10790 _count I
+	FIELD field_10791 _ctx LClass_7079;
 	METHOD method_12791 ()V
 	METHOD method_12792 ()V
 	METHOD method_12793 ()V
@@ -23212,6 +23403,7 @@ CLASS Class_4138
 	METHOD method_12855 (LClass_5806$Class_5807;IIZZZLClass_3644$Class_3645;)V
 	METHOD method_12856 (LClass_5806$Class_5807;ZIIIZZLClass_3644$Class_3647;)V
 CLASS Class_4139
+	FIELD field_10894 _ctx LClass_7079;
 	FIELD field_10895 _interface LClass_2820;
 	FIELD field_10896 _msgs LClass_7683;
 	METHOD method_12857 ()I
@@ -23250,6 +23442,7 @@ CLASS Class_4146
 CLASS Class_4147
 CLASS Class_4148 com/threerings/projectx/building/data/BuildingSceneConfig
 CLASS Class_4149
+	FIELD field_10929 _ctx LClass_7079;
 	FIELD field_10930 _elapsed F
 	FIELD field_10931 _length F
 	METHOD method_12877 ()V
@@ -23287,6 +23480,7 @@ CLASS Class_4159
 	METHOD method_12899 ()V
 CLASS Class_4160
 CLASS Class_4161
+	FIELD field_10959 _ctx LClass_7079;
 	METHOD method_12900 ()V
 	METHOD method_12901 ()V
 	METHOD method_12902 (LClass_4175;)V
@@ -23323,6 +23517,7 @@ CLASS Class_4171 com/threerings/projectx/casino/data/SlotPrize
 	METHOD method_12912 (LClass_7079;)LClass_2834;
 	CLASS Class_4172 Item
 		FIELD field_10982 _count I
+		FIELD field_10983 _ref LClass_1412;
 	CLASS Class_4173 Klepto
 	CLASS Class_4174 KleptoItem
 CLASS Class_4175 com/threerings/projectx/casino/data/VipSpinResult
@@ -23493,6 +23688,7 @@ CLASS Class_4190 com/threerings/projectx/client/HelpWindow
 		METHOD method_12963 valueOf (Ljava/lang/String;)LClass_4190$Class_4191;
 		METHOD method_12964 values ()[LClass_4190$Class_4191;
 CLASS Class_4192
+	FIELD field_11116 _ctx LClass_7079;
 	FIELD field_11117 _msgs LClass_7683;
 	FIELD field_11118 _next LClass_2989;
 	FIELD field_11119 _restoreHover LClass_2054;
@@ -23585,6 +23781,7 @@ CLASS Class_4197 com/threerings/projectx/client/LoadoutPanel
 		METHOD method_13026 ()V
 		METHOD method_13027 ()V
 	CLASS Class_4204
+		FIELD field_11203 _idx I
 		METHOD method_13028 ()V
 		METHOD method_13029 ()V
 	CLASS Class_4205
@@ -23634,6 +23831,7 @@ CLASS Class_4197 com/threerings/projectx/client/LoadoutPanel
 		METHOD method_13064 (LClass_4197$Class_4198;)V
 		METHOD method_13065 (I)Z
 CLASS Class_4214 com/threerings/projectx/client/LoopbackSceneMarshaller
+	FIELD field_11251 _ctx LClass_7079;
 	FIELD field_11252 _target LClass_5050;
 	METHOD method_13066 (LClass_5025;LClass_4802;)V
 CLASS Class_4215
@@ -23802,6 +24000,7 @@ CLASS Class_4224 com/threerings/projectx/client/ProjectXApp
 		METHOD method_13178 (Z)V
 		METHOD method_13179 start ()V
 CLASS Class_4228 com/threerings/projectx/client/ProjectXPrefs
+	FIELD field_11408 _ctx LClass_7079;
 	METHOD method_13180 ()LClass_5806$Class_5807;
 	METHOD method_13181 ()V
 	METHOD method_13182 ()[LClass_4228$Class_4236;
@@ -24069,6 +24268,7 @@ CLASS Class_4241
 CLASS Class_4242
 CLASS Class_4243
 CLASS Class_4244 com/threerings/projectx/client/UplinkWindow
+	FIELD field_11487 _ctx LClass_7079;
 	METHOD method_13380 (J)V
 	METHOD method_13381 (LClass_4244$Class_4245;)V
 	METHOD method_13382 (LClass_7677;)V
@@ -24114,6 +24314,7 @@ CLASS Class_4251 com/threerings/projectx/client/DebugCommunicator
 	METHOD method_13407 (LClass_4251;)Ljava/nio/channels/DatagramChannel;
 	METHOD method_13408 (LClass_4251;)Ljava/nio/channels/DatagramChannel;
 CLASS Class_4252
+	FIELD field_11510 _ctx LClass_7079;
 	CLASS Class_4253
 		METHOD method_13409 update ()V
 CLASS Class_4254
@@ -24147,6 +24348,7 @@ CLASS Class_4257 com/threerings/projectx/client/util/MessageStatsTracker
 		METHOD method_13431 ()I
 		METHOD method_13432 ()I
 CLASS Class_4259
+	FIELD field_11529 _ctx LClass_7079;
 	FIELD field_11530 _interval LClass_1213;
 	FIELD field_11531 _msgs LClass_7683;
 	METHOD method_13433 ()V
@@ -24167,6 +24369,7 @@ CLASS Class_4265
 	METHOD method_13442 ()V
 	CLASS Class_4266
 CLASS Class_4267 com/threerings/projectx/client/util/ProjectXStats
+	FIELD field_11546 _ctx LClass_7079;
 	METHOD method_13443 ()V
 	METHOD method_13444 dispose ()V
 CLASS Class_4269
@@ -24182,6 +24385,7 @@ CLASS Class_4278
 CLASS Class_4279
 CLASS Class_4280
 CLASS Class_4281
+	FIELD field_11564 _ctx LClass_7079;
 	FIELD field_11565 _msgs LClass_7683;
 	METHOD method_13454 ()V
 	METHOD method_13455 ()V
@@ -24222,6 +24426,7 @@ CLASS Class_4289
 	METHOD method_13482 (LClass_7677;LClass_3644$Class_3645;)V
 	METHOD method_13483 (Ljava/lang/String;LClass_3644$Class_3645;)V
 CLASS Class_4290
+	FIELD field_11578 _ctx LClass_7079;
 	FIELD field_11579 _msgs LClass_7683;
 	METHOD method_13484 ()Z
 	METHOD method_13485 ()Z
@@ -24267,6 +24472,7 @@ CLASS Class_4301
 	METHOD method_13512 (Ljava/lang/Runnable;)V
 	METHOD method_13513 lambda$new$0 (LClass_2999;)V
 CLASS Class_4302
+	FIELD field_11617 _ctx LClass_7079;
 	METHOD method_13514 ()V
 CLASS Class_4303
 CLASS Class_4304
@@ -24276,6 +24482,7 @@ CLASS Class_4306
 	METHOD method_13515 ()V
 	METHOD method_13516 (IJ)V
 CLASS Class_4307
+	FIELD field_11627 _ctx LClass_7079;
 	FIELD field_11628 _msgs LClass_7683;
 CLASS Class_4308 com/threerings/projectx/client/GlobalControls
 	FIELD field_11635 _ctx LClass_7079;
@@ -24311,10 +24518,12 @@ CLASS Class_4311
 CLASS Class_4312
 CLASS Class_4313
 CLASS Class_4314 com/threerings/projectx/client/HelpPanel
+	FIELD field_11658 _ctx LClass_7079;
 	FIELD field_11659 _msgs LClass_7683;
 	METHOD method_13543 ()Z
 	METHOD method_13544 setText (Ljava/lang/String;)V
 CLASS Class_4315 com/threerings/projectx/client/HudWindow
+	FIELD field_11663 _ctx LClass_7079;
 	METHOD method_13545 ()V
 	METHOD method_13546 ()V
 	METHOD method_13547 ()V
@@ -24463,9 +24672,11 @@ CLASS Class_4338
 	METHOD method_13667 (LClass_5021;)V
 	METHOD method_13668 (LClass_7079;)LClass_4292;
 CLASS Class_4339
+	FIELD field_11718 _ctx LClass_7079;
 	FIELD field_11719 _msgs LClass_7683;
 	METHOD method_13669 updatePosition ()V
 CLASS Class_4340
+	FIELD field_11723 _ctx LClass_7079;
 	FIELD field_11724 _msgs LClass_7683;
 	METHOD method_13670 ()V
 	METHOD method_13671 ()V
@@ -24487,11 +24698,13 @@ CLASS Class_4344
 CLASS Class_4345
 CLASS Class_4346
 CLASS Class_4347
+	FIELD field_11755 _ctx LClass_7079;
 	METHOD method_13684 ()LClass_4670;
 	METHOD method_13685 (LClass_4638;)V
 	METHOD method_13686 (LClass_7655;LClass_7221;)LClass_4670;
 	METHOD method_13687 rereadPrefs (LClass_4228$Class_4237;)V
 CLASS Class_4348
+	FIELD field_11757 _ctx LClass_7079;
 	METHOD method_13688 (Ljava/util/List;)V
 	METHOD method_13689 ()V
 	CLASS Class_4349
@@ -24544,10 +24757,12 @@ CLASS Class_4386
 CLASS Class_4387
 	METHOD method_13699 (LClass_7683;LClass_5037;)V
 CLASS Class_4388
+	FIELD field_11835 _ctx LClass_7079;
 	METHOD method_13700 shutdown ()V
 CLASS Class_4389
 	METHOD method_13701 (LClass_5057;)V
 CLASS Class_4390
+	FIELD field_11839 _ctx LClass_7079;
 	METHOD method_13702 ()Z
 	METHOD method_13703 ()V
 	METHOD method_13704 ()LClass_5027;
@@ -24607,9 +24822,11 @@ CLASS Class_4414
 CLASS Class_4415
 	METHOD method_13735 (LClass_4228$Class_4230;)Ljava/lang/String;
 CLASS Class_4416 com/threerings/projectx/client/chat/LoopbackSpeakMarshaller
+	FIELD field_11876 _ctx LClass_1514;
 	FIELD field_11877 _target LClass_3716;
 	METHOD method_13736 (LClass_5025;)V
 CLASS Class_4417 com/threerings/projectx/client/chat/ProjectXChatDirector
+	FIELD field_11878 _ctx LClass_7079;
 	METHOD method_13737 ()V
 	METHOD method_13738 ()LClass_4505;
 	METHOD method_13739 ()LClass_4507;
@@ -24754,6 +24971,7 @@ CLASS Class_4502
 CLASS Class_4503
 CLASS Class_4504
 CLASS Class_4505
+	FIELD field_11978 _ctx LClass_7079;
 	METHOD method_13785 ()V
 	METHOD method_13786 ()V
 	METHOD method_13787 ()Z
@@ -24763,12 +24981,14 @@ CLASS Class_4505
 	METHOD method_13791 (Ljava/lang/String;)V
 	METHOD method_13792 (LClass_7677;)V
 CLASS Class_4506
+	FIELD field_11983 _ctx LClass_7079;
 	METHOD method_13793 ()V
 	METHOD method_13794 (Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 	METHOD method_13795 (Z)V
 	METHOD method_13796 (II)Z
 	METHOD method_13797 (I)V
 CLASS Class_4507
+	FIELD field_11993 _ctx LClass_7079;
 	METHOD method_13798 ()V
 	METHOD method_13799 ()V
 	METHOD method_13800 ()V
@@ -24825,6 +25045,7 @@ CLASS Class_4528
 CLASS Class_4529
 	METHOD method_13829 (LClass_6753;)Z
 CLASS Class_4530
+	FIELD field_12023 _ctx LClass_7079;
 	FIELD field_12024 _msgs LClass_7683;
 	METHOD method_13830 (ILClass_7677;)V
 	METHOD method_13831 (ILClass_7677;)V
@@ -24839,6 +25060,7 @@ CLASS Class_4530
 		FIELD field_12033 _model LClass_3226;
 		METHOD method_13839 (Z)V
 CLASS Class_4532 com/threerings/projectx/client/BaseListPanel
+	FIELD field_12038 _ctx LClass_7079;
 	FIELD field_12039 _msgs LClass_7683;
 	FIELD field_12052 _imsgs LClass_7683;
 	METHOD method_13840 (Ljava/util/List;)V
@@ -24877,6 +25099,7 @@ CLASS Class_4532 com/threerings/projectx/client/BaseListPanel
 		METHOD method_13870 compareTo (Ljava/lang/Object;)I
 		METHOD method_13871 getTitle ()Ljava/lang/String;
 	CLASS Class_4536
+		FIELD field_12066 _ctx LClass_7079;
 		METHOD method_13872 (Ljava/util/List;)V
 		METHOD method_13873 (ILClass_4532$Class_4535;)I
 		METHOD method_13874 (LClass_4532$Class_4540;)LClass_2820;
@@ -24901,6 +25124,7 @@ CLASS Class_4541
 CLASS Class_4542
 	METHOD method_13888 (LClass_7677;Ljava/lang/String;JJLClass_3644$Class_3645;)V
 CLASS Class_4543
+	FIELD field_12074 _ctx LClass_7079;
 	METHOD method_13889 ()I
 	METHOD method_13890 ()I
 	METHOD method_13891 ()V
@@ -24918,6 +25142,7 @@ CLASS Class_4548
 	METHOD method_13898 (ILClass_3644$Class_3645;)V
 	METHOD method_13899 (LClass_3644$Class_3647;)V
 CLASS Class_4549
+	FIELD field_12086 _ctx LClass_7079;
 	METHOD method_13900 ()V
 	METHOD method_13901 ()V
 CLASS Class_4550
@@ -25014,6 +25239,7 @@ CLASS Class_4589
 CLASS Class_4590
 CLASS Class_4591
 CLASS Class_4592 com/threerings/projectx/client/ProjectXSceneView
+	FIELD field_12179 _ctx LClass_7079;
 	FIELD field_12180 _msgs LClass_7683;
 	METHOD method_13949 ()V
 	METHOD method_13950 ()LClass_4638;
@@ -25043,6 +25269,7 @@ CLASS Class_4594
 CLASS Class_4595
 CLASS Class_4596
 CLASS Class_4597
+	FIELD field_12196 _ctx LClass_7079;
 	FIELD field_12197 _elapsed F
 	FIELD field_12198 _next LClass_2989;
 	METHOD method_13972 ()V
@@ -25077,28 +25304,33 @@ CLASS Class_4613
 	METHOD method_13984 (Ljava/lang/String;LClass_4179;)LClass_2758;
 	METHOD method_13985 (Ljava/lang/String;)LClass_2758;
 CLASS Class_4614
+	FIELD field_12238 _ctx LClass_7079;
 	METHOD method_13986 (J)V
 	METHOD method_13987 (LClass_4244$Class_4245;Z)V
 	METHOD method_13988 (LClass_4244$Class_4245;)V
 	METHOD method_13989 (LClass_7677;)V
 CLASS Class_4615 com/threerings/projectx/client/WorldMapWindow
+	FIELD field_12242 _ctx LClass_7079;
 CLASS Class_4616 com/threerings/projectx/client/ZoneInstanceDirector
 	FIELD field_12244 _enabled Z
 	METHOD method_13990 isEnabled ()Z
 	METHOD method_13991 setEnabled (Z)V
 CLASS Class_4617
 CLASS Class_4618
+	FIELD field_12248 _ctx LClass_7079;
 	METHOD method_13992 ()LClass_4532;
 	METHOD method_13993 ()I
 	METHOD method_13994 ()I
 	METHOD method_13995 (LClass_7079;)LClass_4532;
 	METHOD method_13996 ()V
 CLASS Class_4619 com/threerings/projectx/client/BaseMapPanel
+	FIELD field_12251 _ctx LClass_7079;
 	FIELD field_12253 _rows LClass_2747;
 	METHOD method_13997 ()V
 	METHOD method_13998 (I)LClass_4619$Class_4621;
 	METHOD method_13999 getTitle ()Ljava/lang/String;
 	CLASS Class_4620 PlacePanel
+		FIELD field_12257 _ctx LClass_7079;
 		METHOD method_14000 ()V
 		METHOD method_14001 ()V
 		METHOD method_14002 ()V
@@ -25129,6 +25361,7 @@ CLASS Class_4626
 	METHOD method_14021 ()V
 	METHOD method_14022 (Z)V
 CLASS Class_4627
+	FIELD field_12271 _ctx LClass_7079;
 	METHOD method_14023 ()V
 	METHOD method_14024 ()V
 	METHOD method_14025 ()V
@@ -25169,6 +25402,7 @@ CLASS Class_4635
 	METHOD method_14052 (Ljava/lang/String;Z)V
 	METHOD method_14053 (Ljava/lang/String;Z)V
 CLASS Class_4636
+	FIELD field_12304 _ctx LClass_7079;
 	FIELD field_12305 _msgs LClass_7683;
 	METHOD method_14054 ()LClass_2975$Class_2976;
 	METHOD method_14055 ()Z
@@ -25252,6 +25486,7 @@ CLASS Class_4656
 CLASS Class_4657
 CLASS Class_4658
 CLASS Class_4659
+	FIELD field_12385 _ctx LClass_7079;
 	FIELD field_12386 _description LClass_1412;
 	FIELD field_12387 _msgs LClass_7683;
 	METHOD method_14099 ()V
@@ -25311,6 +25546,7 @@ CLASS Class_4675
 	METHOD method_14136 (LClass_7079;LClass_2747;I)V
 	METHOD method_14137 (LClass_7079;)I
 CLASS Class_4676
+	FIELD field_12420 _ctx LClass_7079;
 	METHOD method_14138 ()LClass_4197;
 	METHOD method_14139 ()V
 	METHOD method_14140 (I)V
@@ -25325,6 +25561,7 @@ CLASS Class_4679
 	METHOD method_14146 (Ljava/lang/Integer;Ljava/lang/Integer;)I
 	METHOD method_14147 compare (Ljava/lang/Object;Ljava/lang/Object;)I
 CLASS Class_4680
+	FIELD field_12423 _ctx LClass_7079;
 	FIELD field_12424 _msgs LClass_7683;
 	METHOD method_14148 ()V
 	METHOD method_14149 ()V
@@ -25480,9 +25717,12 @@ CLASS Class_4706
 	METHOD method_14220 (Ljava/lang/Object;LClass_1605;)V
 	METHOD method_14221 (Ljava/lang/Object;LClass_1605;)V
 CLASS Class_4707
+	FIELD field_12547 _ctx LClass_7079;
 CLASS Class_4708
+	FIELD field_12548 _ctx LClass_7079;
 CLASS Class_4709
 CLASS Class_4710 com/threerings/projectx/client/ui/ProjectXPopupMenu
+	FIELD field_12549 _ctx LClass_7079;
 	METHOD method_14222 ()LClass_3034;
 	METHOD method_14223 (Ljava/lang/String;Ljava/lang/String;)LClass_2758;
 	METHOD method_14224 (Ljava/lang/String;Ljava/lang/String;)LClass_2761;
@@ -25501,6 +25741,7 @@ CLASS Class_4710 com/threerings/projectx/client/ui/ProjectXPopupMenu
 CLASS Class_4711
 CLASS Class_4712
 	FIELD field_12550 _bundle Ljava/lang/String;
+	FIELD field_12551 _ctx LClass_7079;
 	FIELD field_12552 _label LClass_2814;
 	METHOD method_14237 ([LClass_3034;)LClass_4712;
 	METHOD method_14238 (LClass_1301;)LClass_4712;
@@ -25543,15 +25784,18 @@ CLASS Class_4718
 	METHOD method_20877 (LClass_2794;LClass_4179;)Z
 CLASS Class_4720
 CLASS Class_4721 com/threerings/projectx/client/ui/UserInterfaceDialog
+	FIELD field_12588 _ctx LClass_7079;
 	METHOD method_14267 ()Z
 	METHOD method_14268 (LClass_7079;)V
 CLASS Class_4722
 CLASS Class_4723
+	FIELD field_12591 _age F
 	METHOD method_14269 (F)V
 	METHOD method_14270 (F)V
 CLASS Class_4724
 	METHOD method_14271 (F)V
 CLASS Class_4725 com/threerings/projectx/client/ui/SlidingPanel
+	FIELD field_12596 _ctx LClass_7079;
 	FIELD field_12597 _location I
 	METHOD method_14272 ()V
 	METHOD method_14273 ()Z
@@ -25565,9 +25809,12 @@ CLASS Class_4725 com/threerings/projectx/client/ui/SlidingPanel
 		METHOD method_14277 valueOf (Ljava/lang/String;)LClass_4725$Class_4726;
 		METHOD method_14278 values ()[LClass_4725$Class_4726;
 CLASS Class_4727
+	FIELD field_12606 _ctx LClass_7079;
 	METHOD method_14279 getWindow ()LClass_2789;
 CLASS Class_4728
 CLASS Class_4729
+	FIELD field_12608 _age F
+	FIELD field_12609 _ctx LClass_7079;
 	METHOD method_14280 ()V
 	METHOD method_14281 ()V
 	METHOD method_14282 ()V
@@ -25592,6 +25839,7 @@ CLASS Class_4731 com/threerings/projectx/client/ui/BaseBalloon
 	METHOD method_14298 update ()Z
 CLASS Class_4732
 CLASS Class_4733
+	FIELD field_12624 _ctx LClass_7079;
 	METHOD method_14299 ()LClass_3034;
 CLASS Class_4734
 	FIELD field_12626 _offset I
@@ -25622,6 +25870,7 @@ CLASS Class_4742
 CLASS Class_4743
 	METHOD method_14315 ()I
 CLASS Class_4744
+	FIELD field_12652 _ctx LClass_7079;
 	FIELD field_12653 _target LClass_3034;
 	METHOD method_14316 ()V
 	METHOD method_14317 (J)V
@@ -25668,6 +25917,7 @@ CLASS Class_4753
 	METHOD method_14348 ()V
 CLASS Class_4754
 CLASS Class_4755
+	FIELD field_12673 _ctx LClass_7079;
 	FIELD field_12674 _msgs LClass_7683;
 	METHOD method_14349 ()V
 	METHOD method_14350 ()LClass_2816;
@@ -25714,6 +25964,7 @@ CLASS Class_4762 com/threerings/projectx/config/ActionDesc
 	CLASS Class_4771 Shop
 	CLASS Class_4772 Talk
 	CLASS Class_4773 TipOnly
+		FIELD field_12715 _tip Ljava/lang/String;
 	CLASS Class_4774 Unlock
 	CLASS Class_4775 UnlockGold
 	CLASS Class_4776 UnlockShadow
@@ -26058,6 +26309,8 @@ CLASS Class_4899
 CLASS Class_4900
 CLASS Class_4901
 CLASS Class_4902
+	FIELD field_12947 _ctx LClass_7079;
+	FIELD field_12948 _idx I
 	FIELD field_12949 _itemId J
 	FIELD field_12950 _message Ljava/lang/String;
 	FIELD field_12951 _msgs LClass_7683;
@@ -26127,6 +26380,7 @@ CLASS Class_4928
 CLASS Class_4929
 CLASS Class_4930
 	FIELD field_13010 _cfgmgr LClass_1411;
+	FIELD field_13011 _ctx LClass_7079;
 	FIELD field_13012 _msgs LClass_7683;
 	METHOD method_14463 ()[J
 	METHOD method_14464 ()Ljava/util/Comparator;
@@ -26192,6 +26446,7 @@ CLASS Class_4950
 	METHOD method_14502 (LClass_4997;Z)V
 	METHOD method_14503 (LClass_6237$Class_6239;)Z
 	CLASS Class_4951
+		FIELD field_13074 _ref LClass_1412;
 		METHOD method_14504 (JLClass_4979$Class_4982;LClass_6275$Class_6314;)V
 CLASS Class_4952
 CLASS Class_4953
@@ -26536,6 +26791,7 @@ CLASS Class_5013 com/threerings/projectx/data/EnabledServers
 	METHOD method_14597 values ()[LClass_5013;
 CLASS Class_5014 com/threerings/projectx/data/EventLogMarshaller
 CLASS Class_5015 com/threerings/projectx/data/IconMapEntry
+	FIELD field_13270 _id I
 	METHOD method_14598 (FFLClass_4592;)Z
 	METHOD method_14599 (LClass_5015;)I
 	METHOD method_14600 compareTo (Ljava/lang/Object;)I
@@ -26904,6 +27160,7 @@ CLASS Class_5040 com/threerings/projectx/data/ProjectXCodes
 		FIELD field_13530 RANK_4 LClass_5040$Class_5044;
 		FIELD field_13531 RANK_5 LClass_5040$Class_5044;
 		FIELD field_13532 _icon Ljava/lang/String;
+		FIELD field_13533 _min I
 		METHOD method_14722 $values ()[LClass_5040$Class_5044;
 		METHOD method_14723 getIcon ()Ljava/lang/String;
 		METHOD method_14724 getMinPrestige ()I
@@ -27033,6 +27290,7 @@ CLASS Class_5061 com/threerings/projectx/data/ZoneInstanceSummary
 		FIELD field_13606 $VALUES [LClass_5061$Class_5062;
 		FIELD field_13607 GREEN LClass_5061$Class_5062;
 		FIELD field_13609 YELLOW LClass_5061$Class_5062;
+		FIELD field_13610 _pct F
 		FIELD field_13611 _type Ljava/lang/String;
 		METHOD method_14766 $values ()[LClass_5061$Class_5062;
 		METHOD method_14767 getPct ()F
@@ -27070,6 +27328,7 @@ CLASS Class_5064 com/threerings/projectx/data/actor/Knight
 	METHOD method_14789 (LClass_2341;)LClass_2341;
 CLASS Class_5065 com/threerings/projectx/data/actor/Lift
 	FIELD field_13621 _dropPoint LClass_2341;
+	FIELD field_13622 _z F
 	METHOD method_14790 ()F
 	METHOD method_14791 ()LClass_2341;
 	METHOD method_14792 (LClass_7522;)Z
@@ -27083,6 +27342,7 @@ CLASS Class_5070
 CLASS Class_5071
 CLASS Class_5072
 CLASS Class_5073
+	FIELD field_13636 _ctx LClass_7079;
 	METHOD method_14795 remove ()V
 CLASS Class_5074
 CLASS Class_5075
@@ -27269,6 +27529,7 @@ CLASS Class_5149
 CLASS Class_5151
 	METHOD method_14868 ()V
 CLASS Class_5152
+	FIELD field_13762 _ctx LClass_7079;
 	METHOD method_14869 (LClass_7079;)LClass_5152;
 	METHOD method_14870 ()V
 	METHOD method_14871 ()V
@@ -27538,6 +27799,7 @@ CLASS Class_5260
 	METHOD method_14959 (LClass_5836;)V
 	CLASS Class_5261
 CLASS Class_5262 com/threerings/projectx/dungeon/client/EndOfLevelWindow
+	FIELD field_13944 _ctx LClass_7079;
 	FIELD field_13945 _elapsed F
 	FIELD field_13946 _msgs LClass_7683;
 	METHOD method_14960 ()V
@@ -27579,8 +27841,10 @@ CLASS Class_5268
 	METHOD method_14980 (LClass_5845;)V
 	METHOD method_14981 (Ljava/lang/Comparable;)V
 	CLASS Class_5269
+		FIELD field_13987 _ctx LClass_7079;
 		METHOD method_14982 ()Ljava/lang/Comparable;
 	CLASS Class_5270
+		FIELD field_13991 _ctx LClass_7079;
 CLASS Class_5271
 CLASS Class_5272
 	METHOD method_14983 ()Z
@@ -27598,12 +27862,14 @@ CLASS Class_5275
 CLASS Class_5276
 CLASS Class_5277
 CLASS Class_5278
+	FIELD field_13998 _ctx LClass_7079;
 	METHOD method_14992 ()LClass_2989;
 	METHOD method_14993 ()V
 	METHOD method_14994 (Z)V
 	METHOD method_14995 ()V
 	METHOD method_14996 ()V
 CLASS Class_5279
+	FIELD field_14005 _ctx LClass_7079;
 	FIELD field_14006 _elapsed F
 	FIELD field_14007 _msgs LClass_7683;
 	FIELD field_14008 _timer LClass_2761;
@@ -27611,6 +27877,7 @@ CLASS Class_5279
 	METHOD method_14998 (Z)V
 	METHOD method_14999 (I)V
 CLASS Class_5280 com/threerings/projectx/dungeon/client/QuickbarPanel
+	FIELD field_14017 _ctx LClass_7079;
 	METHOD method_15000 ()LClass_5357;
 	METHOD method_15001 ()V
 	METHOD method_15002 ()V
@@ -27644,6 +27911,7 @@ CLASS Class_5287
 CLASS Class_5289
 CLASS Class_5290
 CLASS Class_5291
+	FIELD field_14041 _ctx LClass_7079;
 	FIELD field_14042 _msgs LClass_7683;
 	METHOD method_15019 ()Z
 	METHOD method_15020 ()V
@@ -27653,6 +27921,7 @@ CLASS Class_5291
 	METHOD method_15024 (LClass_5835;)LClass_4710;
 	METHOD method_15025 (I)LClass_5291$Class_5292;
 	CLASS Class_5292
+		FIELD field_14046 _ctx LClass_7079;
 		METHOD method_15026 ()LClass_1412;
 		METHOD method_15027 ()V
 		METHOD method_15028 ()V
@@ -27662,6 +27931,8 @@ CLASS Class_5291
 		METHOD method_15032 ()Ljava/lang/Comparable;
 CLASS Class_5293
 CLASS Class_5294
+	FIELD field_14056 _ctx LClass_7079;
+	FIELD field_14057 _id I
 	FIELD field_14058 _model LClass_3226;
 	METHOD method_15033 (LClass_2342;)Z
 	METHOD method_15034 ()V
@@ -27717,6 +27988,7 @@ CLASS Class_5307
 CLASS Class_5310
 	FIELD field_14116 _actor LClass_7522;
 CLASS Class_5311
+	FIELD field_14117 _z F
 	METHOD method_15055 (LClass_2341;)F
 CLASS Class_5312
 CLASS Class_5313
@@ -27813,6 +28085,7 @@ CLASS Class_5333
 CLASS Class_5334
 CLASS Class_5335
 CLASS Class_5336
+	FIELD field_14221 _z F
 CLASS Class_5337
 	METHOD method_15113 (LClass_5337;)I
 	METHOD method_15114 (LClass_5337;)I
@@ -27871,8 +28144,10 @@ CLASS Class_5341
 CLASS Class_5342
 CLASS Class_5343
 CLASS Class_5344
+	FIELD field_14245 _idx I
 	METHOD method_15163 ()V
 CLASS Class_5345
+	FIELD field_14246 _ctx LClass_7079;
 	METHOD method_15164 ()Ljava/lang/String;
 	METHOD method_15165 ()V
 	METHOD method_15166 ()V
@@ -27887,6 +28162,7 @@ CLASS Class_5347
 CLASS Class_5348
 CLASS Class_5349
 CLASS Class_5350
+	FIELD field_14261 _ctx LClass_7079;
 	METHOD method_15173 (LClass_5835;)V
 CLASS Class_5351
 	FIELD field_14266 _style LClass_1412;
@@ -27899,6 +28175,7 @@ CLASS Class_5356
 CLASS Class_5357
 	METHOD method_15175 ()V
 CLASS Class_5358
+	FIELD field_14274 _ctx LClass_7079;
 	FIELD field_14275 _interval LClass_1213;
 	METHOD method_15176 (LClass_5028;LClass_2061;I)LClass_6422;
 	METHOD method_15177 (Ljava/lang/String;LClass_6422;I)V
@@ -27914,6 +28191,7 @@ CLASS Class_5361
 CLASS Class_5362
 CLASS Class_5363
 	FIELD field_14284 _cfgmgr LClass_1411;
+	FIELD field_14285 _ctx LClass_7079;
 	METHOD method_15184 ()V
 	METHOD method_15185 (LClass_5835;I)V
 	METHOD method_15186 (I)V
@@ -27922,6 +28200,7 @@ CLASS Class_5363
 		METHOD method_15187 (LClass_5363$Class_5364;)I
 		METHOD method_15188 compareTo (Ljava/lang/Object;)I
 CLASS Class_5365
+	FIELD field_14293 _ctx LClass_7079;
 CLASS Class_5366
 CLASS Class_5367
 	METHOD method_15189 (LClass_5865;)Z
@@ -27992,14 +28271,17 @@ CLASS Class_5386
 CLASS Class_5387
 	FIELD field_14350 _total F
 CLASS Class_5388
+	FIELD field_14355 _ctx LClass_7079;
 	METHOD method_15234 (F)V
 	METHOD method_15235 (F)V
 CLASS Class_5389
+	FIELD field_14362 _ctx LClass_7079;
 	METHOD method_15236 (F)V
 	METHOD method_15237 (F)V
 	METHOD method_15238 (F)V
 	METHOD method_15239 ()V
 CLASS Class_5390
+	FIELD field_14368 _ctx LClass_7079;
 CLASS Class_5391 com/threerings/projectx/dungeon/config/AttackConfig
 	FIELD field_14370 implementation LClass_5391$Class_5397;
 	METHOD method_15240 (LClass_1411;)LClass_5391$Class_5398;
@@ -28958,6 +29240,7 @@ CLASS Class_5688 com/threerings/projectx/dungeon/config/SpawnTableConfig
 			FIELD field_14978 ONE_PER_MILLI LClass_5688$Class_5708$Class_5709;
 			FIELD field_14979 _duration I
 			FIELD field_14980 _fill F
+			FIELD field_14981 _ops I
 			FIELD field_14982 _throt LClass_1267;
 			METHOD method_15345 $values ()[LClass_5688$Class_5708$Class_5709;
 			METHOD method_15346 throttle (Z)Z
@@ -29303,6 +29586,7 @@ CLASS Class_5802 com/threerings/projectx/dungeon/data/DepthCodes
 		FIELD field_15208 ATTACK_NORMAL LClass_5802$Class_5803;
 		FIELD field_15209 LINEAR LClass_5802$Class_5803;
 		FIELD field_15210 POWER LClass_5802$Class_5803;
+		FIELD field_15211 _dt LClass_5802$Class_5805;
 		METHOD method_15405 $values ()[LClass_5802$Class_5803;
 		METHOD method_15406 getDepthType ()LClass_5802$Class_5805;
 		METHOD method_15407 valueOf (Ljava/lang/String;)LClass_5802$Class_5803;
@@ -29311,6 +29595,7 @@ CLASS Class_5802 com/threerings/projectx/dungeon/data/DepthCodes
 		FIELD field_15212 $VALUES [LClass_5802$Class_5804;
 		FIELD field_15213 LINEAR LClass_5802$Class_5804;
 		FIELD field_15214 POWER LClass_5802$Class_5804;
+		FIELD field_15215 _dt LClass_5802$Class_5805;
 		METHOD method_15409 $values ()[LClass_5802$Class_5804;
 		METHOD method_15410 getDepthType ()LClass_5802$Class_5805;
 		METHOD method_15411 valueOf (Ljava/lang/String;)LClass_5802$Class_5804;
@@ -29653,6 +29938,7 @@ CLASS Class_5847 com/threerings/projectx/dungeon/data/StatusCodes
 		FIELD field_15393 ULTRA LClass_5847$Class_5848;
 		FIELD field_15394 VERY_HIGH LClass_5847$Class_5848;
 		FIELD field_15395 _chance F
+		FIELD field_15396 _key Ljava/lang/String;
 		METHOD method_15554 $values ()[LClass_5847$Class_5848;
 		METHOD method_15555 chance (F)F
 		METHOD method_15556 ()Ljava/lang/String;
@@ -29786,6 +30072,7 @@ CLASS Class_5857 com/threerings/projectx/dungeon/data/actor/Block
 CLASS Class_5859 com/threerings/projectx/dungeon/data/actor/Bomb
 	FIELD field_15479 _clientOid I
 	FIELD field_15480 _controlDelta I
+	FIELD field_15481 _z F
 	METHOD method_15600 ()I
 CLASS Class_5860 com/threerings/projectx/dungeon/data/actor/BouncerDoor
 	FIELD field_15482 _actorIds [I
@@ -29796,6 +30083,7 @@ CLASS Class_5861 com/threerings/projectx/dungeon/data/actor/Bullet
 	FIELD field_15485 _faction I
 	FIELD field_15486 _fizzle Z
 	FIELD field_15487 _origin LClass_2341;
+	FIELD field_15488 _z F
 	METHOD method_15602 ()I
 	METHOD method_15603 ()Z
 	METHOD method_15604 (F)V
@@ -29896,6 +30184,7 @@ CLASS Class_5870 com/threerings/projectx/dungeon/data/actor/Monster
 	FIELD field_15536 _maxShieldHealth I
 	FIELD field_15537 _shieldHealth I
 	FIELD field_15538 _status LClass_5825;
+	FIELD field_21015 _z F
 	METHOD method_15648 ()I
 	METHOD method_15649 ()LClass_1412;
 	METHOD method_15650 ()I
@@ -30066,6 +30355,7 @@ CLASS Class_5889 com/threerings/projectx/dungeon/server/random/StatusTraps
 CLASS Class_5890
 	METHOD method_15708 (LClass_5884;)D
 CLASS Class_5891 com/threerings/projectx/dungeon/tools/PrefabTableModel
+	FIELD field_15644 _dir LClass_5900;
 	FIELD field_15645 _normalModel Ljavax/swing/table/TableColumnModel;
 	FIELD field_15646 _smallModel Ljavax/swing/table/TableColumnModel;
 	METHOD method_15709 getColumnCount ()I
@@ -30499,9 +30789,11 @@ CLASS Class_5968 com/threerings/projectx/exchange/client/MiniBuyController
 	METHOD method_15933 isBuy ()Z
 CLASS Class_5969 com/threerings/projectx/exchange/client/MiniExchangeController
 	FIELD field_15898 _content LClass_3034;
+	FIELD field_15899 _ctx LClass_7079;
 	FIELD field_15900 _expand LClass_2989;
 	FIELD field_15901 _expanded Z
 	FIELD field_15902 _fullHeight I
+	FIELD field_15903 _inc I
 	FIELD field_15904 _lastHeight I
 	METHOD method_15934 toggleExpand ()V
 CLASS Class_5970 com/threerings/projectx/exchange/client/MiniSellController
@@ -30520,6 +30812,7 @@ CLASS Class_5980
 CLASS Class_5981
 CLASS Class_5982
 CLASS Class_5983
+	FIELD field_15931 _ctx LClass_7079;
 	FIELD field_15932 _msgs LClass_7683;
 	METHOD method_15936 ()I
 	METHOD method_15937 ()V
@@ -30539,6 +30832,7 @@ CLASS Class_5985 com/threerings/projectx/exchange/client/BillingUtil
 	METHOD method_15949 (LClass_7079;Ljava/lang/String;)V
 CLASS Class_5986
 	FIELD field_15939 _buttonListener LClass_3009;
+	FIELD field_15940 _ctx LClass_7079;
 	METHOD method_15950 ()V
 	METHOD method_15951 (LClass_3009;)V
 	METHOD method_15952 (LClass_7079;Ljava/lang/String;LClass_2999;)V
@@ -30578,6 +30872,7 @@ CLASS Class_5992
 	METHOD method_15979 (LClass_5987$Class_5988;LClass_5987$Class_5988;)I
 	METHOD method_15980 compare (Ljava/lang/Object;Ljava/lang/Object;)I
 CLASS Class_5993
+	FIELD field_15970 _ctx LClass_7079;
 	FIELD field_15975 rarity I
 	METHOD method_15981 ()LClass_2820;
 	METHOD method_15982 ()V
@@ -30585,6 +30880,7 @@ CLASS Class_5993
 	METHOD method_15984 (LClass_2999;)V
 	METHOD method_15985 getName ()Ljava/lang/String;
 CLASS Class_5994
+	FIELD field_15976 _id I
 	METHOD method_15986 ()V
 	METHOD method_15987 (ILClass_6667;)V
 	METHOD method_15988 (LClass_3644$Class_3645;)V
@@ -30595,6 +30891,7 @@ CLASS Class_5997
 CLASS Class_5998
 CLASS Class_5999
 CLASS Class_6000
+	FIELD field_15992 _ctx LClass_7079;
 	METHOD method_15990 (ILClass_6556;)V
 	METHOD method_15991 (ILClass_6667;)V
 	METHOD method_15992 (Ljava/util/Map;Z)Ljava/util/Map;
@@ -30609,6 +30906,7 @@ CLASS Class_6003
 CLASS Class_6004
 	METHOD method_15998 ()V
 CLASS Class_6005
+	FIELD field_15999 _ctx LClass_7079;
 	FIELD field_16000 _interval LClass_1213;
 	METHOD method_15999 ()V
 	METHOD method_16000 ()V
@@ -30622,6 +30920,7 @@ CLASS Class_6005
 		METHOD method_16006 (Ljava/lang/String;Z)V
 CLASS Class_6008
 CLASS Class_6009
+	FIELD field_16011 _ctx LClass_7079;
 	FIELD field_16012 _msgs LClass_7683;
 	FIELD field_16013 _safesub LClass_3642;
 	METHOD method_16007 ()V
@@ -30672,12 +30971,14 @@ CLASS Class_6022 com/threerings/projectx/expr/ProjectXFloatExpression
 CLASS Class_6024
 CLASS Class_6025
 CLASS Class_6026
+	FIELD field_16053 _ctx LClass_7079;
 	FIELD field_16054 _msgs LClass_7683;
 	METHOD method_16029 ()V
 CLASS Class_6027
 CLASS Class_6028
 CLASS Class_6029
 	FIELD field_16062 _active Z
+	FIELD field_16063 _ctx LClass_7079;
 	FIELD field_16064 _guildId I
 	METHOD method_16030 ()V
 	METHOD method_16031 (I)V
@@ -30713,6 +31014,7 @@ CLASS Class_6034 com/threerings/projectx/guild/client/GuildBagWindow
 		METHOD method_16050 values ()[LClass_6034$Class_6035;
 CLASS Class_6036 com/threerings/projectx/guild/client/GuildFundsController
 	FIELD field_16086 _crowns LClass_2761;
+	FIELD field_16087 _gbo LClass_6140;
 	FIELD field_16088 _helper LClass_6029;
 	FIELD field_16089 _listener LClass_3742;
 	METHOD method_16051 updateCrowns ()V
@@ -30729,8 +31031,11 @@ CLASS Class_6037 com/threerings/projectx/guild/client/GuildHelpWindow
 		METHOD method_16054 values ()[LClass_6037$Class_6038;
 CLASS Class_6039 com/threerings/projectx/guild/client/GuildUpkeepController
 	FIELD field_16097 _crowns LClass_2761;
+	FIELD field_16098 _ctx LClass_7079;
 	FIELD field_16099 _isTicking Z
 	FIELD field_16100 _listener LClass_3742;
+	FIELD field_16101 _obj LClass_6169;
+	FIELD field_16102 _sdf Ljava/text/SimpleDateFormat;
 	FIELD field_16103 _timer LClass_2761;
 	METHOD method_16055 checkTimer ()V
 	METHOD method_16056 updateCost ()V
@@ -31348,6 +31653,7 @@ CLASS Class_6196
 	METHOD method_16344 (Ljava/lang/String;LClass_3644$Class_3645;)V
 	METHOD method_16345 (Ljava/lang/String;LClass_3644$Class_3645;)V
 CLASS Class_6197
+	FIELD field_16504 _ctx LClass_7079;
 	METHOD method_16346 ()V
 	METHOD method_16347 ()Ljava/lang/Integer;
 	METHOD method_16348 ()Ljava/lang/String;
@@ -31392,6 +31698,7 @@ CLASS Class_6204
 CLASS Class_6205
 CLASS Class_6206
 CLASS Class_6207
+	FIELD field_16527 _ctx LClass_7079;
 	METHOD method_16380 ()V
 	METHOD method_16381 ()LClass_460;
 	METHOD method_16382 (LClass_2747;)V
@@ -31401,8 +31708,10 @@ CLASS Class_6207
 	METHOD method_16386 isEmpty ()Z
 CLASS Class_6208
 CLASS Class_6209
+	FIELD field_16533 _ctx LClass_7079;
 	METHOD method_16387 (LClass_6410;)LClass_2834;
 CLASS Class_6210
+	FIELD field_16534 _idx I
 	METHOD method_16388 ()V
 	METHOD method_16389 ()V
 	METHOD method_16390 (LClass_6410;ILClass_3034;Z)LClass_3034;
@@ -31426,6 +31735,7 @@ CLASS Class_6217
 		FIELD field_16550 _item LClass_1412;
 	CLASS Class_6219
 CLASS Class_6220
+	FIELD field_16553 _ctx LClass_7079;
 	METHOD method_16399 ()V
 	METHOD method_16400 ()V
 	METHOD method_16401 (I)V
@@ -31464,6 +31774,7 @@ CLASS Class_6231
 		METHOD method_16419 (LClass_6410;)V
 CLASS Class_6235
 CLASS Class_6236
+	FIELD field_16577 _ctx LClass_7079;
 	METHOD method_16420 ()V
 	METHOD method_16421 ()I
 	METHOD method_16422 (J)V
@@ -31524,6 +31835,7 @@ CLASS Class_6241
 	METHOD method_16472 (LClass_6237$Class_6239;LClass_6237$Class_6239;)I
 	METHOD method_16473 compare (Ljava/lang/Object;Ljava/lang/Object;)I
 CLASS Class_6242
+	FIELD field_16594 _ctx LClass_7079;
 	FIELD field_16595 _msgs LClass_7683;
 	METHOD method_16474 ()V
 	METHOD method_16475 ()V
@@ -31531,6 +31843,7 @@ CLASS Class_6242
 	METHOD method_16477 (Ljava/lang/String;)V
 	METHOD method_16478 setTitle (Ljava/lang/String;)V
 CLASS Class_6243
+	FIELD field_16608 _ctx LClass_7079;
 	FIELD field_16609 _msgs LClass_7683;
 	METHOD method_16479 ()V
 	METHOD method_16480 ()V
@@ -31545,11 +31858,13 @@ CLASS Class_6243
 	METHOD method_20902 ()V
 	METHOD method_20903 (LClass_2999;)V
 CLASS Class_6245
+	FIELD field_16628 _ctx LClass_7079;
 	METHOD method_16489 ()V
 	METHOD method_16490 (LClass_6422;)V
 	CLASS Class_6246
 	CLASS Class_6247
 CLASS Class_6248
+	FIELD field_16633 _ctx LClass_7079;
 	FIELD field_16634 _interval LClass_1213;
 	FIELD field_16635 _msgs LClass_7683;
 	METHOD method_16491 ()LClass_3644$Class_3647;
@@ -32473,6 +32788,7 @@ CLASS Class_6440
 	METHOD method_16856 (LClass_7079;LClass_6465;)V
 	METHOD method_16857 matches (Ljava/lang/String;)Z
 CLASS Class_6441
+	FIELD field_17125 _ctx LClass_7079;
 	FIELD field_17126 _interface LClass_2820;
 	FIELD field_17127 _msgs LClass_7683;
 	METHOD method_16858 ()V
@@ -32625,6 +32941,7 @@ CLASS Class_6470
 	METHOD method_16927 (IIF)V
 	METHOD method_16928 (LClass_7634;)F
 CLASS Class_6471 com/threerings/projectx/map/client/AbstractMapComponent
+	FIELD field_17243 _ctx LClass_7079;
 	METHOD method_16929 ()Z
 	METHOD method_16930 (LClass_3267;IILClass_2342;)V
 	METHOD method_16931 (LClass_3267;LClass_2742;FF)V
@@ -32646,6 +32963,7 @@ CLASS Class_6471 com/threerings/projectx/map/client/AbstractMapComponent
 	CLASS Class_6473
 		METHOD method_16944 (LClass_6471;)V
 CLASS Class_6474
+	FIELD field_17252 _map LClass_7211;
 	FIELD field_17253 _view LClass_7221;
 	METHOD method_16945 ()F
 	METHOD method_16946 ()F
@@ -32676,6 +32994,7 @@ CLASS Class_6477 com/threerings/projectx/map/util/MapUtil
 		FIELD field_17268 ARROW LClass_6477$Class_6478;
 		FIELD field_17269 PLAYER LClass_6477$Class_6478;
 		FIELD field_17271 _cache LClass_1207;
+		FIELD field_17272 _img Ljava/lang/String;
 		METHOD method_16965 $values ()[LClass_6477$Class_6478;
 		METHOD method_16966 (LClass_7079;I)LClass_2742;
 		METHOD method_16967 valueOf (Ljava/lang/String;)LClass_6477$Class_6478;
@@ -32712,6 +33031,7 @@ CLASS Class_6482
 CLASS Class_6483 com/threerings/projectx/mission/client/MissionPanel
 	FIELD field_17283 _msgs LClass_7683;
 	FIELD field_17284 _safesub LClass_3642;
+	FIELD field_17285 _sdf Ljava/text/SimpleDateFormat;
 	METHOD method_16991 ()V
 	METHOD method_16992 ()I
 	METHOD method_16993 ()V
@@ -32827,6 +33147,7 @@ CLASS Class_6506
 	METHOD method_17069 (LClass_3644$Class_3647;)V
 	METHOD method_17070 (Ljava/lang/String;LClass_3644$Class_3645;)V
 CLASS Class_6507
+	FIELD field_17405 _ctx LClass_7079;
 	METHOD method_17071 (LClass_7079;)I
 	METHOD method_17072 ()V
 	METHOD method_17073 (LClass_6483$Class_6485;)V
@@ -33054,6 +33375,7 @@ CLASS Class_6559 com/threerings/projectx/mission/data/RankPair
 	METHOD method_17145 hashCode ()I
 	METHOD method_17146 toString ()Ljava/lang/String;
 CLASS Class_6560 com/threerings/projectx/partner/client/SteamDirector
+	FIELD field_17534 _ctx LClass_7079;
 	METHOD method_17147 ()V
 	METHOD method_17148 (Ljava/util/List;)V
 	METHOD method_17149 (Ljava/lang/String;Ljava/lang/String;)V
@@ -33186,6 +33508,7 @@ CLASS Class_6582 com/threerings/projectx/pvp/client/PvpDialog
 		METHOD method_17257 ()V
 		METHOD method_17258 (LClass_6603;)V
 	CLASS Class_6586
+		FIELD field_17617 _ctx LClass_7079;
 		METHOD method_17259 ()V
 		METHOD method_17260 (Z)V
 	CLASS Class_6587
@@ -33404,6 +33727,7 @@ CLASS Class_6630 com/threerings/projectx/reward/data/RewardIdentifier
 	FIELD field_17763 param Ljava/lang/String;
 	FIELD field_17764 rewardId I
 CLASS Class_6631 com/threerings/projectx/shop/client/GoodSlot
+	FIELD field_17765 _ctx LClass_7079;
 	FIELD field_17766 _root LClass_3034;
 	METHOD method_17340 ()LClass_6667;
 	METHOD method_17341 ()V
@@ -33491,6 +33815,7 @@ CLASS Class_6646
 CLASS Class_6647
 	METHOD method_17400 (LClass_3034;)LClass_6667;
 CLASS Class_6648
+	FIELD field_17820 _ctx LClass_7079;
 	METHOD method_17401 (LClass_6667;)LClass_2834;
 CLASS Class_6649
 	METHOD method_17402 (Ljava/lang/String;I)LClass_2820;
@@ -33746,6 +34071,7 @@ CLASS Class_6713
 CLASS Class_6714
 CLASS Class_6715 com/threerings/projectx/social/client/NotificationDirector
 	FIELD field_17934 _clazz Ljava/lang/Class;
+	FIELD field_17935 _ctx LClass_7079;
 	METHOD method_17524 ()Ljava/lang/String;
 	METHOD method_17525 ()V
 	METHOD method_17526 ()LClass_4721;
@@ -33888,6 +34214,7 @@ CLASS Class_6739 com/threerings/projectx/social/data/FeedEvent
 	CLASS Class_6748 SessionLevels
 	CLASS Class_6749 SessionPrestige
 	CLASS Class_6750 SessionPvp
+		FIELD field_17987 _pvp LClass_6611;
 		METHOD method_17621 ()LClass_6611;
 	CLASS Class_6751 Type
 		FIELD field_17988 $VALUES [LClass_6739$Class_6751;
@@ -34037,6 +34364,7 @@ CLASS Class_6780
 CLASS Class_6781
 CLASS Class_6782
 CLASS Class_6783
+	FIELD field_18072 _ctx LClass_7079;
 	FIELD field_18073 _sprite LClass_6829;
 	METHOD method_17686 ()V
 	METHOD method_17687 (LClass_6829;I)V
@@ -34065,6 +34393,7 @@ CLASS Class_6787
 CLASS Class_6788
 CLASS Class_6789
 CLASS Class_6790
+	FIELD field_18088 _ctx LClass_7079;
 	FIELD field_18089 _msgs LClass_7683;
 	FIELD field_18090 _sprite LClass_6829;
 	METHOD method_17706 (LClass_6839;)V
@@ -34072,6 +34401,7 @@ CLASS Class_6790
 	METHOD method_17708 ()V
 CLASS Class_6791
 CLASS Class_6792
+	FIELD field_18095 _ctx LClass_7079;
 	FIELD field_18096 _msgs LClass_7683;
 	FIELD field_18097 _sprite LClass_6829;
 	METHOD method_17709 (LClass_6792;)LClass_2820;
@@ -34082,6 +34412,7 @@ CLASS Class_6793
 CLASS Class_6794
 CLASS Class_6795
 CLASS Class_6796
+	FIELD field_18107 _ctx LClass_7079;
 	FIELD field_18108 _sprite LClass_6829;
 	METHOD method_17713 ()V
 	METHOD method_17714 ()V
@@ -34181,6 +34512,7 @@ CLASS Class_6829 com/threerings/projectx/sprites/data/BattleSprite
 	FIELD field_18185 _dirty Z
 	FIELD field_18186 _fullStamp J
 	FIELD field_18187 _heatProgress F
+	FIELD field_18188 _id I
 	FIELD field_18189 _lastFull Ljava/lang/Long;
 	FIELD field_18190 _level I
 	FIELD field_18191 _name Ljava/lang/String;
@@ -34400,6 +34732,7 @@ CLASS Class_6854
 CLASS Class_6855 com/threerings/projectx/tools/MissingCoordsDialog
 	FIELD field_18332 _container Ljavax/swing/JPanel;
 	FIELD field_18333 _coordTextArea Ljavax/swing/JTextArea;
+	FIELD field_18334 _map LClass_7211;
 	METHOD method_17836 ()V
 	METHOD method_17837 (Ljava/awt/event/ActionEvent;)V
 CLASS Class_6856 com/threerings/projectx/tools/ProjectXConfigEditor
@@ -34756,6 +35089,7 @@ CLASS Class_6955
 CLASS Class_6956
 CLASS Class_6957
 CLASS Class_6958
+	FIELD field_18587 _ctx LClass_7079;
 	METHOD method_18012 ()LClass_6958$Class_6959;
 	METHOD method_18013 (JI)V
 	METHOD method_18014 (Z)V
@@ -34763,6 +35097,7 @@ CLASS Class_6958
 	CLASS Class_6959
 CLASS Class_6960
 CLASS Class_6961
+	FIELD field_18592 _ctx LClass_7079;
 	METHOD method_18016 ()V
 	METHOD method_18017 ()I
 	METHOD method_18018 ()V
@@ -34831,6 +35166,7 @@ CLASS Class_6974
 CLASS Class_6976
 CLASS Class_6977
 CLASS Class_6978
+	FIELD field_18635 _ctx LClass_7079;
 	METHOD method_18054 ()V
 	METHOD method_18055 ()V
 	METHOD method_18056 ()V
@@ -34839,7 +35175,9 @@ CLASS Class_6979
 CLASS Class_6980
 CLASS Class_6981
 CLASS Class_6982 com/threerings/projectx/uplink/client/MailPanel
+	FIELD field_18648 _ctx LClass_7079;
 	FIELD field_18649 _msgs LClass_7683;
+	FIELD field_18650 _sdf Ljava/text/SimpleDateFormat;
 	METHOD method_18058 (Ljava/util/List;)V
 	METHOD method_18059 (Ljava/util/List;)Z
 	METHOD method_18060 ()LClass_2800;
@@ -34898,6 +35236,7 @@ CLASS Class_6984 com/threerings/projectx/uplink/client/UplinkService
 		FIELD field_18669 subscribed Z
 		FIELD field_18670 validated Z
 CLASS Class_6986
+	FIELD field_18671 _ctx LClass_7079;
 	METHOD method_18106 ()I
 	METHOD method_18107 ()I
 	METHOD method_18108 ()Z
@@ -34915,6 +35254,7 @@ CLASS Class_6993
 CLASS Class_6994
 	METHOD method_18113 (Ljava/lang/Void;)V
 CLASS Class_6995
+	FIELD field_18690 _ctx LClass_7079;
 	METHOD method_18114 (LClass_7026;)V
 	CLASS Class_6996
 		METHOD method_18115 ()LClass_7026;
@@ -35360,6 +35700,7 @@ CLASS Class_7098 com/threerings/stage/client/StageScenePanel
 	FIELD field_18918 _clusterWells Ljava/util/Map;
 	FIELD field_18919 _clusters Ljava/util/Map;
 	FIELD field_18920 _ctrl LClass_1168;
+	FIELD field_18921 _ctx LClass_7096;
 	FIELD field_18922 _portobjs Ljava/util/List;
 	FIELD field_18923 _rizer LClass_7100;
 	FIELD field_18924 _scene LClass_7114;
@@ -35528,6 +35869,7 @@ CLASS Class_7138 com/threerings/swing/PrefsTreeNode
 	METHOD method_18433 ()Ljava/lang/String;
 CLASS Class_7139 com/threerings/swing/PrintStreamDialog
 	FIELD field_18988 _close Ljava/lang/String;
+	FIELD field_18989 _out Ljava/io/ByteArrayOutputStream;
 	FIELD field_18990 _printStream Ljava/io/PrintStream;
 	METHOD method_18434 ()Ljava/io/PrintStream;
 	METHOD method_18435 ()V
@@ -35708,6 +36050,7 @@ CLASS Class_7167 com/threerings/tudey/client/sprite/ActorSprite
 		FIELD field_19091 _activities LClass_1201;
 		METHOD method_18560 ()V
 		CLASS Class_7169 Activity
+			FIELD field_19093 _idx I
 			METHOD method_18561 (LClass_1412;)V
 			METHOD method_18562 (LClass_7167$Class_7168$Class_7169;)V
 			METHOD method_18563 (LClass_7167$Class_7168$Class_7169;)V
@@ -36816,10 +37159,12 @@ CLASS Class_7491
 CLASS Class_7492 com/threerings/tudey/config/package-info
 CLASS Class_7493 com/threerings/tudey/data/EntityKey
 	CLASS Class_7494 Actor
+		FIELD field_19718 _id I
 		METHOD method_18989 equals (Ljava/lang/Object;)Z
 		METHOD method_18990 hashCode ()I
 		METHOD method_18991 ()I
 	CLASS Class_7495 Entry
+		FIELD field_19719 _key Ljava/lang/Object;
 		METHOD method_18992 equals (Ljava/lang/Object;)Z
 		METHOD method_18993 getKey ()Ljava/lang/Object;
 		METHOD method_18994 hashCode ()I
@@ -36978,6 +37323,7 @@ CLASS Class_7502 com/threerings/tudey/data/TudeySceneModel
 		FIELD field_19764 sceneGlobal LClass_1412;
 		METHOD method_19113 (LClass_1411;)LClass_7446$Class_7451;
 	CLASS Class_7507 IdEntry
+		FIELD field_19765 _id I
 		METHOD method_19114 (LClass_7502$Class_7507;)I
 		METHOD method_19115 compareTo (Ljava/lang/Object;)I
 		METHOD method_19116 (I)V
@@ -37055,6 +37401,7 @@ CLASS Class_7522 com/threerings/tudey/data/actor/Actor
 	FIELD field_19796 _destroyed I
 	FIELD field_19797 _dirty Z
 	FIELD field_19798 _flags I
+	FIELD field_19799 _id I
 	FIELD field_19800 _rotation F
 	FIELD field_19801 _translation LClass_2341;
 	METHOD method_19154 ()LClass_1412;
@@ -37086,6 +37433,7 @@ CLASS Class_7522 com/threerings/tudey/data/actor/Actor
 CLASS Class_7523 com/threerings/tudey/data/actor/Agent
 	FIELD field_19804 _speed F
 CLASS Class_7524 com/threerings/tudey/data/actor/EntryState
+	FIELD field_19805 _key Ljava/lang/Object;
 	FIELD field_19806 _stateEntered I
 	FIELD field_19807 _state I
 	METHOD method_19180 ()I
@@ -37134,6 +37482,7 @@ CLASS Class_7532
 	METHOD method_19207 ()I
 CLASS Class_7533 com/threerings/tudey/data/package-info
 CLASS Class_7534 com/threerings/tudey/dobj/ActorDelta
+	FIELD field_19822 _id I
 	METHOD method_19208 ()I
 CLASS Class_7535 com/threerings/tudey/dobj/SceneDeltaEvent
 	FIELD field_19823 _acknowledge I
@@ -37290,6 +37639,7 @@ CLASS Class_7563
 	METHOD method_19299 updateBounds ()V
 CLASS Class_7564
 	FIELD field_19874 _colorState LClass_3277;
+	FIELD field_19875 _ctx LClass_3572;
 	FIELD field_19876 _localTransform LClass_2339;
 	FIELD field_19877 _parentViewTransform LClass_2339;
 	FIELD field_19878 _parentWorldTransform LClass_2339;
@@ -37302,6 +37652,7 @@ CLASS Class_7566
 CLASS Class_7567 com/threerings/tudey/tools/AreaDefiner
 	FIELD field_19882 AREA_FILTER LClass_167;
 	FIELD field_19883 _entry LClass_7502$Class_7503;
+	FIELD field_19884 _idx I
 	FIELD field_19885 _isect LClass_2342;
 	METHOD method_19304 (LClass_7502$Class_7503;I)V
 	METHOD method_19305 (LClass_7502$Class_7503;II)V
@@ -37396,6 +37747,7 @@ CLASS Class_7574 com/threerings/tudey/tools/EditorTool
 		METHOD method_19348 (LClass_7502$Class_7504;)Z
 CLASS Class_7577 com/threerings/tudey/tools/EntryEdit
 	FIELD field_19927 _added Ljava/util/Map;
+	FIELD field_19928 _id I
 	FIELD field_19929 _layer I
 	FIELD field_19930 _paint Ljava/util/Map;
 	FIELD field_19931 _removed Ljava/util/Map;
@@ -37475,6 +37827,7 @@ CLASS Class_7587 com/threerings/tudey/tools/LayerTableModel
 	FIELD field_19970 _editor LClass_7611;
 	FIELD field_19971 _layers LClass_7588;
 	FIELD field_19972 _scene LClass_7502;
+	FIELD field_19973 _vis Ljava/util/List;
 	METHOD method_19374 (Ljava/lang/String;I)I
 	METHOD method_19375 ()Ljavax/swing/JTable;
 	METHOD method_19376 ()Ljava/util/List;
@@ -37541,6 +37894,7 @@ CLASS Class_7591 com/threerings/tudey/tools/Palette
 CLASS Class_7592 com/threerings/tudey/tools/PathDefiner
 	FIELD field_19988 PATH_FILTER LClass_167;
 	FIELD field_19989 _entry LClass_7502$Class_7511;
+	FIELD field_19990 _idx I
 	FIELD field_19991 _isect LClass_2342;
 	METHOD method_19415 (LClass_7502$Class_7511;I)V
 	METHOD method_19416 (LClass_7502$Class_7511;II)V
@@ -37636,6 +37990,7 @@ CLASS Class_7611
 	FIELD field_20044 _cameraEnabled Z
 	FIELD field_20045 _chooser Ljavax/swing/JFileChooser;
 	FIELD field_20046 _copy Ljavax/swing/Action;
+	FIELD field_20047 _cut Ljavax/swing/Action;
 	FIELD field_20048 _delete Ljavax/swing/Action;
 	FIELD field_20049 _exportChooser Ljavax/swing/JFileChooser;
 	FIELD field_20050 _file Ljava/io/File;
@@ -37646,6 +38001,7 @@ CLASS Class_7611
 	FIELD field_20055 _paste Ljavax/swing/Action;
 	FIELD field_20056 _pick LClass_2346;
 	FIELD field_20057 _prefs Ljava/util/prefs/Preferences;
+	FIELD field_20058 _pt LClass_2342;
 	FIELD field_20059 _redo Ljavax/swing/Action;
 	FIELD field_20060 _revert Ljavax/swing/JMenuItem;
 	FIELD field_20061 _sceneId I
@@ -37868,6 +38224,7 @@ CLASS Class_7635 com/threerings/tudey/util/CoordIntMap
 		METHOD method_19610 (III)I
 		METHOD method_19611 ()I
 	CLASS Class_7637
+		FIELD field_20181 _idx I
 		FIELD field_20182 _values [I
 		METHOD method_19612 ()LClass_7634;
 		METHOD method_19613 (I)I
@@ -37889,6 +38246,9 @@ CLASS Class_7638 com/threerings/tudey/util/Direction
 	FIELD field_20190 SOUTHEAST LClass_7638;
 	FIELD field_20191 SOUTH LClass_7638;
 	FIELD field_20192 SOUTHWEST LClass_7638;
+	FIELD field_20194 _vec LClass_2341;
+	FIELD field_20195 _x I
+	FIELD field_20196 _y I
 	METHOD method_19623 $values ()[LClass_7638;
 	METHOD method_19624 getVector2f ()LClass_2341;
 	METHOD method_19625 ()I
@@ -37944,6 +38304,7 @@ CLASS Class_7645
 	METHOD method_19658 ()I
 CLASS Class_7646
 	FIELD field_20216 _count I
+	FIELD field_20217 _idx I
 	METHOD method_19659 ()LClass_7635$Class_7637;
 	METHOD method_19660 hasNext ()Z
 	METHOD method_19661 ()V
@@ -38141,6 +38502,7 @@ CLASS Class_7678
 	CLASS Class_7680
 		METHOD method_19806 (IIJ)V
 	CLASS Class_7681
+		FIELD field_20296 _id I
 		FIELD field_20297 _keyCode I
 		METHOD method_19807 (LClass_7678$Class_7680;)Z
 		METHOD method_19808 (IIJ)V
@@ -38264,6 +38626,7 @@ CLASS Class_7703
 	METHOD method_19891 (Ljava/lang/Runnable;)V
 CLASS Class_7704
 CLASS Class_7705
+	FIELD field_20324 _map Ljava/util/IdentityHashMap;
 	METHOD method_19892 (Ljava/lang/Object;)Z
 	METHOD method_19893 clear ()V
 	METHOD method_19894 contains (Ljava/lang/Object;)Z
@@ -38280,6 +38643,7 @@ CLASS Class_7707
 	METHOD method_19903 hashCode ()I
 CLASS Class_7708
 	FIELD field_20327 _count I
+	FIELD field_20328 _idx I
 	METHOD method_19904 ()Ljava/lang/Enum;
 	METHOD method_19905 hasNext ()Z
 	METHOD method_19906 ()V
