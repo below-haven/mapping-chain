@@ -6946,7 +6946,7 @@ CLASS Class_1159
 	METHOD method_4754 ()Ljava/awt/Component;
 CLASS Class_1160
 	METHOD method_4755 mouseMoved (Ljava/awt/event/MouseEvent;)V
-CLASS Class_1161
+CLASS Class_1161 com/samskivert/swing/util/SwingUtil
 	METHOD method_4756 (Ljava/awt/Component;ILClass_1161$Class_1162;)V
 	METHOD method_4757 (Ljava/awt/Component;LClass_1161$Class_1162;)V
 	METHOD method_4758 (Ljava/awt/Container;Z)V
@@ -6955,7 +6955,7 @@ CLASS Class_1161
 	METHOD method_4761 (Ljavax/swing/text/Document;LClass_1161$Class_1164;LClass_1161$Class_1163;)V
 	METHOD method_4762 (Ljavax/swing/text/JTextComponent;LClass_1161$Class_1164;LClass_1161$Class_1163;)V
 	METHOD method_4763 (Ljava/awt/Graphics2D;Ljava/lang/Object;)V
-	METHOD method_4764 (Ljavax/swing/JComponent;)V
+	METHOD method_4764 refresh (Ljavax/swing/JComponent;)V
 	METHOD method_4765 (Ljava/awt/Graphics2D;)Ljava/lang/Object;
 	METHOD method_4766 ()Z
 	CLASS Class_1162
@@ -7770,7 +7770,7 @@ CLASS Class_1312
 CLASS Class_1313 com/samskivert/util/StringUtil
 	METHOD method_5333 (II)Ljava/lang/String;
 	METHOD method_5334 (CI)Ljava/lang/String;
-	METHOD method_5335 (Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+	METHOD method_5335 toString (Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 	METHOD method_5336 (Ljava/lang/String;LClass_1313$Class_1314;)Ljava/lang/String;
 	METHOD method_5337 (Ljava/lang/StringBuilder;Ljava/lang/Object;)V
 	METHOD method_5338 (Ljava/lang/StringBuilder;Ljava/lang/Object;Ljava/lang/String;)V
@@ -7801,7 +7801,7 @@ CLASS Class_1313 com/samskivert/util/StringUtil
 	METHOD method_5363 (Ljava/lang/String;)Ljava/lang/String;
 	METHOD method_5364 (Ljava/lang/String;)Ljava/lang/String;
 	METHOD method_5365 (Ljava/lang/Class;)Ljava/lang/String;
-	METHOD method_5366 (Ljava/lang/Object;)Ljava/lang/String;
+	METHOD method_5366 toString (Ljava/lang/Object;)Ljava/lang/String;
 	METHOD method_5367 isBlank (Ljava/lang/String;)Z
 	METHOD method_5368 (Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/String;
 	METHOD method_5369 (Ljava/lang/String;IC)Ljava/lang/String;
@@ -7953,7 +7953,8 @@ CLASS Class_1345
 	METHOD method_5477 (IIIII)Ljava/awt/Rectangle;
 	METHOD method_5478 (Ljava/awt/Rectangle;Ljava/awt/Rectangle;)Ljava/awt/Rectangle;
 CLASS Class_1346
-CLASS Class_1347
+CLASS Class_1347 com/threerings/admin/Log
+	FIELD field_3026 log LClass_1263;
 CLASS Class_1348 com/threerings/admin/client/AsStringFieldEditor
 	FIELD field_3027 _value Ljavax/swing/JTextField;
 CLASS Class_1349 com/threerings/admin/client/BooleanFieldEditor
@@ -8032,15 +8033,15 @@ CLASS Class_1355 com/threerings/admin/client/FieldEditor
 	FIELD field_3065 _label Ljavax/swing/JLabel;
 	METHOD method_5508 (LClass_1355$Class_1356;)V
 	METHOD method_5509 (LClass_3728;)V
-	METHOD method_5510 (Ljava/lang/Object;)V
-	METHOD method_5511 (Ljava/lang/Object;)Z
+	METHOD method_5510 getDisplayValue (Ljava/lang/Object;)V
+	METHOD method_5511 valueMatches (Ljava/lang/Object;)Z
 	METHOD method_5512 actionPerformed (Ljava/awt/event/ActionEvent;)V
 	METHOD method_5513 addNotify ()V
 	METHOD method_5514 focusGained (Ljava/awt/event/FocusEvent;)V
 	METHOD method_5515 focusLost (Ljava/awt/event/FocusEvent;)V
 	METHOD method_5516 getValue ()Ljava/lang/Object;
 	METHOD method_5517 ()V
-	METHOD method_5518 ()Ljava/lang/Object;
+	METHOD method_5518 getDisplayValue ()Ljava/lang/Object;
 	METHOD method_5519 (Z)V
 	METHOD method_5520 removeNotify ()V
 	CLASS Class_1356
@@ -8056,9 +8057,9 @@ CLASS Class_1358 com/threerings/admin/client/ObjectEditorPanel
 	FIELD field_3071 _safesub LClass_3642;
 	METHOD method_5525 (LClass_1365;)V
 	METHOD method_5526 cleanup ()V
-CLASS Class_1359
+CLASS Class_1359 com/threerings/admin/client/AdminService
 	METHOD method_5527 (LClass_1359$Class_1360;)V
-	CLASS Class_1360
+	CLASS Class_1360 ConfigInfoListener
 		METHOD method_5528 ([Ljava/lang/String;[I)V
 CLASS Class_1361
 	METHOD method_5529 changedUpdate (Ljavax/swing/event/DocumentEvent;)V
@@ -8250,7 +8251,7 @@ CLASS Class_1394 com/threerings/billing/methods/aeria/AeriaResponseCode
 	METHOD method_5594 lookup (Ljava/lang/String;)LClass_1394;
 	METHOD method_5595 valueOf (Ljava/lang/String;)LClass_1394;
 	METHOD method_5596 values ()[LClass_1394;
-CLASS Class_1395
+CLASS Class_1395 com/threerings/bureau/client/BureauService
 CLASS Class_1396 com/threerings/bureau/data/AgentObject
 	FIELD field_3403 bureauId Ljava/lang/String;
 	FIELD field_3404 bureauType Ljava/lang/String;
@@ -8281,6 +8282,8 @@ CLASS Class_1405 com/threerings/coin/data/CoinExOfferInfo
 	METHOD method_5601 (LClass_1405;)I
 	METHOD method_5602 compareTo (Ljava/lang/Object;)I
 CLASS Class_1406 com/threerings/config/ArgumentMap
+	FIELD field_3419 _entries LClass_1251;
+	FIELD field_3420 _key LClass_1406$Class_1407;
 	FIELD field_3421 _a1 [Ljava/lang/Object;
 	FIELD field_3422 _a2 [Ljava/lang/Object;
 	METHOD method_5603 (Ljava/lang/Object;)I
@@ -8302,7 +8305,7 @@ CLASS Class_1406 com/threerings/config/ArgumentMap
 	METHOD method_5619 remove (Ljava/lang/Object;)Ljava/lang/Object;
 	METHOD method_5620 ()I
 	METHOD method_5621 writeObject (LClass_2324;)V
-	CLASS Class_1407
+	CLASS Class_1407 Key
 		FIELD field_3423 _key Ljava/lang/String;
 		METHOD method_5622 (Ljava/util/Map$Entry;)I
 		METHOD method_5623 (Ljava/lang/String;)LClass_1406$Class_1407;
@@ -8315,7 +8318,7 @@ CLASS Class_1408 com/threerings/config/BoundConfig
 	METHOD method_5626 getBound (LClass_2067;)LClass_1408;
 CLASS Class_1409 com/threerings/config/ConfigEvent
 	FIELD field_3427 _config LClass_1414;
-	METHOD method_5627 ()LClass_1414;
+	METHOD method_5627 getConfig ()LClass_1414;
 CLASS Class_1410 com/threerings/config/ConfigGroup
 	FIELD field_3428 _cclass Ljava/lang/Class;
 	FIELD field_3429 _cfgmgr LClass_1411;
@@ -8424,6 +8427,9 @@ CLASS Class_1412 com/threerings/config/ConfigReference
 	METHOD method_5713 ()LClass_1406;
 	METHOD method_5714 ()LClass_1412;
 CLASS Class_1413 com/threerings/config/DerivedConfig
+	FIELD field_3445 cclass Ljava/lang/Class;
+	FIELD field_3446 _source LClass_1414;
+	FIELD field_3447 _derivation Ljava/lang/ref/SoftReference;
 	METHOD method_5715 (LClass_1421;)V
 	METHOD method_5716 (LClass_1421;LClass_1415$Class_1419;)LClass_1415$Class_1419;
 	METHOD method_5717 (LClass_1414;)V
@@ -8464,7 +8470,9 @@ CLASS Class_1414 com/threerings/config/ManagedConfig
 	METHOD method_5744 wasUpdated ()V
 	METHOD method_5745 writeFields (LClass_1812;)V
 CLASS Class_1415 com/threerings/config/Parameter
+	FIELD field_3457 EMPTY_ARRAY [LClass_1415;
 	FIELD field_3460 _property LClass_1694;
+	FIELD field_3461 name Ljava/lang/String;
 	METHOD method_5746 (LClass_1675;LClass_1421;)Z
 	METHOD method_5747 (Ljava/lang/String;LClass_1421;)V
 	METHOD method_5748 (LClass_1421;)LClass_1694;
@@ -8510,7 +8518,7 @@ CLASS Class_1422
 	METHOD method_5770 iterator ()Ljava/util/Iterator;
 	METHOD method_5771 remove (Ljava/lang/Object;)Z
 	METHOD method_5772 ()I
-CLASS Class_1423
+CLASS Class_1423 com/threerings/config/ConfigGroupListener
 	METHOD method_5773 (LClass_1409;)V
 	METHOD method_5774 (LClass_1409;)V
 CLASS Class_1424
@@ -8531,7 +8539,7 @@ CLASS Class_1426 com/threerings/config/dist/client/DConfigDirector
 CLASS Class_1427
 CLASS Class_1428
 CLASS Class_1429
-CLASS Class_1430
+CLASS Class_1430 com/threerings/config/dist/util/ConfigUpdater
 	FIELD field_3489 _cfgmgr LClass_1411;
 	METHOD method_5783 (LClass_1414;)V
 	METHOD method_5784 (LClass_1432;)V
@@ -9074,6 +9082,10 @@ CLASS Class_1514 com/threerings/crowd/util/CrowdContext
 	METHOD method_6081 ()LClass_1583;
 	METHOD method_6082 ()LClass_1518;
 CLASS Class_1515 com/threerings/crowd/chat/client/CurseFilter
+	FIELD field_3703 _stopMatcher Ljava/util/regex/Matcher;
+	FIELD field_3704 _matchers [Ljava/util/regex/Matcher;
+	FIELD field_3705 _comicLength [I
+	FIELD field_3708 COMIC_CHARS [Ljava/lang/Character;
 	METHOD method_6083 (Ljava/lang/String;)V
 	METHOD method_6084 (Ljava/lang/String;)V
 	METHOD method_6085 (Ljava/lang/String;)Ljava/lang/String;
@@ -9602,7 +9614,7 @@ CLASS Class_1678 com/threerings/editor/Editable
 	METHOD method_6390 ()D
 CLASS Class_1679
 	METHOD method_6391 value ()Ljava/lang/String;
-CLASS Class_1680
+CLASS Class_1680 com/threerings/editor/EditorTypes
 	METHOD method_6392 ()Ljava/lang/String;
 	METHOD method_6393 ()[Ljava/lang/Class;
 	METHOD method_6394 ()Ljava/lang/String;
@@ -9647,7 +9659,7 @@ CLASS Class_1692
 CLASS Class_1693
 	METHOD method_6418 (Ljava/lang/Object;)Ljava/lang/Object;
 	METHOD method_6419 prepareInstanceToEdit ()V
-CLASS Class_1694
+CLASS Class_1694 com/threerings/editor/Property
 	FIELD field_3951 _name Ljava/lang/String;
 	METHOD method_6420 (Ljava/lang/reflect/Type;)Ljava/lang/Class;
 	METHOD method_6421 (LClass_1680;Ljava/util/Collection;)V
@@ -11147,7 +11159,7 @@ CLASS Class_2037
 	METHOD method_7290 ()LClass_2339;
 CLASS Class_2038
 	METHOD method_7291 ()LClass_2339;
-CLASS Class_2039
+CLASS Class_2039 com/threerings/expr/Updater
 	METHOD method_7292 update ()V
 CLASS Class_2040
 	METHOD method_7293 (I)LClass_2040;
@@ -11220,7 +11232,7 @@ CLASS Class_2067 com/threerings/expr/Scope
 	METHOD method_7326 getParentScope ()LClass_2067;
 	METHOD method_7327 getScopeName ()Ljava/lang/String;
 	METHOD method_7328 removeListener (LClass_2068;)V
-CLASS Class_2068
+CLASS Class_2068 com/threerings/expr/ScopeUpdateListener
 	METHOD method_7329 scopeUpdated (LClass_1999;)V
 CLASS Class_2069 com/threerings/expr/Scoped
 CLASS Class_2070
@@ -12501,7 +12513,7 @@ CLASS Class_2319 com/threerings/io/FramedInputStream
 CLASS Class_2320 com/threerings/io/FramingOutputStream
 	METHOD method_8094 ()Ljava/nio/ByteBuffer;
 	METHOD method_8095 ()V
-CLASS Class_2321
+CLASS Class_2321 com/threerings/io/Intern
 CLASS Class_2322
 CLASS Class_2323 com/threerings/io/ObjectInputStream
 	FIELD field_5315 _depth I
@@ -21130,7 +21142,7 @@ CLASS Class_3642 com/threerings/presents/util/SafeSubscriber
 	FIELD field_9550 _oid I
 	METHOD method_11837 ()Z
 	METHOD method_11838 (LClass_3745;)V
-	METHOD method_11839 (LClass_3745;)V
+	METHOD method_11839 unsubscribe (LClass_3745;)V
 	METHOD method_11840 toString ()Ljava/lang/String;
 CLASS Class_3643
 	METHOD method_11841 (ILjava/security/Key;)Ljavax/crypto/Cipher;
@@ -25291,7 +25303,7 @@ CLASS Class_4600
 CLASS Class_4601
 CLASS Class_4602
 CLASS Class_4603
-CLASS Class_4604
+CLASS Class_4604 com/threerings/projectx/client/SceneDialog
 	METHOD method_13973 ()LClass_5012;
 	METHOD method_13974 ()V
 	METHOD method_13975 (LClass_5012;)Z
@@ -38454,7 +38466,7 @@ CLASS Class_7672
 	FIELD field_20262 _elements [Ljava/lang/Object;
 	METHOD method_19759 equals (Ljava/lang/Object;)Z
 	METHOD method_19760 hashCode ()I
-CLASS Class_7673
+CLASS Class_7673 com/threerings/util/Inner
 	METHOD method_19761 (Ljava/lang/Object;)V
 	METHOD method_19762 ()Ljava/lang/Object;
 CLASS Class_7674
@@ -38636,7 +38648,7 @@ CLASS Class_7703
 	METHOD method_19889 getRunQueue ()LClass_1307;
 	METHOD method_19890 postRunnable (Ljava/lang/Runnable;)V
 	METHOD method_19891 (Ljava/lang/Runnable;)V
-CLASS Class_7704
+CLASS Class_7704 com/threerings/util/Shallow
 CLASS Class_7705
 	FIELD field_20324 _map Ljava/util/IdentityHashMap;
 	METHOD method_19892 (Ljava/lang/Object;)Z
@@ -38734,7 +38746,7 @@ CLASS Class_7724 com/threerings/util/DeepObject
 	METHOD method_19958 copy (Ljava/lang/Object;)Ljava/lang/Object;
 	METHOD method_19959 hashCode ()I
 	METHOD method_19960 toString ()Ljava/lang/String;
-CLASS Class_7725
+CLASS Class_7725 com/threerings/util/DeepOmit
 CLASS Class_7726 com/threerings/util/DeepUtil
 	METHOD method_19961 copy (Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 	METHOD method_19962 (Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
