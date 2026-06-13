@@ -5614,7 +5614,7 @@ CLASS Class_901
 CLASS Class_902
 	METHOD method_3757 equals (Ljava/lang/Object;)Z
 	METHOD method_3758 hashCode ()I
-CLASS Class_903 com/google/inject/internal/asm/$ClassTooLargeException
+CLASS Class_903 ClassTooLargeException
 	CLASS Class_904
 		FIELD field_2058 className Ljava/lang/String;
 		FIELD field_2059 constantPoolCount I
@@ -7416,7 +7416,7 @@ CLASS Class_1234 com/samskivert/util/ObserverList
 		METHOD method_5087 (Ljava/lang/Object;)Z
 		METHOD method_5088 (Z)LClass_1234;
 		METHOD method_5089 indexOf (Ljava/lang/Object;)I
-	CLASS Class_1237
+	CLASS Class_1237 ObserverOp
 		METHOD method_5090 apply (Ljava/lang/Object;)Z
 CLASS Class_1238
 	CLASS Class_1239
@@ -7598,7 +7598,8 @@ CLASS Class_1267 com/samskivert/util/Throttle
 	METHOD method_5220 (J)Z
 	METHOD method_5221 toString ()Ljava/lang/String;
 	METHOD method_5222 (J)V
-CLASS Class_1268
+CLASS Class_1268 com/samskivert/Log
+	FIELD field_2935 log LClass_1263;
 CLASS Class_1269
 CLASS Class_1270
 CLASS Class_1271
@@ -7653,7 +7654,8 @@ CLASS Class_1288
 	METHOD method_5252 format (Ljava/util/logging/LogRecord;)Ljava/lang/String;
 	METHOD method_5253 (Z)V
 	METHOD method_5254 ()V
-CLASS Class_1289
+CLASS Class_1289 com/samskivert/util/PrefsConfig
+	FIELD field_2949 _propsup Ljava/beans/PropertyChangeSupport;
 	FIELD field_2950 _prefs Ljava/util/prefs/Preferences;
 	METHOD method_5255 (Ljava/beans/PropertyChangeListener;)V
 	METHOD method_5256 (Ljava/lang/String;Ljava/beans/PropertyChangeListener;)V
@@ -7897,6 +7899,7 @@ CLASS Class_1330
 	METHOD method_5442 compare (Ljava/lang/Comparable;Ljava/lang/Comparable;)I
 	METHOD method_5443 compare (Ljava/lang/Object;Ljava/lang/Object;)I
 CLASS Class_1331 com/samskivert/util/Config
+	FIELD field_3007 _props Ljava/util/Properties;
 	METHOD method_5444 (Ljava/lang/String;Ljava/lang/ClassLoader;Ljava/util/Properties;)Ljava/util/Properties;
 	METHOD method_5445 (Ljava/lang/String;[F)[F
 	METHOD method_5446 (Ljava/lang/String;[I)[I
@@ -13082,8 +13085,10 @@ CLASS Class_2354 com/threerings/media/VirtualMediaPanel
 	METHOD method_8586 ()V
 	METHOD method_20858 (LClass_7976$Class_7977;)V
 	METHOD method_20859 (DD)V
-CLASS Class_2355
+CLASS Class_2355 com/threerings/media/AbstractMedia
+	FIELD field_5455 _bounds Ljava/awt/Rectangle;
 	FIELD field_5456 _observers LClass_1234;
+	FIELD field_5457 _renderOrder I
 	METHOD method_8587 (LClass_2355;)I
 	METHOD method_8588 (LClass_2355;)I
 	METHOD method_8589 contains (DD)Z
@@ -13102,8 +13107,10 @@ CLASS Class_2355
 	METHOD method_8602 toString (Ljava/lang/StringBuilder;)V
 CLASS Class_2356
 	METHOD method_8603 iterator ()Ljava/util/Iterator;
-CLASS Class_2357
+CLASS Class_2357 com/threerings/media/AbstractMediaManager
 	FIELD field_5459 _remgr LClass_2387;
+	FIELD field_5461 _host LClass_2373;
+	FIELD field_5462 _notify Ljava/util/List;
 	METHOD method_8604 (LClass_2373;LClass_2387;)V
 	METHOD method_8605 (Ljava/awt/Graphics2D;ILjava/awt/Shape;)V
 	METHOD method_8606 ()LClass_1251;
@@ -13132,10 +13139,10 @@ CLASS Class_2364
 CLASS Class_2365
 	METHOD method_8621 (LClass_2355;LClass_2355;)I
 	METHOD method_8622 compare (Ljava/lang/Object;Ljava/lang/Object;)I
-CLASS Class_2366
-	METHOD method_8623 (II)I
-	METHOD method_8624 (IIII)F
-	METHOD method_8625 (III)I
+CLASS Class_2366 com/threerings/media/util/MathUtil
+	METHOD method_8623 floorDiv (II)I
+	METHOD method_8624 distance (IIII)F
+	METHOD method_8625 bound (III)I
 CLASS Class_2367
 	METHOD method_8626 (Ljava/awt/Graphics2D;)V
 CLASS Class_2368
@@ -13149,7 +13156,8 @@ CLASS Class_2370
 	METHOD method_8631 (Ljava/awt/Component;Ljava/awt/Rectangle;)Ljava/awt/Component;
 	METHOD method_8632 (LClass_2371;)V
 CLASS Class_2371
-CLASS Class_2372
+CLASS Class_2372 com/threerings/media/Log
+	FIELD field_5479 log LClass_1263;
 CLASS Class_2373
 CLASS Class_2374
 CLASS Class_2375
@@ -13244,13 +13252,14 @@ CLASS Class_2386
 	METHOD method_8684 ()LClass_2370;
 	METHOD method_8685 ()LClass_2356;
 	METHOD method_8686 ()LClass_2387;
-CLASS Class_2387
-	METHOD method_8687 (II)Z
-	METHOD method_8688 (IIII)V
-	METHOD method_8689 (Ljava/awt/Rectangle;)V
-	METHOD method_8690 (Ljava/awt/Rectangle;)V
-	METHOD method_8691 ()Z
-	METHOD method_8692 ()[Ljava/awt/Rectangle;
+CLASS Class_2387 com/threerings/media/RegionManager
+	FIELD field_5521 _dirty Ljava/util/List;
+	METHOD method_8687 isValidSize (II)Z
+	METHOD method_8688 invalidateRegion (IIII)V
+	METHOD method_8689 invalidateRegion (Ljava/awt/Rectangle;)V
+	METHOD method_8690 addDirtyRegion (Ljava/awt/Rectangle;)V
+	METHOD method_8691 haveDirtyRegions ()Z
+	METHOD method_8692 getDirtyRegions ()[Ljava/awt/Rectangle;
 CLASS Class_2388 com/threerings/media/tile/NoSuchTileSetException
 CLASS Class_2389 com/threerings/media/tile/TileSet
 	FIELD field_5522 _imagePath Ljava/lang/String;
@@ -13326,14 +13335,17 @@ CLASS Class_2399
 CLASS Class_2400
 	METHOD method_8745 ()LClass_2370;
 	METHOD method_8746 ()LClass_2445;
-CLASS Class_2401
-CLASS Class_2402
+CLASS Class_2401 com/threerings/miso/util/MisoSceneMetrics
+	FIELD field_5556 blockwid S
+	FIELD field_5557 blockhei S
+CLASS Class_2402 com/threerings/miso/util/MisoUtil
 	METHOD method_8747 (LClass_2401;II)Ljava/awt/Polygon;
-	METHOD method_8748 (LClass_2401;IIII)Ljava/awt/Polygon;
+	METHOD method_8748 getFootprintPolygon (LClass_2401;IIII)Ljava/awt/Polygon;
+		ARG 0 metrics
 	METHOD method_8749 (LClass_2401;IIIILjava/awt/Point;)Ljava/awt/Point;
 	METHOD method_8750 (LClass_2401;IILjava/awt/Point;)Ljava/awt/Point;
 	METHOD method_8751 (II)I
-	METHOD method_8752 (LClass_2401;IILjava/awt/Point;)Ljava/awt/Point;
+	METHOD method_8752 tileToScreen (LClass_2401;IILjava/awt/Point;)Ljava/awt/Point;
 	METHOD method_8753 (LClass_2401;IILjava/awt/Point;)V
 	METHOD method_8754 (I)I
 	METHOD method_8755 (LClass_2401;IILjava/awt/Point;)V
@@ -21641,8 +21653,8 @@ CLASS Class_3740 com/threerings/presents/dobj/Accessor
 	METHOD method_12163 compareTo (Ljava/lang/Object;)I
 	METHOD method_12164 (LClass_3716;)Ljava/lang/Object;
 	CLASS Class_3741
-CLASS Class_3742
-	METHOD method_12165 (LClass_3713;)V
+CLASS Class_3742 com/threerings/presents/dobj/AttributeChangeListener
+	METHOD method_12165 attributeChanged (LClass_3713;)V
 CLASS Class_3743 com/threerings/presents/dobj/ChangeListener
 CLASS Class_3744
 CLASS Class_3745 com/threerings/presents/dobj/DObjectManager
@@ -37173,12 +37185,12 @@ CLASS Class_7496 com/threerings/tudey/data/InputFrame
 	FIELD field_19721 _flags I
 	FIELD field_19722 _rotation F
 	FIELD field_19723 _timestamp I
-	METHOD method_18995 ()I
-	METHOD method_18996 ()I
-	METHOD method_18997 ()F
-	METHOD method_18998 (I)Z
+	METHOD method_18995 getApproximateSize ()I
+	METHOD method_18996 getTimestamp ()I
+	METHOD method_18997 getDirection ()F
+	METHOD method_18998 isSet (I)Z
 	METHOD method_18999 getFlags ()I
-	METHOD method_19000 ()F
+	METHOD method_19000 getRotation ()F
 CLASS Class_7497 com/threerings/tudey/data/ModifyEntriesUpdate
 	FIELD field_19724 added [LClass_7502$Class_7504;
 	FIELD field_19725 removed [Ljava/lang/Object;
@@ -38712,36 +38724,36 @@ CLASS Class_7720
 	METHOD method_19953 ()V
 CLASS Class_7721
 	METHOD method_19954 (Ljava/io/InputStream;)Ljava/io/Serializable;
-CLASS Class_7722
-	METHOD method_19955 (Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+CLASS Class_7722 com/threerings/util/Copyable
+	METHOD method_19955 copy (Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 CLASS Class_7723
-CLASS Class_7724
+CLASS Class_7724 com/threerings/util/DeepObject
 	METHOD method_493 equals (Ljava/lang/Object;)Z
 	METHOD method_19956 clone ()LClass_7724;
 	METHOD method_19957 clone ()Ljava/lang/Object;
-	METHOD method_19958 (Ljava/lang/Object;)Ljava/lang/Object;
+	METHOD method_19958 copy (Ljava/lang/Object;)Ljava/lang/Object;
 	METHOD method_19959 hashCode ()I
 	METHOD method_19960 toString ()Ljava/lang/String;
 CLASS Class_7725
-CLASS Class_7726
-	METHOD method_19961 (Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+CLASS Class_7726 com/threerings/util/DeepUtil
+	METHOD method_19961 copy (Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 	METHOD method_19962 (Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 	METHOD method_19963 (Ljava/lang/Object;)I
 	METHOD method_19964 (Ljava/lang/Class;Ljava/util/ArrayList;)V
 	METHOD method_19965 (Ljava/lang/Class;)LClass_7726$Class_7728;
-	METHOD method_19966 (Ljava/lang/Object;)Ljava/lang/Object;
-	METHOD method_19967 (Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+	METHOD method_19966 copy (Ljava/lang/Object;)Ljava/lang/Object;
+	METHOD method_19967 copy (Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 	METHOD method_19968 (Ljava/lang/Object;Ljava/lang/Object;)Z
 	METHOD method_19969 (Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-	CLASS Class_7727
-		METHOD method_19970 (Ljava/lang/reflect/Field;Ljava/lang/Object;Ljava/lang/Object;)V
-		METHOD method_19971 (Ljava/lang/reflect/Field;Ljava/lang/Object;Ljava/lang/Object;)Z
+	CLASS Class_7727 FieldHandler
+		METHOD method_19970 copy (Ljava/lang/reflect/Field;Ljava/lang/Object;Ljava/lang/Object;)V
+		METHOD method_19971 equals (Ljava/lang/reflect/Field;Ljava/lang/Object;Ljava/lang/Object;)Z
 		METHOD method_19972 (Ljava/lang/reflect/Field;Ljava/lang/Object;)I
-	CLASS Class_7728
+	CLASS Class_7728 ObjectHandler
 		METHOD method_19973 (Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 		METHOD method_19974 (Ljava/lang/Object;)I
 		METHOD method_19975 (Ljava/lang/Object;Ljava/lang/Object;)Z
-	CLASS Class_7729
+	CLASS Class_7729 ReflectiveObjectHandler
 		FIELD field_20359 _fields [Ljava/lang/reflect/Field;
 CLASS Class_7730
 CLASS Class_7731
