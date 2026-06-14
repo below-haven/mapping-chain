@@ -5614,7 +5614,7 @@ CLASS Class_901
 CLASS Class_902
 	METHOD method_3757 equals (Ljava/lang/Object;)Z
 	METHOD method_3758 hashCode ()I
-CLASS Class_903 ClassTooLargeException
+CLASS Class_903 com/google/inject/internal/asm/$ClassTooLargeException
 	CLASS Class_904
 		FIELD field_2058 className Ljava/lang/String;
 		FIELD field_2059 constantPoolCount I
@@ -8366,6 +8366,11 @@ CLASS Class_1410 com/threerings/config/ConfigGroup
 	METHOD method_5666 (Z)Ljava/lang/String;
 	METHOD method_5667 readFields (LClass_1880;)V
 	METHOD method_5668 writeFields (LClass_1812;)V
+	METHOD method_20908 (Ljava/lang/Object;)[LClass_1414;
+	CLASS Class_7984 Data
+		FIELD field_21026 array [LClass_1414;
+		FIELD field_21027 cclass Ljava/lang/Class;
+		METHOD method_20909 readFields (LClass_1880;)V
 CLASS Class_1411 com/threerings/config/ConfigManager
 	FIELD field_3433 _classes Ljava/util/HashMap;
 	FIELD field_3434 _configPath Ljava/lang/String;
@@ -8377,6 +8382,8 @@ CLASS Class_1411 com/threerings/config/ConfigManager
 	FIELD field_3440 _rsrcmgr LClass_1374;
 	FIELD field_3441 _type Ljava/lang/String;
 	FIELD field_3442 _updateListeners LClass_1234;
+	FIELD field_21028 _configsById Ljava/util/Map;
+	FIELD field_21029 _groupListener LClass_1423;
 	METHOD method_5669 (LClass_1410;)LClass_1812$Class_1815;
 	METHOD method_5670 (LClass_1439;)V
 	METHOD method_5671 (Ljava/lang/Class;LClass_1412;)LClass_1414;
@@ -8418,6 +8425,8 @@ CLASS Class_1411 com/threerings/config/ConfigManager
 	METHOD method_5707 readFields (LClass_1880;)V
 	METHOD method_5708 validateReferences (LClass_1675;)Z
 	METHOD method_5709 writeFields (LClass_1812;)V
+	METHOD method_20910 (Ljava/lang/Class;)V
+	METHOD method_20911 (LClass_1409;)V
 CLASS Class_1412 com/threerings/config/ConfigReference
 	FIELD field_3443 _arguments LClass_1406;
 	FIELD field_3444 _name Ljava/lang/String;
@@ -8827,6 +8836,10 @@ CLASS Class_1465 com/threerings/config/tools/ConfigEditor
 	METHOD method_5934 ()Ljava/lang/String;
 	METHOD method_5935 lostOwnership (Ljava/awt/datatransfer/Clipboard;Ljava/awt/datatransfer/Transferable;)V
 	METHOD method_5936 (Ljava/lang/String;Ljava/lang/String;)Z
+	METHOD method_20915 (Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)LClass_7139;
+	METHOD method_20916 (LClass_1410;)Z
+	METHOD method_20917 (Ljava/lang/Iterable;)Z
+	METHOD method_20918 ()LClass_7988;
 	CLASS Class_1466 ConfigEdit
 		FIELD field_3599 _diffKey Ljava/lang/String;
 		FIELD field_3600 _group LClass_1410;
@@ -23050,6 +23063,8 @@ CLASS Class_4054 com/threerings/projectx/admin/data/ServerConfigObject
 	FIELD field_10634 txFailFastOnInactivePlayer Z
 	FIELD field_21022 transmitIntervalLeeway F
 	FIELD field_21025 emailInputFrameAlerts Z
+	FIELD field_21202 itemMigrationBatch I
+	FIELD field_21203 itemMigrationDelay I
 	CLASS Class_4055 AlertLevel
 		FIELD field_10635 alertLevel I
 	CLASS Class_4056 AvoidReboot
@@ -24030,7 +24045,6 @@ CLASS Class_4228 com/threerings/projectx/client/ProjectXPrefs
 	METHOD method_13182 ()[LClass_4228$Class_4236;
 	METHOD method_13183 ()I
 	METHOD method_13184 ()V
-	METHOD method_13185 ()Z
 	METHOD method_13186 ()LClass_4228$Class_4234;
 	METHOD method_13187 ()I
 	METHOD method_13188 ()Z
@@ -24098,7 +24112,6 @@ CLASS Class_4228 com/threerings/projectx/client/ProjectXPrefs
 	METHOD method_13250 (LClass_7677;[LClass_7677;)V
 	METHOD method_13251 (LClass_7683;LClass_4228$Class_4236;)Ljava/lang/String;
 	METHOD method_13252 (LClass_7683;LClass_4228$Class_4236;Z)Ljava/lang/String;
-	METHOD method_13253 (Z)V
 	METHOD method_13254 (Z)V
 	METHOD method_13255 (Z)V
 	METHOD method_13256 (Z)V
@@ -24173,6 +24186,10 @@ CLASS Class_4228 com/threerings/projectx/client/ProjectXPrefs
 	METHOD method_13325 setVSyncEnabled (Z)V
 	METHOD method_13326 ()Ljava/lang/String;
 	METHOD method_20875 (LClass_4228$Class_4236;)[I
+	METHOD method_20999 ()Z
+	METHOD method_21000 (LClass_4228$Class_4238;Z)V
+	METHOD method_21001 (Z)V
+	METHOD method_21002 (LClass_4228$Class_4238;)Z
 	CLASS Class_4229 ChatFont
 		FIELD field_11414 $VALUES [LClass_4228$Class_4229;
 		FIELD field_11415 LARGE LClass_4228$Class_4229;
@@ -24283,6 +24300,8 @@ CLASS Class_4228 com/threerings/projectx/client/ProjectXPrefs
 		METHOD method_13375 (III)Z
 		METHOD method_13376 (LClass_7079;)Ljava/util/Set;
 		METHOD method_13377 toString ()Ljava/lang/String;
+		METHOD method_21003 ()Ljava/lang/String;
+		METHOD method_21004 ()Z
 CLASS Class_4239
 CLASS Class_4240
 CLASS Class_4241
@@ -25514,9 +25533,9 @@ CLASS Class_4659
 	FIELD field_12386 _description LClass_1412;
 	FIELD field_12387 _msgs LClass_7683;
 	METHOD method_14099 ()V
-	METHOD method_14100 ()LClass_4788$Class_4798;
+	METHOD method_14100 ()LClass_4788;
 	METHOD method_14101 ()V
-	METHOD method_14102 (LClass_4788$Class_4798;LClass_7683;)V
+	METHOD method_14102 (LClass_4788;LClass_7683;)V
 	METHOD method_14103 (LClass_1412;)V
 CLASS Class_4660
 	FIELD field_12394 _interval LClass_1213;
@@ -26026,31 +26045,25 @@ CLASS Class_4778 com/threerings/projectx/config/ConversationConfig
 	CLASS Class_4787 SimpleResponse
 		FIELD field_12739 action LClass_7244;
 CLASS Class_4788 com/threerings/projectx/config/DescriptionConfig
-	FIELD field_12741 implementation LClass_4788$Class_4794;
-	METHOD method_14380 (LClass_1411;)LClass_4788$Class_4798;
+	FIELD field_21205 dname Ljava/lang/String;
+	METHOD method_14382 ()Ljava/lang/String;
+	METHOD method_14383 ()Ljava/lang/String;
+	METHOD method_14384 ()Z
+	METHOD method_14385 getDescription ()Ljava/lang/String;
+	METHOD method_14386 ()Ljava/lang/String;
+	METHOD method_14387 getTitle ()Ljava/lang/String;
 	CLASS Class_4789 Conversation
 	CLASS Class_4790 Craft
-	CLASS Class_4791 Derived
-		FIELD field_12742 description LClass_1412;
 	CLASS Class_4792 Descriptive
 		FIELD field_12743 description Ljava/lang/String;
 		FIELD field_12744 nameIcon LClass_2923$Class_2926;
 		FIELD field_12745 title Ljava/lang/String;
 	CLASS Class_4793 Dungeon
-	CLASS Class_4794 Implementation
-		METHOD method_14381 (LClass_1411;)LClass_4788$Class_4798;
 	CLASS Class_4795 Item
 	CLASS Class_4796 Mission
 	CLASS Class_4797 Monster
 		FIELD field_12746 damage LClass_5916$Class_5918;
 		FIELD field_12747 weakness LClass_5916$Class_5918;
-	CLASS Class_4798 Original
-		METHOD method_14382 ()Ljava/lang/String;
-		METHOD method_14383 ()Ljava/lang/String;
-		METHOD method_14384 ()Z
-		METHOD method_14385 getDescription ()Ljava/lang/String;
-		METHOD method_14386 getName ()Ljava/lang/String;
-		METHOD method_14387 getTitle ()Ljava/lang/String;
 	CLASS Class_4799 Shop
 	CLASS Class_4800 Sprites
 	CLASS Class_4801 Statue
@@ -26454,7 +26467,7 @@ CLASS Class_4945
 	METHOD method_14490 ()V
 	METHOD method_14491 ()Z
 	METHOD method_14492 ()V
-	METHOD method_14493 (JLClass_4979$Class_4982;)V
+	METHOD method_14493 (JLClass_4979;)V
 	METHOD method_14494 (LClass_3034;Z)V
 	CLASS Class_4946
 CLASS Class_4947
@@ -26465,13 +26478,13 @@ CLASS Class_4950
 	METHOD method_14497 ()V
 	METHOD method_14498 ()V
 	METHOD method_14499 ()V
-	METHOD method_14500 (LClass_4979$Class_4982;J)V
-	METHOD method_14501 (LClass_4997;LClass_4979$Class_4982;)Z
+	METHOD method_14500 (LClass_4979;J)V
+	METHOD method_14501 (LClass_4997;LClass_4979;)Z
 	METHOD method_14502 (LClass_4997;Z)V
 	METHOD method_14503 (LClass_6237$Class_6239;)Z
 	CLASS Class_4951
 		FIELD field_13074 _ref LClass_1412;
-		METHOD method_14504 (JLClass_4979$Class_4982;LClass_6275$Class_6314;)V
+		METHOD method_14504 (JLClass_4979;LClass_6275$Class_6314;)V
 CLASS Class_4952
 CLASS Class_4953
 CLASS Class_4954
@@ -26543,41 +26556,23 @@ CLASS Class_4970 com/threerings/projectx/craft/config/IngredientConfig
 		METHOD method_14527 valueOf (Ljava/lang/String;)LClass_4970$Class_4978;
 		METHOD method_14528 values ()[LClass_4970$Class_4978;
 CLASS Class_4979 com/threerings/projectx/craft/config/RecipeConfig
-	FIELD field_13111 implementation LClass_4979$Class_4981;
-	METHOD method_14529 (LClass_1411;LClass_1412;)LClass_4979$Class_4982;
-	METHOD method_14530 (LClass_1411;LClass_3567;)V
-	METHOD method_14531 (LClass_1411;)LClass_4979$Class_4982;
-	CLASS Class_4980 Derived
-		FIELD field_13112 recipe LClass_1412;
-	CLASS Class_4981 Implementation
-		METHOD method_14532 (LClass_1411;LClass_3567;)V
-		METHOD method_14533 invalidate ()V
-		METHOD method_14534 (LClass_1411;)LClass_4979$Class_4982;
-	CLASS Class_4982 Original
-		FIELD field_13114 count I
-		FIELD field_13115 ingredients [LClass_4970;
-		FIELD field_13117 lockItem Z
-		FIELD field_13118 recipeProp LClass_1412;
-		FIELD field_13119 variantTable LClass_1412;
-		METHOD method_14535 ()LClass_1412;
-		METHOD method_14536 (LClass_1411;)I
-		METHOD method_14537 (LClass_1411;)Ljava/lang/Iterable;
-		METHOD method_14538 (LClass_1411;)LClass_6411$Class_6415;
-		METHOD method_14539 (LClass_1411;)LClass_4984$Class_4989;
-		METHOD method_14540 (LClass_1411;)LClass_6275$Class_6314;
+	FIELD field_21208 count I
+	FIELD field_21209 ingredients [LClass_4970;
+	FIELD field_21211 lockItem Z
+	FIELD field_21212 recipeProp LClass_1412;
+	FIELD field_21213 variantTable LClass_1412;
+	METHOD method_21005 ()LClass_1412;
+	METHOD method_21006 (LClass_1411;LClass_3567;)V
+	METHOD method_21007 (LClass_1411;)I
+	METHOD method_21008 (LClass_1411;)Ljava/lang/Iterable;
+	METHOD method_21009 (LClass_1411;)LClass_6411$Class_6415;
+	METHOD method_21010 (LClass_1411;)LClass_4984$Class_4989;
+	METHOD method_21011 (LClass_1411;)LClass_6275$Class_6314;
 	CLASS Class_4983 RecipeConfigReference
 		METHOD method_14541 (LClass_1411;LClass_3567;)V
 CLASS Class_4984 com/threerings/projectx/craft/config/RecipePropertyConfig
-	FIELD field_13122 implementation LClass_4984$Class_4987;
-	METHOD method_14542 (LClass_1411;)LClass_4984$Class_4988;
-	CLASS Class_4985 Base
-		FIELD field_13123 recipeProps [LClass_4984$Class_4989;
-	CLASS Class_4986 Derived
-		FIELD field_13124 recipeProperty LClass_1412;
-	CLASS Class_4987 Implementation
-		METHOD method_14543 (LClass_1411;)LClass_4984$Class_4988;
-	CLASS Class_4988 Original
-		METHOD method_14544 (I)LClass_4984$Class_4989;
+	FIELD field_21214 recipeProps [LClass_4984$Class_4989;
+	METHOD method_21012 (I)LClass_4984$Class_4989;
 	CLASS Class_4989 RecipeProps
 		FIELD field_13125 crowns I
 		FIELD field_13126 useOrbs Z
@@ -26612,7 +26607,7 @@ CLASS Class_4997 com/threerings/projectx/craft/data/Recipe
 	METHOD method_14554 ()J
 	METHOD method_14555 ()LClass_1412;
 	METHOD method_14556 ()Ljava/lang/Long;
-	METHOD method_14557 (LClass_1411;)LClass_4979$Class_4982;
+	METHOD method_14557 (LClass_1411;)LClass_4979;
 	METHOD method_14558 ()Ljava/lang/String;
 	METHOD method_14559 readFields (LClass_1880;)V
 	METHOD method_14560 writeFields (LClass_1812;)V
@@ -26633,6 +26628,7 @@ CLASS Class_5003
 CLASS Class_5004 com/threerings/projectx/data/Achievement
 	FIELD field_13152 _unlocked J
 	METHOD method_14567 (LClass_5004$Class_5005;)I
+	METHOD method_21013 toString ()Ljava/lang/String;
 	CLASS Class_5005 Type
 		FIELD field_13154 $VALUES [LClass_5004$Class_5005;
 		FIELD field_13155 ARMORS_OWNED_1 LClass_5004$Class_5005;
@@ -27158,6 +27154,7 @@ CLASS Class_5040 com/threerings/projectx/data/ProjectXCodes
 		FIELD field_13511 SQUINT LClass_5040$Class_5042;
 		FIELD field_13513 SULTRY LClass_5040$Class_5042;
 		FIELD field_13515 TRIANGLE LClass_5040$Class_5042;
+		FIELD field_21215 LITE_LASH LClass_5040$Class_5042;
 		METHOD method_14713 $values ()[LClass_5040$Class_5042;
 		METHOD method_14714 getClosedEye ()Ljava/lang/String;
 		METHOD method_14715 getEye ()Ljava/lang/String;
@@ -29307,9 +29304,7 @@ CLASS Class_5688 com/threerings/projectx/dungeon/config/SpawnTableConfig
 	CLASS Class_5721 MultiTableEntry
 		FIELD field_14997 count I
 	CLASS Class_5722 MultiplyEntry
-		FIELD field_14998 entry LClass_5688$Class_5702;
 		FIELD field_14999 multiplier I
-		METHOD method_15360 (LClass_460;Ljava/util/Collection;)V
 	CLASS Class_5723 OffsetEntry
 		FIELD field_15000 offset I
 		METHOD method_15361 (Ljava/util/List;)V
@@ -29398,6 +29393,12 @@ CLASS Class_5688 com/threerings/projectx/dungeon/config/SpawnTableConfig
 	CLASS Class_5744
 	CLASS Class_5745
 		METHOD method_15382 toString ()Ljava/lang/String;
+		METHOD method_21016 (Ljava/lang/String;)Ljava/lang/Object;
+	CLASS Class_8008 BaseMultiplyEntry
+		FIELD field_21216 entry LClass_5688$Class_5702;
+		METHOD method_21014 (LClass_460;ILjava/util/Collection;)V
+		METHOD method_21015 (LClass_5688$Class_5745;)I
+	CLASS Class_8009 MultiplyByVariableEntry
 CLASS Class_5746 com/threerings/projectx/dungeon/config/StatusConditionConfig
 	FIELD field_15063 implementation LClass_5746$Class_5758;
 	METHOD method_15383 (LClass_1411;)LClass_5746$Class_5760;
@@ -30726,6 +30727,7 @@ CLASS Class_5943 com/threerings/projectx/event/config/EventConfig
 	FIELD field_15813 sceneLayers [LClass_5943$Class_5946;
 	FIELD field_15814 scopeVariables [Ljava/lang/String;
 	FIELD field_15815 unpublished Z
+	FIELD field_21220 behaviorModification LClass_5943$Class_8010;
 	CLASS Class_5944 EventVariable
 		FIELD field_15817 value F
 	CLASS Class_5945 EventVariableType
@@ -30747,6 +30749,9 @@ CLASS Class_5943 com/threerings/projectx/event/config/EventConfig
 		FIELD field_15829 includeLayers [Ljava/lang/String;
 		FIELD field_15830 internalId Ljava/lang/String;
 		FIELD field_15831 replacements LClass_1412;
+	CLASS Class_8010 BehaviorModification
+		FIELD field_21221 behavior LClass_1412;
+		FIELD field_21222 tagsRequired [Ljava/lang/String;
 CLASS Class_5947 com/threerings/projectx/event/config/TileReplacementConfig
 	FIELD field_15832 replacements [LClass_5947$Class_5948;
 	CLASS Class_5948 TileReplacement
@@ -31969,6 +31974,7 @@ CLASS Class_6266 com/threerings/projectx/item/config/ForgePropertyConfig
 CLASS Class_6275 com/threerings/projectx/item/config/ItemConfig
 	FIELD field_16685 creatable Z
 	FIELD field_16686 implementation LClass_6275$Class_6305;
+	FIELD field_21223 _configId I
 	METHOD method_16522 (LClass_1411;LClass_5057;LClass_7683;JLClass_6410;)Ljava/lang/String;
 	METHOD method_16523 (LClass_7079;LClass_7683;LClass_6410;Ljava/lang/String;)Ljava/lang/String;
 	METHOD method_16524 (LClass_7683;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
@@ -33183,14 +33189,9 @@ CLASS Class_6508
 	METHOD method_17077 (LClass_7079;II)LClass_2820;
 	METHOD method_17078 (LClass_7079;IILClass_3034;)V
 CLASS Class_6509 com/threerings/projectx/mission/config/DepotCatalogConfig
-	FIELD field_17413 implementation LClass_6509$Class_6511;
-	CLASS Class_6510 Derived
-		FIELD field_17414 catalog LClass_1412;
-	CLASS Class_6511 Implementation
-	CLASS Class_6512 Original
-		FIELD field_17415 featured Z
-		FIELD field_17416 goods [LClass_6667;
-		FIELD field_17418 subrank I
+	FIELD field_21224 featured Z
+	FIELD field_21225 goods [LClass_6667;
+	FIELD field_21227 subrank I
 CLASS Class_6513 com/threerings/projectx/mission/config/MissionActionConfig
 	CLASS Class_6514 CompleteMission
 		FIELD field_17419 fireAction LClass_1412;
@@ -33462,10 +33463,6 @@ CLASS Class_6560 com/threerings/projectx/partner/client/SteamDirector
 		METHOD method_17199 ()V
 		METHOD method_17200 ()Z
 		METHOD method_17201 (Z)V
-CLASS Class_6565
-	METHOD method_17206 ()Z
-	METHOD method_17207 shutdown ()V
-	METHOD method_17208 update ()V
 CLASS Class_6567
 CLASS Class_6568
 CLASS Class_6569
@@ -33853,6 +33850,8 @@ CLASS Class_6649
 	METHOD method_20905 (Ljava/lang/String;LClass_6275$Class_6316;I)I
 	METHOD method_20906 (LClass_6667;I)I
 	METHOD method_20907 (Ljava/lang/String;)V
+	METHOD method_21036 (Ljava/lang/String;I)I
+	METHOD method_21037 (Ljava/lang/String;)V
 	CLASS Class_6650
 		FIELD field_17830 index I
 		METHOD method_17410 update ()V
@@ -33877,20 +33876,15 @@ CLASS Class_6657
 CLASS Class_6658
 	METHOD method_17422 (LClass_6411$Class_6415;)LClass_4532$Class_4535;
 CLASS Class_6659 com/threerings/projectx/shop/config/CatalogConfig
-	FIELD field_17835 implementation LClass_6659$Class_6661;
-	CLASS Class_6660 Derived
-		FIELD field_17836 catalog LClass_1412;
-	CLASS Class_6661 Implementation
+	FIELD field_21235 energy Z
+	FIELD field_21236 goods [LClass_6667;
+	FIELD field_21237 includes [LClass_6659$Class_6662;
 	CLASS Class_6662 Include
 		FIELD field_17837 catalog LClass_1412;
 	CLASS Class_6663 Mission
 		FIELD field_17838 missionId Ljava/lang/String;
 	CLASS Class_6664 Optional
 		FIELD field_17839 chance F
-	CLASS Class_6665 Original
-		FIELD field_17840 energy Z
-		FIELD field_17841 goods [LClass_6667;
-		FIELD field_17842 includes [LClass_6659$Class_6662;
 	CLASS Class_6666 Subset
 CLASS Class_6667 com/threerings/projectx/shop/config/GoodConfig
 	FIELD field_17845 _originalPrice I
@@ -34074,6 +34068,7 @@ CLASS Class_6702
 	METHOD method_17514 (LClass_7677;Ljava/lang/String;Ljava/lang/String;LClass_3644$Class_3645;)V
 	METHOD method_17515 (LClass_7677;LClass_3644$Class_3645;)V
 	METHOD method_17516 (LClass_7677;LClass_3644$Class_3645;)V
+	METHOD method_21038 (Ljava/lang/String;ZLClass_3644$Class_3645;)V
 CLASS Class_6703
 	METHOD method_17517 (Ljava/util/List;)V
 CLASS Class_6704
@@ -34505,26 +34500,13 @@ CLASS Class_6812 com/threerings/projectx/sprites/config/BattleSpriteConfig
 		FIELD field_18166 ultimateNameB LClass_6812$Class_6814;
 		METHOD method_17738 (LClass_1411;LClass_3567;)V
 CLASS Class_6817 com/threerings/projectx/sprites/config/HarnessConfig
-	FIELD field_18168 implementation LClass_6817$Class_6819;
-	METHOD method_17739 (LClass_1411;)LClass_6817$Class_6820;
-	CLASS Class_6818 Derived
-		FIELD field_18169 harness LClass_1412;
-	CLASS Class_6819 Implementation
-		METHOD method_17740 (LClass_1411;)LClass_6817$Class_6820;
-	CLASS Class_6820 Original
-		FIELD field_18170 damageType LClass_5916$Class_5918;
-		FIELD field_18173 material LClass_1412;
-		FIELD field_18175 prereq LClass_1412;
-		FIELD field_18176 rechargeModifier F
-		METHOD method_17741 (LClass_1411;LClass_3567;)V
-		METHOD method_17742 (LClass_7079;)Ljava/lang/String;
-CLASS Class_6821 com/threerings/projectx/sprites/config/SkillConfig
-	CLASS Class_6822 Basic
-		FIELD field_18177 attacks [LClass_5391$Class_5392;
-	CLASS Class_6823 Implementation
-	CLASS Class_6824 Original
-	CLASS Class_6825 Ultimate
-		FIELD field_18180 attack LClass_1412;
+	FIELD field_21238 damageType LClass_5916$Class_5918;
+	FIELD field_21240 harnessName Ljava/lang/String;
+	FIELD field_21242 material LClass_1412;
+	FIELD field_21243 prereq LClass_1412;
+	FIELD field_21244 rechargeModifier F
+	METHOD method_21039 (LClass_1411;LClass_3567;)V
+	METHOD method_21040 (LClass_7079;)Ljava/lang/String;
 CLASS Class_6826 com/threerings/projectx/sprites/config/SpriteActionConfig
 	CLASS Class_6827 OpenHarnessInstaller
 		FIELD field_18181 catalog LClass_1412;
@@ -34565,7 +34547,7 @@ CLASS Class_6829 com/threerings/projectx/sprites/data/BattleSprite
 	METHOD method_17763 (LClass_7079;)Ljava/lang/String;
 	METHOD method_17764 (LClass_7079;)LClass_2923$Class_2925;
 	METHOD method_17765 (LClass_1411;)LClass_6812$Class_6815;
-	METHOD method_17766 (LClass_1411;)LClass_6817$Class_6820;
+	METHOD method_17766 (LClass_1411;)LClass_6817;
 	METHOD method_17767 (LClass_1411;)LClass_1412;
 	METHOD method_17768 (LClass_1411;)LClass_5926;
 	METHOD method_17769 (J)F
@@ -34609,10 +34591,9 @@ CLASS Class_6832 com/threerings/projectx/sprites/data/Harness
 	FIELD field_18206 _harnessId Ljava/lang/Long;
 	METHOD method_17801 ()LClass_1412;
 	METHOD method_17802 ()J
-	METHOD method_17803 (LClass_1411;)LClass_6817$Class_6820;
+	METHOD method_17803 (LClass_1411;)LClass_6817;
 	METHOD method_17804 equals (Ljava/lang/Object;)Z
 	METHOD method_17805 hashCode ()I
-	METHOD method_17806 (LClass_1411;LClass_1412;)LClass_6817$Class_6820;
 CLASS Class_6833 com/threerings/projectx/sprites/data/HarnessDialogInfo
 	FIELD field_18208 installerService LClass_6834;
 CLASS Class_6834 com/threerings/projectx/sprites/data/HarnessInstallerMarshaller
@@ -34786,6 +34767,7 @@ CLASS Class_6860 com/threerings/projectx/tools/ProjectXExporterReplacers
 	FIELD field_18347 TRANSNORMAL LClass_6860;
 	FIELD field_18348 _cfgmgr LClass_1411;
 	FIELD field_18349 _disabled Z
+	FIELD field_21245 CONFIG_MIGRATION_HELPER LClass_6860;
 	METHOD method_17845 $values ()[LClass_6860;
 	METHOD method_17846 getAll ()LClass_1812$Class_1815;
 	METHOD method_17847 (LClass_1411;)V
@@ -34813,6 +34795,7 @@ CLASS Class_6860 com/threerings/projectx/tools/ProjectXExporterReplacers
 		FIELD field_18358 _lastType Ljava/lang/Class;
 	CLASS 9
 	CLASS 10
+	CLASS 11
 CLASS Class_6861 com/threerings/projectx/tools/PseudoPlayer
 	METHOD method_17853 ()LClass_5028;
 	METHOD method_17854 ()V
@@ -35561,6 +35544,7 @@ CLASS Class_7052
 	METHOD method_18253 (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/net/URL;
 	METHOD method_18254 ()J
 	METHOD method_18255 ()[I
+	METHOD method_21041 ()Z
 CLASS Class_7053
 	METHOD method_18256 (F)F
 CLASS Class_7054
@@ -39982,3 +39966,191 @@ CLASS Class_7981
 CLASS Class_7982
 CLASS Class_7983
 	METHOD method_20904 ()V
+CLASS Class_7985 com/threerings/config/DerivedIdConfig
+	FIELD field_21030 _configId I
+CLASS Class_7986
+CLASS Class_7987
+	METHOD method_20912 getConfigId ()I
+	METHOD method_20913 ()Z
+	METHOD method_20914 setConfigId (I)V
+CLASS Class_7988
+	METHOD method_20919 (LClass_1410;Ljava/io/PrintStream;)Z
+	METHOD method_20920 (LClass_1410;Ljava/io/PrintStream;Z)Z
+CLASS Class_7989 com/threerings/discord/Activity
+	FIELD field_21047 state Ljava/lang/String;
+	METHOD method_20921 ()Z
+	METHOD method_20922 ()Z
+	METHOD method_20923 ()Z
+	METHOD method_20924 ()Z
+	METHOD method_20925 toString ()Ljava/lang/String;
+CLASS Class_7990 com/threerings/discord/ActivityActionType
+	FIELD field_21048 $VALUES [LClass_7990;
+	FIELD field_21050 JOIN_REQUEST LClass_7990;
+	FIELD field_21051 nativeValue I
+	METHOD method_20926 $values ()[LClass_7990;
+	METHOD method_20927 fromNative (I)LClass_7990;
+	METHOD method_20928 valueOf (Ljava/lang/String;)LClass_7990;
+	METHOD method_20929 values ()[LClass_7990;
+CLASS Class_7991 com/threerings/discord/ActivityGamePlatforms
+CLASS Class_7992 com/threerings/discord/ActivityInvite
+	METHOD method_20930 close ()V
+	METHOD method_20931 isValid ()Z
+	METHOD method_20932 ()J
+	METHOD method_20933 ()LClass_7990;
+	METHOD method_20934 ()Ljava/lang/String;
+	METHOD method_20935 ()Ljava/lang/foreign/MemorySegment;
+	METHOD method_20936 ()Ljava/lang/foreign/MemorySegment;
+	METHOD method_20937 toString ()Ljava/lang/String;
+	METHOD method_20938 (Ljava/lang/Throwable;)Ljava/lang/RuntimeException;
+CLASS Class_7993 com/threerings/discord/ActivityPartyPrivacy
+	FIELD field_21054 $VALUES [LClass_7993;
+	FIELD field_21055 PRIVATE LClass_7993;
+	FIELD field_21056 PUBLIC LClass_7993;
+	FIELD field_21057 nativeValue I
+	METHOD method_20939 $values ()[LClass_7993;
+	METHOD method_20940 valueOf (Ljava/lang/String;)LClass_7993;
+	METHOD method_20941 values ()[LClass_7993;
+CLASS Class_7994 com/threerings/discord/ActivityType
+	FIELD field_21058 $VALUES [LClass_7994;
+	FIELD field_21059 COMPETING LClass_7994;
+	FIELD field_21060 CUSTOM_STATUS LClass_7994;
+	FIELD field_21061 HANG_STATUS LClass_7994;
+	FIELD field_21062 LISTENING LClass_7994;
+	FIELD field_21063 PLAYING LClass_7994;
+	FIELD field_21064 STREAMING LClass_7994;
+	FIELD field_21065 WATCHING LClass_7994;
+	FIELD field_21066 nativeValue I
+	METHOD method_20942 $values ()[LClass_7994;
+	METHOD method_20943 valueOf (Ljava/lang/String;)LClass_7994;
+	METHOD method_20944 values ()[LClass_7994;
+CLASS Class_7995 com/threerings/discord/ClientError
+	FIELD field_21067 $VALUES [LClass_7995;
+	FIELD field_21068 CONNECTION_CANCELED LClass_7995;
+	FIELD field_21069 CONNECTION_FAILED LClass_7995;
+	FIELD field_21071 UNEXPECTED_CLOSE LClass_7995;
+	FIELD field_21072 nativeValue I
+	METHOD method_20945 $values ()[LClass_7995;
+	METHOD method_20946 fromNative (I)LClass_7995;
+	METHOD method_20947 valueOf (Ljava/lang/String;)LClass_7995;
+	METHOD method_20948 values ()[LClass_7995;
+CLASS Class_7996 com/threerings/discord/ClientStatus
+	FIELD field_21073 $VALUES [LClass_7996;
+	FIELD field_21074 CONNECTED LClass_7996;
+	FIELD field_21075 CONNECTING LClass_7996;
+	FIELD field_21076 DISCONNECTED LClass_7996;
+	FIELD field_21077 DISCONNECTING LClass_7996;
+	FIELD field_21078 HTTP_WAIT LClass_7996;
+	FIELD field_21079 READY LClass_7996;
+	FIELD field_21080 RECONNECTING LClass_7996;
+	FIELD field_21081 nativeValue I
+	METHOD method_20949 $values ()[LClass_7996;
+	METHOD method_20950 fromNative (I)LClass_7996;
+	METHOD method_20951 valueOf (Ljava/lang/String;)LClass_7996;
+	METHOD method_20952 values ()[LClass_7996;
+CLASS Class_7997 com/threerings/discord/DiscordClient
+	METHOD method_20953 (JI)Z
+	METHOD method_20954 (LClass_7989;LClass_7997$Class_8002;)V
+	METHOD method_20955 (LClass_7992;LClass_7997$Class_8002;)V
+	METHOD method_20956 (LClass_7997$Class_7998;)V
+	METHOD method_20957 (LClass_7997$Class_7999;)V
+	METHOD method_20958 (LClass_7997$Class_8000;LClass_8005;)V
+	METHOD method_20959 (LClass_7997$Class_8001;)V
+	METHOD method_20960 (LClass_7997$Class_8002;)Ljava/lang/foreign/MemorySegment;
+	METHOD method_20961 (Ljava/lang/foreign/Arena;LClass_7989;)LClass_7997$Class_8001;
+	METHOD method_20962 close ()V
+	METHOD method_20963 connect ()V
+	METHOD method_20964 lambda$static$0 (ZLClass_8004;)V
+	METHOD method_20965 ()V
+	METHOD method_20966 ()Ljava/lang/foreign/MemorySegment;
+	METHOD method_20967 ()Ljava/lang/foreign/MemorySegment;
+	METHOD method_20968 ()Ljava/lang/foreign/MemorySegment;
+	METHOD method_20969 runCallbacks ()V
+	METHOD method_20970 (J)V
+	METHOD method_20971 (Ljava/lang/Throwable;)Ljava/lang/RuntimeException;
+	CLASS 1
+		METHOD method_20972 invoke (Ljava/lang/foreign/MemorySegment;Ljava/lang/foreign/MemorySegment;)V
+	CLASS 2
+		METHOD method_20973 invoke (IIILjava/lang/foreign/MemorySegment;)V
+	CLASS 3
+		METHOD method_20974 invoke (Ljava/lang/foreign/MemorySegment;ILjava/lang/foreign/MemorySegment;)V
+	CLASS 4
+		METHOD method_20975 invoke (Ljava/lang/foreign/MemorySegment;Ljava/lang/foreign/MemorySegment;)V
+	CLASS 5
+		METHOD method_20976 invoke (Ljava/lang/foreign/MemorySegment;Ljava/lang/foreign/MemorySegment;)V
+	CLASS Class_7998 ActivityInviteCallback
+		METHOD method_20977 onActivityInvite (LClass_7992;)V
+	CLASS Class_7999 ActivityJoinCallback
+		METHOD method_20978 onActivityJoin (Ljava/lang/String;)V
+	CLASS Class_8000 LogCallback
+		METHOD method_20979 onLog (Ljava/lang/String;LClass_8005;)V
+	CLASS Class_8001 MarshalledActivity
+	CLASS Class_8002 ResultCallback
+		METHOD method_20980 onResult (ZLClass_8004;)V
+	CLASS Class_8003 StatusChangedCallback
+		METHOD method_20981 (LClass_7996;LClass_7995;I)V
+CLASS Class_8004 com/threerings/discord/ErrorType
+	FIELD field_21102 $VALUES [LClass_8004;
+	FIELD field_21103 ABORTED LClass_8004;
+	FIELD field_21104 AUTHORIZATION_FAILED LClass_8004;
+	FIELD field_21105 CLIENT_DESTROYED LClass_8004;
+	FIELD field_21106 CLIENT_NOT_READY LClass_8004;
+	FIELD field_21107 DISABLED LClass_8004;
+	FIELD field_21108 HTTP_ERROR LClass_8004;
+	FIELD field_21109 NETWORK_ERROR LClass_8004;
+	FIELD field_21111 RPC_ERROR LClass_8004;
+	FIELD field_21112 VALIDATION_ERROR LClass_8004;
+	FIELD field_21113 nativeValue I
+	METHOD method_20982 $values ()[LClass_8004;
+	METHOD method_20983 fromNative (I)LClass_8004;
+	METHOD method_20984 valueOf (Ljava/lang/String;)LClass_8004;
+	METHOD method_20985 values ()[LClass_8004;
+CLASS Class_8005 com/threerings/discord/LoggingSeverity
+	FIELD field_21114 $VALUES [LClass_8005;
+	FIELD field_21115 ERROR LClass_8005;
+	FIELD field_21118 VERBOSE LClass_8005;
+	FIELD field_21119 WARNING LClass_8005;
+	FIELD field_21120 nativeValue I
+	METHOD method_20986 $values ()[LClass_8005;
+	METHOD method_20987 valueOf (Ljava/lang/String;)LClass_8005;
+	METHOD method_20988 values ()[LClass_8005;
+CLASS Class_8006 com/threerings/discord/StatusType
+	FIELD field_21121 $VALUES [LClass_8006;
+	FIELD field_21122 BLOCKED LClass_8006;
+	FIELD field_21125 INVISIBLE LClass_8006;
+	FIELD field_21126 OFFLINE LClass_8006;
+	FIELD field_21127 ONLINE LClass_8006;
+	FIELD field_21128 STREAMING LClass_8006;
+	FIELD field_21129 UNKNOWN LClass_8006;
+	FIELD field_21130 nativeValue I
+	METHOD method_20989 $values ()[LClass_8006;
+	METHOD method_20990 fromNative (I)LClass_8006;
+	METHOD method_20991 valueOf (Ljava/lang/String;)LClass_8006;
+	METHOD method_20992 values ()[LClass_8006;
+CLASS Class_8007 com/threerings/discord/internal/CDiscord
+	METHOD method_20993 allocOpaque (Ljava/lang/foreign/Arena;)Ljava/lang/foreign/MemorySegment;
+	METHOD method_20994 downcall (Ljava/lang/String;Ljava/lang/foreign/FunctionDescriptor;)Ljava/lang/invoke/MethodHandle;
+	METHOD method_20995 fromDiscordString (Ljava/lang/foreign/MemorySegment;)Ljava/lang/String;
+	METHOD method_20996 lambda$downcall$0 (Ljava/lang/String;)Ljava/lang/UnsatisfiedLinkError;
+	METHOD method_20997 toDiscordString (Ljava/lang/foreign/Arena;Ljava/lang/String;)Ljava/lang/foreign/MemorySegment;
+	METHOD method_20998 upcallStub (Ljava/lang/foreign/Arena;Ljava/lang/Object;Ljava/lang/String;Ljava/lang/foreign/FunctionDescriptor;Ljava/lang/invoke/MethodType;)Ljava/lang/foreign/MemorySegment;
+CLASS Class_8011
+	METHOD method_21017 (Ljava/lang/String;Ljava/lang/String;)Z
+	METHOD method_21018 ()V
+	METHOD method_21019 ()V
+	METHOD method_21020 ()V
+	METHOD method_21021 ()Z
+	METHOD method_21022 (LClass_7989;)Z
+	METHOD method_21023 (LClass_7992;)V
+	METHOD method_21024 (LClass_6765;LClass_5028;)Ljava/lang/String;
+	METHOD method_21025 (Ljava/lang/String;LClass_8005;)V
+	METHOD method_21026 (ZLClass_8004;)V
+	METHOD method_21027 (LClass_6765;)Z
+	METHOD method_21028 (ZLClass_8004;)V
+	METHOD method_21029 (Ljava/lang/Object;[Ljava/lang/Object;)V
+	METHOD method_21030 (Ljava/lang/String;)V
+	METHOD method_21031 ()Z
+	METHOD method_21032 prefChanged (LClass_4228$Class_4237;)V
+	METHOD method_21033 shutdown ()V
+	METHOD method_21034 update ()V
+	METHOD method_21035 (Ljava/lang/String;Z)V
+CLASS Class_8012
