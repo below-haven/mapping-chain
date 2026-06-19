@@ -5614,7 +5614,7 @@ CLASS game/Class_901
 CLASS game/Class_902
 	METHOD method_3757 equals (Ljava/lang/Object;)Z
 	METHOD method_3758 hashCode ()I
-CLASS game/Class_903 com/google/inject/internal/asm/$ClassTooLargeException
+CLASS game/Class_903 ClassTooLargeException
 	CLASS Class_904
 		FIELD field_2058 className Ljava/lang/String;
 		FIELD field_2059 constantPoolCount I
@@ -24024,7 +24024,7 @@ CLASS game/Class_4224 com/threerings/projectx/client/ProjectXApp
 	METHOD method_13169 (Lgame/Class_4224;)Lgame/Class_1411;
 	METHOD method_13170 (Lgame/Class_4224;)Lgame/Class_1411;
 	METHOD method_13171 (Ljava/lang/Runnable;)V
-	METHOD method_13173 ([Ljava/lang/String;)V
+	METHOD method_13173 main ([Ljava/lang/String;)V
 		ARG 0 args
 	METHOD method_13174 ()Ljava/lang/String;
 	CLASS 12
