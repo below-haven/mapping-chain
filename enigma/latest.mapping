@@ -5614,7 +5614,7 @@ CLASS game/Class_901
 CLASS game/Class_902
 	METHOD method_3757 equals (Ljava/lang/Object;)Z
 	METHOD method_3758 hashCode ()I
-CLASS game/Class_903 ClassTooLargeException
+CLASS game/Class_903 com/google/inject/internal/asm/$ClassTooLargeException
 	CLASS Class_904
 		FIELD field_2058 className Ljava/lang/String;
 		FIELD field_2059 constantPoolCount I
