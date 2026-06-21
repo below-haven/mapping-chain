@@ -4530,8 +4530,8 @@ CLASS game/Class_694 com/google/inject/Class_694
 	METHOD method_3009 (Ljava/lang/Iterable;)Lgame/Class_697;
 CLASS game/Class_695 com/google/inject/Class_695
 	METHOD method_3010 ()Ljava/lang/Class;
-CLASS game/Class_696 com/google/inject/Class_696
-	METHOD method_3011 ()Z
+CLASS game/Class_696 com/google/inject/Inject
+	METHOD method_3011 optional ()Z
 CLASS game/Class_697 com/google/inject/Class_697
 	METHOD method_3012 (Lgame/Class_1122;)Ljava/util/List;
 	METHOD method_3013 (Lgame/Class_674;)Lgame/Class_691;
@@ -5614,7 +5614,7 @@ CLASS game/Class_901 com/google/inject/internal/Class_901
 CLASS game/Class_902 com/google/inject/internal/Class_902
 	METHOD method_3757 equals (Ljava/lang/Object;)Z
 	METHOD method_3758 hashCode ()I
-CLASS game/Class_903 com/google/inject/internal/asm/$ClassTooLargeException
+CLASS game/Class_903 ClassTooLargeException
 	CLASS Class_904
 		FIELD field_2058 className Ljava/lang/String;
 		FIELD field_2059 constantPoolCount I
@@ -6694,7 +6694,7 @@ CLASS game/Class_1119 com/google/inject/util/Class_1119
 	METHOD method_4587 (Ljava/lang/reflect/Type;)Ljava/lang/reflect/WildcardType;
 	METHOD method_4588 (Ljava/lang/reflect/Type;)Ljava/lang/reflect/GenericArrayType;
 CLASS game/Class_1120 com/google/inject/util/package-info
-CLASS game/Class_1121 com/google/inject/Class_1121
+CLASS game/Class_1121 com/google/inject/Singleton
 CLASS game/Class_1122 com/google/inject/Class_1122
 	METHOD method_4589 (Ljava/lang/Class;)Ljava/lang/reflect/Type;
 	METHOD method_4590 (Ljava/lang/Class;)Lgame/Class_1122;
@@ -6951,7 +6951,7 @@ CLASS game/Class_1161 com/samskivert/swing/util/SwingUtil
 	METHOD method_4757 (Ljava/awt/Component;Lgame/Class_1161$Class_1162;)V
 	METHOD method_4758 (Ljava/awt/Container;Z)V
 	METHOD method_4759 (Ljava/awt/Rectangle;Ljava/awt/Rectangle;)Ljava/awt/Point;
-	METHOD method_4760 (Ljava/awt/Window;)V
+	METHOD method_4760 centerWindow (Ljava/awt/Window;)V
 	METHOD method_4761 (Ljavax/swing/text/Document;Lgame/Class_1161$Class_1164;Lgame/Class_1161$Class_1163;)V
 	METHOD method_4762 (Ljavax/swing/text/JTextComponent;Lgame/Class_1161$Class_1164;Lgame/Class_1161$Class_1163;)V
 	METHOD method_4763 (Ljava/awt/Graphics2D;Ljava/lang/Object;)V
@@ -7947,7 +7947,8 @@ CLASS game/Class_1343 com/samskivert/util/Class_1343
 	FIELD field_3023 _idx I
 	METHOD method_5474 hasNext ()Z
 	METHOD method_5475 ()V
-CLASS game/Class_1344 com/threerings/Class_1344
+CLASS game/Class_1344 com/threerings/ClydeLog
+	FIELD field_3024 log Lgame/Class_1263;
 CLASS game/Class_1345 com/threerings/a/Class_1345
 	METHOD method_5476 (IIIIILjava/awt/Rectangle;)V
 	METHOD method_5477 (IIIII)Ljava/awt/Rectangle;
@@ -8075,7 +8076,8 @@ CLASS game/Class_1365 com/threerings/admin/data/ConfigObject
 CLASS game/Class_1366 com/threerings/admin/data/EditableConfigObject
 CLASS game/Class_1367 com/threerings/admin/data/Class_1367
 	METHOD method_5535 value ()Ljava/lang/String;
-CLASS game/Class_1368 com/threerings/Class_1368
+CLASS game/Class_1368 com/threerings/Log
+	FIELD field_3075 log Lgame/Class_1263;
 CLASS game/Class_1369 com/threerings/b/Class_1369
 	METHOD method_5536 (Ljava/io/File;)Ljava/awt/image/BufferedImage;
 	METHOD method_5537 (Ljava/nio/ByteBuffer;)Ljava/awt/image/BufferedImage;
@@ -9091,9 +9093,9 @@ CLASS game/Class_1514 com/threerings/crowd/util/CrowdContext
 	METHOD method_6077 (Lgame/Class_1563;)V
 	METHOD method_6078 (Lgame/Class_1563;)V
 	METHOD method_6079 getMessageManager ()Lgame/Class_7684;
-	METHOD method_6080 ()Lgame/Class_1570;
+	METHOD method_6080 getLocationDirector ()Lgame/Class_1570;
 	METHOD method_6081 ()Lgame/Class_1583;
-	METHOD method_6082 ()Lgame/Class_1518;
+	METHOD method_6082 getChatDirector ()Lgame/Class_1518;
 CLASS game/Class_1515 com/threerings/crowd/chat/client/CurseFilter
 	FIELD field_3703 _stopMatcher Ljava/util/regex/Matcher;
 	FIELD field_3704 _matchers [Ljava/util/regex/Matcher;
@@ -9217,7 +9219,7 @@ CLASS game/Class_1540 com/threerings/crowd/chat/client/MuteDirector
 	FIELD field_3758 _observers Lgame/Class_1234;
 	METHOD method_6160 (Lgame/Class_1518;)V
 	METHOD method_6161 (Lgame/Class_1540$Class_1541;)V
-	METHOD method_6162 (Lgame/Class_7677;Z)V
+	METHOD method_6162 setMuted (Lgame/Class_7677;Z)V
 	METHOD method_6163 (Lgame/Class_1540$Class_1541;)V
 	METHOD method_6164 (Lgame/Class_7677;Z)V
 	METHOD method_6165 (Lgame/Class_7677;)Z
@@ -9302,7 +9304,7 @@ CLASS game/Class_1570 com/threerings/crowd/client/LocationDirector
 	METHOD method_6198 (Ljava/lang/Runnable;)V
 	METHOD method_6199 (ILjava/lang/String;)V
 	METHOD method_6200 (ILjava/lang/String;)V
-	METHOD method_6201 ()Lgame/Class_1605;
+	METHOD method_6201 getPlaceObject ()Lgame/Class_1605;
 	METHOD method_6202 ()Z
 	METHOD method_6203 ()Z
 	METHOD method_6204 ()V
@@ -11833,8 +11835,10 @@ CLASS game/Class_2168 com/threerings/getdown/c/Class_2168
 	METHOD method_7648 (Ljava/util/zip/ZipOutputStream;Ljava/util/zip/ZipEntry;Ljava/util/zip/ZipFile;)V
 	METHOD method_7649 (Ljava/io/File;Ljava/io/File;)Ljava/util/zip/ZipOutputStream;
 	METHOD method_7650 (Ljava/lang/String;)Ljava/util/List;
-CLASS game/Class_2169 com/threerings/getdown/c/Class_2169
-	METHOD method_7651 (Ljava/io/File;Ljava/io/File;Lgame/Class_2184;)V
+CLASS game/Class_2169 com/threerings/getdown/tools/Patcher
+	FIELD field_4950 _obs Lgame/Class_2184;
+	FIELD field_4953 _buffer [B
+	METHOD method_7651 patch (Ljava/io/File;Ljava/io/File;Lgame/Class_2184;)V
 	METHOD method_7652 (Ljava/util/zip/ZipFile;Ljava/util/zip/ZipEntry;Ljava/io/File;)V
 	METHOD method_7653 (Ljava/util/zip/ZipFile;Ljava/util/zip/ZipEntry;Ljava/io/File;Ljava/lang/String;)V
 	METHOD method_7654 (I)V
@@ -11910,8 +11914,8 @@ CLASS game/Class_2182 com/threerings/getdown/d/Class_2182
 CLASS game/Class_2183 com/threerings/getdown/d/Class_2183
 	METHOD method_7711 (I)Lgame/Class_2184;
 	METHOD method_7712 ()V
-CLASS game/Class_2184 com/threerings/getdown/d/Class_2184
-	METHOD method_7713 (I)V
+CLASS game/Class_2184 com/threerings/getdown/util/ProgressObserver
+	METHOD method_7713 progress (I)V
 CLASS game/Class_2185 com/threerings/getdown/d/Class_2185
 	FIELD field_4986 height I
 	FIELD field_4987 width I
@@ -12032,8 +12036,8 @@ CLASS game/Class_2191 com/threerings/getdown/data/Application
 			METHOD method_7806 valueOf (Ljava/lang/String;)Lgame/Class_2191$Class_2193$Class_2194;
 			METHOD method_7807 values ()[Lgame/Class_2191$Class_2193$Class_2194;
 	CLASS Class_2195
-	CLASS Class_2196
-		METHOD method_7808 (Ljava/lang/String;)V
+	CLASS Class_2196 StatusDisplay
+		METHOD method_7808 updateStatus (Ljava/lang/String;)V
 CLASS game/Class_2197 com/threerings/getdown/data/EnvConfig
 	CLASS Class_2198 Note
 		CLASS Class_2199 Level
@@ -12192,8 +12196,11 @@ CLASS game/Class_2218 com/threerings/getdown/launcher/StatusPanel
 	METHOD method_7908 paintComponent (Ljava/awt/Graphics;)V
 	METHOD method_7909 removeNotify ()V
 	METHOD method_7910 setStatus (Ljava/lang/String;Z)V
-CLASS game/Class_2219 com/threerings/getdown/launcher/Class_2219
+CLASS game/Class_2219 com/threerings/getdown/launcher/Getdown
 	FIELD field_5157 _ifc Lgame/Class_2191$Class_2193;
+	FIELD field_5158 _progobs Lgame/Class_2184;
+	FIELD field_5159 _app Lgame/Class_2191;
+	FIELD field_5170 _startup J
 	METHOD method_7911 (Z)V
 	METHOD method_7912 (Z)V
 	METHOD method_7913 (Lgame/Class_2191$Class_2193$Class_2194;)V
@@ -12487,9 +12494,10 @@ CLASS game/Class_2304 com/threerings/io/ClassMapping
 	FIELD field_5300 sclass Ljava/lang/Class;
 	FIELD field_5301 streamer Lgame/Class_2257;
 	METHOD method_8075 toString ()Ljava/lang/String;
-CLASS game/Class_2305 com/threerings/io/Class_2305
-	METHOD method_8076 (Ljava/lang/reflect/Field;Ljava/lang/Object;Lgame/Class_2323;)V
-	METHOD method_8077 (Ljava/lang/reflect/Field;Ljava/lang/Object;Lgame/Class_2324;)V
+CLASS game/Class_2305 com/threerings/io/FieldMarshaller
+	FIELD field_5302 _type Ljava/lang/String;
+	METHOD method_8076 readField (Ljava/lang/reflect/Field;Ljava/lang/Object;Lgame/Class_2323;)V
+	METHOD method_8077 writeField (Ljava/lang/reflect/Field;Ljava/lang/Object;Lgame/Class_2324;)V
 	METHOD method_8078 (Ljava/lang/String;)Ljava/lang/String;
 	METHOD method_8079 (Ljava/lang/String;)Ljava/lang/String;
 	METHOD method_8080 (Ljava/lang/reflect/Field;)Lgame/Class_2305;
@@ -12857,7 +12865,7 @@ CLASS game/Class_2339 com/threerings/math/Transform3D
 	METHOD method_8373 (Lgame/Class_2342;Lgame/Class_2334;)Lgame/Class_2339;
 	METHOD method_8374 (Lgame/Class_2342;Lgame/Class_2334;F)Lgame/Class_2339;
 	METHOD method_8375 (Lgame/Class_2342;Lgame/Class_2334;Lgame/Class_2342;)Lgame/Class_2339;
-	METHOD method_8376 (I)V
+	METHOD method_8376 setType (I)V
 	METHOD method_8377 (I)Lgame/Class_2339;
 	METHOD method_8378 (Lgame/Class_2338;)Lgame/Class_2339;
 	METHOD method_8379 (I)Lgame/Class_2339;
@@ -12881,7 +12889,7 @@ CLASS game/Class_2339 com/threerings/math/Transform3D
 	METHOD method_8397 readFields (Lgame/Class_1880;)V
 	METHOD method_8398 ()F
 	METHOD method_8399 ()Lgame/Class_2342;
-	METHOD method_8400 ()Lgame/Class_2334;
+	METHOD method_8400 getRotation ()Lgame/Class_2334;
 	METHOD method_8401 ()Lgame/Class_2332;
 	METHOD method_8402 ()Lgame/Class_2339;
 	METHOD method_8403 toString ()Ljava/lang/String;
@@ -12992,7 +13000,7 @@ CLASS game/Class_2343 com/threerings/math/Vector4f
 	METHOD method_8501 hashCode ()I
 	METHOD method_8502 ([F)Lgame/Class_2343;
 	METHOD method_8503 toString ()Ljava/lang/String;
-CLASS game/Class_2344 com/threerings/math/Class_2344
+CLASS game/Class_2344 com/threerings/math/FloatMath
 	METHOD method_8504 (F)I
 	METHOD method_8505 (F)F
 	METHOD method_8506 (F)F
@@ -13018,7 +13026,7 @@ CLASS game/Class_2344 com/threerings/math/Class_2344
 	METHOD method_8526 (F)F
 	METHOD method_8527 (F)F
 	METHOD method_8528 (F)F
-	METHOD method_8529 (F)F
+	METHOD method_8529 toRadians (F)F
 	METHOD method_8530 (F)F
 	METHOD method_8531 (F)F
 	METHOD method_8532 ()F
@@ -13344,10 +13352,10 @@ CLASS game/Class_2394 com/threerings/media/tile/Class_2394
 		FIELD field_5544 zations [Lgame/Class_2380;
 		METHOD method_8734 equals (Ljava/lang/Object;)Z
 		METHOD method_8735 hashCode ()I
-CLASS game/Class_2396 com/threerings/media/tile/Class_2396
+CLASS game/Class_2396 com/threerings/media/tile/TileManager
 	METHOD method_8736 (IILgame/Class_2389$Class_2390;)Lgame/Class_2394;
-	METHOD method_8737 (Ljava/lang/String;Ljava/lang/String;II)Lgame/Class_2391;
-	METHOD method_8738 (Ljava/lang/String;II)Lgame/Class_2391;
+	METHOD method_8737 loadCachedTileSet (Ljava/lang/String;Ljava/lang/String;II)Lgame/Class_2391;
+	METHOD method_8738 loadTileSet (Ljava/lang/String;II)Lgame/Class_2391;
 	METHOD method_8739 (I)Lgame/Class_2389;
 	METHOD method_8740 (I)Lgame/Class_2394;
 CLASS game/Class_2397 com/threerings/media/tile/Class_2397
@@ -13550,7 +13558,7 @@ CLASS game/Class_2419 com/threerings/miso/client/Class_2419
 	METHOD method_8873 (Ljava/lang/String;)Lgame/Class_2419;
 CLASS game/Class_2420 com/threerings/miso/client/Class_2420
 	FIELD field_5646 _metrics Lgame/Class_2401;
-CLASS game/Class_2421 com/threerings/miso/client/Class_2421
+CLASS game/Class_2421 com/threerings/miso/client/SceneBlock
 	FIELD field_5650 _metrics Lgame/Class_2401;
 	FIELD field_5651 _model Lgame/Class_2432;
 	FIELD field_5652 _panel Lgame/Class_2407;
@@ -13745,22 +13753,28 @@ CLASS game/Class_2451 com/threerings/nio/conman/Class_2451
 	METHOD method_8980 clone ()Ljava/lang/Object;
 	METHOD method_8981 toString ()Ljava/lang/String;
 	METHOD method_8982 ()Lgame/Class_2451;
-CLASS game/Class_2452 com/threerings/nio/conman/Class_2452
-	METHOD method_8983 (Lgame/Class_2448;Ljava/nio/channels/SocketChannel;J)V
+CLASS game/Class_2452 com/threerings/nio/conman/Connection
+	FIELD field_5785 selkey Ljava/nio/channels/SelectionKey;
+	FIELD field_5786 _cmgr Lgame/Class_2448;
+	FIELD field_5787 _channel Ljava/nio/channels/SocketChannel;
+	FIELD field_5788 _lastEvent J
+	FIELD field_5789 _connectionId I
+	FIELD field_5790 _lastConnectionId I
+	METHOD method_8983 init (Lgame/Class_2448;Ljava/nio/channels/SocketChannel;J)V
 	METHOD method_8984 (Ljava/io/IOException;)V
 	METHOD method_8985 (Ljava/io/IOException;)V
 	METHOD method_8986 close ()V
 	METHOD method_8987 toString ()Ljava/lang/String;
-	METHOD method_8988 ()I
-	METHOD method_8989 ()Ljava/nio/channels/SocketChannel;
+	METHOD method_8988 getConnectionId ()I
+	METHOD method_8989 getChannel ()Ljava/nio/channels/SocketChannel;
 	METHOD method_8990 ()Ljava/net/InetAddress;
 	METHOD method_8991 ()Z
 	METHOD method_8992 ()V
 CLASS game/Class_2453 com/threerings/nio/conman/Class_2453
-CLASS game/Class_2454 com/threerings/nio/conman/Class_2454
-	METHOD method_8993 (J)I
-	METHOD method_8994 ()V
-	METHOD method_8995 (J)Z
+CLASS game/Class_2454 com/threerings/nio/conman/NetEventHandler
+	METHOD method_8993 handleEvent (J)I
+	METHOD method_8994 becameIdle ()V
+	METHOD method_8995 checkIdle (J)Z
 CLASS game/Class_2455 com/threerings/nio/conman/Class_2455
 CLASS game/Class_2456 com/threerings/openal/Class_2456
 CLASS game/Class_2457 com/threerings/openal/Class_2457
@@ -14619,7 +14633,7 @@ CLASS game/Class_2604 com/threerings/opengl/compositor/Class_2604
 CLASS game/Class_2608 com/threerings/opengl/Class_2608
 	FIELD field_6262 this$0 Lgame/Class_2537;
 	METHOD method_9418 ()V
-CLASS game/Class_2609 com/threerings/opengl/Class_2609
+CLASS game/Class_2609 com/threerings/opengl/GlCanvasApp
 	FIELD field_6263 _canvas Lgame/Class_2537;
 	FIELD field_6264 _canvasRoot Lgame/Class_2766;
 	FIELD field_6265 _frame Ljavax/swing/JFrame;
@@ -16854,7 +16868,7 @@ CLASS game/Class_2993 com/threerings/opengl/gui/e/Class_2993
 	METHOD method_10187 (II)Lgame/Class_2993;
 	METHOD method_10188 (Lgame/Class_2993;)Lgame/Class_2993;
 	METHOD method_10189 toString ()Ljava/lang/String;
-CLASS game/Class_2994 com/threerings/opengl/gui/e/Class_2994
+CLASS game/Class_2994 com/threerings/opengl/gui/util/PseudoKeys
 	FIELD field_7438 KEY_MODIFIERS [I
 	FIELD field_7439 _modifierToKeys Lgame/Class_387;
 	FIELD field_7440 _singleton Lgame/Class_2994;
@@ -16879,11 +16893,11 @@ CLASS game/Class_2994 com/threerings/opengl/gui/e/Class_2994
 	METHOD method_10208 isMouseKey (I)Z
 	METHOD method_10209 isValid (I)Z
 	METHOD method_10210 singleton ()Lgame/Class_2994;
-	CLASS Class_2995
-	CLASS Class_2996
+	CLASS Class_2995 Adapter
+	CLASS Class_2996 Observer
 		METHOD method_10211 keyPressed (JIF)V
 		METHOD method_10212 keyReleased (JI)V
-	CLASS Class_2997
+	CLASS Class_2997 Unifier
 		FIELD field_7441 _axes Ljava/util/Map;
 		FIELD field_7442 _consume Z
 		FIELD field_7443 _modifierMap Ljava/util/Map;
@@ -16979,13 +16993,13 @@ CLASS game/Class_3009 com/threerings/opengl/gui/event/ActionListener
 CLASS game/Class_3010 com/threerings/opengl/gui/event/ChangeListener
 	METHOD method_10259 stateChanged (Lgame/Class_3000;)V
 CLASS game/Class_3011 com/threerings/opengl/gui/event/ComponentListener
-CLASS game/Class_3012 com/threerings/opengl/gui/event/Class_3012
+CLASS game/Class_3012 com/threerings/opengl/gui/event/ControllerListener
 	METHOD method_10260 controllerMoved (Lgame/Class_3001;)V
 	METHOD method_10261 controllerPressed (Lgame/Class_3001;)V
 	METHOD method_10262 controllerReleased (Lgame/Class_3001;)V
 CLASS game/Class_3013 com/threerings/opengl/gui/event/Class_3013
 	METHOD method_10263 eventDispatched (Lgame/Class_3002;)V
-CLASS game/Class_3014 com/threerings/opengl/gui/event/Class_3014
+CLASS game/Class_3014 com/threerings/opengl/gui/event/KeyListener
 	METHOD method_10264 keyPressed (Lgame/Class_3005;)V
 	METHOD method_10265 keyReleased (Lgame/Class_3005;)V
 CLASS game/Class_3015 com/threerings/opengl/gui/event/MouseAdapter
@@ -17000,7 +17014,7 @@ CLASS game/Class_3017 com/threerings/opengl/gui/event/MouseMotionListener
 	METHOD method_10272 mouseMoved (Lgame/Class_3006;)V
 CLASS game/Class_3018 com/threerings/opengl/gui/event/MouseWheelListener
 	METHOD method_10273 mouseWheeled (Lgame/Class_3006;)V
-CLASS game/Class_3019 com/threerings/opengl/gui/event/Class_3019
+CLASS game/Class_3019 com/threerings/opengl/gui/event/TextListener
 	METHOD method_10274 textChanged (Lgame/Class_3007;)V
 CLASS game/Class_3020 com/threerings/opengl/gui/event/Class_3020
 	METHOD method_10275 windowRemoved (Lgame/Class_3008;)V
@@ -17484,7 +17498,7 @@ CLASS game/Class_3063 com/threerings/opengl/gui/Class_3063
 CLASS game/Class_3064 com/threerings/opengl/Class_3064
 	FIELD field_7634 this$0 Lgame/Class_2609;
 	METHOD method_10548 componentResized (Ljava/awt/event/ComponentEvent;)V
-CLASS game/Class_3065 com/threerings/opengl/Class_3065
+CLASS game/Class_3065 com/threerings/opengl/GlCanvasTool
 	FIELD field_7635 _bounds Lgame/Class_3571;
 	FIELD field_7636 _compass Lgame/Class_3568;
 	FIELD field_7637 _eprefs Lgame/Class_3065$Class_3066;
@@ -17933,7 +17947,7 @@ CLASS game/Class_3123 com/threerings/opengl/model/Animation
 		METHOD method_10720 apply (Lgame/Class_3220;)Z
 		METHOD method_10721 (Lgame/Class_3123;Z)V
 CLASS game/Class_3135 com/threerings/opengl/model/Class_3135
-CLASS game/Class_3136 com/threerings/opengl/model/Class_3136
+CLASS game/Class_3136 com/threerings/opengl/model/AnimationAdapter
 CLASS game/Class_3137 com/threerings/opengl/model/config/ActionConfig
 	METHOD method_10722 createExecutor (Lgame/Class_3572;Lgame/Class_2067;)Lgame/Class_2097;
 	METHOD method_10723 preload (Lgame/Class_3572;)V
@@ -18323,7 +18337,7 @@ CLASS game/Class_3219 com/threerings/opengl/model/config/Class_3219
 CLASS game/Class_3220 com/threerings/opengl/model/AnimationObserver
 	METHOD method_10802 animationStarted (Lgame/Class_3123;)Z
 	METHOD method_10803 animationStopped (Lgame/Class_3123;Z)Z
-CLASS game/Class_3221 com/threerings/opengl/model/Class_3221
+CLASS game/Class_3221 com/threerings/opengl/model/Articulated
 	FIELD field_8086 _animationsByName Ljava/util/HashMap;
 	FIELD field_8087 _animations [Lgame/Class_3123;
 	FIELD field_8088 _bounds Lgame/Class_2328;
@@ -18391,7 +18405,7 @@ CLASS game/Class_3221 com/threerings/opengl/model/Class_3221
 		METHOD method_10826 setConfig (Lgame/Class_3160$Class_3167;Lgame/Class_2339;Lgame/Class_2339;)V
 		METHOD method_10827 setUpdater (Lgame/Class_2039;)V
 		METHOD method_10828 update ()V
-CLASS game/Class_3224 com/threerings/opengl/model/Class_3224
+CLASS game/Class_3224 com/threerings/opengl/model/Compound
 	FIELD field_8126 _bounds Lgame/Class_2328;
 	FIELD field_8127 _completed Z
 	FIELD field_8128 _config Lgame/Class_3173;
@@ -18407,7 +18421,7 @@ CLASS game/Class_3224 com/threerings/opengl/model/Class_3224
 	FIELD field_8138 _worldTransform Lgame/Class_2339;
 	METHOD method_10829 setConfig (Lgame/Class_3572;Lgame/Class_3173;)V
 	METHOD method_10830 updateFromConfig ()V
-CLASS game/Class_3225 com/threerings/opengl/model/Class_3225
+CLASS game/Class_3225 com/threerings/opengl/model/Conditional
 	FIELD field_8139 _active Lgame/Class_3226;
 	FIELD field_8140 _bounds Lgame/Class_2328;
 	FIELD field_8141 _completed Z
@@ -18538,7 +18552,7 @@ CLASS game/Class_3230 com/threerings/opengl/model/Class_3230
 CLASS game/Class_3231 com/threerings/opengl/model/Class_3231
 CLASS game/Class_3232 com/threerings/opengl/model/ModelObserver
 	METHOD method_10915 modelCompleted (Lgame/Class_3226;)Z
-CLASS game/Class_3233 com/threerings/opengl/model/Class_3233
+CLASS game/Class_3233 com/threerings/opengl/model/Scripted
 	FIELD field_8177 LONG_ELAPSED_TIME F
 	FIELD field_8178 _bounds Lgame/Class_2328;
 	FIELD field_8179 _completed Z
@@ -18561,7 +18575,7 @@ CLASS game/Class_3233 com/threerings/opengl/model/Class_3233
 	CLASS Class_3234
 		FIELD field_8193 duration F
 		FIELD field_8194 executor Lgame/Class_2097;
-CLASS game/Class_3235 com/threerings/opengl/model/Class_3235
+CLASS game/Class_3235 com/threerings/opengl/model/Static
 	FIELD field_8196 _bounds Lgame/Class_2328;
 	FIELD field_8197 _config Lgame/Class_3196$Class_3197;
 	FIELD field_8198 _ctx Lgame/Class_3572;
@@ -18690,27 +18704,27 @@ CLASS game/Class_3248 com/threerings/opengl/model/tools/ModelTool
 		METHOD method_10981 getEnvironmentModels ()[Lgame/Class_3248$Class_3249;
 		METHOD method_10982 setEnvironmentModels ([Lgame/Class_3248$Class_3249;)V
 		METHOD method_10983 updateEnvironment ()V
-CLASS game/Class_3251 com/threerings/opengl/model/tools/Class_3251
+CLASS game/Class_3251 com/threerings/opengl/model/tools/AnimationDef
 	FIELD field_8247 frameRate F
 	FIELD field_8248 frames Ljava/util/ArrayList;
 	METHOD method_10984 addFrame (Lgame/Class_3251$Class_3252;)V
 	METHOD method_10985 getTargets ()[Ljava/lang/String;
 	METHOD method_10986 getTransforms ([Ljava/lang/String;FZ)[[Lgame/Class_2339;
 	METHOD method_10987 update (Lgame/Class_3147$Class_3152;)V
-	CLASS Class_3252
+	CLASS Class_3252 FrameDef
 		FIELD field_8249 transforms Ljava/util/HashMap;
 		METHOD method_10988 addTransform (Lgame/Class_3251$Class_3253;)V
 		METHOD method_10989 getTransforms ([Ljava/lang/String;F)[Lgame/Class_2339;
-	CLASS Class_3253
+	CLASS Class_3253 TransformDef
 		FIELD field_8251 rotation [F
 		FIELD field_8252 scale [F
 		FIELD field_8253 translation [F
 		METHOD method_10990 createTransform (F)Lgame/Class_2339;
-CLASS game/Class_3254 com/threerings/opengl/model/tools/a/Class_3254
+CLASS game/Class_3254 com/threerings/opengl/model/tools/xml/AnimationParser
 	FIELD field_8254 _animation Lgame/Class_3251;
 	FIELD field_8255 _digester Lorg/apache/commons/digester/Digester;
 	METHOD method_10991 parseAnimation (Ljava/io/InputStream;)Lgame/Class_3251;
-CLASS game/Class_3255 com/threerings/opengl/model/tools/a/Class_3255
+CLASS game/Class_3255 com/threerings/opengl/model/tools/xml/ModelParser
 	FIELD field_8256 _digester Lorg/apache/commons/digester/Digester;
 	FIELD field_8257 _model Lgame/Class_3237;
 	METHOD method_10992 parseModel (Ljava/io/InputStream;)Lgame/Class_3237;
@@ -19278,7 +19292,7 @@ CLASS game/Class_3291 com/threerings/opengl/renderer/Class_3291
 	METHOD method_11215 setData (Ljava/nio/ShortBuffer;I)V
 CLASS game/Class_3292 com/threerings/opengl/renderer/b/Class_3292
 	METHOD method_11216 createLineBatch (Lgame/Class_3267;Ljava/nio/FloatBuffer;)Lgame/Class_3483;
-CLASS game/Class_3293 com/threerings/opengl/renderer/b/Class_3293
+CLASS game/Class_3293 com/threerings/opengl/renderer/util/SnippetUtil
 	FIELD field_8577 _fogParams Ljava/util/Map;
 	FIELD field_8578 _fragmentLighting Ljava/util/Map;
 	FIELD field_8579 _texCoords Ljava/util/Map;
@@ -20854,13 +20868,13 @@ CLASS game/Class_3568 com/threerings/opengl/util/Class_3568
 	FIELD field_9417 _y Lgame/Class_3056;
 	FIELD field_9418 _z Lgame/Class_3056;
 	METHOD method_11731 drawAxis (Lgame/Class_3267;Lgame/Class_3056;FF)V
-CLASS game/Class_3569 com/threerings/opengl/util/Class_3569
-	METHOD method_11732 (Ljava/io/File;)Ljava/nio/ByteBuffer;
-	METHOD method_11733 (Ljava/io/File;Lgame/Class_3494;Z)V
-	METHOD method_11734 (Ljava/io/File;Lgame/Class_3495;Z)V
+CLASS game/Class_3569 com/threerings/opengl/util/DDSLoader
+	METHOD method_11732 load (Ljava/io/File;)Ljava/nio/ByteBuffer;
+	METHOD method_11733 load (Ljava/io/File;Lgame/Class_3494;Z)V
+	METHOD method_11734 load (Ljava/io/File;Lgame/Class_3495;Z)V
 	METHOD method_11735 (Ljava/io/File;Lgame/Class_3496;Z)V
 	METHOD method_11736 (Ljava/io/File;Lgame/Class_3497;Z)V
-	CLASS Class_3570
+	CLASS Class_3570 Header
 		FIELD field_9419 alphaBitMask I
 		FIELD field_9420 bBitMask I
 		FIELD field_9421 caps1 I
@@ -21259,7 +21273,7 @@ CLASS game/Class_3656 com/threerings/presents/client/Client
 	METHOD method_11898 (Lgame/Class_3764;Lgame/Class_3745;)V
 	METHOD method_11899 (Ljava/lang/String;[I[I)V
 	METHOD method_11900 (Ljava/lang/Class;)Ljava/lang/Object;
-	METHOD method_11901 (Ljava/lang/Class;)Ljava/lang/Object;
+	METHOD method_11901 requireService (Ljava/lang/Class;)Ljava/lang/Object;
 	METHOD method_11902 (Lgame/Class_3664;)V
 	METHOD method_11903 (Lgame/Class_3700;)V
 	METHOD method_11904 (Ljava/lang/StringBuilder;)V
@@ -21941,7 +21955,8 @@ CLASS game/Class_3814 com/threerings/presents/peer/server/Class_3814
 	METHOD method_12294 ()Lgame/Class_3814$Class_3815;
 	CLASS Class_3815
 CLASS game/Class_3816 com/threerings/presents/peer/server/Class_3816
-CLASS game/Class_3817 com/threerings/presents/server/Class_3817
+CLASS game/Class_3817 com/threerings/presents/server/PresentsServer
+	FIELD field_9901 omgr Lgame/Class_3851;
 	METHOD method_12295 (Lgame/Class_697;)V
 	METHOD method_12296 (Lgame/Class_697;)V
 	METHOD method_12297 ()[I
@@ -21959,7 +21974,7 @@ CLASS game/Class_3819 com/threerings/presents/server/Authenticator
 	METHOD method_12307 (Lgame/Class_3862;Lgame/Class_3762;)V
 	METHOD method_12308 ()Lgame/Class_3763;
 	CLASS Class_3820 AuthException
-CLASS game/Class_3821 com/threerings/presents/server/Class_3821
+CLASS game/Class_3821 com/threerings/presents/server/PresentsSession
 	FIELD field_9911 _compoundDepth I
 	METHOD method_12309 (J)Z
 	METHOD method_12310 (Z)V
@@ -22104,7 +22119,7 @@ CLASS game/Class_3863 com/threerings/presents/server/a/Class_3863
 CLASS game/Class_3864 com/threerings/presents/server/a/Class_3864
 	METHOD method_12396 ()V
 CLASS game/Class_3865 com/threerings/presents/server/a/Class_3865
-CLASS game/Class_3866 com/threerings/presents/server/a/Class_3866
+CLASS game/Class_3866 com/threerings/presents/server/net/PresentsConnection
 	METHOD method_12397 (Z)V
 	METHOD method_12398 (Lgame/Class_2320;)Lgame/Class_2324;
 	METHOD method_12399 (Lgame/Class_3866$Class_3867;)V
@@ -22121,7 +22136,7 @@ CLASS game/Class_3866 com/threerings/presents/server/a/Class_3866
 	CLASS Class_3867
 		METHOD method_12410 (Lgame/Class_3774;)V
 CLASS game/Class_3868 com/threerings/presents/server/a/Class_3868
-CLASS game/Class_3869 com/threerings/presents/server/a/Class_3869
+CLASS game/Class_3869 com/threerings/presents/server/net/PresentsConnectionManager
 	METHOD method_12411 (J)V
 	METHOD method_12412 (Lgame/Class_2452;Ljava/net/InetSocketAddress;)V
 	METHOD method_12413 (Lgame/Class_3866;Lgame/Class_3774;)V
@@ -22143,7 +22158,7 @@ CLASS game/Class_3873 com/threerings/presents/server/a/Class_3873
 CLASS game/Class_3874 com/threerings/presents/server/Class_3874
 CLASS game/Class_3875 com/threerings/presents/server/Class_3875
 	METHOD method_12425 (Lgame/Class_3862;)Z
-CLASS game/Class_3876 com/threerings/presents/server/Class_3876
+CLASS game/Class_3876 com/threerings/presents/server/ClientManager
 	METHOD method_12426 (Lgame/Class_2452;Ljava/io/IOException;)V
 	METHOD method_12427 (Lgame/Class_3821;)V
 	METHOD method_12428 (Lgame/Class_3844;)V
@@ -22177,7 +22192,7 @@ CLASS game/Class_3884 com/threerings/presents/server/Class_3884
 CLASS game/Class_3885 com/threerings/presents/server/Class_3885
 	METHOD method_12448 (Lgame/Class_7677;Lgame/Class_3700;)V
 	METHOD method_12449 (Lgame/Class_7677;Ljava/lang/Exception;)V
-CLASS game/Class_3886 com/threerings/presents/server/Class_3886
+CLASS game/Class_3886 com/threerings/presents/server/InvocationManager
 	FIELD field_10067 _invCode I
 	METHOD method_12450 (Lgame/Class_3702;)V
 	METHOD method_12451 (Lgame/Class_3889;Ljava/lang/Class;Ljava/lang/String;)Lgame/Class_3702;
@@ -22189,7 +22204,7 @@ CLASS game/Class_3886 com/threerings/presents/server/Class_3886
 		METHOD method_12456 (Lgame/Class_3700;I[Ljava/lang/Object;)V
 		METHOD method_12457 ()Lgame/Class_3889;
 CLASS game/Class_3888 com/threerings/presents/server/Class_3888
-CLASS game/Class_3889 com/threerings/presents/server/Class_3889
+CLASS game/Class_3889 com/threerings/presents/server/InvocationProvider
 CLASS game/Class_3890 com/threerings/presents/server/Class_3890
 	METHOD method_12458 (I)Lgame/Class_3745;
 CLASS game/Class_3891 com/threerings/presents/server/Class_3891
@@ -24334,7 +24349,7 @@ CLASS game/Class_4248 com/threerings/projectx/client/DObjectDirector
 	FIELD field_11500 _dobj Lgame/Class_3716;
 	FIELD field_11501 _observers Lgame/Class_1234;
 	FIELD field_11502 _safesub Lgame/Class_3642;
-	METHOD method_13390 ()Lgame/Class_3716;
+	METHOD method_13390 getDObject ()Lgame/Class_3716;
 	METHOD method_13391 ()V
 	METHOD method_13392 getOidAttributeName ()Ljava/lang/String;
 	METHOD method_13393 (Lgame/Class_4248$Class_4249;)V
@@ -24439,12 +24454,13 @@ CLASS game/Class_4282 com/threerings/projectx/client/Class_4282
 CLASS game/Class_4283 com/threerings/projectx/client/Class_4283
 CLASS game/Class_4284 com/threerings/projectx/client/Class_4284
 	METHOD method_13459 (Ljava/lang/String;Ljava/lang/String;Lgame/Class_3644$Class_3645;)V
-CLASS game/Class_4285 com/threerings/projectx/client/Class_4285
+CLASS game/Class_4285 com/threerings/projectx/client/KnightPopupMenu
+	FIELD field_11575 _name Lgame/Class_7677;
 	METHOD method_13460 ()V
 	METHOD method_13461 ()V
 	METHOD method_13462 ()V
-	METHOD method_13463 (Lgame/Class_7079;Lgame/Class_2789;Lgame/Class_7677;ZLgame/Class_6765;)Lgame/Class_4285;
-	METHOD method_13464 (Lgame/Class_7079;Lgame/Class_7677;)V
+	METHOD method_13463 createPopupMenu (Lgame/Class_7079;Lgame/Class_2789;Lgame/Class_7677;ZLgame/Class_6765;)Lgame/Class_4285;
+	METHOD method_13464 requestTrade (Lgame/Class_7079;Lgame/Class_7677;)V
 	METHOD method_13465 (Lgame/Class_7079;Lgame/Class_7677;Ljava/lang/String;)V
 	METHOD method_13466 (Lgame/Class_7079;Lgame/Class_7677;)V
 	METHOD method_13467 (Ljava/lang/String;)V
@@ -24600,7 +24616,7 @@ CLASS game/Class_4315 com/threerings/projectx/client/HudWindow
 	METHOD method_13575 ()V
 	METHOD method_13576 ()V
 	METHOD method_13577 ()V
-	METHOD method_13578 ()V
+	METHOD method_13578 toggleArsenalPanel ()V
 	METHOD method_13579 ()V
 	METHOD method_13580 ()V
 	METHOD method_13581 ()V
@@ -24871,7 +24887,7 @@ CLASS game/Class_4416 com/threerings/projectx/client/chat/LoopbackSpeakMarshalle
 CLASS game/Class_4417 com/threerings/projectx/client/chat/ProjectXChatDirector
 	FIELD field_11878 _ctx Lgame/Class_7079;
 	METHOD method_13737 ()V
-	METHOD method_13738 ()Lgame/Class_4505;
+	METHOD method_13738 getEntry ()Lgame/Class_4505;
 	METHOD method_13739 ()Lgame/Class_4507;
 	METHOD method_13740 ()Lgame/Class_7677;
 	METHOD method_13741 ()Lgame/Class_7079;
@@ -25022,7 +25038,7 @@ CLASS game/Class_4505 com/threerings/projectx/client/chat/Class_4505
 	METHOD method_13789 ()V
 	METHOD method_13790 (I)V
 	METHOD method_13791 (Ljava/lang/String;)V
-	METHOD method_13792 (Lgame/Class_7677;)V
+	METHOD method_13792 showTell (Lgame/Class_7677;)V
 CLASS game/Class_4506 com/threerings/projectx/client/chat/Class_4506
 	FIELD field_11983 _ctx Lgame/Class_7079;
 	METHOD method_13793 ()V
@@ -25341,11 +25357,12 @@ CLASS game/Class_4610 com/threerings/projectx/client/Class_4610
 	METHOD method_13982 (Ljava/lang/Object;Ljava/lang/Object;)V
 CLASS game/Class_4611 com/threerings/projectx/client/Class_4611
 CLASS game/Class_4612 com/threerings/projectx/client/Class_4612
-CLASS game/Class_4613 com/threerings/projectx/client/Class_4613
+CLASS game/Class_4613 com/threerings/projectx/client/SystemPopupMenu
 	FIELD field_12236 _msgs Lgame/Class_7683;
+	FIELD field_12237 _hud Lgame/Class_4315;
 	METHOD method_13983 (Lgame/Class_5836;)Z
-	METHOD method_13984 (Ljava/lang/String;Lgame/Class_4179;)Lgame/Class_2758;
-	METHOD method_13985 (Ljava/lang/String;)Lgame/Class_2758;
+	METHOD method_13984 addMenuItem (Ljava/lang/String;Lgame/Class_4179;)Lgame/Class_2758;
+	METHOD method_13985 addMenuItem (Ljava/lang/String;)Lgame/Class_2758;
 CLASS game/Class_4614 com/threerings/projectx/client/Class_4614
 	FIELD field_12238 _ctx Lgame/Class_7079;
 	METHOD method_13986 (J)V
@@ -25603,7 +25620,7 @@ CLASS game/Class_4678 com/threerings/projectx/client/Class_4678
 CLASS game/Class_4679 com/threerings/projectx/client/Class_4679
 	METHOD method_14146 (Ljava/lang/Integer;Ljava/lang/Integer;)I
 	METHOD method_14147 compare (Ljava/lang/Object;Ljava/lang/Object;)I
-CLASS game/Class_4680 com/threerings/projectx/client/Class_4680
+CLASS game/Class_4680 com/threerings/projectx/client/ComplainTree
 	FIELD field_12423 _ctx Lgame/Class_7079;
 	FIELD field_12424 _msgs Lgame/Class_7683;
 	METHOD method_14148 ()V
@@ -25779,7 +25796,7 @@ CLASS game/Class_4710 com/threerings/projectx/client/ui/ProjectXPopupMenu
 	METHOD method_14232 (Ljava/lang/String;Ljava/lang/String;Z)Lgame/Class_2761;
 	METHOD method_14233 isEmpty ()Z
 	METHOD method_14234 addMenuItem (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lgame/Class_2758;
-	METHOD method_14235 (Ljava/lang/String;Ljava/lang/Object;)V
+	METHOD method_14235 doAction (Ljava/lang/String;Ljava/lang/Object;)V
 	METHOD method_14236 setTitle (Ljava/lang/String;)V
 CLASS game/Class_4711 com/threerings/projectx/client/ui/Class_4711
 CLASS game/Class_4712 com/threerings/projectx/client/ui/Class_4712
@@ -26986,7 +27003,7 @@ CLASS game/Class_5028 com/threerings/projectx/data/PlayerObject
 	METHOD method_14656 (II)Lgame/Class_6422;
 	METHOD method_14657 (Lgame/Class_1411;Lgame/Class_1412;)Lgame/Class_4997;
 	METHOD method_14658 (Lgame/Class_1411;Lgame/Class_6410;)Z
-	METHOD method_14659 (I)Z
+	METHOD method_14659 isSet (I)Z
 	METHOD method_14660 (Lgame/Class_1411;Lgame/Class_6410;)Z
 	METHOD method_14661 (Lgame/Class_5021;)Z
 	METHOD method_14662 (Lgame/Class_1411;Lgame/Class_6410;)Z
@@ -30908,8 +30925,9 @@ CLASS game/Class_5993 com/threerings/projectx/exchange/client/Class_5993
 	METHOD method_15983 (ILgame/Class_6667;)V
 	METHOD method_15984 (Lgame/Class_2999;)V
 	METHOD method_15985 getName ()Ljava/lang/String;
-CLASS game/Class_5994 com/threerings/projectx/exchange/client/Class_5994
+CLASS game/Class_5994 com/threerings/projectx/exchange/client/DepotPurchaseWindow
 	FIELD field_15976 _id I
+	FIELD field_15978 _depotCtx Lgame/Class_7079;
 	METHOD method_15986 ()V
 	METHOD method_15987 (ILgame/Class_6667;)V
 	METHOD method_15988 (Lgame/Class_3644$Class_3645;)V
@@ -30948,10 +30966,11 @@ CLASS game/Class_6005 com/threerings/projectx/exchange/client/Class_6005
 	CLASS Class_6007
 		METHOD method_16006 (Ljava/lang/String;Z)V
 CLASS game/Class_6008 com/threerings/projectx/exchange/client/Class_6008
-CLASS game/Class_6009 com/threerings/projectx/exchange/client/Class_6009
+CLASS game/Class_6009 com/threerings/projectx/exchange/client/ExchangeDialog
 	FIELD field_16011 _ctx Lgame/Class_7079;
 	FIELD field_16012 _msgs Lgame/Class_7683;
 	FIELD field_16013 _safesub Lgame/Class_3642;
+	FIELD field_16026 _exchangeobj Lgame/Class_6020;
 	METHOD method_16007 ()V
 	METHOD method_16008 ()V
 	METHOD method_16009 ()V
@@ -31681,8 +31700,11 @@ CLASS game/Class_6196 com/threerings/projectx/item/client/Class_6196
 	METHOD method_16343 (Ljava/lang/String;Lgame/Class_3644$Class_3645;)V
 	METHOD method_16344 (Ljava/lang/String;Lgame/Class_3644$Class_3645;)V
 	METHOD method_16345 (Ljava/lang/String;Lgame/Class_3644$Class_3645;)V
-CLASS game/Class_6197 com/threerings/projectx/item/client/Class_6197
+CLASS game/Class_6197 com/threerings/projectx/item/client/ItemSlot
 	FIELD field_16504 _ctx Lgame/Class_7079;
+	FIELD field_16505 _item Lgame/Class_6410;
+	FIELD field_16507 _button Lgame/Class_2989;
+	FIELD field_16510 _big Z
 	METHOD method_16346 ()V
 	METHOD method_16347 ()Ljava/lang/Integer;
 	METHOD method_16348 ()Ljava/lang/String;
@@ -31690,19 +31712,21 @@ CLASS game/Class_6197 com/threerings/projectx/item/client/Class_6197
 	METHOD method_16350 (Lgame/Class_7079;)Z
 	METHOD method_16351 ()V
 	METHOD method_16352 (Lgame/Class_6410;)Z
-	METHOD method_16353 (Lgame/Class_7079;Lgame/Class_2834;)Lgame/Class_2834;
+	METHOD method_16353 createCursedIcon (Lgame/Class_7079;Lgame/Class_2834;)Lgame/Class_2834;
 	METHOD method_16354 (Lgame/Class_7079;Lgame/Class_3034;Lgame/Class_3034;I)Lgame/Class_3034;
-	METHOD method_16355 (Lgame/Class_7079;Lgame/Class_6275$Class_6314;J)Lgame/Class_6422;
-	METHOD method_16356 (Lgame/Class_7079;Lgame/Class_6275$Class_6314;JZ)Lgame/Class_6422;
-	METHOD method_16357 (Lgame/Class_7079;Lgame/Class_6410;I)Lgame/Class_2834;
+	METHOD method_16355 findComparator (Lgame/Class_7079;Lgame/Class_6275$Class_6314;J)Lgame/Class_6422;
+	METHOD method_16356 findComparator (Lgame/Class_7079;Lgame/Class_6275$Class_6314;JZ)Lgame/Class_6422;
+	METHOD method_16357 createIcon (Lgame/Class_7079;Lgame/Class_6410;I)Lgame/Class_2834;
+		ARG 1 item
 	METHOD method_16358 (Lgame/Class_7079;Lgame/Class_6410;Ljava/lang/Integer;Lgame/Class_3034;I)Lgame/Class_3034;
-	METHOD method_16359 (Lgame/Class_7079;Lgame/Class_6410;Z)Lgame/Class_2834;
+	METHOD method_16359 createIcon (Lgame/Class_7079;Lgame/Class_6410;Z)Lgame/Class_2834;
 	METHOD method_16360 (Z)V
-	METHOD method_16361 (Lgame/Class_7079;Lgame/Class_6410;)Lgame/Class_2834;
+	METHOD method_16361 createIcon (Lgame/Class_7079;Lgame/Class_6410;)Lgame/Class_2834;
 	METHOD method_16362 (Lgame/Class_7079;Lgame/Class_6410;I)Z
 	METHOD method_16363 (Lgame/Class_7079;Lgame/Class_6410;Z)I
 	METHOD method_16364 (Lgame/Class_6410;)V
-	METHOD method_16365 (Lgame/Class_7079;Lgame/Class_6410;)Lgame/Class_6422;
+	METHOD method_16365 findComparator (Lgame/Class_7079;Lgame/Class_6410;)Lgame/Class_6422;
+		ARG 1 item
 	METHOD method_16366 (Lgame/Class_7079;Lgame/Class_6410;I)Z
 	METHOD method_16367 (Z)V
 	METHOD method_16368 (Z)V
@@ -32171,7 +32195,7 @@ CLASS game/Class_6275 com/threerings/projectx/item/config/ItemConfig
 		METHOD method_16602 ()Ljava/lang/String;
 		METHOD method_16603 ()Ljava/lang/String;
 		METHOD method_16604 (Lgame/Class_1411;)Lgame/Class_6342$Class_6346;
-		METHOD method_16605 ()Z
+		METHOD method_16605 isComparable ()Z
 		METHOD method_16606 ()Z
 		METHOD method_16607 ()Z
 		METHOD method_16608 ()I
@@ -32548,8 +32572,8 @@ CLASS game/Class_6410 com/threerings/projectx/item/data/Item
 	METHOD method_16733 ()Lgame/Class_6410;
 	METHOD method_16734 ()Z
 	METHOD method_16735 ()Lgame/Class_1412;
-	METHOD method_16736 ()J
-	METHOD method_16737 ()Z
+	METHOD method_16736 getItemId ()J
+	METHOD method_16737 isCursed ()Z
 	METHOD method_16738 ()Z
 	METHOD method_16739 ()Z
 	METHOD method_16740 ()Ljava/lang/Long;
@@ -34062,12 +34086,12 @@ CLASS game/Class_6692 com/threerings/projectx/social/client/FeedListPanel
 		METHOD method_17511 ()Lgame/Class_3034;
 	CLASS Class_6701
 		FIELD field_17925 pvpKey Lgame/Class_6616;
-CLASS game/Class_6702 com/threerings/projectx/social/client/Class_6702
+CLASS game/Class_6702 com/threerings/projectx/social/client/SocialService
 	METHOD method_17512 (Ljava/lang/String;ILgame/Class_3644$Class_3645;)V
 	METHOD method_17513 (ZLgame/Class_5806$Class_5807;ZLgame/Class_3644$Class_3645;)V
 	METHOD method_17514 (Lgame/Class_7677;Ljava/lang/String;Ljava/lang/String;Lgame/Class_3644$Class_3645;)V
 	METHOD method_17515 (Lgame/Class_7677;Lgame/Class_3644$Class_3645;)V
-	METHOD method_17516 (Lgame/Class_7677;Lgame/Class_3644$Class_3645;)V
+	METHOD method_17516 joinFriend (Lgame/Class_7677;Lgame/Class_3644$Class_3645;)V
 	METHOD method_21038 (Ljava/lang/String;ZLgame/Class_3644$Class_3645;)V
 CLASS game/Class_6703 com/threerings/projectx/social/client/Class_6703
 	METHOD method_17517 (Ljava/util/List;)V
@@ -35066,7 +35090,7 @@ CLASS game/Class_6942 com/threerings/projectx/trade/a/Class_6942
 	METHOD method_17996 (JI)V
 CLASS game/Class_6943 com/threerings/projectx/trade/a/Class_6943
 CLASS game/Class_6944 com/threerings/projectx/trade/a/Class_6944
-CLASS game/Class_6945 com/threerings/projectx/trade/a/Class_6945
+CLASS game/Class_6945 com/threerings/projectx/trade/client/TradePanel
 	FIELD field_18555 _safesub Lgame/Class_3642;
 	METHOD method_17997 ()V
 	METHOD method_17998 ()V
@@ -35635,7 +35659,7 @@ CLASS game/Class_7079 com/threerings/projectx/util/ProjectXContext
 	METHOD method_18313 getAdminDirector ()Lgame/Class_3976;
 	METHOD method_18314 getGuildDirector ()Lgame/Class_6043;
 	METHOD method_18315 ()Lgame/Class_6094;
-	METHOD method_18316 ()Lgame/Class_5284;
+	METHOD method_18316 getPartyDirector ()Lgame/Class_5284;
 	METHOD method_18317 ()Lgame/Class_4390;
 	METHOD method_18318 getSteamDirector ()Lgame/Class_6560;
 	METHOD method_18319 getServerObject ()Lgame/Class_5057;
@@ -37995,7 +38019,7 @@ CLASS game/Class_7609 com/threerings/tudey/tools/Class_7609
 CLASS game/Class_7610 com/threerings/tudey/tools/Class_7610
 	METHOD method_19441 accept (Ljava/io/File;)Z
 	METHOD method_19442 getDescription ()Ljava/lang/String;
-CLASS game/Class_7611 com/threerings/tudey/tools/Class_7611
+CLASS game/Class_7611 com/threerings/tudey/tools/SceneEditor
 	FIELD field_20044 _cameraEnabled Z
 	FIELD field_20045 _chooser Ljavax/swing/JFileChooser;
 	FIELD field_20046 _copy Ljavax/swing/Action;
@@ -38172,7 +38196,7 @@ CLASS game/Class_7627 com/threerings/tudey/tools/Class_7627
 CLASS game/Class_7630 com/threerings/tudey/tools/Class_7630
 CLASS game/Class_7631 com/threerings/tudey/tools/Class_7631
 CLASS game/Class_7632 com/threerings/tudey/tools/Class_7632
-CLASS game/Class_7633 com/threerings/tudey/tools/Class_7633
+CLASS game/Class_7633 com/threerings/tudey/tools/TudeyTool
 	FIELD field_20160 _root Lgame/Class_2766;
 	METHOD method_19566 ()Z
 	METHOD method_19567 (Lgame/Class_3070;)V
@@ -38380,8 +38404,9 @@ CLASS game/Class_7654 com/threerings/tudey/util/Class_7654
 CLASS game/Class_7655 com/threerings/tudey/util/TudeyContext
 	METHOD method_19708 getRoot ()Lgame/Class_2766;
 CLASS game/Class_7656 com/threerings/tudey/util/Class_7656
-CLASS game/Class_7657 com/threerings/tudey/util/Class_7657
-	METHOD method_19709 (IIIIIILgame/Class_2339;)V
+CLASS game/Class_7657 com/threerings/tudey/util/TudeySceneMetrics
+	FIELD field_20238 TILE_ROTATIONS [Lgame/Class_2334;
+	METHOD method_19709 getTileTransform (IIIIIILgame/Class_2339;)V
 	METHOD method_19710 (IIIIILgame/Class_2998;)V
 	METHOD method_19711 (Lgame/Class_7325;F)Lgame/Class_2335;
 	METHOD method_19712 (F)I
@@ -38439,7 +38464,12 @@ CLASS game/Class_7668 com/threerings/util/Class_7668
 CLASS game/Class_7669 com/threerings/util/Class_7669
 CLASS game/Class_7670 com/threerings/util/Class_7670
 	METHOD method_19751 (I)Ljava/lang/String;
-CLASS game/Class_7671 com/threerings/util/Class_7671
+CLASS game/Class_7671 com/threerings/util/IdentUtil
+	FIELD field_20255 NO_IDENT Ljava/lang/String;
+	FIELD field_20256 bogusIdents Ljava/util/Set;
+	FIELD field_20257 TWO_MONTHS J
+	FIELD field_20258 WINDOWS_LOCS [Ljava/lang/String;
+	FIELD field_20259 UNIX_LOCS [Ljava/lang/String;
 	METHOD method_19752 ()Ljava/lang/String;
 	METHOD method_19753 ()Ljava/lang/String;
 	METHOD method_19754 ()Ljava/io/File;
@@ -38546,10 +38576,12 @@ CLASS game/Class_7684 com/threerings/util/MessageManager
 	METHOD method_19831 (Ljava/lang/String;Ljava/util/ResourceBundle;Lgame/Class_7683;)Lgame/Class_7683;
 	METHOD method_19832 (Ljava/util/Locale;Z)V
 	METHOD method_19833 ()Ljava/util/Locale;
-	METHOD method_19834 (Ljava/lang/String;)Lgame/Class_7683;
+	METHOD method_19834 getBundle (Ljava/lang/String;)Lgame/Class_7683;
 	METHOD method_19835 (Ljava/lang/String;)Ljava/util/ResourceBundle;
-CLASS game/Class_7685 com/threerings/util/Class_7685
-	METHOD method_19836 (Ljava/lang/String;)Z
+CLASS game/Class_7685 com/threerings/util/NameUtil
+	FIELD field_20309 STOP_WORDS [Ljava/lang/String;
+	FIELD field_20310 STOP_REGEXES [Ljava/lang/String;
+	METHOD method_19836 isVulgarName (Ljava/lang/String;)Z
 CLASS game/Class_7686 com/threerings/util/StreamableArrayIntSet
 	METHOD method_19837 readObject (Lgame/Class_2323;)V
 	METHOD method_19838 writeObject (Lgame/Class_2324;)V
@@ -38663,7 +38695,7 @@ CLASS game/Class_7709 com/threerings/util/Class_7709
 	METHOD method_19910 (JBB)Ljava/lang/String;
 	METHOD method_19911 (B)I
 	METHOD method_19912 (B)Ljava/lang/String;
-CLASS game/Class_7710 com/threerings/util/Class_7710
+CLASS game/Class_7710 com/threerings/util/ToolUtil
 	METHOD method_19913 (Ljava/awt/datatransfer/Transferable;)Ljava/lang/Object;
 	METHOD method_19914 (Ljava/awt/event/ActionListener;Lgame/Class_7683;Ljava/lang/String;)Ljavax/swing/JButton;
 	METHOD method_19915 (Ljava/awt/event/ActionListener;Lgame/Class_7683;Ljava/lang/String;II)Ljavax/swing/JMenuItem;
@@ -38704,7 +38736,7 @@ CLASS game/Class_7714 com/threerings/util/Class_7714
 	METHOD method_19943 propertyChange (Ljava/beans/PropertyChangeEvent;)V
 CLASS game/Class_7715 com/threerings/util/Class_7715
 	METHOD method_19944 isValid ()Z
-CLASS game/Class_7716 com/threerings/util/Class_7716
+CLASS game/Class_7716 com/threerings/util/ArrayKey
 	FIELD field_20347 _elements [Ljava/lang/Object;
 	METHOD method_19945 equals (Ljava/lang/Object;)Z
 	METHOD method_19946 hashCode ()I
