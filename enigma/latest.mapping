@@ -3632,7 +3632,7 @@ CLASS game/Class_509 com/google/common/collect/StandardTable
 		METHOD method_2430 ()Lgame/Class_516$Class_517;
 		METHOD method_2431 ()Ljava/lang/Object;
 		METHOD method_2432 remove ()V
-	CLASS Class_511
+	CLASS Class_511 Row
 		FIELD field_1239 backingRowMap Ljava/util/Map;
 		FIELD field_1240 rowKey Ljava/lang/Object;
 		FIELD field_1241 this$0 Lgame/Class_509;
@@ -4427,7 +4427,7 @@ CLASS game/Class_673 com/google/inject/CreationException
 	FIELD field_1464 serialVersionUID J
 	METHOD method_2936 ()Ljava/util/Collection;
 	METHOD method_2937 getMessage ()Ljava/lang/String;
-CLASS game/Class_674 com/google/inject/Class_674
+CLASS game/Class_674 com/google/inject/Key
 	METHOD method_2938 (Lgame/Class_1122;Ljava/lang/annotation/Annotation;)Lgame/Class_674;
 	METHOD method_2939 (Ljava/lang/Class;Ljava/lang/Class;)Lgame/Class_674;
 	METHOD method_2940 (Ljava/lang/Class;Ljava/lang/annotation/Annotation;)Lgame/Class_674;
@@ -6325,7 +6325,7 @@ CLASS game/Class_1018 com/google/inject/Class_1018
 CLASS game/Class_1019 com/google/inject/matcher/Matchers
 	METHOD method_4335 (Ljava/lang/Class;)Lgame/Class_1024;
 	METHOD method_4336 (Ljava/lang/Object;)Lgame/Class_1024;
-	CLASS Class_1020
+	CLASS Class_1020 Any
 		FIELD field_2470 serialVersionUID J
 		METHOD method_4337 toString ()Ljava/lang/String;
 	CLASS Class_1021 IdenticalTo
@@ -10898,7 +10898,7 @@ CLASS game/Class_1903 com/threerings/expr/BooleanExpression
 	METHOD method_7215 (Lgame/Class_2067;)Lgame/Class_1903$Class_1920;
 	METHOD method_7216 (Ljava/lang/String;)Lgame/Class_1903;
 	METHOD method_7217 invalidate ()V
-	CLASS Class_1904
+	CLASS Class_1904 And
 	CLASS Class_1905 BinaryOperation
 		FIELD field_4327 firstOperand Lgame/Class_1903;
 		FIELD field_4328 secondOperand Lgame/Class_1903;
@@ -10915,9 +10915,9 @@ CLASS game/Class_1903 com/threerings/expr/BooleanExpression
 	CLASS Class_1911 FloatGreaterEquals
 	CLASS Class_1912 FloatLess
 	CLASS Class_1913 FloatLessEquals
-	CLASS Class_1914
+	CLASS Class_1914 Not
 		FIELD field_4332 operand Lgame/Class_1903;
-	CLASS Class_1915
+	CLASS Class_1915 Or
 	CLASS Class_1916 Parsed
 		FIELD field_4334 expression Ljava/lang/String;
 	CLASS Class_1917 Reference
@@ -10925,7 +10925,7 @@ CLASS game/Class_1903 com/threerings/expr/BooleanExpression
 	CLASS Class_1918 StringEquals
 		FIELD field_4337 firstOperand Lgame/Class_2000;
 		FIELD field_4338 secondOperand Lgame/Class_2000;
-	CLASS Class_1919
+	CLASS Class_1919 Xor
 	CLASS Class_1920
 		METHOD method_7220 ()Z
 CLASS game/Class_1921 com/threerings/expr/Class_1921
@@ -11001,7 +11001,7 @@ CLASS game/Class_1946 com/threerings/expr/FloatExpression
 	METHOD method_7245 (Ljava/lang/String;)Lgame/Class_1946;
 	METHOD method_7246 invalidate ()V
 	CLASS Class_1947
-	CLASS Class_1948
+	CLASS Class_1948 Add
 	CLASS Class_1949 BinaryOperation
 		FIELD field_4377 firstOperand Lgame/Class_1946;
 		FIELD field_4378 secondOperand Lgame/Class_1946;
@@ -11010,10 +11010,10 @@ CLASS game/Class_1946 com/threerings/expr/FloatExpression
 		FIELD field_4379 scope Ljava/lang/String;
 	CLASS Class_1951 Constant
 		FIELD field_4380 value F
-	CLASS Class_1952
+	CLASS Class_1952 Cos
 	CLASS Class_1953 Divide
 	CLASS Class_1954 Elapsed
-	CLASS Class_1955
+	CLASS Class_1955 Exp
 	CLASS Class_1956
 	CLASS Class_1957
 	CLASS Class_1958 Multiply
@@ -11022,16 +11022,16 @@ CLASS game/Class_1946 com/threerings/expr/FloatExpression
 	CLASS Class_1961 Noise2
 	CLASS Class_1962 Parsed
 		FIELD field_4382 expression Ljava/lang/String;
-	CLASS Class_1963
+	CLASS Class_1963 Pow
 	CLASS Class_1964 Ramp
 	CLASS Class_1965 Reference
 		FIELD field_4383 defvalue F
 	CLASS Class_1966 Remainder
-	CLASS Class_1967
-	CLASS Class_1968
+	CLASS Class_1967 Saw
+	CLASS Class_1968 Sin
 	CLASS Class_1969 Square
 	CLASS Class_1970 Subtract
-	CLASS Class_1971
+	CLASS Class_1971 Tan
 	CLASS Class_1972 Triangle
 	CLASS Class_1973 UnaryOperation
 		FIELD field_4385 operand Lgame/Class_1946;
@@ -14908,7 +14908,7 @@ CLASS game/Class_2658 com/threerings/opengl/effect/config/ParticleSystemConfig
 		FIELD field_6430 segments I
 CLASS game/Class_2667 com/threerings/opengl/effect/config/PlacerConfig
 	METHOD method_9484 createPlacer (Lgame/Class_2635$Class_2636;)Lgame/Class_2712;
-	CLASS Class_2668
+	CLASS Class_2668 Box
 		FIELD field_6431 height F
 		FIELD field_6432 length F
 		FIELD field_6433 solid Z
@@ -15499,7 +15499,7 @@ CLASS game/Class_2761 com/threerings/opengl/gui/Label
 	METHOD method_9694 setOrientation (I)V
 	METHOD method_9695 setPreferredWidth (I)V
 	METHOD method_9696 setTextRotation (I)V
-	CLASS Class_2762
+	CLASS Class_2762 Fit
 		FIELD field_6720 $VALUES [Lgame/Class_2761$Class_2762;
 		FIELD field_6721 SCALE Lgame/Class_2761$Class_2762;
 		FIELD field_6722 TRUNCATE Lgame/Class_2761$Class_2762;
@@ -16399,7 +16399,7 @@ CLASS game/Class_2880 com/threerings/opengl/gui/config/ComponentConfig
 		FIELD field_7145 tabAlignment Lgame/Class_2934$Class_2946;
 		FIELD field_7146 tabStyle Lgame/Class_1412;
 		METHOD method_10051 lambda$getGrouped$0 (Lgame/Class_2880$Class_2904$Class_2905;)Lgame/Class_2880;
-		CLASS Class_2905
+		CLASS Class_2905 Tab
 			FIELD field_7148 hasClose Z
 			FIELD field_7149 styleOverride Lgame/Class_1412;
 			FIELD field_7150 title Ljava/lang/String;
@@ -19702,7 +19702,7 @@ CLASS game/Class_3384 com/threerings/opengl/renderer/config/StencilStateConfig
 	FIELD field_8805 uniqueInstance Z
 	FIELD field_8806 writeMask I
 	METHOD method_11332 getState ()Lgame/Class_3288;
-	CLASS Class_3385
+	CLASS Class_3385 Op
 		FIELD field_8807 $VALUES [Lgame/Class_3384$Class_3385;
 		FIELD field_8810 INVERT Lgame/Class_3384$Class_3385;
 		FIELD field_8812 REPLACE Lgame/Class_3384$Class_3385;
@@ -19951,7 +19951,7 @@ CLASS game/Class_3433 com/threerings/opengl/renderer/config/TextureEnvironmentCo
 	METHOD method_11402 configure (Lgame/Class_3499;)V
 	METHOD method_11403 getMode ()I
 	METHOD method_11404 isSupported (Z)Z
-	CLASS Class_3434
+	CLASS Class_3434 Add
 	CLASS Class_3435 AlphaCombine
 		FIELD field_8953 $VALUES [Lgame/Class_3433$Class_3435;
 		FIELD field_8955 ADD_SIGNED Lgame/Class_3433$Class_3435;
@@ -20471,7 +20471,7 @@ CLASS game/Class_3508 com/threerings/opengl/scene/config/SceneInfluenceConfig
 		FIELD field_9218 color Lgame/Class_3264;
 	CLASS Class_3510 Definer
 		FIELD field_9219 definitions [Lgame/Class_1939;
-	CLASS Class_3511
+	CLASS Class_3511 Fog
 		FIELD field_9220 state Lgame/Class_3318;
 	CLASS Class_3512 Light
 		FIELD field_9221 light Lgame/Class_3323;
@@ -22957,7 +22957,7 @@ CLASS game/Class_4032 com/threerings/projectx/admin/data/PlaceSummary
 	METHOD method_12672 ()I
 	METHOD method_12673 ()I
 	METHOD method_12674 ()Ljava/lang/String;
-	CLASS Class_4033
+	CLASS Class_4033 Key
 		FIELD field_10534 instanceId I
 		FIELD field_10535 nodeName Ljava/lang/String;
 		FIELD field_10536 sceneId I
@@ -23728,7 +23728,7 @@ CLASS game/Class_4189 com/threerings/projectx/client/Class_4189
 CLASS game/Class_4190 com/threerings/projectx/client/HelpWindow
 	METHOD method_12960 ()V
 	METHOD method_12961 (Lgame/Class_4190$Class_4191;)V
-	CLASS Class_4191
+	CLASS Class_4191 Tab
 		FIELD field_11107 $VALUES [Lgame/Class_4190$Class_4191;
 		FIELD field_11108 CLOCKWORKS Lgame/Class_4190$Class_4191;
 		FIELD field_11109 CONTROLS Lgame/Class_4190$Class_4191;
@@ -23912,7 +23912,7 @@ CLASS game/Class_4218 com/threerings/projectx/client/OptionsDialog
 	METHOD method_13082 (IZ)V
 	METHOD method_13083 (Lgame/Class_7079;)V
 	METHOD method_13084 (Lgame/Class_7079;)Ljava/lang/String;
-	CLASS Class_4219
+	CLASS Class_4219 Tab
 		FIELD field_11321 $VALUES [Lgame/Class_4218$Class_4219;
 		FIELD field_11322 ABOUT Lgame/Class_4218$Class_4219;
 		FIELD field_11324 CONTROLS Lgame/Class_4218$Class_4219;
@@ -24330,7 +24330,7 @@ CLASS game/Class_4244 com/threerings/projectx/client/UplinkWindow
 	METHOD method_13380 (J)V
 	METHOD method_13381 (Lgame/Class_4244$Class_4245;)V
 	METHOD method_13382 (Lgame/Class_7677;)V
-	CLASS Class_4245
+	CLASS Class_4245 Tab
 		FIELD field_11490 $VALUES [Lgame/Class_4244$Class_4245;
 		FIELD field_11491 GIFTS Lgame/Class_4244$Class_4245;
 		FIELD field_11492 INVITES Lgame/Class_4244$Class_4245;
@@ -34384,7 +34384,7 @@ CLASS game/Class_6765 com/threerings/projectx/social/data/Whereabouts
 		METHOD method_17675 (Lgame/Class_7079;)Ljava/lang/String;
 		METHOD method_17676 equals (Ljava/lang/Object;)Z
 		METHOD method_17677 hashCode ()I
-	CLASS Class_6772
+	CLASS Class_6772 Pvp
 		FIELD field_18044 isTesting Z
 		FIELD field_18046 privateTesting Z
 		METHOD method_17678 equals (Ljava/lang/Object;)Z
@@ -36775,9 +36775,9 @@ CLASS game/Class_7330 com/threerings/tudey/config/ConditionConfig
 	METHOD method_18886 invalidate ()V
 	CLASS Class_7331 Action
 		FIELD field_19493 action Lgame/Class_7244;
-	CLASS Class_7332
+	CLASS Class_7332 All
 	CLASS Class_7333 Always
-	CLASS Class_7334
+	CLASS Class_7334 Any
 	CLASS Class_7335 Cooldown
 	CLASS Class_7336 DateRange
 		FIELD field_19496 start Ljava/lang/Long;
@@ -36811,7 +36811,7 @@ CLASS game/Class_7330 com/threerings/tudey/config/ConditionConfig
 		FIELD field_19519 limit I
 	CLASS Class_7345 MultiSubConditionConfig
 		FIELD field_19520 conditions [Lgame/Class_7330;
-	CLASS Class_7346
+	CLASS Class_7346 Not
 		FIELD field_19521 condition Lgame/Class_7330;
 	CLASS Class_7347 Random
 		FIELD field_19522 probability F
@@ -36849,8 +36849,8 @@ CLASS game/Class_7354 com/threerings/tudey/config/EffectSpriteConfig
 	CLASS Class_7356 Default
 CLASS game/Class_7357 com/threerings/tudey/config/ExpressionConfig
 	METHOD method_18897 invalidate ()V
-	CLASS Class_7358
-	CLASS Class_7359
+	CLASS Class_7358 Add
+	CLASS Class_7359 And
 	CLASS Class_7360 BinaryOperation
 		FIELD field_19538 firstOperand Lgame/Class_7357;
 		FIELD field_19539 secondOperand Lgame/Class_7357;
@@ -36868,10 +36868,10 @@ CLASS game/Class_7357 com/threerings/tudey/config/ExpressionConfig
 	CLASS Class_7371 LessEquals
 	CLASS Class_7372 Multiply
 	CLASS Class_7373 Negate
-	CLASS Class_7374
+	CLASS Class_7374 Not
 	CLASS Class_7375 NumTargets
 		FIELD field_19541 target Lgame/Class_7463;
-	CLASS Class_7376
+	CLASS Class_7376 Or
 	CLASS Class_7377 Parsed
 		FIELD field_19543 expression Ljava/lang/String;
 	CLASS Class_7378 Power
@@ -36885,7 +36885,7 @@ CLASS game/Class_7357 com/threerings/tudey/config/ExpressionConfig
 		FIELD field_19546 operand Lgame/Class_7357;
 	CLASS Class_7385 Variable
 		FIELD field_19547 variable Lgame/Class_3920;
-	CLASS Class_7386
+	CLASS Class_7386 Xor
 CLASS game/Class_7387 com/threerings/tudey/config/GroundConfig
 	FIELD field_19548 implementation Lgame/Class_7387$Class_7390;
 	METHOD method_18898 (Lgame/Class_7502;Lgame/Class_1412;Lgame/Class_7387$Class_7391;III)I
