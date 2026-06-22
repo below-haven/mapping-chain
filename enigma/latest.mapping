@@ -22738,7 +22738,7 @@ CLASS game/Class_3957 com/threerings/projectx/admin/client/PeerAdministrator
 	METHOD method_12542 dobjectChanged (Lgame/Class_3998;)V
 	METHOD method_12543 (Lgame/Class_4061;)V
 	METHOD method_12544 actionPerformed (Ljava/awt/event/ActionEvent;)V
-	METHOD method_12545 ()V
+	METHOD method_12545 updateNodeBox ()V
 	METHOD method_12546 ()V
 	METHOD method_12547 ()V
 	METHOD method_12548 ()V
@@ -22898,7 +22898,7 @@ CLASS game/Class_3975 com/threerings/projectx/admin/client/SubscriberTool
 	METHOD method_12587 removeNotify ()V
 	METHOD method_12588 getOid ()I
 	METHOD method_12589 ()V
-	METHOD method_12590 ()V
+	METHOD method_12590 subscribe ()V
 CLASS game/Class_3976 com/threerings/projectx/admin/client/AdminDirector
 CLASS game/Class_3977 com/threerings/projectx/admin/client/Class_3977
 CLASS game/Class_3978 com/threerings/projectx/admin/client/Class_3978
@@ -23220,7 +23220,7 @@ CLASS game/Class_4030 com/threerings/projectx/admin/data/PartySummary
 	FIELD field_10526 members [Lgame/Class_7677;
 	FIELD field_10527 scene Ljava/lang/String;
 	METHOD method_12666 ()Lgame/Class_5833;
-	METHOD method_12667 ()I
+	METHOD method_12667 getGateId ()I
 	METHOD method_12668 ()Ljava/lang/String;
 CLASS game/Class_4031 com/threerings/projectx/admin/data/PlaceBrowserObject
 	FIELD field_10528 parties Lgame/Class_3717;
@@ -23232,7 +23232,7 @@ CLASS game/Class_4032 com/threerings/projectx/admin/data/PlaceSummary
 	FIELD field_10533 occupants Ljava/util/List;
 	METHOD method_12669 getName ()Ljava/lang/String;
 	METHOD method_12670 ()Ljava/lang/String;
-	METHOD method_12671 ()I
+	METHOD method_12671 getZoneId ()I
 	METHOD method_12672 ()I
 	METHOD method_12673 ()I
 	METHOD method_12674 ()Ljava/lang/String;
@@ -25641,7 +25641,7 @@ CLASS game/Class_4592 com/threerings/projectx/client/ProjectXSceneView
 	FIELD field_12187 _viewrefs Ljava/util/List;
 	METHOD method_13949 ()V
 	METHOD method_13950 ()Lgame/Class_4638;
-	METHOD method_13951 ()Ljava/lang/String;
+	METHOD method_13951 getSceneTitle ()Ljava/lang/String;
 	METHOD method_13952 ()Ljava/lang/String;
 	METHOD method_13953 getSceneBackground ()Ljava/lang/String;
 	METHOD method_13954 ()Z
@@ -25982,7 +25982,7 @@ CLASS game/Class_4680 com/threerings/projectx/client/ComplainTree
 	METHOD method_14152 (J)Lgame/Class_4680;
 	METHOD method_14153 (Z)V
 	METHOD method_14154 optionSelected (I)V
-	METHOD method_14155 (I)V
+	METHOD method_14155 buttonSelected (I)V
 	METHOD method_14156 (I)V
 	METHOD method_14157 update (I)V
 	METHOD method_14158 addSubHeader (Ljava/lang/String;)V
@@ -35943,7 +35943,7 @@ CLASS game/Class_7049 com/threerings/projectx/util/Resulting
 	METHOD method_18209 (Ljava/lang/Exception;Ljava/lang/Object;Lgame/Class_1263;[Ljava/lang/Object;)V
 	METHOD method_18210 ()Lgame/Class_3644$Class_3645;
 	METHOD method_18211 ()Lgame/Class_3644$Class_3647;
-	METHOD method_18212 ()Ljava/lang/Object;
+	METHOD method_18212 invokePersist ()Ljava/lang/Object;
 	METHOD method_18213 (Ljava/lang/Object;)Ljava/lang/Void;
 	METHOD method_18214 requestFailed (Ljava/lang/Exception;)V
 	METHOD method_21042 ()V
