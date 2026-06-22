@@ -16042,7 +16042,7 @@ CLASS game/Class_2801 com/threerings/opengl/gui/Class_2801
 	FIELD field_6883 this$0 Lgame/Class_2800;
 	FIELD field_6884 val$alert Lgame/Class_2834;
 	FIELD field_6885 val$blank Lgame/Class_2833;
-CLASS game/Class_2802 com/threerings/opengl/gui/Class_2802
+CLASS game/Class_2802 com/threerings/opengl/gui/StretchWindow
 	METHOD method_9880 isStretching ()Z
 CLASS game/Class_2803 com/threerings/opengl/gui/Class_2803
 	FIELD field_6886 _buttons Lgame/Class_2747;
@@ -25434,7 +25434,7 @@ CLASS game/Class_4527 com/threerings/projectx/client/Class_4527
 CLASS game/Class_4528 com/threerings/projectx/client/Class_4528
 CLASS game/Class_4529 com/threerings/projectx/client/Class_4529
 	METHOD method_13829 (Lgame/Class_6753;)Z
-CLASS game/Class_4530 com/threerings/projectx/client/Class_4530
+CLASS game/Class_4530 com/threerings/projectx/client/PickKnightWindow
 	FIELD field_12023 _ctx Lgame/Class_7079;
 	FIELD field_12024 _msgs Lgame/Class_7683;
 	METHOD method_13830 (ILgame/Class_7677;)V
@@ -32209,7 +32209,7 @@ CLASS game/Class_6231 com/threerings/projectx/item/client/Class_6231
 	CLASS Class_6234
 		METHOD method_16419 (Lgame/Class_6410;)V
 CLASS game/Class_6235 com/threerings/projectx/item/client/Class_6235
-CLASS game/Class_6236 com/threerings/projectx/item/client/Class_6236
+CLASS game/Class_6236 com/threerings/projectx/item/client/ArsenalWindow
 	FIELD field_16577 _ctx Lgame/Class_7079;
 	METHOD method_16420 ()V
 	METHOD method_16421 ()I
@@ -35524,7 +35524,7 @@ CLASS game/Class_6954 com/threerings/projectx/trade/a/Class_6954
 CLASS game/Class_6955 com/threerings/projectx/trade/a/Class_6955
 CLASS game/Class_6956 com/threerings/projectx/trade/a/Class_6956
 CLASS game/Class_6957 com/threerings/projectx/trade/a/Class_6957
-CLASS game/Class_6958 com/threerings/projectx/trade/a/Class_6958
+CLASS game/Class_6958 com/threerings/projectx/trade/client/TradeUtil
 	FIELD field_18587 _ctx Lgame/Class_7079;
 	METHOD method_18012 ()Lgame/Class_6958$Class_6959;
 	METHOD method_18013 (JI)V
@@ -35682,8 +35682,9 @@ CLASS game/Class_6984 com/threerings/projectx/uplink/client/UplinkService
 		FIELD field_18668 email Ljava/lang/String;
 		FIELD field_18669 subscribed Z
 		FIELD field_18670 validated Z
-CLASS game/Class_6986 com/threerings/projectx/uplink/client/Class_6986
+CLASS game/Class_6986 com/threerings/projectx/uplink/client/ComposePanel
 	FIELD field_18671 _ctx Lgame/Class_7079;
+	FIELD field_18673 _mpanel Lgame/Class_6982;
 	METHOD method_18106 ()I
 	METHOD method_18107 ()I
 	METHOD method_18108 ()Z
