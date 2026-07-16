@@ -32929,7 +32929,7 @@ CLASS game/Class_6409 com/threerings/projectx/item/data/ImmutableEquipmentModifi
 CLASS game/Class_6410 com/threerings/projectx/item/data/Item
 	FIELD field_16953 _count I
 	FIELD field_16954 _dirty Z
-	FIELD field_16960 EXPIRE_DAYS_ARG Ljava/lang/String;
+	FIELD field_16960 _name Ljava/lang/String;
 	FIELD field_21322 _configId I
 	METHOD method_15593 getName (Lgame/Class_7079;)Ljava/lang/String;
 	METHOD method_16722 isEquivalent (Lgame/Class_1412;)Z
@@ -32971,7 +32971,7 @@ CLASS game/Class_6410 com/threerings/projectx/item/data/Item
 	METHOD method_16757 (Ljava/lang/String;)Z
 	METHOD method_16758 getCount ()I
 	METHOD method_16759 getOriginal (Lgame/Class_1411;Lgame/Class_1412;)Lgame/Class_6275$Class_6314;
-	METHOD method_16760 getExpiredMessage ()Ljava/lang/String;
+	METHOD method_16760 ()Ljava/lang/String;
 	METHOD method_16761 isEquivalent (Lgame/Class_6410;)Z
 	METHOD method_16762 readObject (Lgame/Class_2323;)V
 	METHOD method_16763 setDirty (Z)V
