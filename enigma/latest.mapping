@@ -8883,6 +8883,8 @@ CLASS game/Class_1465 com/threerings/config/tools/ConfigEditor
 	METHOD method_20916 (Lgame/Class_1410;)Z
 	METHOD method_20917 (Ljava/lang/Iterable;)Z
 	METHOD method_20918 ()Lgame/Class_7988;
+	METHOD method_21080 (Ljavax/swing/JMenu;)V
+	METHOD method_21091 (ZLgame/Class_1414;)V
 	CLASS Class_1466 ConfigEdit
 		FIELD field_3599 _diffKey Ljava/lang/String;
 		FIELD field_3600 _group Lgame/Class_1410;
@@ -11394,6 +11396,7 @@ CLASS game/Class_2096 com/threerings/expr/DynamicScope
 	METHOD method_7346 setParentScope (Lgame/Class_2067;)V
 	METHOD method_7347 startCompoundUpdate ()V
 	METHOD method_7348 wasUpdated ()V
+	METHOD method_21092 putQuietly (Ljava/lang/String;Ljava/lang/Object;)V
 CLASS game/Class_2097 com/threerings/expr/Class_2097
 	METHOD method_7349 execute ()V
 CLASS game/Class_2098 com/threerings/expr/Class_2098
@@ -14222,7 +14225,6 @@ CLASS game/Class_2515 com/threerings/openal/SoundManager
 	METHOD method_9160 getBaseGain ()F
 	METHOD method_9161 getListener ()Lgame/Class_2501;
 	METHOD method_9162 getStreams ()Ljava/util/ArrayList;
-	METHOD method_20867 createSoundManager (Lgame/Class_1307;)Lgame/Class_2515;
 	METHOD method_20868 ()Lgame/Class_2515$Class_7978;
 	CLASS Class_7978
 		METHOD method_20869 ()I
@@ -14392,6 +14394,7 @@ CLASS game/Class_2540 com/threerings/opengl/GlApp
 	METHOD method_9250 updateView (F)V
 	METHOD method_9251 willShutdown ()V
 	METHOD method_9252 xlate (Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+	METHOD method_21093 getSoundManagerInitArgs ()Lgame/Class_2515$Class_7978;
 CLASS game/Class_2541 com/threerings/opengl/a/Class_2541
 	FIELD field_6094 _bottom F
 	FIELD field_6095 _far F
@@ -29260,6 +29263,7 @@ CLASS game/Class_5525 com/threerings/projectx/dungeon/config/DungeonActorConfig
 			METHOD method_15277 valueOf (Ljava/lang/String;)Lgame/Class_5525$Class_5567$Class_5568;
 			METHOD method_15278 values ()[Lgame/Class_5525$Class_5567$Class_5568;
 	CLASS Class_5569 UnbreakableStarlinkBlock
+	CLASS Class_8027 ZMonster
 CLASS game/Class_5570 com/threerings/projectx/dungeon/config/DungeonActorSpriteConfig
 	CLASS Class_5571 BattleSprite
 	CLASS Class_5572 Block
@@ -29315,6 +29319,7 @@ CLASS game/Class_5570 com/threerings/projectx/dungeon/config/DungeonActorSpriteC
 		FIELD field_14773 states [Lgame/Class_7291$Class_7299;
 	CLASS Class_5594 Trap
 		FIELD field_14774 states [Lgame/Class_7291$Class_7299;
+	CLASS Class_8028 ZMonster
 CLASS game/Class_5595 com/threerings/projectx/dungeon/config/DungeonBehaviorConfig
 	CLASS Class_5596 AcquireDamagers
 		FIELD field_14775 $VALUES [Lgame/Class_5595$Class_5596;
@@ -30608,7 +30613,6 @@ CLASS game/Class_5870 com/threerings/projectx/dungeon/data/actor/Monster
 	FIELD field_15537 _shieldHealth I
 	FIELD field_15538 _status Lgame/Class_5825;
 	FIELD field_15539 HURT_ACTIVITIES [I
-	FIELD field_21015 _z F
 	METHOD method_15648 ()I
 	METHOD method_15649 ()Lgame/Class_1412;
 	METHOD method_15650 getAffectedType ()I
@@ -32385,6 +32389,7 @@ CLASS game/Class_6266 com/threerings/projectx/item/config/ForgePropertyConfig
 	CLASS Class_6270 HeatBonus
 	CLASS Class_6272 ItemBonus
 	CLASS Class_6274 SkipLevel
+	CLASS Class_8030 LockedItemBonus
 CLASS game/Class_6275 com/threerings/projectx/item/config/ItemConfig
 	FIELD field_16682 NULL_ORIGINAL Lgame/Class_6275$Class_6314;
 	FIELD field_16685 creatable Z
@@ -34266,7 +34271,18 @@ CLASS game/Class_6652 com/threerings/projectx/shop/client/Class_6652
 CLASS game/Class_6653 com/threerings/projectx/shop/client/Class_6653
 CLASS game/Class_6654 com/threerings/projectx/shop/client/Class_6654
 CLASS game/Class_6655 com/threerings/projectx/shop/client/Class_6655
-	METHOD method_17412 (Lgame/Class_1412;)Lgame/Class_4532$Class_4535;
+	METHOD method_17412 (Lgame/Class_6655$Class_8024;)Lgame/Class_4532$Class_4535;
+	METHOD method_21081 (Lgame/Class_6655;)Lgame/Class_7079;
+	METHOD method_21082 (Lgame/Class_6655;)Lgame/Class_7079;
+	CLASS Class_8023
+		METHOD method_21083 (Lgame/Class_4532$Class_4540;)I
+		METHOD method_21084 compareTo (Ljava/lang/Object;)I
+	CLASS Class_8024
+		METHOD method_21085 ()Ljava/lang/String;
+		METHOD method_21086 ()Lgame/Class_1412;
+		METHOD method_21087 equals (Ljava/lang/Object;)Z
+		METHOD method_21088 hashCode ()I
+		METHOD method_21089 toString ()Ljava/lang/String;
 CLASS game/Class_6656 com/threerings/projectx/shop/client/Class_6656
 	METHOD method_17413 (Lgame/Class_4532$Class_4535;Lgame/Class_4532$Class_4535;)I
 	METHOD method_17414 compare (Ljava/lang/Object;Ljava/lang/Object;)I
@@ -34310,6 +34326,7 @@ CLASS game/Class_6667 com/threerings/projectx/shop/config/GoodConfig
 	METHOD method_17434 (Lgame/Class_460;)V
 	METHOD method_17435 createIcon (Lgame/Class_7079;I)Lgame/Class_2834;
 	METHOD method_17436 getCount ()I
+	METHOD method_21090 ()Ljava/lang/String;
 	CLASS Class_6668 Item
 		FIELD field_17849 count I
 		FIELD field_17850 goodLimit I
@@ -34320,6 +34337,8 @@ CLASS game/Class_6667 com/threerings/projectx/shop/config/GoodConfig
 	CLASS Class_6670 TokenItem
 		FIELD field_17852 tokenCount I
 		FIELD field_17853 token Lgame/Class_1412;
+	CLASS Class_8025 TokenEventItem
+		FIELD field_21340 event Ljava/lang/String;
 CLASS game/Class_6671 com/threerings/projectx/shop/config/ShopActionConfig
 	CLASS Class_6672 CatalogCycle
 		FIELD field_17854 $VALUES [Lgame/Class_6671$Class_6672;
@@ -35148,6 +35167,8 @@ CLASS game/Class_6855 com/threerings/projectx/tools/MissingCoordsDialog
 	METHOD method_17837 (Ljava/awt/event/ActionEvent;)V
 CLASS game/Class_6856 com/threerings/projectx/tools/ProjectXConfigEditor
 	FIELD field_18335 _exportChooser Ljavax/swing/JFileChooser;
+	FIELD field_21343 _create Ljavax/swing/Action;
+	FIELD field_21344 _prune Ljavax/swing/Action;
 	METHOD method_17838 ()V
 	METHOD method_17839 ()V
 	METHOD method_17840 ()V
@@ -35155,6 +35176,7 @@ CLASS game/Class_6856 com/threerings/projectx/tools/ProjectXConfigEditor
 	METHOD method_17842 (Lgame/Class_1509;)V
 	METHOD method_17843 (Ljava/io/File;Ljava/lang/String;Ljava/lang/String;)V
 	METHOD method_17844 (Lgame/Class_1509;)V
+	METHOD method_21094 (Ljava/lang/String;)V
 	CLASS Class_6857
 	CLASS Class_6858
 	CLASS Class_6859
@@ -37539,6 +37561,7 @@ CLASS game/Class_7462 com/threerings/tudey/config/TagConfig
 	METHOD method_18959 getTags ()[Ljava/lang/String;
 	METHOD method_18960 getLength ()I
 	METHOD method_18961 iterator ()Ljava/util/Iterator;
+	METHOD method_21095 (Ljava/lang/String;)Z
 CLASS game/Class_7463 com/threerings/tudey/config/TargetConfig
 	METHOD method_18962 invalidate ()V
 	CLASS Class_7464 Activator
@@ -40701,3 +40724,6 @@ CLASS game/Class_8011 com/threerings/projectx/partner/client/Class_8011
 	METHOD method_21075 (Lgame/Class_7992;)V
 CLASS game/Class_8012 com/threerings/projectx/partner/client/Class_8012
 CLASS game/Class_8022 com/threerings/projectx/shop/client/Class_8022
+CLASS game/Class_8026 com/threerings/projectx/dungeon/client/a/Class_8026
+CLASS game/Class_8029 com/threerings/projectx/dungeon/data/actor/ZMonster
+	FIELD field_21342 _z F
